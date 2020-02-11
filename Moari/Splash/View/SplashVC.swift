@@ -8,23 +8,73 @@
 
 import UIKit
 
-class SplashVC: UIViewController {
-
+class SplashVC: BaseVC, SplashVCDelegate {
+    
+    @IBOutlet weak var splashVCLabel: UILabel!
+    
+    static let viewRouter: SplashVCRouterDelegate = SplashVC()
+    
+    private let window: UIWindow = UIApplication.shared.windows.first ?? UIWindow.init(frame: UIScreen.main.bounds)
+    
+    weak var actor: SplashActorDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.initVC()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear")
+        
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.initVC()
+    }
+    
+    func initVC() {
+        print("init")
+        
+        
+        
+        self.setDarkModeUI()
+    }
+    
+    func setDarkModeUI() {
+        if self.isDarkMode {
+            
+        } else {
+            // User Interface is Light
+            
+        }
     }
 
+    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension SplashVC: SplashVCRouterDelegate {
+    func makeSplashVC() -> SplashVC {
+        let vc = SplashVC()
+        let actor = SplashActor.shared
+        let dataManager = SplashDataManager.shared
+        
+        vc.actor = actor
+        actor.view = vc
+        actor.dataManager = dataManager
+        dataManager.actor = actor
+        
+        return vc
     }
-    */
-
+    
+    func presentMainVC() {
+        
+    }
+    
+    func presentSignInVC() {
+        
+    }
+    
+    
 }

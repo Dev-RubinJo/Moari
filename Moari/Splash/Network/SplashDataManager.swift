@@ -6,4 +6,13 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
-import Foundation
+import Alamofire
+import AlamofireObjectMapper
+
+class SplashDataManager: SplashDataManagerDelegate {
+    
+    static let shared = SplashDataManager()
+    private init() {}
+    
+    weak var actor: SplashActorDelegate?
+}
