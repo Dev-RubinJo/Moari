@@ -38,6 +38,7 @@ class SplashTests: XCTestCase {
         }
     }
     
+    // 밤에만 True
     func testIsDarkMode() {
         self.measure {
             let vc = SplashVC.viewRouter.makeSplashVC()
