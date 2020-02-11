@@ -3,20 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198823F1A2B7008B9F84 /* AppDelegate.swift */; };
 		4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */; };
-		4362198D23F1A2B7008B9F84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198C23F1A2B7008B9F84 /* ViewController.swift */; };
-		4362199023F1A2B7008B9F84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4362198E23F1A2B7008B9F84 /* Main.storyboard */; };
 		4362199223F1A2B7008B9F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4362199123F1A2B7008B9F84 /* Assets.xcassets */; };
 		4362199523F1A2B7008B9F84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4362199323F1A2B7008B9F84 /* LaunchScreen.storyboard */; };
 		436219A023F1A2B7008B9F84 /* MoariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362199F23F1A2B7008B9F84 /* MoariTests.swift */; };
 		436219AB23F242FA008B9F84 /* Pods_Moari.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1DA8A874583CB34F6191E8 /* Pods_Moari.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4946BA89E6D0A1EDE2054674 /* Pods_Moari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1DA8A874583CB34F6191E8 /* Pods_Moari.framework */; };
-		57FDDEBF9676BA9124FE899A /* Pods_MoariTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDAD4AF0C04CDAB64D85D93A /* Pods_MoariTests.framework */; };
+		43CF868E23F29B1A0062B846 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43CF868D23F29B1A0062B846 /* GoogleService-Info.plist */; };
+		43CF869423F29BDE0062B846 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869323F29BDE0062B846 /* Device.swift */; };
+		43CF869623F29BF30062B846 /* BaseVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869523F29BF30062B846 /* BaseVCProtocol.swift */; };
+		43CF869823F29C040062B846 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869723F29C040062B846 /* UIColor.swift */; };
+		43CF869A23F29C1A0062B846 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869923F29C1A0062B846 /* UIButton.swift */; };
+		43CF869C23F29C2B0062B846 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869B23F29C2B0062B846 /* UIViewController.swift */; };
+		43CF869E23F29C400062B846 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869D23F29C400062B846 /* String.swift */; };
+		43CF86A023F29C550062B846 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869F23F29C550062B846 /* BaseVC.swift */; };
+		43CF86A223F29C6A0062B846 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF86A123F29C6A0062B846 /* IndicatorView.swift */; };
+		43CF86A423F29C820062B846 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF86A323F29C820062B846 /* ColorPalette.swift */; };
+		43CF86A723F29CA00062B846 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43CF86A923F29CA00062B846 /* Localizable.strings */; };
+		43CF86AC23F29CAE0062B846 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43CF86AE23F29CAE0062B846 /* InfoPlist.strings */; };
+		4A4A3E8DF1AF946B5ABDD294 /* libPods-Moari.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A0F51F34B695367033AB22 /* libPods-Moari.a */; };
+		6715CDA1D5567804532A4810 /* libPods-MoariTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6367B16AD08E8341DFD6296 /* libPods-MoariTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +58,6 @@
 		4362198523F1A2B7008B9F84 /* Moari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4362198823F1A2B7008B9F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4362198C23F1A2B7008B9F84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4362198F23F1A2B7008B9F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4362199123F1A2B7008B9F84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4362199423F1A2B7008B9F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4362199623F1A2B7008B9F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,9 +65,24 @@
 		4362199F23F1A2B7008B9F84 /* MoariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoariTests.swift; sourceTree = "<group>"; };
 		436219A123F1A2B7008B9F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		439CA85B1EBDAD103DA04605 /* Pods-MoariTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoariTests.release.xcconfig"; path = "Target Support Files/Pods-MoariTests/Pods-MoariTests.release.xcconfig"; sourceTree = "<group>"; };
-		BDAD4AF0C04CDAB64D85D93A /* Pods_MoariTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoariTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43CF868D23F29B1A0062B846 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43CF869323F29BDE0062B846 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		43CF869523F29BF30062B846 /* BaseVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVCProtocol.swift; sourceTree = "<group>"; };
+		43CF869723F29C040062B846 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		43CF869923F29C1A0062B846 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		43CF869B23F29C2B0062B846 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		43CF869D23F29C400062B846 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		43CF869F23F29C550062B846 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		43CF86A123F29C6A0062B846 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		43CF86A323F29C820062B846 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		43CF86A823F29CA00062B846 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		43CF86AD23F29CAE0062B846 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		43CF86AF23F29CBE0062B846 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		43CF86B023F29CBE0062B846 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6367B16AD08E8341DFD6296 /* libPods-MoariTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoariTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1DA8A874583CB34F6191E8 /* Pods_Moari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90915411A2F82CC74BCEA4B /* Pods-MoariTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoariTests.debug.xcconfig"; path = "Target Support Files/Pods-MoariTests/Pods-MoariTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E9A0F51F34B695367033AB22 /* libPods-Moari.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Moari.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4946BA89E6D0A1EDE2054674 /* Pods_Moari.framework in Frameworks */,
+				4A4A3E8DF1AF946B5ABDD294 /* libPods-Moari.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57FDDEBF9676BA9124FE899A /* Pods_MoariTests.framework in Frameworks */,
+				6715CDA1D5567804532A4810 /* libPods-MoariTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +113,7 @@
 				4362198623F1A2B7008B9F84 /* Products */,
 				B71496941FB550DF4708B349 /* Pods */,
 				8DCDD2AF95A4BEF6904BDEC5 /* Frameworks */,
+				43CF868C23F29A420062B846 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,13 +129,13 @@
 		4362198723F1A2B7008B9F84 /* Moari */ = {
 			isa = PBXGroup;
 			children = (
+				43CF868F23F29BAD0062B846 /* Config */,
 				4362198823F1A2B7008B9F84 /* AppDelegate.swift */,
 				4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */,
-				4362198C23F1A2B7008B9F84 /* ViewController.swift */,
-				4362198E23F1A2B7008B9F84 /* Main.storyboard */,
 				4362199123F1A2B7008B9F84 /* Assets.xcassets */,
 				4362199323F1A2B7008B9F84 /* LaunchScreen.storyboard */,
 				4362199623F1A2B7008B9F84 /* Info.plist */,
+				43CF868D23F29B1A0062B846 /* GoogleService-Info.plist */,
 			);
 			path = Moari;
 			sourceTree = "<group>";
@@ -125,11 +149,61 @@
 			path = MoariTests;
 			sourceTree = "<group>";
 		};
-		8DCDD2AF95A4BEF6904BDEC5 /* Frameworks */ = {
+		43CF868C23F29A420062B846 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				CA1DA8A874583CB34F6191E8 /* Pods_Moari.framework */,
-				BDAD4AF0C04CDAB64D85D93A /* Pods_MoariTests.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		43CF868F23F29BAD0062B846 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				43CF869023F29BB80062B846 /* Enum */,
+				43CF869123F29BBD0062B846 /* Protocol */,
+				43CF869223F29BC30062B846 /* Extension */,
+				43CF869F23F29C550062B846 /* BaseVC.swift */,
+				43CF86A123F29C6A0062B846 /* IndicatorView.swift */,
+				43CF86A323F29C820062B846 /* ColorPalette.swift */,
+				43CF86A923F29CA00062B846 /* Localizable.strings */,
+				43CF86AE23F29CAE0062B846 /* InfoPlist.strings */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		43CF869023F29BB80062B846 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				43CF869323F29BDE0062B846 /* Device.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		43CF869123F29BBD0062B846 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				43CF869523F29BF30062B846 /* BaseVCProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		43CF869223F29BC30062B846 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				43CF869723F29C040062B846 /* UIColor.swift */,
+				43CF869923F29C1A0062B846 /* UIButton.swift */,
+				43CF869B23F29C2B0062B846 /* UIViewController.swift */,
+				43CF869D23F29C400062B846 /* String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8DCDD2AF95A4BEF6904BDEC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9A0F51F34B695367033AB22 /* libPods-Moari.a */,
+				B6367B16AD08E8341DFD6296 /* libPods-MoariTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,7 +231,6 @@
 				4362198123F1A2B6008B9F84 /* Sources */,
 				4362198223F1A2B6008B9F84 /* Frameworks */,
 				4362198323F1A2B6008B9F84 /* Resources */,
-				55EA534D287320B705B89ACA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,6 +286,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 4362197C23F1A2B6008B9F84;
 			productRefGroup = 4362198623F1A2B7008B9F84 /* Products */;
@@ -231,8 +305,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4362199523F1A2B7008B9F84 /* LaunchScreen.storyboard in Resources */,
+				43CF86A723F29CA00062B846 /* Localizable.strings in Resources */,
+				43CF868E23F29B1A0062B846 /* GoogleService-Info.plist in Resources */,
 				4362199223F1A2B7008B9F84 /* Assets.xcassets in Resources */,
-				4362199023F1A2B7008B9F84 /* Main.storyboard in Resources */,
+				43CF86AC23F29CAE0062B846 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,23 +322,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		55EA534D287320B705B89ACA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Moari/Pods-Moari-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Moari/Pods-Moari-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moari/Pods-Moari-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7BC79A57ECE982CF7422E9AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,9 +373,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4362198D23F1A2B7008B9F84 /* ViewController.swift in Sources */,
+				43CF869C23F29C2B0062B846 /* UIViewController.swift in Sources */,
+				43CF869423F29BDE0062B846 /* Device.swift in Sources */,
+				43CF869623F29BF30062B846 /* BaseVCProtocol.swift in Sources */,
 				4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */,
+				43CF86A223F29C6A0062B846 /* IndicatorView.swift in Sources */,
+				43CF86A023F29C550062B846 /* BaseVC.swift in Sources */,
 				4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */,
+				43CF869823F29C040062B846 /* UIColor.swift in Sources */,
+				43CF869E23F29C400062B846 /* String.swift in Sources */,
+				43CF869A23F29C1A0062B846 /* UIButton.swift in Sources */,
+				43CF86A423F29C820062B846 /* ColorPalette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,20 +406,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4362198E23F1A2B7008B9F84 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4362198F23F1A2B7008B9F84 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4362199323F1A2B7008B9F84 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4362199423F1A2B7008B9F84 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		43CF86A923F29CA00062B846 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43CF86A823F29CA00062B846 /* en */,
+				43CF86AF23F29CBE0062B846 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		43CF86AE23F29CAE0062B846 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43CF86AD23F29CAE0062B846 /* en */,
+				43CF86B023F29CBE0062B846 /* ko */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -362,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -422,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
