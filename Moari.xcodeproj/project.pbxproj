@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		434D2B3A23F2A7FE00E1E0D1 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */; };
 		4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198823F1A2B7008B9F84 /* AppDelegate.swift */; };
 		4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */; };
 		4362199223F1A2B7008B9F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4362199123F1A2B7008B9F84 /* Assets.xcassets */; };
@@ -26,6 +27,12 @@
 		43CF86A723F29CA00062B846 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43CF86A923F29CA00062B846 /* Localizable.strings */; };
 		43CF86AC23F29CAE0062B846 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43CF86AE23F29CAE0062B846 /* InfoPlist.strings */; };
 		43CF86B423F29D500062B846 /* SplashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF86B323F29D500062B846 /* SplashTests.swift */; };
+		43CF86BA23F29DA00062B846 /* SplashProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF86B923F29DA00062B846 /* SplashProtocol.swift */; };
+		43CF86BC23F29DAB0062B846 /* SplashDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF86BB23F29DAB0062B846 /* SplashDataManager.swift */; };
+		43CF86BE23F29DB50062B846 /* SplashActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF86BD23F29DB50062B846 /* SplashActor.swift */; };
+		43CF86C023F29DC10062B846 /* SplashDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF86BF23F29DC10062B846 /* SplashDataResponse.swift */; };
+		43CF86C323F29DD00062B846 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF86C123F29DD00062B846 /* SplashVC.swift */; };
+		43CF86C423F29DD00062B846 /* SplashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43CF86C223F29DD00062B846 /* SplashVC.xib */; };
 		4A4A3E8DF1AF946B5ABDD294 /* libPods-Moari.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A0F51F34B695367033AB22 /* libPods-Moari.a */; };
 		6715CDA1D5567804532A4810 /* libPods-MoariTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6367B16AD08E8341DFD6296 /* libPods-MoariTests.a */; };
 /* End PBXBuildFile section */
@@ -56,6 +63,7 @@
 /* Begin PBXFileReference section */
 		0160B0ACF983F050FD1EBB75 /* Pods-Moari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moari.debug.xcconfig"; path = "Target Support Files/Pods-Moari/Pods-Moari.debug.xcconfig"; sourceTree = "<group>"; };
 		3F64763878C86E67F9CF8AA2 /* Pods-Moari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moari.release.xcconfig"; path = "Target Support Files/Pods-Moari/Pods-Moari.release.xcconfig"; sourceTree = "<group>"; };
+		434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 		4362198523F1A2B7008B9F84 /* Moari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4362198823F1A2B7008B9F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +89,12 @@
 		43CF86AF23F29CBE0062B846 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		43CF86B023F29CBE0062B846 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43CF86B323F29D500062B846 /* SplashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTests.swift; sourceTree = "<group>"; };
+		43CF86B923F29DA00062B846 /* SplashProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashProtocol.swift; sourceTree = "<group>"; };
+		43CF86BB23F29DAB0062B846 /* SplashDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashDataManager.swift; sourceTree = "<group>"; };
+		43CF86BD23F29DB50062B846 /* SplashActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashActor.swift; sourceTree = "<group>"; };
+		43CF86BF23F29DC10062B846 /* SplashDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashDataResponse.swift; sourceTree = "<group>"; };
+		43CF86C123F29DD00062B846 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		43CF86C223F29DD00062B846 /* SplashVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashVC.xib; sourceTree = "<group>"; };
 		B6367B16AD08E8341DFD6296 /* libPods-MoariTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoariTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1DA8A874583CB34F6191E8 /* Pods_Moari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90915411A2F82CC74BCEA4B /* Pods-MoariTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoariTests.debug.xcconfig"; path = "Target Support Files/Pods-MoariTests/Pods-MoariTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		434D2B3723F2A7E100E1E0D1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		4362197C23F1A2B6008B9F84 = {
 			isa = PBXGroup;
 			children = (
@@ -131,8 +153,8 @@
 		4362198723F1A2B7008B9F84 /* Moari */ = {
 			isa = PBXGroup;
 			children = (
-				43CF86B123F29D270062B846 /* Splash */,
 				43CF868F23F29BAD0062B846 /* Config */,
+				43CF86B123F29D270062B846 /* Splash */,
 				4362198823F1A2B7008B9F84 /* AppDelegate.swift */,
 				4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */,
 				4362199123F1A2B7008B9F84 /* Assets.xcassets */,
@@ -147,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				43CF86B223F29D370062B846 /* Splash */,
+				434D2B3723F2A7E100E1E0D1 /* Main */,
 				4362199F23F1A2B7008B9F84 /* MoariTests.swift */,
 				436219A123F1A2B7008B9F84 /* Info.plist */,
 			);
@@ -206,6 +229,10 @@
 		43CF86B123F29D270062B846 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				43CF86B823F29D870062B846 /* View */,
+				43CF86B723F29D850062B846 /* Actor */,
+				43CF86B623F29D830062B846 /* Network */,
+				43CF86B523F29D820062B846 /* Protocol */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -216,6 +243,40 @@
 				43CF86B323F29D500062B846 /* SplashTests.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		43CF86B523F29D820062B846 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				43CF86B923F29DA00062B846 /* SplashProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		43CF86B623F29D830062B846 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				43CF86BB23F29DAB0062B846 /* SplashDataManager.swift */,
+				43CF86BF23F29DC10062B846 /* SplashDataResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		43CF86B723F29D850062B846 /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+				43CF86BD23F29DB50062B846 /* SplashActor.swift */,
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
+		43CF86B823F29D870062B846 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43CF86C123F29DD00062B846 /* SplashVC.swift */,
+				43CF86C223F29DD00062B846 /* SplashVC.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8DCDD2AF95A4BEF6904BDEC5 /* Frameworks */ = {
@@ -326,6 +387,7 @@
 				4362199523F1A2B7008B9F84 /* LaunchScreen.storyboard in Resources */,
 				43CF86A723F29CA00062B846 /* Localizable.strings in Resources */,
 				43CF868E23F29B1A0062B846 /* GoogleService-Info.plist in Resources */,
+				43CF86C423F29DD00062B846 /* SplashVC.xib in Resources */,
 				4362199223F1A2B7008B9F84 /* Assets.xcassets in Resources */,
 				43CF86AC23F29CAE0062B846 /* InfoPlist.strings in Resources */,
 			);
@@ -396,13 +458,18 @@
 				43CF869423F29BDE0062B846 /* Device.swift in Sources */,
 				43CF869623F29BF30062B846 /* BaseVCProtocol.swift in Sources */,
 				4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */,
+				43CF86BA23F29DA00062B846 /* SplashProtocol.swift in Sources */,
 				43CF86A223F29C6A0062B846 /* IndicatorView.swift in Sources */,
 				43CF86A023F29C550062B846 /* BaseVC.swift in Sources */,
 				4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */,
+				43CF86BE23F29DB50062B846 /* SplashActor.swift in Sources */,
 				43CF869823F29C040062B846 /* UIColor.swift in Sources */,
+				43CF86BC23F29DAB0062B846 /* SplashDataManager.swift in Sources */,
 				43CF869E23F29C400062B846 /* String.swift in Sources */,
 				43CF869A23F29C1A0062B846 /* UIButton.swift in Sources */,
+				43CF86C323F29DD00062B846 /* SplashVC.swift in Sources */,
 				43CF86A423F29C820062B846 /* ColorPalette.swift in Sources */,
+				43CF86C023F29DC10062B846 /* SplashDataResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43CF86B423F29D500062B846 /* SplashTests.swift in Sources */,
+				434D2B3A23F2A7FE00E1E0D1 /* MainTests.swift in Sources */,
 				436219A023F1A2B7008B9F84 /* MoariTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
