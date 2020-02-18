@@ -28,9 +28,19 @@ protocol SplashActorDelegate: class {
     
     var dataManager: SplashDataManagerDelegate? { get set }
     
+    func didLoadSplash(fromVC vc: SplashVC)
+    
+    func presentInvalidTokenAlert(toVC vc: SplashVC)
+    
+    func vaildToken()
+    
+    func invalidToken()
+    
 }
 
 protocol SplashDataManagerDelegate: class {
     
     var actor: SplashActorDelegate? { get set }
+    
+    func checkToken(fromVC vc: SplashVC)
 }

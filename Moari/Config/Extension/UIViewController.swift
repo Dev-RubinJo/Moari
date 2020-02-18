@@ -43,6 +43,13 @@ extension UIViewController {
         }
     }
     
+    /// 현재 테마가 어떤 테마인지 알 수 있는 프로퍼티
+    var theme: Int {
+        get {
+            UserDefaults.standard.integer(forKey: "Theme")
+        }
+    }
+    
     var indicator: IndicatorView {
         get {
             return IndicatorView.shared

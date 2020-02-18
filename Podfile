@@ -15,9 +15,8 @@ target 'Moari' do
   pod 'RealmSwift'
   
   pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
   pod 'FirebaseStorage'
-  pod 'Fabric', '~> 1.7.5'
-  pod 'Crashlytics', '~> 3.10.1'
 
   target 'MoariTests' do
     inherit! :search_paths

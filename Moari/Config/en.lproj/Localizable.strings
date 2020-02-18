@@ -5,3 +5,7 @@
   Created by YooBin Jo on 2020/02/11.
   Copyright © 2020 YooBin Jo. All rights reserved.
 */
+
+// SplashActor >> presentInvalidTokenAlert
+"OUT_OF_TOKEN_TITLE" = "Sign-In session expired";
+"OUT_OF_TOKEN_CONTENT" = "Your Sign-In session has expired. Please Sign-In again!";

@@ -10,11 +10,19 @@ import UIKit
 
 class SplashVC: BaseVC, SplashVCDelegate {
     
-    @IBOutlet weak var splashVCLabel: UILabel!
+    @IBOutlet weak var logoImageView: UIImageView!
     
     static let viewRouter: SplashVCRouterDelegate = SplashVC()
     
-    private let window: UIWindow = UIApplication.shared.windows.first ?? UIWindow.init(frame: UIScreen.main.bounds)
+    private var window: UIWindow? {
+        get {
+            if #available(iOS 13.0, *) {
+                return UIApplication.shared.windows.first ?? UIWindow.init(frame: UIScreen.main.bounds)
+            } else {
+                return UIApplication.shared.keyWindow
+            }
+        }
+    }
     
     weak var actor: SplashActorDelegate?
     
@@ -23,35 +31,28 @@ class SplashVC: BaseVC, SplashVCDelegate {
         self.initVC()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("viewDidAppear")
-        
-    }
-    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        self.initVC()
-    }
-    
-    func initVC() {
-        print("init")
-        
-        
         
         self.setDarkModeUI()
     }
     
+    func initVC() {
+        self.setDarkModeUI()
+        self.delay(0.5) { [weak self] in
+            self?.actor?.didLoadSplash(fromVC: self!)
+        }
+        
+    }
+    
     func setDarkModeUI() {
         if self.isDarkMode {
-            
+            self.logoImageView.tintColor = .white
         } else {
             // User Interface is Light
-            
+            self.logoImageView.image = UIImage(named: "logoImageLight")
         }
     }
-
-    
 }
 
 extension SplashVC: SplashVCRouterDelegate {
@@ -69,12 +70,13 @@ extension SplashVC: SplashVCRouterDelegate {
     }
     
     func presentMainVC() {
-        
+        // TODO: makeMainVC func 만들어서 적용하기, set what is First. Curation? Category?
     }
     
     func presentSignInVC() {
-        
+        let signInVC = SignInVC.makeSignInVC()
+        self.window?.rootViewController = signInVC
+        self.window?.makeKeyAndVisible()
+        UIView.transition(with: self.window!, duration: 0.2, options: .transitionCrossDissolve, animations: nil, completion: nil)
     }
-    
-    
 }

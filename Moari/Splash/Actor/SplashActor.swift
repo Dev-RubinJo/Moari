@@ -15,6 +15,19 @@ class SplashActor: SplashActorDelegate {
     weak var view: SplashVCRouterDelegate?
     weak var dataManager: SplashDataManagerDelegate?
     
+    func didLoadSplash(fromVC vc: SplashVC) {
+        self.dataManager?.checkToken(fromVC: vc)
+    }
     
+    func presentInvalidTokenAlert(toVC vc: SplashVC) {
+        vc.presentAlert(title: "OUT_OF_TOKEN_TITLE".localized, message: "OUT_OF_TOKEN_CONTENT".localized)
+    }
     
+    func vaildToken() {
+        self.view?.presentMainVC()
+    }
+    
+    func invalidToken() {
+        self.view?.presentSignInVC()
+    }
 }

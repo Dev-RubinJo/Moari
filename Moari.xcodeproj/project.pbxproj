@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430A998E23F4F70700586CB0 /* ServerAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A998D23F4F70700586CB0 /* ServerAddress.swift */; };
 		434D2B3A23F2A7FE00E1E0D1 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */; };
 		4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198823F1A2B7008B9F84 /* AppDelegate.swift */; };
 		4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */; };
@@ -14,7 +15,6 @@
 		4362199523F1A2B7008B9F84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4362199323F1A2B7008B9F84 /* LaunchScreen.storyboard */; };
 		436219A023F1A2B7008B9F84 /* MoariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362199F23F1A2B7008B9F84 /* MoariTests.swift */; };
 		436219AB23F242FA008B9F84 /* Pods_Moari.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1DA8A874583CB34F6191E8 /* Pods_Moari.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		43CF868E23F29B1A0062B846 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43CF868D23F29B1A0062B846 /* GoogleService-Info.plist */; };
 		43CF869423F29BDE0062B846 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869323F29BDE0062B846 /* Device.swift */; };
 		43CF869623F29BF30062B846 /* BaseVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869523F29BF30062B846 /* BaseVCProtocol.swift */; };
 		43CF869823F29C040062B846 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869723F29C040062B846 /* UIColor.swift */; };
@@ -33,6 +33,13 @@
 		43CF86C023F29DC10062B846 /* SplashDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF86BF23F29DC10062B846 /* SplashDataResponse.swift */; };
 		43CF86C323F29DD00062B846 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF86C123F29DD00062B846 /* SplashVC.swift */; };
 		43CF86C423F29DD00062B846 /* SplashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43CF86C223F29DD00062B846 /* SplashVC.xib */; };
+		43D53E4923FAE191005DFC4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43D53E4823FAE191005DFC4A /* GoogleService-Info.plist */; };
+		43D53E4D23FAE7DD005DFC4A /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D53E4B23FAE7DD005DFC4A /* SignInVC.swift */; };
+		43D53E4E23FAE7DD005DFC4A /* SignInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D53E4C23FAE7DD005DFC4A /* SignInVC.xib */; };
+		43D53E5023FAE808005DFC4A /* SignInProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D53E4F23FAE808005DFC4A /* SignInProtocol.swift */; };
+		43D53E5223FAE98F005DFC4A /* SignInActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D53E5123FAE98F005DFC4A /* SignInActor.swift */; };
+		43D53E5423FAE9DC005DFC4A /* SignInDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D53E5323FAE9DC005DFC4A /* SignInDataManager.swift */; };
+		43D53E5623FAEA12005DFC4A /* SignInDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D53E5523FAEA12005DFC4A /* SignInDataResponse.swift */; };
 		4A4A3E8DF1AF946B5ABDD294 /* libPods-Moari.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A0F51F34B695367033AB22 /* libPods-Moari.a */; };
 		6715CDA1D5567804532A4810 /* libPods-MoariTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6367B16AD08E8341DFD6296 /* libPods-MoariTests.a */; };
 /* End PBXBuildFile section */
@@ -63,6 +70,7 @@
 /* Begin PBXFileReference section */
 		0160B0ACF983F050FD1EBB75 /* Pods-Moari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moari.debug.xcconfig"; path = "Target Support Files/Pods-Moari/Pods-Moari.debug.xcconfig"; sourceTree = "<group>"; };
 		3F64763878C86E67F9CF8AA2 /* Pods-Moari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moari.release.xcconfig"; path = "Target Support Files/Pods-Moari/Pods-Moari.release.xcconfig"; sourceTree = "<group>"; };
+		430A998D23F4F70700586CB0 /* ServerAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAddress.swift; sourceTree = "<group>"; };
 		434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 		4362198523F1A2B7008B9F84 /* Moari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4362198823F1A2B7008B9F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +82,6 @@
 		4362199F23F1A2B7008B9F84 /* MoariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoariTests.swift; sourceTree = "<group>"; };
 		436219A123F1A2B7008B9F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		439CA85B1EBDAD103DA04605 /* Pods-MoariTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoariTests.release.xcconfig"; path = "Target Support Files/Pods-MoariTests/Pods-MoariTests.release.xcconfig"; sourceTree = "<group>"; };
-		43CF868D23F29B1A0062B846 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43CF869323F29BDE0062B846 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		43CF869523F29BF30062B846 /* BaseVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVCProtocol.swift; sourceTree = "<group>"; };
 		43CF869723F29C040062B846 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -95,6 +102,13 @@
 		43CF86BF23F29DC10062B846 /* SplashDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashDataResponse.swift; sourceTree = "<group>"; };
 		43CF86C123F29DD00062B846 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		43CF86C223F29DD00062B846 /* SplashVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashVC.xib; sourceTree = "<group>"; };
+		43D53E4823FAE191005DFC4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43D53E4B23FAE7DD005DFC4A /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		43D53E4C23FAE7DD005DFC4A /* SignInVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInVC.xib; sourceTree = "<group>"; };
+		43D53E4F23FAE808005DFC4A /* SignInProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInProtocol.swift; sourceTree = "<group>"; };
+		43D53E5123FAE98F005DFC4A /* SignInActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInActor.swift; sourceTree = "<group>"; };
+		43D53E5323FAE9DC005DFC4A /* SignInDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataManager.swift; sourceTree = "<group>"; };
+		43D53E5523FAEA12005DFC4A /* SignInDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataResponse.swift; sourceTree = "<group>"; };
 		B6367B16AD08E8341DFD6296 /* libPods-MoariTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoariTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1DA8A874583CB34F6191E8 /* Pods_Moari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90915411A2F82CC74BCEA4B /* Pods-MoariTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoariTests.debug.xcconfig"; path = "Target Support Files/Pods-MoariTests/Pods-MoariTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +143,255 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		435EAC3923FA9E5500FF1AD8 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				435EAC4323FAA02C00FF1AD8 /* View */,
+				435EAC4223FAA02B00FF1AD8 /* Actor */,
+				435EAC4123FAA02900FF1AD8 /* Network */,
+				435EAC4023FAA02400FF1AD8 /* Protocol */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		435EAC3A23FA9E5D00FF1AD8 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				435EAC4723FAA04B00FF1AD8 /* View */,
+				435EAC4623FAA04A00FF1AD8 /* Actor */,
+				435EAC4523FAA04800FF1AD8 /* Network */,
+				435EAC4423FAA04500FF1AD8 /* Protocol */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		435EAC3B23FA9E7D00FF1AD8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				435EAC3C23FA9E8F00FF1AD8 /* Category */,
+				435EAC3D23FA9E9A00FF1AD8 /* Curation */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		435EAC3C23FA9E8F00FF1AD8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				435EAC4B23FAA06200FF1AD8 /* View */,
+				435EAC4A23FAA06100FF1AD8 /* Actor */,
+				435EAC4923FAA05F00FF1AD8 /* Network */,
+				435EAC4823FAA05D00FF1AD8 /* Protocol */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		435EAC3D23FA9E9A00FF1AD8 /* Curation */ = {
+			isa = PBXGroup;
+			children = (
+				435EAC4F23FAA07D00FF1AD8 /* View */,
+				435EAC4E23FAA07C00FF1AD8 /* Actor */,
+				435EAC4D23FAA07A00FF1AD8 /* Network */,
+				435EAC4C23FAA07700FF1AD8 /* Protocol */,
+			);
+			path = Curation;
+			sourceTree = "<group>";
+		};
+		435EAC3E23FAA00300FF1AD8 /* CategoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				435EAC5323FAA09300FF1AD8 /* View */,
+				435EAC5223FAA09200FF1AD8 /* Actor */,
+				435EAC5123FAA09000FF1AD8 /* Network */,
+				435EAC5023FAA08F00FF1AD8 /* Protocol */,
+			);
+			path = CategoryDetail;
+			sourceTree = "<group>";
+		};
+		435EAC3F23FAA01200FF1AD8 /* MemoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				435EAC5723FAA0AD00FF1AD8 /* View */,
+				435EAC5623FAA0AB00FF1AD8 /* Actor */,
+				435EAC5523FAA0A900FF1AD8 /* Network */,
+				435EAC5423FAA0A700FF1AD8 /* Protocol */,
+			);
+			path = MemoDetail;
+			sourceTree = "<group>";
+		};
+		435EAC4023FAA02400FF1AD8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				43D53E4F23FAE808005DFC4A /* SignInProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		435EAC4123FAA02900FF1AD8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				43D53E5323FAE9DC005DFC4A /* SignInDataManager.swift */,
+				43D53E5523FAEA12005DFC4A /* SignInDataResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		435EAC4223FAA02B00FF1AD8 /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+				43D53E5123FAE98F005DFC4A /* SignInActor.swift */,
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
+		435EAC4323FAA02C00FF1AD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43D53E4B23FAE7DD005DFC4A /* SignInVC.swift */,
+				43D53E4C23FAE7DD005DFC4A /* SignInVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		435EAC4423FAA04500FF1AD8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		435EAC4523FAA04800FF1AD8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		435EAC4623FAA04A00FF1AD8 /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
+		435EAC4723FAA04B00FF1AD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		435EAC4823FAA05D00FF1AD8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		435EAC4923FAA05F00FF1AD8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		435EAC4A23FAA06100FF1AD8 /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
+		435EAC4B23FAA06200FF1AD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		435EAC4C23FAA07700FF1AD8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		435EAC4D23FAA07A00FF1AD8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		435EAC4E23FAA07C00FF1AD8 /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
+		435EAC4F23FAA07D00FF1AD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		435EAC5023FAA08F00FF1AD8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		435EAC5123FAA09000FF1AD8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		435EAC5223FAA09200FF1AD8 /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
+		435EAC5323FAA09300FF1AD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		435EAC5423FAA0A700FF1AD8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		435EAC5523FAA0A900FF1AD8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		435EAC5623FAA0AB00FF1AD8 /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
+		435EAC5723FAA0AD00FF1AD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4362197C23F1A2B6008B9F84 = {
 			isa = PBXGroup;
 			children = (
@@ -155,12 +418,17 @@
 			children = (
 				43CF868F23F29BAD0062B846 /* Config */,
 				43CF86B123F29D270062B846 /* Splash */,
+				435EAC3923FA9E5500FF1AD8 /* SignIn */,
+				435EAC3A23FA9E5D00FF1AD8 /* SignUp */,
+				435EAC3B23FA9E7D00FF1AD8 /* Main */,
+				435EAC3E23FAA00300FF1AD8 /* CategoryDetail */,
+				435EAC3F23FAA01200FF1AD8 /* MemoDetail */,
 				4362198823F1A2B7008B9F84 /* AppDelegate.swift */,
 				4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */,
 				4362199123F1A2B7008B9F84 /* Assets.xcassets */,
 				4362199323F1A2B7008B9F84 /* LaunchScreen.storyboard */,
 				4362199623F1A2B7008B9F84 /* Info.plist */,
-				43CF868D23F29B1A0062B846 /* GoogleService-Info.plist */,
+				43D53E4823FAE191005DFC4A /* GoogleService-Info.plist */,
 			);
 			path = Moari;
 			sourceTree = "<group>";
@@ -193,6 +461,7 @@
 				43CF869F23F29C550062B846 /* BaseVC.swift */,
 				43CF86A123F29C6A0062B846 /* IndicatorView.swift */,
 				43CF86A323F29C820062B846 /* ColorPalette.swift */,
+				430A998D23F4F70700586CB0 /* ServerAddress.swift */,
 				43CF86A923F29CA00062B846 /* Localizable.strings */,
 				43CF86AE23F29CAE0062B846 /* InfoPlist.strings */,
 			);
@@ -311,6 +580,7 @@
 				4362198123F1A2B6008B9F84 /* Sources */,
 				4362198223F1A2B6008B9F84 /* Frameworks */,
 				4362198323F1A2B6008B9F84 /* Resources */,
+				43D53E4A23FAE328005DFC4A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -386,10 +656,11 @@
 			files = (
 				4362199523F1A2B7008B9F84 /* LaunchScreen.storyboard in Resources */,
 				43CF86A723F29CA00062B846 /* Localizable.strings in Resources */,
-				43CF868E23F29B1A0062B846 /* GoogleService-Info.plist in Resources */,
 				43CF86C423F29DD00062B846 /* SplashVC.xib in Resources */,
 				4362199223F1A2B7008B9F84 /* Assets.xcassets in Resources */,
 				43CF86AC23F29CAE0062B846 /* InfoPlist.strings in Resources */,
+				43D53E4923FAE191005DFC4A /* GoogleService-Info.plist in Resources */,
+				43D53E4E23FAE7DD005DFC4A /* SignInVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +674,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		43D53E4A23FAE328005DFC4A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}\"\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		7BC79A57ECE982CF7422E9AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -456,17 +744,23 @@
 			files = (
 				43CF869C23F29C2B0062B846 /* UIViewController.swift in Sources */,
 				43CF869423F29BDE0062B846 /* Device.swift in Sources */,
+				43D53E4D23FAE7DD005DFC4A /* SignInVC.swift in Sources */,
 				43CF869623F29BF30062B846 /* BaseVCProtocol.swift in Sources */,
+				43D53E5623FAEA12005DFC4A /* SignInDataResponse.swift in Sources */,
+				43D53E5023FAE808005DFC4A /* SignInProtocol.swift in Sources */,
 				4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */,
 				43CF86BA23F29DA00062B846 /* SplashProtocol.swift in Sources */,
 				43CF86A223F29C6A0062B846 /* IndicatorView.swift in Sources */,
 				43CF86A023F29C550062B846 /* BaseVC.swift in Sources */,
 				4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */,
 				43CF86BE23F29DB50062B846 /* SplashActor.swift in Sources */,
+				430A998E23F4F70700586CB0 /* ServerAddress.swift in Sources */,
 				43CF869823F29C040062B846 /* UIColor.swift in Sources */,
+				43D53E5223FAE98F005DFC4A /* SignInActor.swift in Sources */,
 				43CF86BC23F29DAB0062B846 /* SplashDataManager.swift in Sources */,
 				43CF869E23F29C400062B846 /* String.swift in Sources */,
 				43CF869A23F29C1A0062B846 /* UIButton.swift in Sources */,
+				43D53E5423FAE9DC005DFC4A /* SignInDataManager.swift in Sources */,
 				43CF86C323F29DD00062B846 /* SplashVC.swift in Sources */,
 				43CF86A423F29C820062B846 /* ColorPalette.swift in Sources */,
 				43CF86C023F29DC10062B846 /* SplashDataResponse.swift in Sources */,
@@ -644,15 +938,18 @@
 			baseConfigurationReference = 0160B0ACF983F050FD1EBB75 /* Pods-Moari.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6M94RM5DH9;
 				INFOPLIST_FILE = Moari/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.softsquared.ios.Moari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -663,15 +960,18 @@
 			baseConfigurationReference = 3F64763878C86E67F9CF8AA2 /* Pods-Moari.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6M94RM5DH9;
 				INFOPLIST_FILE = Moari/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.softsquared.ios.Moari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

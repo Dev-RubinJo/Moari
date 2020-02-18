@@ -6,4 +6,26 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
+
+struct SplashDataResponse {
+    var isSuccess: Bool!
+    var code: Int!
+    var name: String!
+    var id: String!
+    var message: String!
+}
+extension SplashDataResponse: Mappable {
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        isSuccess <- map["isSuccess"]
+        code <- map["code"]
+        name <- map["name"]
+        id <- map["id"]
+        message <- map["message"]
+    }
+    
+    
+}

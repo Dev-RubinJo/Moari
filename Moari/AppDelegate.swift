@@ -8,13 +8,21 @@
 
 import UIKit
 import Firebase
-import BackgroundTasks
+//import BackgroundTasks
 import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    private let _tokenHeaders = ["x-access-Token": UserDefaults.standard.string(forKey: "LoginToken") ?? ""]
+    
     var window: UIWindow?
+    
+    var getLoginTokenHeader: [String: String] {
+        get {
+            return self._tokenHeaders
+        }
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -31,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
+
     // 백그라운드 테스트를 위해 준비
 //    @available(iOS 13.0, *)
 //    private func registerBackgroundTasks() {

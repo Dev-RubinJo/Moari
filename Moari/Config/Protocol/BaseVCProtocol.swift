@@ -6,9 +6,12 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
-protocol BaseVCProtocol {
+import Foundation
+
+@objc protocol BaseVCProtocol {
     
     func initVC()
     
-    func setDarkModeUI()
+    /// 다크모드를 안쓰는 화면이 있을 수 있기에 optional func로 선언
+    @objc optional func setDarkModeUI()
 }
