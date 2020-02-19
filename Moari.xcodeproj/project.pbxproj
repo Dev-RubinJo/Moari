@@ -15,6 +15,8 @@
 		4362199523F1A2B7008B9F84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4362199323F1A2B7008B9F84 /* LaunchScreen.storyboard */; };
 		436219A023F1A2B7008B9F84 /* MoariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362199F23F1A2B7008B9F84 /* MoariTests.swift */; };
 		436219AB23F242FA008B9F84 /* Pods_Moari.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1DA8A874583CB34F6191E8 /* Pods_Moari.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */; };
+		439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */; };
 		43CF869423F29BDE0062B846 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869323F29BDE0062B846 /* Device.swift */; };
 		43CF869623F29BF30062B846 /* BaseVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869523F29BF30062B846 /* BaseVCProtocol.swift */; };
 		43CF869823F29C040062B846 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869723F29C040062B846 /* UIColor.swift */; };
@@ -81,6 +83,8 @@
 		4362199B23F1A2B7008B9F84 /* MoariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4362199F23F1A2B7008B9F84 /* MoariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoariTests.swift; sourceTree = "<group>"; };
 		436219A123F1A2B7008B9F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+SetUI.swift"; sourceTree = "<group>"; };
+		439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		439CA85B1EBDAD103DA04605 /* Pods-MoariTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoariTests.release.xcconfig"; path = "Target Support Files/Pods-MoariTests/Pods-MoariTests.release.xcconfig"; sourceTree = "<group>"; };
 		43CF869323F29BDE0062B846 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		43CF869523F29BF30062B846 /* BaseVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVCProtocol.swift; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 		435EAC4323FAA02C00FF1AD8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				439BE62A23FC54A700EC77A9 /* Extension */,
 				43D53E4B23FAE7DD005DFC4A /* SignInVC.swift */,
 				43D53E4C23FAE7DD005DFC4A /* SignInVC.xib */,
 			);
@@ -442,6 +447,15 @@
 				436219A123F1A2B7008B9F84 /* Info.plist */,
 			);
 			path = MoariTests;
+			sourceTree = "<group>";
+		};
+		439BE62A23FC54A700EC77A9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */,
+				439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		43CF868C23F29A420062B846 /* Recovered References */ = {
@@ -759,11 +773,13 @@
 				43D53E5223FAE98F005DFC4A /* SignInActor.swift in Sources */,
 				43CF86BC23F29DAB0062B846 /* SplashDataManager.swift in Sources */,
 				43CF869E23F29C400062B846 /* String.swift in Sources */,
+				439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */,
 				43CF869A23F29C1A0062B846 /* UIButton.swift in Sources */,
 				43D53E5423FAE9DC005DFC4A /* SignInDataManager.swift in Sources */,
 				43CF86C323F29DD00062B846 /* SplashVC.swift in Sources */,
 				43CF86A423F29C820062B846 /* ColorPalette.swift in Sources */,
 				43CF86C023F29DC10062B846 /* SplashDataResponse.swift in Sources */,
+				439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

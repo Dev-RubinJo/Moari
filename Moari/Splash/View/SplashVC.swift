@@ -33,24 +33,48 @@ class SplashVC: BaseVC, SplashVCDelegate {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        
-        self.setDarkModeUI()
+        self.setColorModeUI()
     }
     
     func initVC() {
-        self.setDarkModeUI()
+        self.setColorModeUI()
         self.delay(0.5) { [weak self] in
             self?.actor?.didLoadSplash(fromVC: self!)
         }
         
     }
     
+    func setLightModeUI() {
+        self.logoImageView.image = UIImage(named: "logoImageLight")
+    }
+    
     func setDarkModeUI() {
+        self.logoImageView.image = UIImage(named: "logoImageDark")
+    }
+    
+    func setSystemColorModeUI() {
         if self.isDarkMode {
-            self.logoImageView.tintColor = .white
+            self.logoImageView.image = UIImage(named: "logoImageDark")
         } else {
             // User Interface is Light
             self.logoImageView.image = UIImage(named: "logoImageLight")
+        }
+    }
+    
+    func setColorModeUI() {
+        switch self.theme {
+        case 0:
+            self.setLightModeUI()
+        case 1:
+            self.setDarkModeUI()
+        case 2:
+            if #available(iOS 13.0, *) {
+                self.setSystemColorModeUI()
+            } else {
+                fallthrough
+            }
+        default:
+            self.setLightModeUI()
         }
     }
 }

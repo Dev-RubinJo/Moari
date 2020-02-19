@@ -44,9 +44,20 @@ extension UIViewController {
     }
     
     /// 현재 테마가 어떤 테마인지 알 수 있는 프로퍼티
+    /// if value == 0 setLightMode
+    /// if value == 1 setDarkMode
+    /// if value == 2 setSysemColorMode
     var theme: Int {
         get {
             UserDefaults.standard.integer(forKey: "Theme")
+        }
+    }
+    
+    /// 디바이스 언어(앱 언어)가 어떤건지 가져올 수 있는 프로퍼티
+    var deviceLocale: String {
+        get {
+            let localeId = Locale.preferredLanguages.first
+            return (Locale(identifier: localeId!).languageCode)!
         }
     }
     
