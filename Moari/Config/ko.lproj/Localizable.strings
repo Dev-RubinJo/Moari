@@ -9,3 +9,10 @@
 // SplashActor >> presentInvalidTokenAlert
 "OUT_OF_TOKEN_TITLE" = "로그인 세션 만료";
 "OUT_OF_TOKEN_CONTENT" = "로그인 세션이 만료되었습니다. 다시 로그인해주세요!";
+
+// SignInVC >> EmailTextField Placeholder
+"EMAIL" = "이메일";
+// SignInVC >> PasswordTextField Placeholder
+"PASSWORD" = "비밀번호";
+// SignInVC >> SignInButtonLabel
+"SIGNIN" = "로그인";

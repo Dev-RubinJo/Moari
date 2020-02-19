@@ -9,3 +9,10 @@
 // SplashActor >> presentInvalidTokenAlert
 "OUT_OF_TOKEN_TITLE" = "Sign-In session expired";
 "OUT_OF_TOKEN_CONTENT" = "Your Sign-In session has expired. Please Sign-In again!";
+
+// SignInVC >> EmailTextField Placeholder
+"EMAIL" = "email";
+// SignInVC >> PasswordTextField Placeholder
+"PASSWORD" = "password";
+// SignInVC >> SignInButtonLabel
+"SIGNIN" = "Sign In";
