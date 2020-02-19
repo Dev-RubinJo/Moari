@@ -24,4 +24,10 @@ struct ColorPalette {
     // rgb 237 237 237
     static let borderSoft: UInt = 0xededed
     
+    /// SignInVC SignInButtonLabel Light Mode Color
+    static let deepPink: UInt = 0xd4005b
+    
+    /// SignInVC TextField background Color
+    static let signInTextFieldBGColor: UInt = 0xfafafa
+    
 }

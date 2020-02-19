@@ -17,4 +17,25 @@ extension UIColor {
             alpha: CGFloat(alpha)
         )
     }
+    
+    /// SignInVC SignInButtonLabel Light Mode Color
+    @nonobjc class var deepPink: UIColor {
+      return UIColor(red: 212.0 / 255.0, green: 0.0, blue: 91.0 / 255.0, alpha: 1.0)
+    }
+
+    /// SignInVC TextField background Color
+    @nonobjc class var signInTextFieldGray: UIColor {
+      return UIColor(white: 250.0 / 255.0, alpha: 1.0)
+    }
+    
+    /// SignInVC Bottom Label Border bar Color
+    @nonobjc class var brownGrey: UIColor {
+      return UIColor(white: 151.0 / 255.0, alpha: 1.0)
+    }
+
+    /// SignInVC Bottom LabelColor(Find email password, Sign Up)
+    @nonobjc class var brownishGrey: UIColor {
+      return UIColor(white: 117.0 / 255.0, alpha: 1.0)
+    }
+
 }
