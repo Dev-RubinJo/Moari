@@ -14,6 +14,12 @@ protocol SignInVCDelegate: BaseVCProtocol {
 protocol SignInVCRouterDelegate: class {
     
     static func makeSignInVC() -> SignInVC
+    
+    func presentMainVC()
+    
+    func presentFindEmailPasswordVC()
+    
+    func presentSignUpVC()
 }
 
 protocol SignInActorDelegate: class {
@@ -21,9 +27,17 @@ protocol SignInActorDelegate: class {
     var view: SignInVCRouterDelegate? { get set }
     
     var dataManager: SignInDataManagerDelegate? { get set }
+    
+    func didTapSignInButton()
+    
+    func didTapFindEmailPasswordLabel()
+    
+    func didTapSignUpLabel()
 }
 
 protocol SignInDataManagerDelegate: class {
     
     var actor: SignInActorDelegate? { get set }
+    
+    func signIn(fromVC vc: SignInVC, id: String, password: String)
 }

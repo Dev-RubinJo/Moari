@@ -11,8 +11,13 @@ import AlamofireObjectMapper
 
 class SignInDataManager: SignInDataManagerDelegate {
     
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     static let shared = SignInDataManager()
     private init() {}
     
     weak var actor: SignInActorDelegate?
+    
+    func signIn(fromVC vc: SignInVC, id: String, password: String) {
+        
+    }
 }

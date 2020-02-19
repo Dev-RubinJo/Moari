@@ -14,5 +14,15 @@ class SignInActor: SignInActorDelegate {
     weak var view: SignInVCRouterDelegate?
     weak var dataManager: SignInDataManagerDelegate?
     
+    func didTapSignInButton() {
+        
+    }
     
+    func didTapFindEmailPasswordLabel() {
+        
+    }
+    
+    func didTapSignUpLabel() {
+        
+    }
 }
