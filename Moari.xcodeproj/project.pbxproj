@@ -17,6 +17,12 @@
 		436219AB23F242FA008B9F84 /* Pods_Moari.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1DA8A874583CB34F6191E8 /* Pods_Moari.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */; };
 		439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */; };
+		439BE63A23FE294E00EC77A9 /* FindEmailPasswordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */; };
+		439BE63C23FE298800EC77A9 /* FindEmailPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63B23FE298800EC77A9 /* FindEmailPasswordDataManager.swift */; };
+		439BE63E23FE29A000EC77A9 /* FindEmailPasswordDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63D23FE299F00EC77A9 /* FindEmailPasswordDataResponse.swift */; };
+		439BE64023FE29AB00EC77A9 /* FindEmailPasswordActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63F23FE29AB00EC77A9 /* FindEmailPasswordActor.swift */; };
+		439BE64323FE29C400EC77A9 /* FindEmailPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE64123FE29C400EC77A9 /* FindEmailPasswordVC.swift */; };
+		439BE64423FE29C400EC77A9 /* FindEmailPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439BE64223FE29C400EC77A9 /* FindEmailPasswordVC.xib */; };
 		43CF869423F29BDE0062B846 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869323F29BDE0062B846 /* Device.swift */; };
 		43CF869623F29BF30062B846 /* BaseVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869523F29BF30062B846 /* BaseVCProtocol.swift */; };
 		43CF869823F29C040062B846 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF869723F29C040062B846 /* UIColor.swift */; };
@@ -85,6 +91,12 @@
 		436219A123F1A2B7008B9F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+SetUI.swift"; sourceTree = "<group>"; };
 		439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailPasswordProtocol.swift; sourceTree = "<group>"; };
+		439BE63B23FE298800EC77A9 /* FindEmailPasswordDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailPasswordDataManager.swift; sourceTree = "<group>"; };
+		439BE63D23FE299F00EC77A9 /* FindEmailPasswordDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailPasswordDataResponse.swift; sourceTree = "<group>"; };
+		439BE63F23FE29AB00EC77A9 /* FindEmailPasswordActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailPasswordActor.swift; sourceTree = "<group>"; };
+		439BE64123FE29C400EC77A9 /* FindEmailPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailPasswordVC.swift; sourceTree = "<group>"; };
+		439BE64223FE29C400EC77A9 /* FindEmailPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindEmailPasswordVC.xib; sourceTree = "<group>"; };
 		439CA85B1EBDAD103DA04605 /* Pods-MoariTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoariTests.release.xcconfig"; path = "Target Support Files/Pods-MoariTests/Pods-MoariTests.release.xcconfig"; sourceTree = "<group>"; };
 		43CF869323F29BDE0062B846 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		43CF869523F29BF30062B846 /* BaseVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVCProtocol.swift; sourceTree = "<group>"; };
@@ -424,6 +436,7 @@
 				43CF868F23F29BAD0062B846 /* Config */,
 				43CF86B123F29D270062B846 /* Splash */,
 				435EAC3923FA9E5500FF1AD8 /* SignIn */,
+				439BE63423FE28F000EC77A9 /* FindEmailPassword */,
 				435EAC3A23FA9E5D00FF1AD8 /* SignUp */,
 				435EAC3B23FA9E7D00FF1AD8 /* Main */,
 				435EAC3E23FAA00300FF1AD8 /* CategoryDetail */,
@@ -456,6 +469,51 @@
 				439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		439BE63423FE28F000EC77A9 /* FindEmailPassword */ = {
+			isa = PBXGroup;
+			children = (
+				439BE63823FE290900EC77A9 /* View */,
+				439BE63723FE290700EC77A9 /* Actor */,
+				439BE63623FE290500EC77A9 /* Network */,
+				439BE63523FE290100EC77A9 /* Protocol */,
+			);
+			path = FindEmailPassword;
+			sourceTree = "<group>";
+		};
+		439BE63523FE290100EC77A9 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		439BE63623FE290500EC77A9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				439BE63B23FE298800EC77A9 /* FindEmailPasswordDataManager.swift */,
+				439BE63D23FE299F00EC77A9 /* FindEmailPasswordDataResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		439BE63723FE290700EC77A9 /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+				439BE63F23FE29AB00EC77A9 /* FindEmailPasswordActor.swift */,
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
+		439BE63823FE290900EC77A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				439BE64123FE29C400EC77A9 /* FindEmailPasswordVC.swift */,
+				439BE64223FE29C400EC77A9 /* FindEmailPasswordVC.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		43CF868C23F29A420062B846 /* Recovered References */ = {
@@ -673,6 +731,7 @@
 				43CF86C423F29DD00062B846 /* SplashVC.xib in Resources */,
 				4362199223F1A2B7008B9F84 /* Assets.xcassets in Resources */,
 				43CF86AC23F29CAE0062B846 /* InfoPlist.strings in Resources */,
+				439BE64423FE29C400EC77A9 /* FindEmailPasswordVC.xib in Resources */,
 				43D53E4923FAE191005DFC4A /* GoogleService-Info.plist in Resources */,
 				43D53E4E23FAE7DD005DFC4A /* SignInVC.xib in Resources */,
 			);
@@ -758,10 +817,12 @@
 			files = (
 				43CF869C23F29C2B0062B846 /* UIViewController.swift in Sources */,
 				43CF869423F29BDE0062B846 /* Device.swift in Sources */,
+				439BE63C23FE298800EC77A9 /* FindEmailPasswordDataManager.swift in Sources */,
 				43D53E4D23FAE7DD005DFC4A /* SignInVC.swift in Sources */,
 				43CF869623F29BF30062B846 /* BaseVCProtocol.swift in Sources */,
 				43D53E5623FAEA12005DFC4A /* SignInDataResponse.swift in Sources */,
 				43D53E5023FAE808005DFC4A /* SignInProtocol.swift in Sources */,
+				439BE63A23FE294E00EC77A9 /* FindEmailPasswordProtocol.swift in Sources */,
 				4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */,
 				43CF86BA23F29DA00062B846 /* SplashProtocol.swift in Sources */,
 				43CF86A223F29C6A0062B846 /* IndicatorView.swift in Sources */,
@@ -774,12 +835,15 @@
 				43CF86BC23F29DAB0062B846 /* SplashDataManager.swift in Sources */,
 				43CF869E23F29C400062B846 /* String.swift in Sources */,
 				439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */,
+				439BE63E23FE29A000EC77A9 /* FindEmailPasswordDataResponse.swift in Sources */,
 				43CF869A23F29C1A0062B846 /* UIButton.swift in Sources */,
 				43D53E5423FAE9DC005DFC4A /* SignInDataManager.swift in Sources */,
 				43CF86C323F29DD00062B846 /* SplashVC.swift in Sources */,
+				439BE64023FE29AB00EC77A9 /* FindEmailPasswordActor.swift in Sources */,
 				43CF86A423F29C820062B846 /* ColorPalette.swift in Sources */,
 				43CF86C023F29DC10062B846 /* SplashDataResponse.swift in Sources */,
 				439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */,
+				439BE64323FE29C400EC77A9 /* FindEmailPasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
