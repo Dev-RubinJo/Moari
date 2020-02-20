@@ -19,22 +19,25 @@ extension UIColor {
     }
     
     /// SignInVC SignInButtonLabel Light Mode Color
-    @nonobjc class var deepPink: UIColor {
+    @nonobjc class var defaultPink: UIColor {
       return UIColor(red: 212.0 / 255.0, green: 0.0, blue: 91.0 / 255.0, alpha: 1.0)
     }
 
     /// SignInVC TextField background Color
-    @nonobjc class var signInTextFieldGray: UIColor {
+    @nonobjc class var signInTextFieldGrayLight: UIColor {
       return UIColor(white: 250.0 / 255.0, alpha: 1.0)
+    }
+    @nonobjc class var signInTextFieldGrayDark: UIColor {
+      return UIColor(white: 66.0 / 255.0, alpha: 1.0)
     }
     
     /// SignInVC Bottom Label Border bar Color
-    @nonobjc class var brownGrey: UIColor {
+    @nonobjc class var signInBottomBorderBar: UIColor {
       return UIColor(white: 151.0 / 255.0, alpha: 1.0)
     }
 
     /// SignInVC Bottom LabelColor(Find email password, Sign Up)
-    @nonobjc class var brownishGrey: UIColor {
+    @nonobjc class var signInBottomLabels: UIColor {
       return UIColor(white: 117.0 / 255.0, alpha: 1.0)
     }
 

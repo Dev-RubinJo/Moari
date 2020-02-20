@@ -50,5 +50,4 @@ extension SignInVC {
         self.signInButtonLabel.layer.borderWidth = 1.0
         self.signInButtonLabel.layer.cornerRadius = 3
     }
-    
 }

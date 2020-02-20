@@ -23,6 +23,9 @@ class SignInVC: BaseVC, SignInVCDelegate {
     
     weak var actor: SignInActorDelegate?
     
+    var emailTextFieldPlaceholder = NSAttributedString(string: "EMAIL".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.signInBottomBorderBar])
+    var passwordTextFieldPlaceholder = NSAttributedString(string: "PASSWORD".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.signInBottomBorderBar])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initVC()
@@ -36,6 +39,8 @@ class SignInVC: BaseVC, SignInVCDelegate {
     func initVC() {
         self.setColorModeUI()
 //        self.setDarkModeUI()
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
         if self.isIphone == .iPhone {
             self.setSignInVCPhoneUI()
         } else if self.isIphone == .iPad {
@@ -47,18 +52,28 @@ class SignInVC: BaseVC, SignInVCDelegate {
         self.logoImageView.image = UIImage(named: "logoImageLight")
         self.signInTitleLabel.textColor = .black
         
-        self.emailTextField.backgroundColor = .signInTextFieldGray
-        self.passwordTextField.backgroundColor = .signInTextFieldGray
+        self.emailTextField.backgroundColor = .signInTextFieldGrayLight
+        self.passwordTextField.backgroundColor = .signInTextFieldGrayLight
         
-        self.signInButtonLabel.textColor = .deepPink
-        self.signInButtonLabel.layer.borderColor = UIColor.deepPink.cgColor
+        self.signInButtonLabel.textColor = .defaultPink
+        self.signInButtonLabel.layer.borderColor = UIColor.defaultPink.cgColor
         
-        self.findEmailPasswordLabel.textColor = .brownishGrey
-        self.signUpLabel.textColor = .brownGrey
+        self.findEmailPasswordLabel.textColor = .signInBottomLabels
+        self.signUpLabel.textColor = .signInBottomLabels
     }
     
     func setDarkModeUI() {
         self.logoImageView.image = UIImage(named: "logoImageDark")
+        self.signInTitleLabel.textColor = .white
+        
+        self.emailTextField.backgroundColor = .signInTextFieldGrayDark
+        self.passwordTextField.backgroundColor = .signInTextFieldGrayDark
+        
+        self.signInButtonLabel.textColor = .defaultPink
+        self.signInButtonLabel.layer.borderColor = UIColor.defaultPink.cgColor
+        
+        self.findEmailPasswordLabel.textColor = .signInBottomLabels
+        self.signUpLabel.textColor = .signInBottomLabels
     }
     
     func setSystemColorModeUI() {
@@ -99,15 +114,15 @@ extension SignInVC: SignInVCRouterDelegate {
         dataManager.actor = actor
         return vc
     }
-    
+    // TODO: MainVC 만들어서 넣기
     func presentMainVC() {
         
     }
-    
+    // TODO: FindEmailPasswordVC 만들어서 넣기
     func presentFindEmailPasswordVC() {
         
     }
-    
+    // TODO: SignUpVC 만들어서 넣기
     func presentSignUpVC() {
         
     }
