@@ -36,7 +36,7 @@ extension String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal // 소수점이 있는 경우 처리
         if let _ = self.range(of: ".") {
-            var numberArray = self.components(separatedBy: ".")
+            let numberArray = self.components(separatedBy: ".")
             if numberArray.count == 1 {
                 var numberString = numberArray[0]
                 if numberString.isEmpty {
@@ -65,6 +65,19 @@ extension String {
             return numberFormatter.string(from: NSNumber(value: doubleValue)) ?? self
         }
         return self
+    }
+    
+    // email Validation Func
+    func validateEmail() -> Bool {
+        let emailRegEx = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return predicate.evaluate(with: self)
+    }
+    // password Validation Func
+    func validatePassword() -> Bool {
+        let passwordRegEx = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,16}$"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
+        return predicate.evaluate(with: self)
     }
     
     
