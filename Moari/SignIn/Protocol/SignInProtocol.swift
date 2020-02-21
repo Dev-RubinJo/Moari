@@ -28,11 +28,16 @@ protocol SignInActorDelegate: class {
     
     var dataManager: SignInDataManagerDelegate? { get set }
     
-    func didTapSignInButton()
+    func didTapSignInButton(fromVC vc: SignInVC)
     
     func didTapFindEmailPasswordLabel()
     
     func didTapSignUpLabel()
+    
+    /// 이메일, 비밀번호 벨리데이션에 따른 Alert를 띄워주는 메서드 true값이 벨리데이션 맞을때, false값이 벨리데이션이 틀릴 때의 값이다.
+    /// - Parameter email: 이메일 벨리데이션 bool
+    /// - Parameter password: 비밀번호 벨리데이션 bool
+    func presentValidationAlert(toVC vc: SignInVC, email: Bool, password: Bool)
 }
 
 protocol SignInDataManagerDelegate: class {

@@ -52,4 +52,14 @@ extension SignInVC {
     func setSignInVCPadUI() {
         
     }
+    
+    func initTapListener() {
+        let signInListener = UITapGestureRecognizer(target: self, action: #selector(self.pressSignInButton(_:)))
+        self.signInButtonLabel.isUserInteractionEnabled = true
+        self.signInButtonLabel.addGestureRecognizer(signInListener)
+    }
+    
+    @objc func pressSignInButton(_ sender: UILabel) {
+        self.actor?.didTapSignInButton(fromVC: self)
+    }
 }

@@ -38,14 +38,16 @@ class SignInVC: BaseVC, SignInVCDelegate {
     
     func initVC() {
         self.setColorModeUI()
-//        self.setDarkModeUI()
-        self.emailTextField.delegate = self
+        //        self.setDarkModeUI()
+        //        self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         if self.isIphone == .iPhone {
             self.setSignInVCPhoneUI()
         } else if self.isIphone == .iPad {
             self.setSignInVCPadUI()
         }
+        
+        self.initTapListener()
     }
     
     func setLightModeUI() {

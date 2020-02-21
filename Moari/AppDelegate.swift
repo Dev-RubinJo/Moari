@@ -30,6 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         NetworkActivityIndicatorManager.shared.isEnabled = true
+        if !UserDefaults.standard.bool(forKey: "FirstAppLaunch") {
+            UserDefaults.standard.set(2, forKey: "Theme")
+        }
+        UserDefaults.standard.set(true, forKey: "FirstAppLaunch")
+        
         
         if #available(iOS 13.0, *) {}
         else {
