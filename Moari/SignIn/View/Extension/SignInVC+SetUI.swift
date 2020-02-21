@@ -28,19 +28,17 @@ extension SignInVC {
               .kern: 0.0
             ])
             signInTitleLabelAttributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 17.0)!, range: NSRange(location: 10, length: 3))
-            
-            self.signInTitleLabel.attributedText = signInTitleLabelAttributedString
         } else if self.deviceLocale.isEqual("en") {
             
         }
         
-        self.emailTextField.placeholder = "EMAIL".localized
+        
+        self.signInTitleLabel.attributedText = signInTitleLabelAttributedString
         self.emailTextField.layer.cornerRadius = 3
         let emailPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 11, height: 0))
         self.emailTextField.leftView = emailPaddingView
         self.emailTextField.leftViewMode = .always
         
-        self.passwordTextField.placeholder = "PASSWORD".localized
         self.passwordTextField.layer.cornerRadius = 3
         let passwordPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 11, height: 0))
         self.passwordTextField.leftView = passwordPaddingView
@@ -49,5 +47,9 @@ extension SignInVC {
         self.signInButtonLabel.text = "SIGNIN".localized
         self.signInButtonLabel.layer.borderWidth = 1.0
         self.signInButtonLabel.layer.cornerRadius = 3
+    }
+    
+    func setSignInVCPadUI() {
+        
     }
 }

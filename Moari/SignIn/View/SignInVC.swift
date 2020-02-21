@@ -44,7 +44,7 @@ class SignInVC: BaseVC, SignInVCDelegate {
         if self.isIphone == .iPhone {
             self.setSignInVCPhoneUI()
         } else if self.isIphone == .iPad {
-            
+            self.setSignInVCPadUI()
         }
     }
     
