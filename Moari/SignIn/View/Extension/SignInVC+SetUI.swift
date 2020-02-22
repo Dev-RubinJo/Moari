@@ -28,20 +28,32 @@ extension SignInVC {
         let emailPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 11, height: 0))
         self.emailTextField.leftView = emailPaddingView
         self.emailTextField.leftViewMode = .always
+        self.emailTextField.attributedPlaceholder = self.emailTextFieldPlaceholder
         
         self.passwordTextField.layer.cornerRadius = 3
         let passwordPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 11, height: 0))
         self.passwordTextField.leftView = passwordPaddingView
         self.passwordTextField.leftViewMode = .always
+        self.passwordTextField.attributedPlaceholder = self.passwordTextFieldPlaceholder
         
         self.signInButtonLabel.text = "SIGNIN".localized
         self.signInButtonLabel.layer.borderWidth = 1.0
         self.signInButtonLabel.layer.cornerRadius = 3
         
+        self.findEmailPasswordLabel.text = "FIND_EMAIL_PASSWORD_TITLE".localized
+        self.signUpLabel.text = "SIGNUP".localized
+        
         if self.isIphone == .iPhone {
             switch UIScreen.main.nativeBounds.height {
             case 1136:
                 self.signInLogoTopConstraint.constant = 100
+                self.findEmailPasswordLabelRightConstraint.constant = 15
+                self.signUpLabelLeftConstraint.constant = 18
+                self.borderBarViewCenterConstraint.constant = 35
+            case 1334:
+                self.signInLogoTopConstraint.constant = 120
+                self.findEmailPasswordLabelRightConstraint.constant = 25
+                self.signUpLabelLeftConstraint.constant = 25
             default:
                 self.signInLogoTopConstraint.constant = 140
             }

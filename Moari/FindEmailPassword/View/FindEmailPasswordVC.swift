@@ -50,7 +50,7 @@ class FindEmailPasswordVC: BaseVC, FindEmailPasswordVCProtocol {
         if self.isDarkMode {
             self.setDarkModeUI()
         } else {
-            self.setDarkModeUI()
+            self.setLightModeUI()
         }
     }
     

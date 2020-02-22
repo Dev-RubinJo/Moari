@@ -20,6 +20,12 @@ class SignInVC: BaseVC, SignInVCProtocol {
     @IBOutlet weak var signUpLabel: UILabel!
     
     @IBOutlet weak var signInLogoTopConstraint: NSLayoutConstraint!
+    /// 이메일, 비밀번호 찾기 오른쪽 마진
+    @IBOutlet weak var findEmailPasswordLabelRightConstraint: NSLayoutConstraint!
+    /// 회원가입 왼쪽 마진
+    @IBOutlet weak var signUpLabelLeftConstraint: NSLayoutConstraint!
+    /// 이메일찾기, 회원가입 가운데 뷰 x축 좌표
+    @IBOutlet weak var borderBarViewCenterConstraint: NSLayoutConstraint!
     
     weak var actor: SignInActorDelegate?
     

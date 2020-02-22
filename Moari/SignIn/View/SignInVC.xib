@@ -11,14 +11,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInVC" customModule="Moari" customModuleProvider="target">
             <connections>
                 <outlet property="borderBarView" destination="puy-9w-9VS" id="TlP-lr-Elf"/>
+                <outlet property="borderBarViewCenterConstraint" destination="Ghh-dY-aWt" id="ZBg-4v-1WC"/>
                 <outlet property="emailTextField" destination="KC1-zV-jWo" id="VpW-zI-ClC"/>
                 <outlet property="findEmailPasswordLabel" destination="AeD-ba-x3e" id="ZzB-4g-6ye"/>
+                <outlet property="findEmailPasswordLabelRightConstraint" destination="tas-9X-Yaa" id="b7G-Sn-Xgg"/>
                 <outlet property="logoImageView" destination="vLd-pU-Cpa" id="84I-jv-psA"/>
                 <outlet property="passwordTextField" destination="jPd-Dy-aQs" id="jnl-Ax-kAa"/>
                 <outlet property="signInButtonLabel" destination="hab-k8-VLo" id="MUC-zv-txh"/>
                 <outlet property="signInLogoTopConstraint" destination="X9y-Sw-W2N" id="lJ6-7K-XPN"/>
                 <outlet property="signInTitleLabel" destination="rIB-Jh-gLa" id="HPg-50-iDS"/>
                 <outlet property="signUpLabel" destination="ljG-t1-Nbj" id="9da-fk-AKr"/>
+                <outlet property="signUpLabelLeftConstraint" destination="GY8-dV-W2P" id="a4U-br-KC6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
