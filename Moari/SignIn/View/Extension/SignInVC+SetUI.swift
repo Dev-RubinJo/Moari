@@ -9,16 +9,7 @@
 import UIKit
 
 extension SignInVC {
-    func setSignInVCPhoneUI() {
-        
-        if self.isIphone == .iPhone {
-            switch UIScreen.main.nativeBounds.height {
-            case 1136:
-                self.signInLogoTopConstraint.constant = 100
-            default:
-                self.signInLogoTopConstraint.constant = 140
-            }
-        }
+    func setSignInVCUI() {
         
         var signInTitleLabelAttributedString = NSMutableAttributedString()
         if self.deviceLocale.isEqual("ko") {
@@ -31,7 +22,6 @@ extension SignInVC {
         } else if self.deviceLocale.isEqual("en") {
             
         }
-        
         
         self.signInTitleLabel.attributedText = signInTitleLabelAttributedString
         self.emailTextField.layer.cornerRadius = 3
@@ -47,19 +37,35 @@ extension SignInVC {
         self.signInButtonLabel.text = "SIGNIN".localized
         self.signInButtonLabel.layer.borderWidth = 1.0
         self.signInButtonLabel.layer.cornerRadius = 3
-    }
-    
-    func setSignInVCPadUI() {
         
+        if self.isIphone == .iPhone {
+            switch UIScreen.main.nativeBounds.height {
+            case 1136:
+                self.signInLogoTopConstraint.constant = 100
+            default:
+                self.signInLogoTopConstraint.constant = 140
+            }
+            
+        } else if self.isIphone == .iPad {
+            
+        }
     }
     
     func initTapListener() {
         let signInListener = UITapGestureRecognizer(target: self, action: #selector(self.pressSignInButton(_:)))
         self.signInButtonLabel.isUserInteractionEnabled = true
         self.signInButtonLabel.addGestureRecognizer(signInListener)
+        
+        let findEmailPasswordListener = UITapGestureRecognizer(target: self, action: #selector(self.pressFindEmailPasswordButton(_:)))
+        self.findEmailPasswordLabel.isUserInteractionEnabled = true
+        self.findEmailPasswordLabel.addGestureRecognizer(findEmailPasswordListener)
     }
     
     @objc func pressSignInButton(_ sender: UILabel) {
         self.actor?.didTapSignInButton(fromVC: self)
+    }
+    
+    @objc func pressFindEmailPasswordButton(_ sender: UILabel) {
+        self.actor?.didTapFindEmailPasswordLabel()
     }
 }

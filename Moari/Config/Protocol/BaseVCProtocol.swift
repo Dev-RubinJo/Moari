@@ -10,8 +10,6 @@ import Foundation
 
 @objc protocol BaseVCProtocol {
     
-    func initVC()
-    
     /// 라이트모드에서의 세팅 메서드
     @objc optional func setLightModeUI()
     

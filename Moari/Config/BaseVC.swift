@@ -17,7 +17,7 @@ class BaseVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
+        self.initBaseVC()
         self.setLocalAuthentication()
     }
     
@@ -29,6 +29,53 @@ class BaseVC: UIViewController {
             return [.portrait, .landscape]
         @unknown case _:
             return [.portrait]
+        }
+    }
+    
+    func initBaseVC() {
+        self.hideKeyboardWhenTappedAround()
+        self.setBaseColorModeUI()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: .navigationBarBottomBorder)
+        let navigationTitleFont = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navigationTitleFont!]
+    }
+    
+    func setBaseLightModeUI() {
+        let imageBack = UIImage(named: "backArrowLight")
+        self.navigationController?.navigationBar.backIndicatorImage = imageBack
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = imageBack
+        
+        self.navigationController?.navigationBar.tintColor = .black
+    }
+    
+    func setBaseDarkModeUI() {
+        let imageBack = UIImage(named: "backArrowDark")
+        self.navigationController?.navigationBar.backIndicatorImage = imageBack
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = imageBack
+        
+        self.navigationController?.navigationBar.tintColor = .white
+    }
+    
+    func setBaseSystemColorModeUI() {
+        if self.isDarkMode {
+            self.setBaseDarkModeUI()
+        } else {
+            self.setBaseLightModeUI()
+        }
+    }
+    
+    func setBaseColorModeUI() {
+        switch self.theme {
+        case 0:
+            self.setBaseLightModeUI()
+        case 1:
+            self.setBaseDarkModeUI()
+        case 2:
+            self.setBaseSystemColorModeUI()
+        default:
+            self.setBaseLightModeUI()
         }
     }
     
@@ -55,8 +102,6 @@ class BaseVC: UIViewController {
 //
 //            }
 //        }
-        
-        
     }
     
     func appearIndicator() {
@@ -67,7 +112,7 @@ class BaseVC: UIViewController {
         self.indicator.dismiss()
     }
     
-    func delay(_ delay:Double, closure:@escaping ()->()) {
+    func delay(_ delay:Double, closure: @escaping ()->()) {
         let when = DispatchTime.now() + delay
         DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
     }

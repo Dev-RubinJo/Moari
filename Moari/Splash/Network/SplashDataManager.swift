@@ -15,7 +15,7 @@ class SplashDataManager: SplashDataManagerDelegate {
     static let shared = SplashDataManager()
     private init() {}
     
-    weak var actor: SplashActorDelegate?
+    weak var actor: (SplashActorDelegate & SplashAlertActorDelegate)?
     
     func checkToken(fromVC vc: SplashVC) {
         if self.appDelegate.getLoginTokenHeader["x-access-Token"] == "" {

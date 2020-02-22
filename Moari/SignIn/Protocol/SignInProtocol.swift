@@ -6,14 +6,14 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
-protocol SignInVCDelegate: BaseVCProtocol {
+protocol SignInVCProtocol: BaseVCProtocol {
     
     var actor: SignInActorDelegate? { get set }
 }
 
 protocol SignInVCRouterDelegate: class {
     
-    static func makeSignInVC() -> SignInVC
+    static var makeSignInVC: SignInVC { get }
     
     func presentMainVC()
     
@@ -33,6 +33,9 @@ protocol SignInActorDelegate: class {
     func didTapFindEmailPasswordLabel()
     
     func didTapSignUpLabel()
+}
+
+protocol SignInAlertActorDelegate: class {
     
     /// 이메일, 비밀번호 벨리데이션에 따른 Alert를 띄워주는 메서드 true값이 벨리데이션 맞을때, false값이 벨리데이션이 틀릴 때의 값이다.
     /// - Parameter email: 이메일 벨리데이션 bool
@@ -44,5 +47,5 @@ protocol SignInDataManagerDelegate: class {
     
     var actor: SignInActorDelegate? { get set }
     
-    func signIn(fromVC vc: SignInVC, id: String, password: String)
+    func signIn(fromVC vc: SignInVC, email: String, password: String)
 }

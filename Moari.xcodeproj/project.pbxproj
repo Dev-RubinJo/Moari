@@ -15,6 +15,13 @@
 		4362199523F1A2B7008B9F84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4362199323F1A2B7008B9F84 /* LaunchScreen.storyboard */; };
 		436219A023F1A2B7008B9F84 /* MoariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362199F23F1A2B7008B9F84 /* MoariTests.swift */; };
 		436219AB23F242FA008B9F84 /* Pods_Moari.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1DA8A874583CB34F6191E8 /* Pods_Moari.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4384020D2401037B00ECA42E /* SplashActor+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4384020C2401037B00ECA42E /* SplashActor+Alert.swift */; };
+		4384020F2401040000ECA42E /* SplashVC+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4384020E2401040000ECA42E /* SplashVC+Router.swift */; };
+		438402112401054C00ECA42E /* SignInVC+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438402102401054C00ECA42E /* SignInVC+Router.swift */; };
+		43840213240105D500ECA42E /* SignInActor+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43840212240105D500ECA42E /* SignInActor+Alert.swift */; };
+		43840215240117BA00ECA42E /* FindEmailPasswordVC+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43840214240117BA00ECA42E /* FindEmailPasswordVC+Router.swift */; };
+		4384021924014ED000ECA42E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4384021824014ED000ECA42E /* UIImage.swift */; };
+		4384021C2401590900ECA42E /* FindEmailPasswordVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4384021B2401590900ECA42E /* FindEmailPasswordVC+SetUI.swift */; };
 		439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */; };
 		439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */; };
 		439BE63A23FE294E00EC77A9 /* FindEmailPasswordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */; };
@@ -89,6 +96,13 @@
 		4362199B23F1A2B7008B9F84 /* MoariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4362199F23F1A2B7008B9F84 /* MoariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoariTests.swift; sourceTree = "<group>"; };
 		436219A123F1A2B7008B9F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4384020C2401037B00ECA42E /* SplashActor+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashActor+Alert.swift"; sourceTree = "<group>"; };
+		4384020E2401040000ECA42E /* SplashVC+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashVC+Router.swift"; sourceTree = "<group>"; };
+		438402102401054C00ECA42E /* SignInVC+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+Router.swift"; sourceTree = "<group>"; };
+		43840212240105D500ECA42E /* SignInActor+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInActor+Alert.swift"; sourceTree = "<group>"; };
+		43840214240117BA00ECA42E /* FindEmailPasswordVC+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FindEmailPasswordVC+Router.swift"; sourceTree = "<group>"; };
+		4384021824014ED000ECA42E /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		4384021B2401590900ECA42E /* FindEmailPasswordVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FindEmailPasswordVC+SetUI.swift"; sourceTree = "<group>"; };
 		439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+SetUI.swift"; sourceTree = "<group>"; };
 		439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailPasswordProtocol.swift; sourceTree = "<group>"; };
@@ -255,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				43D53E5123FAE98F005DFC4A /* SignInActor.swift */,
+				43840212240105D500ECA42E /* SignInActor+Alert.swift */,
 			);
 			path = Actor;
 			sourceTree = "<group>";
@@ -265,6 +280,7 @@
 				439BE62A23FC54A700EC77A9 /* Extension */,
 				43D53E4B23FAE7DD005DFC4A /* SignInVC.swift */,
 				43D53E4C23FAE7DD005DFC4A /* SignInVC.xib */,
+				438402102401054C00ECA42E /* SignInVC+Router.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -462,6 +478,14 @@
 			path = MoariTests;
 			sourceTree = "<group>";
 		};
+		4384021A240158F800ECA42E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4384021B2401590900ECA42E /* FindEmailPasswordVC+SetUI.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		439BE62A23FC54A700EC77A9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,8 +534,10 @@
 		439BE63823FE290900EC77A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4384021A240158F800ECA42E /* Extension */,
 				439BE64123FE29C400EC77A9 /* FindEmailPasswordVC.swift */,
 				439BE64223FE29C400EC77A9 /* FindEmailPasswordVC.xib */,
+				43840214240117BA00ECA42E /* FindEmailPasswordVC+Router.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -563,6 +589,7 @@
 				43CF869923F29C1A0062B846 /* UIButton.swift */,
 				43CF869B23F29C2B0062B846 /* UIViewController.swift */,
 				43CF869D23F29C400062B846 /* String.swift */,
+				4384021824014ED000ECA42E /* UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -607,6 +634,7 @@
 			isa = PBXGroup;
 			children = (
 				43CF86BD23F29DB50062B846 /* SplashActor.swift */,
+				4384020C2401037B00ECA42E /* SplashActor+Alert.swift */,
 			);
 			path = Actor;
 			sourceTree = "<group>";
@@ -616,6 +644,7 @@
 			children = (
 				43CF86C123F29DD00062B846 /* SplashVC.swift */,
 				43CF86C223F29DD00062B846 /* SplashVC.xib */,
+				4384020E2401040000ECA42E /* SplashVC+Router.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -817,13 +846,17 @@
 			files = (
 				43CF869C23F29C2B0062B846 /* UIViewController.swift in Sources */,
 				43CF869423F29BDE0062B846 /* Device.swift in Sources */,
+				4384020F2401040000ECA42E /* SplashVC+Router.swift in Sources */,
 				439BE63C23FE298800EC77A9 /* FindEmailPasswordDataManager.swift in Sources */,
 				43D53E4D23FAE7DD005DFC4A /* SignInVC.swift in Sources */,
 				43CF869623F29BF30062B846 /* BaseVCProtocol.swift in Sources */,
+				4384021924014ED000ECA42E /* UIImage.swift in Sources */,
 				43D53E5623FAEA12005DFC4A /* SignInDataResponse.swift in Sources */,
 				43D53E5023FAE808005DFC4A /* SignInProtocol.swift in Sources */,
 				439BE63A23FE294E00EC77A9 /* FindEmailPasswordProtocol.swift in Sources */,
 				4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */,
+				43840215240117BA00ECA42E /* FindEmailPasswordVC+Router.swift in Sources */,
+				4384021C2401590900ECA42E /* FindEmailPasswordVC+SetUI.swift in Sources */,
 				43CF86BA23F29DA00062B846 /* SplashProtocol.swift in Sources */,
 				43CF86A223F29C6A0062B846 /* IndicatorView.swift in Sources */,
 				43CF86A023F29C550062B846 /* BaseVC.swift in Sources */,
@@ -838,10 +871,13 @@
 				439BE63E23FE29A000EC77A9 /* FindEmailPasswordDataResponse.swift in Sources */,
 				43CF869A23F29C1A0062B846 /* UIButton.swift in Sources */,
 				43D53E5423FAE9DC005DFC4A /* SignInDataManager.swift in Sources */,
+				4384020D2401037B00ECA42E /* SplashActor+Alert.swift in Sources */,
 				43CF86C323F29DD00062B846 /* SplashVC.swift in Sources */,
 				439BE64023FE29AB00EC77A9 /* FindEmailPasswordActor.swift in Sources */,
+				43840213240105D500ECA42E /* SignInActor+Alert.swift in Sources */,
 				43CF86A423F29C820062B846 /* ColorPalette.swift in Sources */,
 				43CF86C023F29DC10062B846 /* SplashDataResponse.swift in Sources */,
+				438402112401054C00ECA42E /* SignInVC+Router.swift in Sources */,
 				439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */,
 				439BE64323FE29C400EC77A9 /* FindEmailPasswordVC.swift in Sources */,
 			);

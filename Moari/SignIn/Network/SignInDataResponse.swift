@@ -10,4 +10,23 @@ import ObjectMapper
 
 struct SignInDataResponse {
     // TODO: 리스폰스 데이터들 선언하기
+    var isSuccess: Bool!
+    var code: Int!
+    var message: String!
+    var name: String!
+    var jwt: String!
+}
+extension SignInDataResponse: Mappable {
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        isSuccess <- map["isSuccess"]
+        code <- map["code"]
+        message <- map["message"]
+        name <- map["name"]
+        jwt <- map["jwt"]
+    }
+    
+    
 }

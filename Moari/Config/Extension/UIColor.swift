@@ -23,11 +23,11 @@ extension UIColor {
       return UIColor(red: 212.0 / 255.0, green: 0.0, blue: 91.0 / 255.0, alpha: 1.0)
     }
 
-    /// SignInVC TextField background Color
-    @nonobjc class var signInTextFieldGrayLight: UIColor {
+    /// TextField background Color
+    @nonobjc class var textFieldGrayLight: UIColor {
       return UIColor(white: 250.0 / 255.0, alpha: 1.0)
     }
-    @nonobjc class var signInTextFieldGrayDark: UIColor {
+    @nonobjc class var textFieldGrayDark: UIColor {
       return UIColor(white: 66.0 / 255.0, alpha: 1.0)
     }
     
@@ -39,6 +39,11 @@ extension UIColor {
     /// SignInVC Bottom LabelColor(Find email password, Sign Up)
     @nonobjc class var signInBottomLabels: UIColor {
       return UIColor(white: 117.0 / 255.0, alpha: 1.0)
+    }
+
+    /// UINavigationBar Bottom Border Color
+    @nonobjc class var navigationBarBottomBorder: UIColor {
+      return UIColor(white: 189.0 / 255.0, alpha: 1.0)
     }
 
 }

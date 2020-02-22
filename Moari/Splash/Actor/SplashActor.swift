@@ -19,10 +19,6 @@ class SplashActor: SplashActorDelegate {
         self.dataManager?.checkToken(fromVC: vc)
     }
     
-    func presentInvalidTokenAlert(toVC vc: SplashVC) {
-        vc.presentAlert(title: "OUT_OF_TOKEN_TITLE".localized, message: "OUT_OF_TOKEN_CONTENT".localized)
-    }
-    
     func vaildToken() {
         self.view?.presentMainVC()
     }

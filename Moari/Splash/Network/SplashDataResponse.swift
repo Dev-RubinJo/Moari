@@ -24,6 +24,4 @@ extension SplashDataResponse: Mappable {
         name <- map["name"]
         message <- map["message"]
     }
-    
-    
 }

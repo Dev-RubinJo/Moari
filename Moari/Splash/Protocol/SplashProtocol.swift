@@ -8,14 +8,16 @@
 
 import UIKit
 
-protocol SplashVCDelegate: class, BaseVCProtocol {
+protocol SplashVCProtocol {
     
     var actor: SplashActorDelegate? { get set }
 }
 
 protocol SplashVCRouterDelegate: class {
     
-    func makeSplashVC() -> SplashVC
+    var window: UIWindow? { get }
+    
+    static var makeSplashVC: SplashVC { get }
     
     func presentMainVC()
     
@@ -30,17 +32,20 @@ protocol SplashActorDelegate: class {
     
     func didLoadSplash(fromVC vc: SplashVC)
     
-    func presentInvalidTokenAlert(toVC vc: SplashVC)
-    
     func vaildToken()
     
     func invalidToken()
     
 }
 
+protocol SplashAlertActorDelegate: class {
+    
+    func presentInvalidTokenAlert(toVC vc: SplashVC)
+}
+
 protocol SplashDataManagerDelegate: class {
     
-    var actor: SplashActorDelegate? { get set }
+    var actor: (SplashActorDelegate & SplashAlertActorDelegate)? { get set }
     
     func checkToken(fromVC vc: SplashVC)
 }

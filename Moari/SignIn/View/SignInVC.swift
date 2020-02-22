@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInVC: BaseVC, SignInVCDelegate {
+class SignInVC: BaseVC, SignInVCProtocol {
     
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var signInTitleLabel: UILabel!
@@ -28,7 +28,23 @@ class SignInVC: BaseVC, SignInVCDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initVC()
+        self.setColorModeUI()
+        //        self.setDarkModeUI()
+        //        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.setSignInVCUI()
+        
+        self.initTapListener()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -36,26 +52,12 @@ class SignInVC: BaseVC, SignInVCDelegate {
         self.setColorModeUI()
     }
     
-    func initVC() {
-        self.setColorModeUI()
-        //        self.setDarkModeUI()
-        //        self.emailTextField.delegate = self
-        self.passwordTextField.delegate = self
-        if self.isIphone == .iPhone {
-            self.setSignInVCPhoneUI()
-        } else if self.isIphone == .iPad {
-            self.setSignInVCPadUI()
-        }
-        
-        self.initTapListener()
-    }
-    
     func setLightModeUI() {
         self.logoImageView.image = UIImage(named: "logoImageLight")
         self.signInTitleLabel.textColor = .black
         
-        self.emailTextField.backgroundColor = .signInTextFieldGrayLight
-        self.passwordTextField.backgroundColor = .signInTextFieldGrayLight
+        self.emailTextField.backgroundColor = .textFieldGrayLight
+        self.passwordTextField.backgroundColor = .textFieldGrayLight
         
         self.signInButtonLabel.textColor = .defaultPink
         self.signInButtonLabel.layer.borderColor = UIColor.defaultPink.cgColor
@@ -68,8 +70,8 @@ class SignInVC: BaseVC, SignInVCDelegate {
         self.logoImageView.image = UIImage(named: "logoImageDark")
         self.signInTitleLabel.textColor = .white
         
-        self.emailTextField.backgroundColor = .signInTextFieldGrayDark
-        self.passwordTextField.backgroundColor = .signInTextFieldGrayDark
+        self.emailTextField.backgroundColor = .textFieldGrayDark
+        self.passwordTextField.backgroundColor = .textFieldGrayDark
         
         self.signInButtonLabel.textColor = .defaultPink
         self.signInButtonLabel.layer.borderColor = UIColor.defaultPink.cgColor
@@ -101,31 +103,5 @@ class SignInVC: BaseVC, SignInVCDelegate {
         default:
             self.setLightModeUI()
         }
-    }
-}
-extension SignInVC: SignInVCRouterDelegate {
-    
-    static func makeSignInVC() -> SignInVC {
-        let vc = SignInVC()
-        let actor = SignInActor.shared
-        let dataManager = SignInDataManager.shared
-        
-        vc.actor = actor
-        actor.view = vc
-        actor.dataManager = dataManager
-        dataManager.actor = actor
-        return vc
-    }
-    // TODO: MainVC 만들어서 넣기
-    func presentMainVC() {
-        
-    }
-    // TODO: FindEmailPasswordVC 만들어서 넣기
-    func presentFindEmailPasswordVC() {
-        
-    }
-    // TODO: SignUpVC 만들어서 넣기
-    func presentSignUpVC() {
-        
     }
 }
