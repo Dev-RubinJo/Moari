@@ -16,15 +16,22 @@
 "PASSWORD" = "password";
 // SignInVC >> SignInButtonLabel
 "SIGNIN" = "Sign In";
+// SignInVC >> SignUpLabel
+"SIGNUP" = "Sign Up";
 
 // FindEmailPasswordVC >> NavigationBar Title
 "FIND_EMAIL_PASSWORD_TITLE" = "Find Email/Password";
 
 // FindEmailPasswordVC >> Guide Content
-"FIND_EMAIL_PASSWORD_GUIDE_LABEL" = "First, verify that you have joined the account.\nYou can send a temporary password.";
+"FIND_EMAIL_PASSWORD_GUIDE_LABEL" = "We can send you a temporary password\nAfter verifying your email";
 
 // FindEmailPasswordVC >> checkEmailButtonTitle
-"FIND_EMAIL_PASSWORD_CHECK_EMAIL_BUTTON_TITLE" = "";
+"FIND_EMAIL_PASSWORD_CHECK_EMAIL_BUTTON_TITLE" = "Checking for registered email";
 
 // FindEmailPasswordVC >> sendTemporaryPasswordButtonTitle
-"FIND_EMAIL_PASSWORD_SEND_TEMP_PASSWORD_BUTTON_TITLE" = "Send a temporary password to the email above";
+"FIND_EMAIL_PASSWORD_SEND_TEMP_PASSWORD_BUTTON_TITLE" = "Send a temporary password";
+
+// FindEmailPasswordVC >> AlertLabel(registered Email)
+"REGISTERED_EMAIL" = "* This email is registered!";
+// FindEmailPasswordVC >> AlertLabel(not registered Email)
+"NOT_REGISTERED_EMAIL" = "* This email is not registered!\nPlease check again";

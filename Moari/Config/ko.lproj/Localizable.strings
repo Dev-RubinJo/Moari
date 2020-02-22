@@ -16,15 +16,22 @@
 "PASSWORD" = "비밀번호";
 // SignInVC >> SignInButtonLabel
 "SIGNIN" = "로그인";
+// SignInVC >> SignUpLabel
+"SIGNUP" = "회원가입";
 
 // FindEmailPasswordVC >> NavigationBar Title
 "FIND_EMAIL_PASSWORD_TITLE" = "이메일/비밀번호 찾기";
 
 // FindEmailPasswordVC >> Guide Content
-"FIND_EMAIL_PASSWORD_GUIDE_LABEL" = "먼저 가입된 계정인지 확인 후,\n임시 비밀번호를 발송할 수 있습니다.";
+"FIND_EMAIL_PASSWORD_GUIDE_LABEL" = "먼저 가입된 이메일인지 확인 후,\n임시 비밀번호를 발송할 수 있습니다.";
 
 // FindEmailPasswordVC >> checkEmailButtonTitle
 "FIND_EMAIL_PASSWORD_CHECK_EMAIL_BUTTON_TITLE" = "가입된 이메일인지 확인하기";
 
 // FindEmailPasswordVC >> sendTemporaryPasswordButtonTitle
 "FIND_EMAIL_PASSWORD_SEND_TEMP_PASSWORD_BUTTON_TITLE" = "위의 이메일로 임시 비밀번호 발송";
+
+// FindEmailPasswordVC >> AlertLabel(registered Email)
+"REGISTERED_EMAIL" = "* 가입된 이메일입니다!";
+// FindEmailPasswordVC >> AlertLabel(not registered Email)
+"NOT_REGISTERED_EMAIL" = "* 가입된 이메일이 아닙니다!\n다시 확인해주세요";
