@@ -10,9 +10,21 @@
 "OUT_OF_TOKEN_TITLE" = "로그인 세션 만료";
 "OUT_OF_TOKEN_CONTENT" = "로그인 세션이 만료되었습니다. 다시 로그인해주세요!";
 
-// SignInVC >> EmailTextField Placeholder
+// EmailTextField Placeholder
 "EMAIL" = "이메일";
 // SignInVC >> PasswordTextField Placeholder
 "PASSWORD" = "비밀번호";
 // SignInVC >> SignInButtonLabel
 "SIGNIN" = "로그인";
+
+// FindEmailPasswordVC >> NavigationBar Title
+"FIND_EMAIL_PASSWORD_TITLE" = "이메일/비밀번호 찾기";
+
+// FindEmailPasswordVC >> Guide Content
+"FIND_EMAIL_PASSWORD_GUIDE_LABEL" = "먼저 가입된 계정인지 확인 후,\n임시 비밀번호를 발송할 수 있습니다.";
+
+// FindEmailPasswordVC >> checkEmailButtonTitle
+"FIND_EMAIL_PASSWORD_CHECK_EMAIL_BUTTON_TITLE" = "가입된 이메일인지 확인하기";
+
+// FindEmailPasswordVC >> sendTemporaryPasswordButtonTitle
+"FIND_EMAIL_PASSWORD_SEND_TEMP_PASSWORD_BUTTON_TITLE" = "위의 이메일로 임시 비밀번호 발송";
