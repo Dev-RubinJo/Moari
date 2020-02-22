@@ -95,3 +95,62 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+
+
+
+/*
+ if UIDevice().userInterfaceIdiom == .phone {
+ switch UIScreen.main.nativeBounds.height {
+ case 1136: se1
+     self.folderNameLabel.font.withSize(14)
+     self.folderCreateTimeLabel.font.withSize(10)
+     self.folderNameTimeLabelsConstraint.constant = 3
+     self.photoCollectionViewLeadingConstraint.constant = 10
+     self.photoCollectionViewTrailingConstraint.constant = 10
+     //                print("iPhone 5 or 5S or 5C")
+     self.tagButtonLeadingConstraint.constant = 20
+     self.shareButtonLeadingConstraint.constant = 28
+     self.lockButtonLeadingConstraint.constant = 28
+     self.deleteButtonLeadingConstraint.constant = 28
+     self.downloadButtonTrailingConstraint.constant = 10
+     break;
+ case 1334:
+     //                print("iPhone 6/6S/7/8")
+     self.tagButtonLeadingConstraint.constant = 10
+     self.shareButtonLeadingConstraint.constant = 50
+     self.lockButtonLeadingConstraint.constant = 50
+     self.deleteButtonLeadingConstraint.constant = 51
+     self.downloadButtonTrailingConstraint.constant = 15
+     break;
+ case 1920, 2208:
+     //                print("iPhone 6+/6S+/7+/8+")
+     self.tagButtonLeadingConstraint.constant = 13
+     self.shareButtonLeadingConstraint.constant = 63
+     self.lockButtonLeadingConstraint.constant = 63
+     self.deleteButtonLeadingConstraint.constant = 63
+     self.downloadButtonTrailingConstraint.constant = 18
+     
+     break;
+ case 2436:
+     //                print("iPhone X, XS")
+     self.tagButtonLeadingConstraint.constant = 10
+     self.shareButtonLeadingConstraint.constant = 51
+     self.lockButtonLeadingConstraint.constant = 51
+     self.deleteButtonLeadingConstraint.constant = 52
+     self.downloadButtonTrailingConstraint.constant = 18
+     self.bottomButtonItemViewHeightConstraint.constant = 70
+     break;
+ case 1792, 2688:
+     //                print("iPhone XR, XS MAX")
+     self.tagButtonLeadingConstraint.constant = 13
+     self.shareButtonLeadingConstraint.constant = 63
+     self.lockButtonLeadingConstraint.constant = 63
+     self.deleteButtonLeadingConstraint.constant = 63
+     self.downloadButtonTrailingConstraint.constant = 18
+     self.bottomButtonItemViewHeightConstraint.constant = 70
+     break;
+ default:
+     break;
+ }
+ */
