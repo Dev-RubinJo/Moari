@@ -34,4 +34,18 @@
 // FindEmailPasswordVC >> AlertLabel(registered Email)
 "REGISTERED_EMAIL" = "* This email is registered!";
 // FindEmailPasswordVC >> AlertLabel(not registered Email)
-"NOT_REGISTERED_EMAIL" = "* This email is not registered!\nPlease check again";
+"NOT_REGISTERED_EMAIL" = "* This email is not registered!%@Please check again";
+
+// FindEmailPasswordVC >> temporaryPasswordAlertLabel
+"SEND_TEMPORARY_PASSWORD" = "* Temporary password has been sent";
+
+// ALERT
+// Invalid Email And Password
+"INVALID_EMAIL_PASSWORD_TITLE" = "Email and password were entered incorrectly";
+"INVALID_EMAIL_PASSWORD_MESSAGE" = "Please check your email and password again and enter it!";
+
+"INVALID_EMAIL_TITLE" = "It's wrong Email";
+"INVALID_EMAIL_MESSAGE" = "Please check your email again and enter it!";
+
+"INVALID_PASSWORD_TITLE" = "Password format is incorrect";
+"INVALID_PASSWORD_MESSAGE" = "Please enter 8 to 16 digits according to the password format(case-sensitive English, numeric)!";

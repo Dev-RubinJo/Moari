@@ -16,6 +16,8 @@ class FindEmailPasswordVC: BaseVC, FindEmailPasswordVCProtocol {
     @IBOutlet weak var alertLabel: UILabel!
     @IBOutlet weak var checkEmailButton: UIButton!
     @IBOutlet weak var sendTemporaryPasswordButton: UIButton!
+    /// 임시 비밀번호가 전송되었는지 아닌지 확인할 수 있도록 해주는 Label
+    @IBOutlet weak var temporaryPasswordAlertLabel: UILabel!
     
     weak var actor: FindEmailPasswordActorDelegate?
     
@@ -25,6 +27,7 @@ class FindEmailPasswordVC: BaseVC, FindEmailPasswordVCProtocol {
         super.viewDidLoad()
         self.setColorModeUI()
         self.setFindEmailPasswordVCUI()
+        self.initTapListener()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

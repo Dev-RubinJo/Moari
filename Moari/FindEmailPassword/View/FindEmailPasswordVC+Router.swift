@@ -11,8 +11,13 @@ extension FindEmailPasswordVC: FindEmailPasswordVCRouterDelegate {
     static var makeFindEmailPasswordVC: FindEmailPasswordVC {
         get {
             let vc = FindEmailPasswordVC()
+            let actor = FindEmailPasswordActor.shared
+            let dataManager = FindEmailPasswordDataManager.shared
             
-            
+            vc.actor = actor
+            actor.view = vc
+            actor.dataManager = dataManager
+            dataManager.actor = actor
             return vc
         }
     }

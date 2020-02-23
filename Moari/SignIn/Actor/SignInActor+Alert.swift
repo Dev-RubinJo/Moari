@@ -12,14 +12,14 @@ extension SignInActor: SignInAlertActorDelegate {
         var title = ""
         var message = ""
         if !email && !password {
-            title = "이메일과 비밀번호가 잘못 입력되었습니다"
-            message = "이메일과 비밀번호를 다시 한번 확인하여 입력해주세요!"
+            title = "INVALID_EMAIL_PASSWORD_TITLE".localized
+            message = "INVALID_EMAIL_PASSWORD_MESSAGE".localized
         } else if !email {
-            title = "이메일이 잘못 입력되었습니다"
-            message = "이메일을 다시 한번 확인하여 입력해주세요!"
+            title = "INVALID_EMAIL_TITLE".localized
+            message = "INVALID_EMAIL_MESSAGE".localized
         } else if !password {
-            title = "비밀번호 형식이 맞지 않습니다"
-            message = "비밀번호 형식(대소문자 영어, 숫자)에 맞춰서 8 ~ 16자리를 입력해주세요!"
+            title = "INVALID_PASSWORD_TITLE".localized
+            message = "INVALID_PASSWORD_MESSAGE".localized
         }
         vc.presentAlert(title: title, message: message)
     }

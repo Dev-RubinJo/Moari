@@ -30,10 +30,27 @@ extension FindEmailPasswordVC {
         self.sendTemporaryPasswordButton.tintColor = .defaultPink
         self.sendTemporaryPasswordButton.layer.cornerRadius = 3
         
+        
+        self.alertLabel.isHidden = true
+        self.sendTemporaryPasswordButton.isHidden = true
+        self.temporaryPasswordAlertLabel.isHidden = true
         if self.isIphone == .iPhone {
             
         } else if self.isIphone == .iPad {
             
         }
+    }
+    
+    func initTapListener() {
+        self.checkEmailButton.addTarget(self, action: #selector(self.pressCheckEmailButton(_:)), for: .touchUpInside)
+        self.sendTemporaryPasswordButton.addTarget(self, action: #selector(self.pressSendTemporaryPasswordButton(_:)), for: .touchUpInside)
+    }
+    
+    @objc func pressCheckEmailButton(_ sender: UIButton) {
+        self.actor?.didTapCheckForRegisteredEmailButton(fromVC: self)
+    }
+    
+    @objc func pressSendTemporaryPasswordButton(_ sender: UIButton) {
+        self.actor?.didTapSendTemporaryPasswordButton(fromVC: self)
     }
 }

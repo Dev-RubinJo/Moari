@@ -21,9 +21,28 @@ protocol FindEmailPasswordActorDelegate: class {
     var view: FindEmailPasswordVCRouterDelegate? { get set }
     
     var dataManager: FindEmailPasswordDataManagerDelegate? { get set }
+    
+    func didTapCheckForRegisteredEmailButton(fromVC vc: FindEmailPasswordVC)
+    
+    func didTapSendTemporaryPasswordButton(fromVC vc: FindEmailPasswordVC)
+    
+    func notRegisteredEmail(updateVC vc: FindEmailPasswordVC)
+    
+    func registeredEmail(updateVC vc: FindEmailPasswordVC)
+    
+    func sendTemporaryPassword(updateVC vc: FindEmailPasswordVC)
+}
+
+protocol FindEmailPasswordAlertActorDelegate: class {
+    
+    func presentInvalidEmailAlert(toVC vc: FindEmailPasswordVC)
 }
 
 protocol FindEmailPasswordDataManagerDelegate: class {
     
-    var actor: (FindEmailPasswordActorDelegate)? { get set }
+    var actor: (FindEmailPasswordActorDelegate & FindEmailPasswordAlertActorDelegate)? { get set }
+    
+    func checkEmail(fromVC vc: FindEmailPasswordVC, email: String)
+    
+    func sendTemporaryPassword(fromVC vc: FindEmailPasswordVC, email: String)
 }
