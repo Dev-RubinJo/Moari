@@ -22,6 +22,13 @@
 		43840215240117BA00ECA42E /* FindEmailPasswordVC+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43840214240117BA00ECA42E /* FindEmailPasswordVC+Router.swift */; };
 		4384021924014ED000ECA42E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4384021824014ED000ECA42E /* UIImage.swift */; };
 		4384021C2401590900ECA42E /* FindEmailPasswordVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4384021B2401590900ECA42E /* FindEmailPasswordVC+SetUI.swift */; };
+		4384021E2402522900ECA42E /* FindEmailPasswordActor+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4384021D2402522900ECA42E /* FindEmailPasswordActor+Alert.swift */; };
+		438402212402646B00ECA42E /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4384021F2402646B00ECA42E /* SignUpVC.swift */; };
+		438402222402646B00ECA42E /* SignUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438402202402646B00ECA42E /* SignUpVC.xib */; };
+		438402242402647900ECA42E /* SignUpActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438402232402647900ECA42E /* SignUpActor.swift */; };
+		438402262402648300ECA42E /* SignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438402252402648300ECA42E /* SignUpDataManager.swift */; };
+		438402282402649300ECA42E /* SignUpDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438402272402649300ECA42E /* SignUpDataResponse.swift */; };
+		4384022A2402649D00ECA42E /* SignUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438402292402649D00ECA42E /* SignUpProtocol.swift */; };
 		439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */; };
 		439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */; };
 		439BE63A23FE294E00EC77A9 /* FindEmailPasswordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */; };
@@ -103,6 +110,13 @@
 		43840214240117BA00ECA42E /* FindEmailPasswordVC+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FindEmailPasswordVC+Router.swift"; sourceTree = "<group>"; };
 		4384021824014ED000ECA42E /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		4384021B2401590900ECA42E /* FindEmailPasswordVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FindEmailPasswordVC+SetUI.swift"; sourceTree = "<group>"; };
+		4384021D2402522900ECA42E /* FindEmailPasswordActor+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FindEmailPasswordActor+Alert.swift"; sourceTree = "<group>"; };
+		4384021F2402646B00ECA42E /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		438402202402646B00ECA42E /* SignUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpVC.xib; sourceTree = "<group>"; };
+		438402232402647900ECA42E /* SignUpActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpActor.swift; sourceTree = "<group>"; };
+		438402252402648300ECA42E /* SignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataManager.swift; sourceTree = "<group>"; };
+		438402272402649300ECA42E /* SignUpDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataResponse.swift; sourceTree = "<group>"; };
+		438402292402649D00ECA42E /* SignUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocol.swift; sourceTree = "<group>"; };
 		439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+SetUI.swift"; sourceTree = "<group>"; };
 		439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailPasswordProtocol.swift; sourceTree = "<group>"; };
@@ -288,6 +302,7 @@
 		435EAC4423FAA04500FF1AD8 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				438402292402649D00ECA42E /* SignUpProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -295,6 +310,8 @@
 		435EAC4523FAA04800FF1AD8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				438402252402648300ECA42E /* SignUpDataManager.swift */,
+				438402272402649300ECA42E /* SignUpDataResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -302,6 +319,7 @@
 		435EAC4623FAA04A00FF1AD8 /* Actor */ = {
 			isa = PBXGroup;
 			children = (
+				438402232402647900ECA42E /* SignUpActor.swift */,
 			);
 			path = Actor;
 			sourceTree = "<group>";
@@ -309,6 +327,8 @@
 		435EAC4723FAA04B00FF1AD8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4384021F2402646B00ECA42E /* SignUpVC.swift */,
+				438402202402646B00ECA42E /* SignUpVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -527,6 +547,7 @@
 			isa = PBXGroup;
 			children = (
 				439BE63F23FE29AB00EC77A9 /* FindEmailPasswordActor.swift */,
+				4384021D2402522900ECA42E /* FindEmailPasswordActor+Alert.swift */,
 			);
 			path = Actor;
 			sourceTree = "<group>";
@@ -761,6 +782,7 @@
 				4362199223F1A2B7008B9F84 /* Assets.xcassets in Resources */,
 				43CF86AC23F29CAE0062B846 /* InfoPlist.strings in Resources */,
 				439BE64423FE29C400EC77A9 /* FindEmailPasswordVC.xib in Resources */,
+				438402222402646B00ECA42E /* SignUpVC.xib in Resources */,
 				43D53E4923FAE191005DFC4A /* GoogleService-Info.plist in Resources */,
 				43D53E4E23FAE7DD005DFC4A /* SignInVC.xib in Resources */,
 			);
@@ -862,6 +884,7 @@
 				43CF86A023F29C550062B846 /* BaseVC.swift in Sources */,
 				4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */,
 				43CF86BE23F29DB50062B846 /* SplashActor.swift in Sources */,
+				438402242402647900ECA42E /* SignUpActor.swift in Sources */,
 				430A998E23F4F70700586CB0 /* ServerAddress.swift in Sources */,
 				43CF869823F29C040062B846 /* UIColor.swift in Sources */,
 				43D53E5223FAE98F005DFC4A /* SignInActor.swift in Sources */,
@@ -870,15 +893,20 @@
 				439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */,
 				439BE63E23FE29A000EC77A9 /* FindEmailPasswordDataResponse.swift in Sources */,
 				43CF869A23F29C1A0062B846 /* UIButton.swift in Sources */,
+				438402212402646B00ECA42E /* SignUpVC.swift in Sources */,
 				43D53E5423FAE9DC005DFC4A /* SignInDataManager.swift in Sources */,
 				4384020D2401037B00ECA42E /* SplashActor+Alert.swift in Sources */,
 				43CF86C323F29DD00062B846 /* SplashVC.swift in Sources */,
+				438402282402649300ECA42E /* SignUpDataResponse.swift in Sources */,
 				439BE64023FE29AB00EC77A9 /* FindEmailPasswordActor.swift in Sources */,
 				43840213240105D500ECA42E /* SignInActor+Alert.swift in Sources */,
 				43CF86A423F29C820062B846 /* ColorPalette.swift in Sources */,
 				43CF86C023F29DC10062B846 /* SplashDataResponse.swift in Sources */,
 				438402112401054C00ECA42E /* SignInVC+Router.swift in Sources */,
 				439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */,
+				438402262402648300ECA42E /* SignUpDataManager.swift in Sources */,
+				4384022A2402649D00ECA42E /* SignUpProtocol.swift in Sources */,
+				4384021E2402522900ECA42E /* FindEmailPasswordActor+Alert.swift in Sources */,
 				439BE64323FE29C400EC77A9 /* FindEmailPasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
