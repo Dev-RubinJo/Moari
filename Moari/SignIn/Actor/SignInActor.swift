@@ -23,11 +23,10 @@ class SignInActor: SignInActorDelegate {
     }
     
     func didTapSignUpLabel() {
-        
+        self.view?.presentSignUpVC()
     }
 }
 extension SignInActor {
-    
     private func checkTextFields(vc: SignInVC) {
         if vc.emailTextField.text!.validateEmail() && vc.passwordTextField.text!.validatePassword() {
             guard let id = vc.emailTextField.text else { return }

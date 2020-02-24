@@ -7,7 +7,7 @@
 //
 
 extension SignInVC: SignInVCRouterDelegate {
-    
+
     static var makeSignInVC: SignInVC {
         get {
             let vc = SignInVC()
@@ -32,6 +32,7 @@ extension SignInVC: SignInVCRouterDelegate {
     }
     // TODO: SignUpVC 만들어서 넣기
     func presentSignUpVC() {
-        
+        let signUpVC = SignUpVC.makeSignUpVC
+        self.navigationController?.pushViewController(signUpVC, animated: true)
     }
 }

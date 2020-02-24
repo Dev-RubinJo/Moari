@@ -23,7 +23,7 @@ class FindEmailPasswordActor: FindEmailPasswordActorDelegate {
     
     func didTapSendTemporaryPasswordButton(fromVC vc: FindEmailPasswordVC) {
         guard let email = vc.emailTextField.text else { return }
-        self.dataManager?.sendTemporaryPassword(fromVC: vc, email: email)
+        self.dataManager?.sendTemporaryPassword(email: email)
     }
     
     func notRegisteredEmail(updateVC vc: FindEmailPasswordVC) {

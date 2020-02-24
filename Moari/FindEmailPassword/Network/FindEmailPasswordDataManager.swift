@@ -28,7 +28,7 @@ class FindEmailPasswordDataManager: FindEmailPasswordDataManagerDelegate {
         
     }
     
-    func sendTemporaryPassword(fromVC vc: FindEmailPasswordVC, email: String) {
+    func sendTemporaryPassword(email: String) {
         let headers = ["Content-Type": "application/json"]
         let parameters: Parameters = ["email": email]
         

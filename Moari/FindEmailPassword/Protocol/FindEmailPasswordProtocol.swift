@@ -44,5 +44,5 @@ protocol FindEmailPasswordDataManagerDelegate: class {
     
     func checkEmail(fromVC vc: FindEmailPasswordVC, email: String)
     
-    func sendTemporaryPassword(fromVC vc: FindEmailPasswordVC, email: String)
+    func sendTemporaryPassword(email: String)
 }
