@@ -71,6 +71,10 @@ extension SignInVC {
         let findEmailPasswordListener = UITapGestureRecognizer(target: self, action: #selector(self.pressFindEmailPasswordButton(_:)))
         self.findEmailPasswordLabel.isUserInteractionEnabled = true
         self.findEmailPasswordLabel.addGestureRecognizer(findEmailPasswordListener)
+        
+        let signUpListener = UITapGestureRecognizer(target: self, action: #selector(self.pressSignUpButton(_:)))
+        self.signUpLabel.isUserInteractionEnabled = true
+        self.signUpLabel.addGestureRecognizer(signUpListener)
     }
     
     @objc func pressSignInButton(_ sender: UILabel) {
@@ -79,5 +83,9 @@ extension SignInVC {
     
     @objc func pressFindEmailPasswordButton(_ sender: UILabel) {
         self.actor?.didTapFindEmailPasswordLabel()
+    }
+    
+    @objc func pressSignUpButton(_ sender: UILabel) {
+        self.actor?.didTapSignUpLabel()
     }
 }

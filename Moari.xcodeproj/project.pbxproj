@@ -29,6 +29,7 @@
 		438402262402648300ECA42E /* SignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438402252402648300ECA42E /* SignUpDataManager.swift */; };
 		438402282402649300ECA42E /* SignUpDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438402272402649300ECA42E /* SignUpDataResponse.swift */; };
 		4384022A2402649D00ECA42E /* SignUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438402292402649D00ECA42E /* SignUpProtocol.swift */; };
+		4384022C24026D0100ECA42E /* SignUpVC+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4384022B24026D0100ECA42E /* SignUpVC+Router.swift */; };
 		439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */; };
 		439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */; };
 		439BE63A23FE294E00EC77A9 /* FindEmailPasswordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */; };
@@ -117,6 +118,7 @@
 		438402252402648300ECA42E /* SignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataManager.swift; sourceTree = "<group>"; };
 		438402272402649300ECA42E /* SignUpDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataResponse.swift; sourceTree = "<group>"; };
 		438402292402649D00ECA42E /* SignUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocol.swift; sourceTree = "<group>"; };
+		4384022B24026D0100ECA42E /* SignUpVC+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC+Router.swift"; sourceTree = "<group>"; };
 		439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+SetUI.swift"; sourceTree = "<group>"; };
 		439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailPasswordProtocol.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			children = (
 				4384021F2402646B00ECA42E /* SignUpVC.swift */,
 				438402202402646B00ECA42E /* SignUpVC.xib */,
+				4384022B24026D0100ECA42E /* SignUpVC+Router.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -886,6 +889,7 @@
 				43CF86BE23F29DB50062B846 /* SplashActor.swift in Sources */,
 				438402242402647900ECA42E /* SignUpActor.swift in Sources */,
 				430A998E23F4F70700586CB0 /* ServerAddress.swift in Sources */,
+				4384022C24026D0100ECA42E /* SignUpVC+Router.swift in Sources */,
 				43CF869823F29C040062B846 /* UIColor.swift in Sources */,
 				43D53E5223FAE98F005DFC4A /* SignInActor.swift in Sources */,
 				43CF86BC23F29DAB0062B846 /* SplashDataManager.swift in Sources */,

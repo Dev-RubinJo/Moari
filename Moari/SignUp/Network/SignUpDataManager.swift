@@ -8,3 +8,21 @@
 //
 
 import Foundation
+
+class SignUpDataManager: SignUpDataManagerDelegate {
+    
+    static let shared = SignUpDataManager()
+    private init() {}
+    
+    weak var actor: (SignUpActorDelegate)?
+    
+    func signUp() {
+        
+    }
+}
+extension SignUpDataManager {
+    
+    private func signInAfterSignUp(email: String, password: String) {
+          
+    }
+}

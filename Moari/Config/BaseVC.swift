@@ -19,6 +19,7 @@ class BaseVC: UIViewController {
         super.viewDidLoad()
         self.initBaseVC()
         self.setLocalAuthentication()
+//        self.tabBarController?.tabBar.isHidden = true
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -89,6 +90,7 @@ class BaseVC: UIViewController {
             case .touchID:
                 description = "잠금 해제를 위해 Touch Id로 인증합니다."
             case .none:
+                print(description)
                 break
             @unknown default:
                 break

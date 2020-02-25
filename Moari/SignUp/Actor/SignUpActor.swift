@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class SignUpActor: SignUpActorDelegate {
+    
+    static let shared = SignUpActor()
+    private init() {}
+    
+    weak var view: SignUpVCRouterDelegate?
+    weak var dataManager: SignUpDataManagerDelegate?
+}

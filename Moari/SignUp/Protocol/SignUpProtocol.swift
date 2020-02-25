@@ -13,7 +13,13 @@ protocol SignUpVCProtocol: BaseVCProtocol {
 
 protocol SignUpVCRouterDelegate: class {
     
-    var makeSignUpVC: SignUpVC { get }
+    static var makeSignUpVC: SignUpVC { get }
+    
+    func presentUsingPolicyView()
+    
+    func presentPersonPolicyView()
+    
+    func presentMainVC()
 }
 
 protocol SignUpActorDelegate: class {
@@ -26,4 +32,6 @@ protocol SignUpActorDelegate: class {
 protocol SignUpDataManagerDelegate: class {
     
     var actor: (SignUpActorDelegate)? { get set }
+        
+    func signUp()
 }
