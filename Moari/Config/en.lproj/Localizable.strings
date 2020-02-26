@@ -39,6 +39,24 @@
 // FindEmailPasswordVC >> temporaryPasswordAlertLabel
 "SEND_TEMPORARY_PASSWORD" = "* Temporary password has been sent";
 
+// SignUpVC >> Navigation Bar Title
+"SIGN_UP_TITLE" = "Sign Up";
+
+// SignUpVC >> PasswordTextField Placeholder
+"PASSWORD_SIGN_UP_PLACEHOLDER" = "비밀번호 (6자리 이상)";
+// SignUpVC >> PasswordCheckTextField Placeholder
+"PASSWORD_CHECK_PLACEHOLDER" = "비밀번호 확인";
+// SignUpVC >> NickNameTextField Placeholder
+"NICKNAME_PLACEHOLDER" = "닉네임";
+
+// SignUpVC >> usingPolicy Label
+"USING_POLICY_LABEL" = "모아리 이용약관 동의";
+// SignUpVC >> personalPolicy Label
+"PERSONAL_POLICY_LABEL" = "개인정보 수집이용 동의";
+
+// SignUpVC >> SignUpButton Title
+"SIGN_UP_BUTTON" = "회원가입하기";
+
 // ALERT
 // Invalid Email And Password
 "INVALID_EMAIL_PASSWORD_TITLE" = "Email and password were entered incorrectly";

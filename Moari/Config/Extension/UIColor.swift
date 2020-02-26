@@ -45,5 +45,9 @@ extension UIColor {
     @nonobjc class var navigationBarBottomBorder: UIColor {
       return UIColor(white: 189.0 / 255.0, alpha: 1.0)
     }
-
+    
+    /// TextField, TextView Cursor Color
+    @nonobjc class var cursorColor: UIColor {
+      return UIColor(red: 194.0 / 255.0, green: 24.0 / 255.0, blue: 91.0 / 255.0, alpha: 1.0)
+    }
 }

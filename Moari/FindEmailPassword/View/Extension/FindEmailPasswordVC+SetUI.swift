@@ -14,7 +14,9 @@ extension FindEmailPasswordVC {
         
         self.navigationItem.title = "FIND_EMAIL_PASSWORD_TITLE".localized
         self.findEmailPasswordGuideLabel.text = "FIND_EMAIL_PASSWORD_GUIDE_LABEL".localized
-        self.emailTextField.attributedPlaceholder = self.emailTextFieldPlaceholder
+        
+        let emailTextFieldPlaceholder = NSAttributedString(string: "EMAIL".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.signInBottomBorderBar])
+        self.emailTextField.attributedPlaceholder = emailTextFieldPlaceholder
         let emailPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 11, height: 0))
         self.emailTextField.leftView = emailPaddingView
         self.emailTextField.leftViewMode = .always

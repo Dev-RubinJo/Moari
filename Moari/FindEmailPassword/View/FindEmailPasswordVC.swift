@@ -21,8 +21,6 @@ class FindEmailPasswordVC: BaseVC, FindEmailPasswordVCProtocol {
     
     weak var actor: FindEmailPasswordActorDelegate?
     
-    var emailTextFieldPlaceholder = NSAttributedString(string: "EMAIL".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.signInBottomBorderBar])
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setColorModeUI()
@@ -58,7 +56,9 @@ class FindEmailPasswordVC: BaseVC, FindEmailPasswordVCProtocol {
     }
     
     func setColorModeUI() {
+        self.sendTemporaryPasswordButton.setTitleColor(.defaultPink, for: .normal)
         self.sendTemporaryPasswordButton.layer.borderColor = UIColor.defaultPink.cgColor
+        // TODO: SetUI로 옮기기
         self.sendTemporaryPasswordButton.layer.borderWidth = 1
         switch self.theme {
         case 0:

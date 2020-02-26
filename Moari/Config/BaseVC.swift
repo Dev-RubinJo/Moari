@@ -19,6 +19,7 @@ class BaseVC: UIViewController {
         super.viewDidLoad()
         self.initBaseVC()
         self.setLocalAuthentication()
+        UITextField.appearance().tintColor = .cursorColor
 //        self.tabBarController?.tabBar.isHidden = true
     }
     
