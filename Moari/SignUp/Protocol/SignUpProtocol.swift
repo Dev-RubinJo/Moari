@@ -8,7 +8,7 @@
 
 protocol SignUpVCProtocol: BaseVCProtocol {
     
-    var actor: SignUpActorDelegate? { get set }
+    var actor: (SignUpActorDelegate & SignUpAlertActorDelegate)? { get set }
 }
 
 protocol SignUpVCRouterDelegate: class {
@@ -27,11 +27,37 @@ protocol SignUpActorDelegate: class {
     var view: SignUpVCRouterDelegate? { get set }
     
     var dataManager: SignUpDataManagerDelegate? { get set }
+    
+    func didTapUsingTermLabel()
+    
+    func didTapUsingTermCheckImageView(updateVC vc: SignUpVC)
+    
+    func didTapPersonalTermLabel()
+    
+    func didTapPersonalTermCheckImageView(updateVC vc: SignUpVC)
+    
+    func didTapSignUpButton(fromVC vc: SignUpVC)
+}
+
+protocol SignUpAlertActorDelegate: class {
+    
+    func presentInvalidEmailAlert(toVC vc: SignUpVC)
+    
+    func presentInvalidPasswordAlert(toVC vc: SignUpVC)
+    
+    func presentInvalidPasswordCheckAlert(toVC vc: SignUpVC)
+    
+    func presentCheckTermAlert(toVC vc: SignUpVC)
+}
+
+protocol SignUpPopUpActorDelegate: class {
+    
+    func presentSignUpPopUp(fromVC vc: SignUpVC)
 }
 
 protocol SignUpDataManagerDelegate: class {
     
     var actor: (SignUpActorDelegate)? { get set }
         
-    func signUp()
+    func signUp(fromVC vc: SignUpVC, email: String, password: String, nickName: String)
 }

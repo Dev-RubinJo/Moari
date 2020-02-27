@@ -55,7 +55,7 @@
 "PERSONAL_POLICY_LABEL" = "개인정보 수집이용 동의";
 
 // SignUpVC >> SignUpButton Title
-"SIGN_UP_BUTTON" = "회원가입하기";
+"SIGN_UP_BUTTON" = "Sign Up";
 
 // ALERT
 // Invalid Email And Password

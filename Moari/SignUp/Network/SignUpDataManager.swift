@@ -7,7 +7,8 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
-import Foundation
+import Alamofire
+import AlamofireObjectMapper
 
 class SignUpDataManager: SignUpDataManagerDelegate {
     
@@ -16,7 +17,7 @@ class SignUpDataManager: SignUpDataManagerDelegate {
     
     weak var actor: (SignUpActorDelegate)?
     
-    func signUp() {
+    func signUp(fromVC vc: SignUpVC, email: String, password: String, nickName: String) {
         
     }
 }

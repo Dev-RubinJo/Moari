@@ -23,11 +23,11 @@ extension SignUpVC: SignUpVCRouterDelegate {
     }
     
     func presentUsingPolicyView() {
-        
+        self.usingPolicyCheck = true
     }
     
     func presentPersonPolicyView() {
-        
+        self.personalPolicyCheck = true
     }
     
     func presentMainVC() {
