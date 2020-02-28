@@ -6,12 +6,16 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
+import UIKit
+
 protocol SignInVCProtocol: BaseVCProtocol {
     
     var actor: SignInActorDelegate? { get set }
 }
 
 protocol SignInVCRouterDelegate: class {
+    
+    var window: UIWindow? { get }
     
     static var makeSignInVC: SignInVC { get }
     

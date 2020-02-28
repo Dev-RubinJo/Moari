@@ -6,7 +6,19 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
+import UIKit
+
 extension SignInVC: SignInVCRouterDelegate {
+    
+    weak var window: UIWindow? {
+        get {
+            if #available(iOS 13.0, *) {
+                return UIApplication.shared.windows.first ?? UIWindow.init(frame: UIScreen.main.bounds)
+            } else {
+                return UIApplication.shared.keyWindow
+            }
+        }
+    }
 
     static var makeSignInVC: SignInVC {
         get {
@@ -23,7 +35,9 @@ extension SignInVC: SignInVCRouterDelegate {
     }
     // TODO: MainVC 만들어서 넣기
     func presentMainVC() {
-        
+        let mainVC = MainVC.makeMainVC
+        self.window?.rootViewController = mainVC
+        self.window?.makeKeyAndVisible()
     }
     // TODO: FindEmailPasswordVC 만들어서 넣기
     func presentFindEmailPasswordVC() {

@@ -57,6 +57,11 @@
 // SignUpVC >> SignUpButton Title
 "SIGN_UP_BUTTON" = "Sign Up";
 
+// SignUpPopUp >> SignUpPopUp Title
+"SIGNUP_POPUP_TITLE" = "가입이 완료되었습니다!";
+// SignUpPopUp >> SignUpPopUp Button
+"SIGNUP_POPUP_BUTTON" = "로그인하기";
+
 // ALERT
 // Invalid Email And Password
 "INVALID_EMAIL_PASSWORD_TITLE" = "Email and password were entered incorrectly";

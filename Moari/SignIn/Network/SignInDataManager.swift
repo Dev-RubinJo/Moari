@@ -24,12 +24,13 @@ class SignInDataManager: SignInDataManagerDelegate {
         
         Alamofire.request("\(Server.api)/app/signIn", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
             .validate()
-            .responseObject(completionHandler: { (response: DataResponse<SignInDataResponse>) in
+            .responseObject(completionHandler: { (response: DataResponse<SignInResponse>) in
                 switch response.result {
                 case .success(let signInResponse):
                     switch signInResponse.code{
                     case 200:
                         UserDefaults.standard.set(signInResponse.jwt, forKey: "LoginToken")
+                        UserDefaults.standard.set(signInResponse.name, forKey: "NickName")
                         print("로그인 성공")
                     case 310:
                         print("이메일을 확인해주세요")

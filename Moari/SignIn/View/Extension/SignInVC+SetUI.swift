@@ -12,14 +12,14 @@ extension SignInVC {
     func setSignInVCUI() {
         
         var signInTitleLabelAttributedString = NSMutableAttributedString()
-        if self.deviceLocale.isEqual("ko") {
+        if self.deviceLocale.isEqual("ko") { // 한국어일때
             signInTitleLabelAttributedString = NSMutableAttributedString(string: "모아 보는 리뷰, 모아리", attributes: [
               .font: UIFont(name: "AppleSDGothicNeo-Thin", size: 17.0)!,
               .foregroundColor: UIColor(white: 0.0, alpha: 1.0),
               .kern: 0.0
             ])
             signInTitleLabelAttributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 17.0)!, range: NSRange(location: 10, length: 3))
-        } else if self.deviceLocale.isEqual("en") {
+        } else if self.deviceLocale.isEqual("en") { // 영어일때
             
         }
         
