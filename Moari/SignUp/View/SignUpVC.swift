@@ -28,6 +28,19 @@ class SignUpVC: BaseVC, SignUpVCProtocol {
     @IBOutlet weak var signUpButton: UIButton!
     
     weak var actor: (SignUpActorDelegate & SignUpAlertActorDelegate)?
+    
+    var email: String {
+        get {
+            self.emailTextField.text ?? ""
+        }
+    }
+    
+    var password: String {
+        get {
+            self.passwordTextField.text ?? ""
+        }
+    }
+    
     // 약관동의 체크를 했는지 안했는지 구분하기 위한 변수
     // TODO: think 이 변수를 Actor에 넣는다면?
     var usingPolicyCheck: Bool = false
