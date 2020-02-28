@@ -13,7 +13,7 @@ class SignUpActor: SignUpActorDelegate {
     static let shared = SignUpActor()
     private init() {}
     
-    weak var view: SignUpVCRouterDelegate?
+    weak var view: (SignUpVCProtocol & SignUpVCRouterDelegate)?
     weak var dataManager: SignUpDataManagerDelegate?
     
     func didTapUsingTermLabel() {
@@ -49,5 +49,9 @@ class SignUpActor: SignUpActorDelegate {
         guard let password = vc.passwordTextField.text else { return }
         guard let nickName = vc.nickNameTextField.text else { return }
         self.dataManager?.signUp(fromVC: vc, email: email, password: password, nickName: nickName)
+    }
+    
+    func completeSignInAfterSignUp() {
+        self.view?.presentMainVC()
     }
 }

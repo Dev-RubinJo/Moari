@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up-->
+        <scene sceneID="omU-ME-tm4">
+            <objects>
+                <viewController storyboardIdentifier="SignUp" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xB9-mE-LMB" customClass="SignUp" customModule="Moari" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yiM-mu-IwU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWh-rp-FHv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZtE-tj-AHv">
+                                <rect key="frame" x="67.666666666666686" y="316" width="240" height="180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aA-pO-hRw">
+                                        <rect key="frame" x="0.0" y="130" width="240" height="1"/>
+                                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="ScX-v0-09k"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입이 완료되었습니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-GX-u2y">
+                                        <rect key="frame" x="42" y="55" width="156" height="21"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7S-Qx-ohP">
+                                        <rect key="frame" x="87.333333333333329" y="141" width="64.999999999999986" height="30"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <state key="normal" title="로그인하기">
+                                            <color key="titleColor" red="0.76078431369999999" green="0.094117647060000004" blue="0.35686274509999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Kwy-GX-u2y" firstAttribute="top" secondItem="ZtE-tj-AHv" secondAttribute="top" constant="55" id="5kH-qE-2VK"/>
+                                    <constraint firstItem="b7S-Qx-ohP" firstAttribute="centerX" secondItem="ZtE-tj-AHv" secondAttribute="centerX" id="D5H-uP-ux4"/>
+                                    <constraint firstItem="3aA-pO-hRw" firstAttribute="top" secondItem="Kwy-GX-u2y" secondAttribute="bottom" constant="54" id="Obw-QD-sUi"/>
+                                    <constraint firstAttribute="width" constant="240" id="QHf-hs-oMp"/>
+                                    <constraint firstAttribute="trailing" secondItem="3aA-pO-hRw" secondAttribute="trailing" id="RD0-Qg-JtI"/>
+                                    <constraint firstItem="Kwy-GX-u2y" firstAttribute="centerX" secondItem="ZtE-tj-AHv" secondAttribute="centerX" id="VDQ-Ne-mNr"/>
+                                    <constraint firstItem="b7S-Qx-ohP" firstAttribute="top" secondItem="3aA-pO-hRw" secondAttribute="bottom" constant="10" id="Z3o-Vw-pOS"/>
+                                    <constraint firstAttribute="height" constant="180" id="ZKv-U7-OYk"/>
+                                    <constraint firstItem="3aA-pO-hRw" firstAttribute="leading" secondItem="ZtE-tj-AHv" secondAttribute="leading" id="a2r-NW-6cp"/>
+                                    <constraint firstAttribute="bottom" secondItem="3aA-pO-hRw" secondAttribute="bottom" constant="49" id="beZ-Nl-Uqu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="WWh-rp-FHv" secondAttribute="bottom" id="DTM-nl-Tl6"/>
+                            <constraint firstItem="WWh-rp-FHv" firstAttribute="leading" secondItem="yiM-mu-IwU" secondAttribute="leading" id="HZe-2N-MBB"/>
+                            <constraint firstAttribute="trailing" secondItem="WWh-rp-FHv" secondAttribute="trailing" id="NSa-F3-TGu"/>
+                            <constraint firstItem="WWh-rp-FHv" firstAttribute="top" secondItem="yiM-mu-IwU" secondAttribute="top" id="jh5-kP-gVT"/>
+                            <constraint firstItem="ZtE-tj-AHv" firstAttribute="centerX" secondItem="yiM-mu-IwU" secondAttribute="centerX" id="l5J-3R-DT5"/>
+                            <constraint firstItem="ZtE-tj-AHv" firstAttribute="centerY" secondItem="yiM-mu-IwU" secondAttribute="centerY" id="vHq-DQ-FP1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JeC-r7-kGE"/>
+                    </view>
+                    <connections>
+                        <outlet property="outsideView" destination="WWh-rp-FHv" id="jHq-8A-HRV"/>
+                        <outlet property="signUpPopUpBorderView" destination="3aA-pO-hRw" id="7qG-gd-hBq"/>
+                        <outlet property="signUpPopUpButton" destination="b7S-Qx-ohP" id="vll-qK-bgP"/>
+                        <outlet property="signUpPopUpTitle" destination="Kwy-GX-u2y" id="5re-Cc-wJd"/>
+                        <outlet property="signUpPopUpView" destination="ZtE-tj-AHv" id="gbX-an-kKI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DZ3-ai-y90" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="246"/>
+        </scene>
+    </scenes>
+</document>

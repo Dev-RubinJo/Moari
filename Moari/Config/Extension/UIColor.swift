@@ -50,4 +50,19 @@ extension UIColor {
     @nonobjc class var cursorColor: UIColor {
       return UIColor(red: 194.0 / 255.0, green: 24.0 / 255.0, blue: 91.0 / 255.0, alpha: 1.0)
     }
+    
+    /// SignUp PopUp Border Color
+    @nonobjc class var popUpBorderColor: UIColor {
+      return UIColor(white: 224.0 / 255.0, alpha: 1.0)
+    }
+    
+    /// CategoryVC Cell Border Color If It is not exist
+    @nonobjc class var notExistCategoryCellBorderColor: UIColor {
+        return UIColor(red: 106.0 / 255.0, green: 110.0 / 255.0, blue: 120.0 / 255.0, alpha: 1.0)
+    }
+    
+    /// CategoryVC Cell Border Color If It exist
+    @nonobjc class var existCategoryCellBorderColor: UIColor {
+        return UIColor(red: 154.0 / 255.0, green: 166.0 / 255.0, blue: 173.0 / 255.0, alpha: 1.0)
+    }
 }

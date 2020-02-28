@@ -6,4 +6,20 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
+
+struct SignUpResponse {
+    var isSuccess: Bool!
+    var code: Int!
+    var message: String!
+}
+extension SignUpResponse: Mappable {
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        isSuccess <- map["isSuccess"]
+        code <- map["code"]
+        message <- map["message"]
+    }
+}

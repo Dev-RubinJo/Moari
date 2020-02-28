@@ -37,6 +37,9 @@ extension SplashVC: SplashVCRouterDelegate {
     
     func presentMainVC() {
         // TODO: makeMainVC func 만들어서 적용하기, set what is First. Curation? Category?
+        let mainVC = MainVC.makeMainVC
+        self.window?.rootViewController = mainVC
+        self.window?.makeKeyAndVisible()
     }
     
     func presentSignInVC() {
