@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 extension SignInVC: SignInVCRouterDelegate {
     
@@ -35,7 +36,9 @@ extension SignInVC: SignInVCRouterDelegate {
     }
     // TODO: MainVC 만들어서 넣기
     func presentMainVC() {
-        let mainVC = MainVC.makeMainVC
+        let mainRootVC = MainVC.makeMainVC
+        let mainVC = SideMenuNavigationController(rootViewController: mainRootVC)
+        
         self.window?.rootViewController = mainVC
         self.window?.makeKeyAndVisible()
     }

@@ -16,43 +16,24 @@ class CurationVC: BaseVC, CurationVCProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setColorModeUI()
         
-        self.tabBarController?.tabBar.isHidden = true
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.setCurationVCUI()
+        self.initTapListener()
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        self.setColorModeUI()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setCurationVCUI()
+        self.navigationController?.navigationBar.barStyle = .black
+        self.setNeedsStatusBarAppearanceUpdate()
     }
     
-    func setLightModeUI() {
-        self.logoButton.setImage(UIImage(named: "navigationTitleLogoCurationLight"), for: .normal)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.barStyle = .default
     }
     
-    func setDarkModeUI() {
-        self.logoButton.setImage(UIImage(named: "navigationTitleLogoCurationDark"), for: .normal)
-    }
-    
-    func setSystemColorModeUI() {
-        if self.isDarkMode {
-            self.setDarkModeUI()
-        } else {
-            self.setLightModeUI()
-        }
-    }
-    
-    func setColorModeUI() {
-        switch self.theme {
-        case 0:
-            self.setLightModeUI()
-        case 1:
-            self.setDarkModeUI()
-        case 2:
-            self.setSystemColorModeUI()
-        default:
-            self.setLightModeUI()
-        }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

@@ -10,7 +10,9 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell {
 
-    @IBOutlet weak var categoryCellBackgroundView: UIView!
+    @IBOutlet weak var categoryTitleLabel: UILabel!
+    @IBOutlet weak var categotyCellBackgroundView: UIView!
+    @IBOutlet weak var categoryCellBorderView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

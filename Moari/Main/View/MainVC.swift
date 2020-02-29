@@ -7,32 +7,52 @@
 //
 
 import UIKit
+import SideMenu
 
-class MainVC: UITabBarController {
+class MainVC: UITabBarController, MainVCDelegate {
+    
+    static let shared: MainVCDelegate = MainVC()
+    let menuVC = SideMenuNavigationController(rootViewController: DrawerVC())
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.delegate = self
         
+        SideMenuManager.default.leftMenuNavigationController = menuVC
+        
+        let presentationStyle = SideMenuPresentationStyle.menuSlideIn
+        presentationStyle.menuStartAlpha = CGFloat(1.0)
+        presentationStyle.menuScaleFactor = CGFloat(1.0)
+        presentationStyle.onTopShadowOpacity = 0
+        presentationStyle.presentingEndAlpha = CGFloat(1.0)
+        presentationStyle.presentingScaleFactor = CGFloat(1.0)
+
+        var settings = SideMenuSettings()
+        settings.presentationStyle = presentationStyle
+        settings.menuWidth = min(view.frame.width, view.frame.height) * 0.64
+        settings.statusBarEndAlpha = 0
+        menuVC.settings = settings
+        
         let categoryVC = UINavigationController(rootViewController: CategoryVC.makeCategoryVC)
-        categoryVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         let curationVC = UINavigationController(rootViewController: CurationVC.makeCurationVC)
-        curationVC.tabBarItem = UITabBarItem(tabBarSystemItem: .recents, tag: 1)
         
         let tabbarList = [categoryVC, curationVC]
         self.viewControllers = tabbarList
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.navigationController?.navigationBar.isHidden = true
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        self.navigationController?.navigationBar.isHidden = false
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.barStyle = .black
+        self.setNeedsStatusBarAppearanceUpdate()
+        self.navigationController?.navigationBar.isHidden = true
+        
+        SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: view)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     static var makeMainVC: MainVC {
         get {
@@ -40,6 +60,19 @@ class MainVC: UITabBarController {
             return vc
         }
     }
+    
+    func setMainVCNavigationBar() {
+        
+    }
+    
+    func didTapDrawerMenuButton() {
+        self.navigationController?.pushViewController(self.menuVC, animated: true)
+    }
+    
+    func didTapAddReviewButton() {
+        
+    }
+        
 }
 // MARK: - UITabBarControllerDelegate
 extension MainVC: UITabBarControllerDelegate {
@@ -59,6 +92,7 @@ extension MainVC: UITabBarControllerDelegate {
  A set of methods for implementing the animations for a custom view controller transition.
  ref: https://developer.apple.com/documentation/uikit/uiviewcontrolleranimatedtransitioning
  */
+
 final class TabBarAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
 
     /*
@@ -68,7 +102,7 @@ final class TabBarAnimatedTransitioning: NSObject, UIViewControllerAnimatedTrans
         guard let destination = transitionContext.view(forKey: UITransitionContextViewKey.to) else { return }
 
         destination.alpha = 0.0
-        destination.transform = .init(scaleX: 1.5, y: 1.5)
+        destination.transform = .init(scaleX: 1, y: 1)
         transitionContext.containerView.addSubview(destination)
 
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
@@ -83,5 +117,4 @@ final class TabBarAnimatedTransitioning: NSObject, UIViewControllerAnimatedTrans
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.25
     }
-
 }

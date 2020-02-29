@@ -17,9 +17,18 @@ extension CategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as? CategoryCell else {
             return UICollectionViewCell()
         }
+        if indexPath.item < 4 {
+            cell.categotyCellBackgroundView.alpha = 0.2
+            cell.categoryCellBorderView.alpha = 0.6
+            cell.categoryCellBorderView.layer.borderColor = UIColor.white.cgColor
+            cell.categoryCellBorderView.layer.borderWidth = 0.7
+        } else {
+            cell.categotyCellBackgroundView.alpha = 0.1
+            cell.categoryCellBorderView.alpha = 0.3
+            cell.categoryCellBorderView.layer.borderColor = UIColor.white.cgColor
+            cell.categoryCellBorderView.layer.borderWidth = 0.7
+        }
         
-        cell.categoryCellBackgroundView.layer.borderColor = UIColor.notExistCategoryCellBorderColor.cgColor
-        cell.categoryCellBackgroundView.layer.borderWidth = 1
         
         return cell
     }

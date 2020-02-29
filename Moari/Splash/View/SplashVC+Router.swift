@@ -8,6 +8,8 @@
 
 import UIKit
 
+import SideMenu
+
 extension SplashVC: SplashVCRouterDelegate {
     
     weak var window: UIWindow? {
@@ -36,8 +38,9 @@ extension SplashVC: SplashVCRouterDelegate {
     }
     
     func presentMainVC() {
-        // TODO: makeMainVC func 만들어서 적용하기, set what is First. Curation? Category?
-        let mainVC = MainVC.makeMainVC
+        let mainRootVC = MainVC.makeMainVC
+        let mainVC = SideMenuNavigationController(rootViewController: mainRootVC)
+        
         self.window?.rootViewController = mainVC
         self.window?.makeKeyAndVisible()
     }

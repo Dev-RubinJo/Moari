@@ -23,14 +23,19 @@ class BaseVC: UIViewController {
 //        self.tabBarController?.tabBar.isHidden = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.initBaseVC()
+    }
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         switch self.isIphone {
         case .iPhone:
             return [.portrait]
         case .iPad:
             return [.portrait, .landscape]
-        @unknown case _:
-            return [.portrait]
+//        @unknown case _:
+//            return [.portrait]
         }
     }
     

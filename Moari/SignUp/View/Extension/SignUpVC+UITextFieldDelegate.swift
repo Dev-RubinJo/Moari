@@ -69,6 +69,5 @@ extension SignUpVC: UITextFieldDelegate {
         default:
             return false
         }
-        return false
     }
 }

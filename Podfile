@@ -13,6 +13,7 @@ target 'Moari' do
   pod 'Kingfisher', '~> 5.0'
   pod 'SwiftyJSON'
   pod 'RealmSwift'
+  pod 'SideMenu', '~> 6.0'
   
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'

@@ -17,31 +17,41 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYX-Pj-o98">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7F-DL-cNg">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdB-ji-mUS">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jk5-wT-mlr">
-                        <rect key="frame" x="20.5" y="39.5" width="59" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="19" y="39" width="62.5" height="22"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="QdB-ji-mUS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2jQ-Bw-2cD"/>
+                <constraint firstAttribute="trailing" secondItem="QdB-ji-mUS" secondAttribute="trailing" id="421-y5-NaF"/>
                 <constraint firstItem="Jk5-wT-mlr" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="FqE-2w-qyA"/>
+                <constraint firstItem="F7F-DL-cNg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HV9-GE-giU"/>
+                <constraint firstAttribute="trailing" secondItem="F7F-DL-cNg" secondAttribute="trailing" id="MRP-A5-Njc"/>
+                <constraint firstAttribute="bottom" secondItem="F7F-DL-cNg" secondAttribute="bottom" id="TkB-jj-XhT"/>
+                <constraint firstAttribute="bottom" secondItem="QdB-ji-mUS" secondAttribute="bottom" id="Wg8-pq-tXF"/>
+                <constraint firstItem="F7F-DL-cNg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="a4c-Oo-o4U"/>
+                <constraint firstItem="QdB-ji-mUS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gGn-cS-Lci"/>
                 <constraint firstItem="Jk5-wT-mlr" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="hIj-Vh-u0K"/>
-                <constraint firstItem="hYX-Pj-o98" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lci-kZ-2fU"/>
-                <constraint firstAttribute="bottom" secondItem="hYX-Pj-o98" secondAttribute="bottom" id="swf-A3-jC3"/>
-                <constraint firstAttribute="trailing" secondItem="hYX-Pj-o98" secondAttribute="trailing" id="tGs-N0-DHC"/>
-                <constraint firstItem="hYX-Pj-o98" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yCB-Vf-64w"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="categoryCellBackgroundView" destination="hYX-Pj-o98" id="AB5-K9-xwO"/>
+                <outlet property="categoryCellBorderView" destination="QdB-ji-mUS" id="LJL-Ia-FsR"/>
+                <outlet property="categoryTitleLabel" destination="Jk5-wT-mlr" id="UKP-AV-BD6"/>
+                <outlet property="categotyCellBackgroundView" destination="F7F-DL-cNg" id="udt-oq-j2n"/>
             </connections>
-            <point key="canvasLocation" x="139" y="154"/>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </collectionViewCell>
     </objects>
 </document>

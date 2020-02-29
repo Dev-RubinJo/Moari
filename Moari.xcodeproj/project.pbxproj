@@ -28,6 +28,12 @@
 		430B4E882408B310004046F9 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430B4E862408B310004046F9 /* CategoryCell.xib */; };
 		430B4E8B2408CCEB004046F9 /* CategoryVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4E8A2408CCEB004046F9 /* CategoryVC+SetUI.swift */; };
 		430B4E8D2408D0C2004046F9 /* CategoryVC+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4E8C2408D0C2004046F9 /* CategoryVC+UICollectionView.swift */; };
+		430B4E9424090CFD004046F9 /* CurationVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4E9324090CFD004046F9 /* CurationVC+SetUI.swift */; };
+		430B4EA02409441F004046F9 /* DrawerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4E9E2409441F004046F9 /* DrawerVC.swift */; };
+		430B4EA12409441F004046F9 /* DrawerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430B4E9F2409441F004046F9 /* DrawerVC.xib */; };
+		432E0F94240A2C0C00ADD122 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0F92240A2C0C00ADD122 /* TestVC.swift */; };
+		432E0F95240A2C0C00ADD122 /* TestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 432E0F93240A2C0C00ADD122 /* TestVC.xib */; };
+		432E0FC9240A586000ADD122 /* MainProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FC8240A586000ADD122 /* MainProtocol.swift */; };
 		434D2B3A23F2A7FE00E1E0D1 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */; };
 		4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198823F1A2B7008B9F84 /* AppDelegate.swift */; };
 		4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */; };
@@ -141,6 +147,12 @@
 		430B4E862408B310004046F9 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		430B4E8A2408CCEB004046F9 /* CategoryVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryVC+SetUI.swift"; sourceTree = "<group>"; };
 		430B4E8C2408D0C2004046F9 /* CategoryVC+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryVC+UICollectionView.swift"; sourceTree = "<group>"; };
+		430B4E9324090CFD004046F9 /* CurationVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurationVC+SetUI.swift"; sourceTree = "<group>"; };
+		430B4E9E2409441F004046F9 /* DrawerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerVC.swift; sourceTree = "<group>"; };
+		430B4E9F2409441F004046F9 /* DrawerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerVC.xib; sourceTree = "<group>"; };
+		432E0F92240A2C0C00ADD122 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		432E0F93240A2C0C00ADD122 /* TestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestVC.xib; sourceTree = "<group>"; };
+		432E0FC8240A586000ADD122 /* MainProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocol.swift; sourceTree = "<group>"; };
 		434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 		4362198523F1A2B7008B9F84 /* Moari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4362198823F1A2B7008B9F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -262,6 +274,78 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		430B4E8E2408F395004046F9 /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				430B4E8F2408F3A5004046F9 /* AddCategory */,
+				430B4E902408F3AE004046F9 /* EditCategory */,
+				430B4E912408F3BD004046F9 /* DeleteCategory */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
+		430B4E8F2408F3A5004046F9 /* AddCategory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddCategory;
+			sourceTree = "<group>";
+		};
+		430B4E902408F3AE004046F9 /* EditCategory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EditCategory;
+			sourceTree = "<group>";
+		};
+		430B4E912408F3BD004046F9 /* DeleteCategory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeleteCategory;
+			sourceTree = "<group>";
+		};
+		430B4E9224090CE7004046F9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				430B4E9324090CFD004046F9 /* CurationVC+SetUI.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		430B4E952409416D004046F9 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				430B4E96240941A8004046F9 /* Config */,
+				430B4E9D24094404004046F9 /* View */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
+		430B4E96240941A8004046F9 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		430B4E9D24094404004046F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				430B4E9E2409441F004046F9 /* DrawerVC.swift */,
+				430B4E9F2409441F004046F9 /* DrawerVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		432E0FC7240A584F00ADD122 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				432E0FC8240A586000ADD122 /* MainProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		434D2B3723F2A7E100E1E0D1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +381,8 @@
 			isa = PBXGroup;
 			children = (
 				430B4E6224079256004046F9 /* View */,
+				432E0FC7240A584F00ADD122 /* Protocol */,
+				430B4E952409416D004046F9 /* Drawer */,
 				435EAC3C23FA9E8F00FF1AD8 /* Category */,
 				435EAC3D23FA9E9A00FF1AD8 /* Curation */,
 			);
@@ -306,6 +392,7 @@
 		435EAC3C23FA9E8F00FF1AD8 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				430B4E8E2408F395004046F9 /* PopUp */,
 				435EAC4B23FAA06200FF1AD8 /* View */,
 				435EAC4A23FAA06100FF1AD8 /* Actor */,
 				435EAC4923FAA05F00FF1AD8 /* Network */,
@@ -486,6 +573,7 @@
 		435EAC4F23FAA07D00FF1AD8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				430B4E9224090CE7004046F9 /* Extension */,
 				430B4E6B240792EE004046F9 /* CurationVC.swift */,
 				430B4E6C240792EE004046F9 /* CurationVC.xib */,
 				430B4E752407947F004046F9 /* CurationVC+Router.swift */,
@@ -545,6 +633,8 @@
 		435EAC5723FAA0AD00FF1AD8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				432E0F92240A2C0C00ADD122 /* TestVC.swift */,
+				432E0F93240A2C0C00ADD122 /* TestVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -919,6 +1009,8 @@
 				4362199523F1A2B7008B9F84 /* LaunchScreen.storyboard in Resources */,
 				430B4E882408B310004046F9 /* CategoryCell.xib in Resources */,
 				43CF86A723F29CA00062B846 /* Localizable.strings in Resources */,
+				430B4EA12409441F004046F9 /* DrawerVC.xib in Resources */,
+				432E0F95240A2C0C00ADD122 /* TestVC.xib in Resources */,
 				430B4E6A240792DD004046F9 /* CategoryVC.xib in Resources */,
 				43CF86C423F29DD00062B846 /* SplashVC.xib in Resources */,
 				4362199223F1A2B7008B9F84 /* Assets.xcassets in Resources */,
@@ -1051,16 +1143,20 @@
 				439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */,
 				439BE63E23FE29A000EC77A9 /* FindEmailPasswordDataResponse.swift in Sources */,
 				4365F75824062368008232EF /* SignUpVC+SetUI.swift in Sources */,
+				430B4E9424090CFD004046F9 /* CurationVC+SetUI.swift in Sources */,
 				43CF869A23F29C1A0062B846 /* UIButton.swift in Sources */,
 				438402212402646B00ECA42E /* SignUpVC.swift in Sources */,
 				43D53E5423FAE9DC005DFC4A /* SignInDataManager.swift in Sources */,
+				432E0F94240A2C0C00ADD122 /* TestVC.swift in Sources */,
 				4384020D2401037B00ECA42E /* SplashActor+Alert.swift in Sources */,
 				43CF86C323F29DD00062B846 /* SplashVC.swift in Sources */,
 				438402282402649300ECA42E /* SignUpDataResponse.swift in Sources */,
 				430B4E782407948B004046F9 /* CategoryVC+Router.swift in Sources */,
+				430B4EA02409441F004046F9 /* DrawerVC.swift in Sources */,
 				4365F75C24067DC3008232EF /* SignUpActor+Alert.swift in Sources */,
 				439BE64023FE29AB00EC77A9 /* FindEmailPasswordActor.swift in Sources */,
 				430B4E822408A4A6004046F9 /* UIView.swift in Sources */,
+				432E0FC9240A586000ADD122 /* MainProtocol.swift in Sources */,
 				43840213240105D500ECA42E /* SignInActor+Alert.swift in Sources */,
 				43CF86A423F29C820062B846 /* ColorPalette.swift in Sources */,
 				43CF86C023F29DC10062B846 /* SplashDataResponse.swift in Sources */,

@@ -13,6 +13,7 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
+    @IBOutlet weak var categoryTitleLabel: UILabel!
     @IBOutlet weak var categoryVCTitleLabelTopConstraint: NSLayoutConstraint!
     
 //    @IBAction func makeImageTest(_ sender: Any) {
@@ -23,12 +24,14 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
 //    @IBOutlet weak var testImageView: UIImageView!
     
     weak var actor: CategoryActorDelegate?
+    weak var mainDelegate: MainVCDelegate?
     
     var logoButton: UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setColorModeUI()
+
+        self.initTapListener()
         self.setCategoryVCUI()
         
         let categoryCellNib = UINib(nibName: "CategoryCell", bundle: nil)
@@ -36,44 +39,11 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
         
         self.categoryCollectionView.delegate = self
         self.categoryCollectionView.dataSource = self
-        
-        self.tabBarController?.tabBar.isHidden = true
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        logoButton.addTarget(self, action: #selector(self.test(_:)), for: .touchUpInside)
-        self.navigationItem.titleView = self.logoButton
+        self.mainDelegate = MainVC.shared
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        self.setColorModeUI()
-    }
-    
-    func setLightModeUI() {
-        self.logoButton.setImage(UIImage(named: "navigationTitleLogoCategoryDark"), for: .normal)
-    }
-    
-    func setDarkModeUI() {
-        self.logoButton.setImage(UIImage(named: "navigationTitleLogoCategoryDark"), for: .normal)
-    }
-    
-    func setSystemColorModeUI() {
-        if self.isDarkMode {
-            self.setDarkModeUI()
-        } else {
-            self.setLightModeUI()
-        }
-    }
-    
-    func setColorModeUI() {
-        switch self.theme {
-        case 0:
-            self.setLightModeUI()
-        case 1:
-            self.setDarkModeUI()
-        case 2:
-            self.setSystemColorModeUI()
-        default:
-            self.setLightModeUI()
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setCategoryVCUI()
     }
 }
