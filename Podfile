@@ -14,6 +14,9 @@ target 'Moari' do
   pod 'SwiftyJSON'
   pod 'RealmSwift'
   
+  # Star Rating Library
+  pod 'Cosmos', '~> 21.0'
+  
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
   pod 'FirebaseStorage'

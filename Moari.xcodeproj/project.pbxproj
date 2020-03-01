@@ -31,7 +31,6 @@
 		430B4E9424090CFD004046F9 /* CurationVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4E9324090CFD004046F9 /* CurationVC+SetUI.swift */; };
 		430B4EA02409441F004046F9 /* DrawerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4E9E2409441F004046F9 /* DrawerVC.swift */; };
 		430B4EA12409441F004046F9 /* DrawerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430B4E9F2409441F004046F9 /* DrawerVC.xib */; };
-		432E0FC9240A586000ADD122 /* MainProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FC8240A586000ADD122 /* MainProtocol.swift */; };
 		432E0FCD240A8B8A00ADD122 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FCA240A8B8A00ADD122 /* MenuViewController.swift */; };
 		432E0FCE240A8B8A00ADD122 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FCB240A8B8A00ADD122 /* RootViewController.swift */; };
 		432E0FCF240A8B8A00ADD122 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FCC240A8B8A00ADD122 /* DrawerController.swift */; };
@@ -46,6 +45,13 @@
 		432E0FE3240B801900ADD122 /* DeleteCategoryPopUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FE2240B801800ADD122 /* DeleteCategoryPopUpDelegate.swift */; };
 		432E0FE8240B869100ADD122 /* ReviewDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FE6240B869100ADD122 /* ReviewDetailVC.swift */; };
 		432E0FE9240B869100ADD122 /* ReviewDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 432E0FE7240B869100ADD122 /* ReviewDetailVC.xib */; };
+		432E0FF4240BA78900ADD122 /* AddReviewActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FF3240BA78900ADD122 /* AddReviewActor.swift */; };
+		432E0FF6240BA79400ADD122 /* AddReviewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FF5240BA79400ADD122 /* AddReviewDataManager.swift */; };
+		432E0FF8240BA7A200ADD122 /* AddReviewDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FF7240BA7A200ADD122 /* AddReviewDataResponse.swift */; };
+		432E0FFA240BA7B000ADD122 /* AddReviewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FF9240BA7B000ADD122 /* AddReviewProtocol.swift */; };
+		432E0FFD240BA80F00ADD122 /* AddReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FFB240BA80F00ADD122 /* AddReviewVC.swift */; };
+		432E0FFE240BA80F00ADD122 /* AddReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 432E0FFC240BA80F00ADD122 /* AddReviewVC.xib */; };
+		432E1000240BBBB100ADD122 /* AddReviewVC+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FFF240BBBB100ADD122 /* AddReviewVC+Router.swift */; };
 		434D2B3A23F2A7FE00E1E0D1 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */; };
 		4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198823F1A2B7008B9F84 /* AppDelegate.swift */; };
 		4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */; };
@@ -162,7 +168,6 @@
 		430B4E9324090CFD004046F9 /* CurationVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurationVC+SetUI.swift"; sourceTree = "<group>"; };
 		430B4E9E2409441F004046F9 /* DrawerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerVC.swift; sourceTree = "<group>"; };
 		430B4E9F2409441F004046F9 /* DrawerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerVC.xib; sourceTree = "<group>"; };
-		432E0FC8240A586000ADD122 /* MainProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocol.swift; sourceTree = "<group>"; };
 		432E0FCA240A8B8A00ADD122 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		432E0FCB240A8B8A00ADD122 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		432E0FCC240A8B8A00ADD122 /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
@@ -177,6 +182,13 @@
 		432E0FE2240B801800ADD122 /* DeleteCategoryPopUpDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCategoryPopUpDelegate.swift; sourceTree = "<group>"; };
 		432E0FE6240B869100ADD122 /* ReviewDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailVC.swift; sourceTree = "<group>"; };
 		432E0FE7240B869100ADD122 /* ReviewDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewDetailVC.xib; sourceTree = "<group>"; };
+		432E0FF3240BA78900ADD122 /* AddReviewActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewActor.swift; sourceTree = "<group>"; };
+		432E0FF5240BA79400ADD122 /* AddReviewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewDataManager.swift; sourceTree = "<group>"; };
+		432E0FF7240BA7A200ADD122 /* AddReviewDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewDataResponse.swift; sourceTree = "<group>"; };
+		432E0FF9240BA7B000ADD122 /* AddReviewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewProtocol.swift; sourceTree = "<group>"; };
+		432E0FFB240BA80F00ADD122 /* AddReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewVC.swift; sourceTree = "<group>"; };
+		432E0FFC240BA80F00ADD122 /* AddReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddReviewVC.xib; sourceTree = "<group>"; };
+		432E0FFF240BBBB100ADD122 /* AddReviewVC+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddReviewVC+Router.swift"; sourceTree = "<group>"; };
 		434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 		4362198523F1A2B7008B9F84 /* Moari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4362198823F1A2B7008B9F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -374,19 +386,50 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		432E0FC7240A584F00ADD122 /* Protocol */ = {
+		432E0FEA240B86AA00ADD122 /* AddReview */ = {
 			isa = PBXGroup;
 			children = (
-				432E0FC8240A586000ADD122 /* MainProtocol.swift */,
+				432E0FEE240B9F6F00ADD122 /* View */,
+				432E0FED240B9F6D00ADD122 /* Actor */,
+				432E0FEC240B9F6B00ADD122 /* Network */,
+				432E0FEB240B9F6400ADD122 /* Protocol */,
+			);
+			path = AddReview;
+			sourceTree = "<group>";
+		};
+		432E0FEB240B9F6400ADD122 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				432E0FF9240BA7B000ADD122 /* AddReviewProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		432E0FEA240B86AA00ADD122 /* AddReview */ = {
+		432E0FEC240B9F6B00ADD122 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				432E0FF5240BA79400ADD122 /* AddReviewDataManager.swift */,
+				432E0FF7240BA7A200ADD122 /* AddReviewDataResponse.swift */,
 			);
-			path = AddReview;
+			path = Network;
+			sourceTree = "<group>";
+		};
+		432E0FED240B9F6D00ADD122 /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+				432E0FF3240BA78900ADD122 /* AddReviewActor.swift */,
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
+		432E0FEE240B9F6F00ADD122 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				432E0FFB240BA80F00ADD122 /* AddReviewVC.swift */,
+				432E0FFC240BA80F00ADD122 /* AddReviewVC.xib */,
+				432E0FFF240BBBB100ADD122 /* AddReviewVC+Router.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		434D2B3723F2A7E100E1E0D1 /* Main */ = {
@@ -424,7 +467,6 @@
 			isa = PBXGroup;
 			children = (
 				430B4E6224079256004046F9 /* View */,
-				432E0FC7240A584F00ADD122 /* Protocol */,
 				430B4E952409416D004046F9 /* Drawer */,
 				435EAC3C23FA9E8F00FF1AD8 /* Category */,
 				435EAC3D23FA9E9A00FF1AD8 /* Curation */,
@@ -1050,6 +1092,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				432E0FFE240BA80F00ADD122 /* AddReviewVC.xib in Resources */,
 				4362199523F1A2B7008B9F84 /* LaunchScreen.storyboard in Resources */,
 				430B4E882408B310004046F9 /* CategoryCell.xib in Resources */,
 				43CF86A723F29CA00062B846 /* Localizable.strings in Resources */,
@@ -1169,6 +1212,7 @@
 				439BE63A23FE294E00EC77A9 /* FindEmailPasswordProtocol.swift in Sources */,
 				4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */,
 				430B4E6D240792EE004046F9 /* CurationVC.swift in Sources */,
+				432E1000240BBBB100ADD122 /* AddReviewVC+Router.swift in Sources */,
 				43840215240117BA00ECA42E /* FindEmailPasswordVC+Router.swift in Sources */,
 				4384021C2401590900ECA42E /* FindEmailPasswordVC+SetUI.swift in Sources */,
 				4365F7622406B69C008232EF /* SignUp.swift in Sources */,
@@ -1200,16 +1244,18 @@
 				43D53E5423FAE9DC005DFC4A /* SignInDataManager.swift in Sources */,
 				432E0FD5240B7F1F00ADD122 /* AddCategoryPopUpProtocol.swift in Sources */,
 				4384020D2401037B00ECA42E /* SplashActor+Alert.swift in Sources */,
+				432E0FF4240BA78900ADD122 /* AddReviewActor.swift in Sources */,
 				43CF86C323F29DD00062B846 /* SplashVC.swift in Sources */,
 				438402282402649300ECA42E /* SignUpDataResponse.swift in Sources */,
 				430B4E782407948B004046F9 /* CategoryVC+Router.swift in Sources */,
 				432E0FCF240A8B8A00ADD122 /* DrawerController.swift in Sources */,
 				430B4EA02409441F004046F9 /* DrawerVC.swift in Sources */,
+				432E0FFD240BA80F00ADD122 /* AddReviewVC.swift in Sources */,
 				4365F75C24067DC3008232EF /* SignUpActor+Alert.swift in Sources */,
 				439BE64023FE29AB00EC77A9 /* FindEmailPasswordActor.swift in Sources */,
 				430B4E822408A4A6004046F9 /* UIView.swift in Sources */,
-				432E0FC9240A586000ADD122 /* MainProtocol.swift in Sources */,
 				43840213240105D500ECA42E /* SignInActor+Alert.swift in Sources */,
+				432E0FF8240BA7A200ADD122 /* AddReviewDataResponse.swift in Sources */,
 				43CF86A423F29C820062B846 /* ColorPalette.swift in Sources */,
 				43CF86C023F29DC10062B846 /* SplashDataResponse.swift in Sources */,
 				432E0FCE240A8B8A00ADD122 /* RootViewController.swift in Sources */,
@@ -1222,9 +1268,11 @@
 				430B4E69240792DD004046F9 /* CategoryVC.swift in Sources */,
 				438402262402648300ECA42E /* SignUpDataManager.swift in Sources */,
 				4384022A2402649D00ECA42E /* SignUpProtocol.swift in Sources */,
+				432E0FF6240BA79400ADD122 /* AddReviewDataManager.swift in Sources */,
 				430B4E872408B310004046F9 /* CategoryCell.swift in Sources */,
 				4365F75E240692D4008232EF /* SignUpVC+UITextFieldDelegate.swift in Sources */,
 				432E0FDB240B7F4F00ADD122 /* EditCategoryPopUpProtocol.swift in Sources */,
+				432E0FFA240BA7B000ADD122 /* AddReviewProtocol.swift in Sources */,
 				430B4E8B2408CCEB004046F9 /* CategoryVC+SetUI.swift in Sources */,
 				4384021E2402522900ECA42E /* FindEmailPasswordActor+Alert.swift in Sources */,
 				439BE64323FE29C400EC77A9 /* FindEmailPasswordVC.swift in Sources */,

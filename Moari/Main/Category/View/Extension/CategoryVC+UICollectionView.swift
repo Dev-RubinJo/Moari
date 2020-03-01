@@ -9,6 +9,7 @@
 import UIKit
 
 extension CategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8
     }
@@ -28,9 +29,12 @@ extension CategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             cell.categoryCellBorderView.layer.borderColor = UIColor.white.cgColor
             cell.categoryCellBorderView.layer.borderWidth = 0.7
         }
-        
-        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // TODO: 카테고리를 선택하고 선택한 카테고리의 리뷰들 띄우기
+        print(indexPath.item)
     }
     
     // 기종별 Cell 사이즈 지정

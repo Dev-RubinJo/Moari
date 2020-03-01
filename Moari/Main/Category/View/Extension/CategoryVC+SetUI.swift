@@ -66,6 +66,9 @@ extension CategoryVC {
     }
 
     @objc func pressAddReviewButton(_ sender: UIBarButtonItem) {
-
+        // Actor로 옮기기
+        let addReviewVC = AddReviewVC.makeAddReviewVC
+//        addReviewVC.modalPresentationStyle = .fullScreen
+        self.present(addReviewVC, animated: true, completion: nil)
     }
 }

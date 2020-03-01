@@ -1,5 +1,5 @@
 //
-//  ReviewDetailVC.swift
+//  AddReviewVC.swift
 //  Moari
 //
 //  Created by YooBin Jo on 2020/03/01.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ReviewDetailVC: BaseVC {
+class AddReviewVC: BaseVC, AddReviewVCProtocol {
+    
+    weak var actor: AddReviewActorDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
