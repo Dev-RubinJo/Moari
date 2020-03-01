@@ -67,6 +67,24 @@ class SignUpVC: BaseVC, SignUpVCProtocol {
         self.setColorModeUI()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        switch self.theme {
+        case 0:
+            return .default
+        case 1:
+            return .lightContent
+        case 2:
+            if #available(iOS 13.0, *) {
+                self.setSystemColorModeUI()
+            } else {
+                fallthrough
+            }
+            return .default
+        default:
+            return .default
+        }
+    }
+    
     func setLightModeUI() {
         self.emailTextField.backgroundColor = .textFieldGrayLight
         self.passwordTextField.backgroundColor = .textFieldGrayLight
@@ -75,7 +93,6 @@ class SignUpVC: BaseVC, SignUpVCProtocol {
         
         self.usingTermArrowImageView.image = UIImage(named: "goNextICLight")
         self.personalTermArrowImageView.image = UIImage(named: "goNextICLight")
-        UIApplication.shared.statusBarStyle = .default
     }
     
     func setDarkModeUI() {
@@ -86,7 +103,6 @@ class SignUpVC: BaseVC, SignUpVCProtocol {
         
         self.usingTermArrowImageView.image = UIImage(named: "goNextICDark")
         self.personalTermArrowImageView.image = UIImage(named: "goNextICDark")
-        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     func setSystemColorModeUI() {

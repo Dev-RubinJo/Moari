@@ -28,15 +28,6 @@ class MainVC: UITabBarController {
         self.viewControllers = tabbarList
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.navigationController?.navigationBar.barStyle = .black
-//    }
-//    
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
-//    }
-    
     static var makeMainVC: MainVC {
         get {
             let vc = MainVC()

@@ -38,8 +38,5 @@ extension CurationVC {
     
     @objc func pressAddReviewButton(_ sender: UIBarButtonItem) {
         
-        // Router로 옮기기
-        let vc = TestVC.makeTest
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

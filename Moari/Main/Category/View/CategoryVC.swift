@@ -36,6 +36,7 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setCategoryVCUI()
+        // Category, Curation 도메인 부터는 RootViewController 가 이니기 때문에 어쩔 수 없이 UIApplication의 statusBarStyle를 강제로 변환
         UIApplication.shared.statusBarStyle = .lightContent
         self.navigationController?.navigationBar.barStyle = .black
     }

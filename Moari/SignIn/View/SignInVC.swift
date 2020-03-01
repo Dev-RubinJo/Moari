@@ -58,6 +58,24 @@ class SignInVC: BaseVC, SignInVCProtocol {
         self.setColorModeUI()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        switch self.theme {
+        case 0:
+            return .default
+        case 1:
+            return .lightContent
+        case 2:
+            if #available(iOS 13.0, *) {
+                self.setSystemColorModeUI()
+            } else {
+                fallthrough
+            }
+            return .default
+        default:
+            return .default
+        }
+    }
+    
     func setLightModeUI() {
         self.logoImageView.image = UIImage(named: "logoImageLight")
         self.signInTitleLabel.textColor = .black
@@ -70,7 +88,6 @@ class SignInVC: BaseVC, SignInVCProtocol {
         
         self.findEmailPasswordLabel.textColor = .signInBottomLabels
         self.signUpLabel.textColor = .signInBottomLabels
-        UIApplication.shared.statusBarStyle = .default
     }
     
     func setDarkModeUI() {
@@ -85,7 +102,6 @@ class SignInVC: BaseVC, SignInVCProtocol {
         
         self.findEmailPasswordLabel.textColor = .signInBottomLabels
         self.signUpLabel.textColor = .signInBottomLabels
-        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     func setSystemColorModeUI() {

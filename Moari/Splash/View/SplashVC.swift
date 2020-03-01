@@ -29,14 +29,30 @@ class SplashVC: BaseVC, SplashVCProtocol {
         self.setColorModeUI()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        switch self.theme {
+        case 0:
+            return .default
+        case 1:
+            return .lightContent
+        case 2:
+            if #available(iOS 13.0, *) {
+                self.setSystemColorModeUI()
+            } else {
+                fallthrough
+            }
+            return .default
+        default:
+            return .default
+        }
+    }
+    
     func setLightModeUI() {
         self.logoImageView.image = UIImage(named: "logoImageLight")
-        UIApplication.shared.statusBarStyle = .default
     }
     
     func setDarkModeUI() {
         self.logoImageView.image = UIImage(named: "logoImageDark")
-        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     func setSystemColorModeUI() {
