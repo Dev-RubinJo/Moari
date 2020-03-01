@@ -8,8 +8,6 @@
 
 import UIKit
 
-import SideMenu
-
 extension SplashVC: SplashVCRouterDelegate {
     
     weak var window: UIWindow? {
@@ -38,9 +36,8 @@ extension SplashVC: SplashVCRouterDelegate {
     }
     
     func presentMainVC() {
-        let mainRootVC = MainVC.makeMainVC
-        let mainVC = SideMenuNavigationController(rootViewController: mainRootVC)
-        
+        let mainVC = MainVC.makeMainVC
+
         self.window?.rootViewController = mainVC
         self.window?.makeKeyAndVisible()
     }

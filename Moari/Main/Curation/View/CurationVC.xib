@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurationVC" customModule="Moari" customModuleProvider="target">
             <connections>
+                <outlet property="curationCollectionView" destination="cZQ-nx-mRJ" id="id6-rU-mIc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,17 +19,23 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="큐레이션" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cc-2W-WUs">
-                    <rect key="frame" x="155" y="430" width="104" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cZQ-nx-mRJ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oy6-ba-ZY9">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="3cc-2W-WUs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NWq-Ig-6Qc"/>
-                <constraint firstItem="3cc-2W-WUs" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="wXY-tj-lbe"/>
+                <constraint firstItem="cZQ-nx-mRJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AyX-o2-Y69"/>
+                <constraint firstAttribute="bottom" secondItem="cZQ-nx-mRJ" secondAttribute="bottom" id="OTt-j7-XvS"/>
+                <constraint firstItem="cZQ-nx-mRJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SSl-sg-SlJ"/>
+                <constraint firstAttribute="trailing" secondItem="cZQ-nx-mRJ" secondAttribute="trailing" id="kVh-22-KGl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>

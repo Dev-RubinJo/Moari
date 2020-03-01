@@ -21,7 +21,7 @@ class RootViewController: UINavigationController, UINavigationControllerDelegate
     
     weak var drawerDelegate: RootViewControllerDelegate?
     
-    public init(mainViewController: UIViewController, topNavigationLeftImage: UIImage?) {
+    public init(mainViewController: BaseVC, topNavigationLeftImage: UIImage?) {
         super.init(rootViewController: mainViewController)
         self.topNavigationLeftImage = topNavigationLeftImage
         self.menuButton = UIBarButtonItem(image: topNavigationLeftImage, style: .plain, target: self, action: #selector(self.handleMenuButton))

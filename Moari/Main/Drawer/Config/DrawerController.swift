@@ -39,7 +39,7 @@ class DrawerController: BaseVC, RootViewControllerDelegate {
         
         self.menuController.view.frame = CGRect(x: 0, y: 0, width: 0, height: self.view.bounds.height)
         self.addChild(self.menuController)
-//        self.view.addSubview(self.menuController.view)
+        self.view.addSubview(self.menuController.view)
         self.menuController.didMove(toParent: self)
         
         self.configureGestures()
@@ -52,19 +52,22 @@ class DrawerController: BaseVC, RootViewControllerDelegate {
         self.menuController.view.frame = CGRect(x: 0, y: 0, width: width , height: self.view.bounds.height)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     func toggleMenu() {
         self.isMenuExpanded = !self.isMenuExpanded
         let bounds = self.view.bounds
         let width: CGFloat = (self.isMenuExpanded) ? bounds.width * 2 / 3 : 0.0
-        if self.isMenuExpanded {
-            self.view.addSubview(self.menuController.view)
-            self.menuController.view.isHidden = false
-        } else {
-            
-        }
+//        if self.isMenuExpanded {
+//            self.view.addSubview(self.menuController.view)
+//        } else {
+//            self.menuController.removeFromParent()
+//        }
         
         
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.17, animations: {
             self.menuController.view.frame = CGRect(x: 0, y: 0, width: width, height: bounds.height)
             self.overlayView.alpha = (self.isMenuExpanded) ? 0.5 : 0.0
         }) { (success) in

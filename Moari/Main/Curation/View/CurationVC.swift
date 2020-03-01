@@ -9,7 +9,9 @@
 import UIKit
 
 class CurationVC: BaseVC, CurationVCProtocol {
-
+    
+    @IBOutlet weak var curationCollectionView: UICollectionView!
+    
     weak var actor: CurationActorDelegate?
     
     var logoButton: UIButton = UIButton()
@@ -24,16 +26,6 @@ class CurationVC: BaseVC, CurationVCProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setCurationVCUI()
-        self.navigationController?.navigationBar.barStyle = .black
-        self.setNeedsStatusBarAppearanceUpdate()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.barStyle = .default
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        UIApplication.shared.statusBarStyle = .lightContent
     }
 }

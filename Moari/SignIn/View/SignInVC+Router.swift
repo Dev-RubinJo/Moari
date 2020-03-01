@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SideMenu
 
 extension SignInVC: SignInVCRouterDelegate {
     
@@ -35,13 +34,27 @@ extension SignInVC: SignInVCRouterDelegate {
         }
     }
     // TODO: MainVC 만들어서 넣기
+    
     func presentMainVC() {
-        let mainRootVC = MainVC.makeMainVC
-        let mainVC = SideMenuNavigationController(rootViewController: mainRootVC)
+        let mainVC = MainVC.makeMainVC
         
         self.window?.rootViewController = mainVC
         self.window?.makeKeyAndVisible()
     }
+    
+//    func presentMainVC() {
+//        let mainRootVC = MainVC.makeMainVC
+//        let menuVC = DrawerVC()
+//        let mainVC = DrawerController()
+//
+//        mainVC.setViewController(mainRootVC, for: .none)
+//        mainVC.setViewController(menuVC, for: .left)
+//
+//
+//        self.window?.rootViewController = mainVC
+//        self.window?.makeKeyAndVisible()
+//    }
+    
     // TODO: FindEmailPasswordVC 만들어서 넣기
     func presentFindEmailPasswordVC() {
         let findVC = FindEmailPasswordVC.makeFindEmailPasswordVC

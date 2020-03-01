@@ -31,10 +31,12 @@ class SplashVC: BaseVC, SplashVCProtocol {
     
     func setLightModeUI() {
         self.logoImageView.image = UIImage(named: "logoImageLight")
+        UIApplication.shared.statusBarStyle = .default
     }
     
     func setDarkModeUI() {
         self.logoImageView.image = UIImage(named: "logoImageDark")
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     func setSystemColorModeUI() {

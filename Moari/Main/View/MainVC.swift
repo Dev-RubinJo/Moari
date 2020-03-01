@@ -7,52 +7,35 @@
 //
 
 import UIKit
-import SideMenu
 
-class MainVC: UITabBarController, MainVCDelegate {
-    
-    static let shared: MainVCDelegate = MainVC()
-    let menuVC = SideMenuNavigationController(rootViewController: DrawerVC())
+class MainVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        
-        SideMenuManager.default.leftMenuNavigationController = menuVC
-        
-        let presentationStyle = SideMenuPresentationStyle.menuSlideIn
-        presentationStyle.menuStartAlpha = CGFloat(1.0)
-        presentationStyle.menuScaleFactor = CGFloat(1.0)
-        presentationStyle.onTopShadowOpacity = 0
-        presentationStyle.presentingEndAlpha = CGFloat(1.0)
-        presentationStyle.presentingScaleFactor = CGFloat(1.0)
 
-        var settings = SideMenuSettings()
-        settings.presentationStyle = presentationStyle
-        settings.menuWidth = min(view.frame.width, view.frame.height) * 0.64
-        settings.statusBarEndAlpha = 0
-        menuVC.settings = settings
+        let categoryRootVC = RootViewController(mainViewController: CategoryVC.makeCategoryVC, topNavigationLeftImage: UIImage(named: "drawerMenuDark"))
+        let categoryDrawerVC = DrawerVC()
+        let categoryVC = DrawerController(rootViewController: categoryRootVC, menuController: categoryDrawerVC)
+        categoryVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 0)
         
-        let categoryVC = UINavigationController(rootViewController: CategoryVC.makeCategoryVC)
-        let curationVC = UINavigationController(rootViewController: CurationVC.makeCurationVC)
+        let curationRootVC = RootViewController(mainViewController: CurationVC.makeCurationVC, topNavigationLeftImage: UIImage(named: "drawerMenuDark"))
+        let curationDrawerVC = DrawerVC()
+        let curationVC = DrawerController(rootViewController: curationRootVC, menuController: curationDrawerVC)
+        curationVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
         
         let tabbarList = [categoryVC, curationVC]
         self.viewControllers = tabbarList
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.barStyle = .black
-        self.setNeedsStatusBarAppearanceUpdate()
-        self.navigationController?.navigationBar.isHidden = true
-        
-        SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: view)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.navigationController?.navigationBar.barStyle = .black
+//    }
+//    
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
     
     static var makeMainVC: MainVC {
         get {
@@ -60,19 +43,6 @@ class MainVC: UITabBarController, MainVCDelegate {
             return vc
         }
     }
-    
-    func setMainVCNavigationBar() {
-        
-    }
-    
-    func didTapDrawerMenuButton() {
-        self.navigationController?.pushViewController(self.menuVC, animated: true)
-    }
-    
-    func didTapAddReviewButton() {
-        
-    }
-        
 }
 // MARK: - UITabBarControllerDelegate
 extension MainVC: UITabBarControllerDelegate {

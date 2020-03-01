@@ -8,17 +8,17 @@
 
 import UIKit
 
-class DrawerVC: BaseVC {
+class DrawerVC: MenuViewController {
     
     @IBOutlet weak var drawerViewTitleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        self.navigationController?.navigationBar.barStyle = .black
+//        self.navigationController?.navigationBar.barStyle = .black
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .default
+//    }
 }

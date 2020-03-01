@@ -15,8 +15,12 @@ class TestVC: BaseVC {
         // Do any additional setup after loading the view.
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("ViewWillAppear")
+        self.navigationController?.navigationBar.topItem?.title = ""
+        
+        UIApplication.shared.statusBarStyle = .default
     }
     
     static var makeTest: TestVC {

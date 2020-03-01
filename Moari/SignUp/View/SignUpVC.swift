@@ -75,6 +75,7 @@ class SignUpVC: BaseVC, SignUpVCProtocol {
         
         self.usingTermArrowImageView.image = UIImage(named: "goNextICLight")
         self.personalTermArrowImageView.image = UIImage(named: "goNextICLight")
+        UIApplication.shared.statusBarStyle = .default
     }
     
     func setDarkModeUI() {
@@ -85,6 +86,7 @@ class SignUpVC: BaseVC, SignUpVCProtocol {
         
         self.usingTermArrowImageView.image = UIImage(named: "goNextICDark")
         self.personalTermArrowImageView.image = UIImage(named: "goNextICDark")
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     func setSystemColorModeUI() {

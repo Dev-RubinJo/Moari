@@ -19,6 +19,7 @@ class BaseVC: UIViewController {
         super.viewDidLoad()
         self.initBaseVC()
         self.setLocalAuthentication()
+        self.setBaseColorModeUI()
         UITextField.appearance().tintColor = .cursorColor
 //        self.tabBarController?.tabBar.isHidden = true
     }
@@ -26,6 +27,7 @@ class BaseVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.initBaseVC()
+        self.setBaseColorModeUI()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -41,7 +43,7 @@ class BaseVC: UIViewController {
     
     func initBaseVC() {
         self.hideKeyboardWhenTappedAround()
-        self.setBaseColorModeUI()
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: .navigationBarBottomBorder)
@@ -51,17 +53,19 @@ class BaseVC: UIViewController {
     
     func setBaseLightModeUI() {
         let imageBack = UIImage(named: "backArrowLight")
-        self.navigationController?.navigationBar.backIndicatorImage = imageBack
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = imageBack
-        
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage()
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage()
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(image: imageBack, style: .plain, target: self, action: nil)
+        self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.tintColor = .black
     }
     
     func setBaseDarkModeUI() {
         let imageBack = UIImage(named: "backArrowDark")
-        self.navigationController?.navigationBar.backIndicatorImage = imageBack
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = imageBack
-        
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage()
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage()
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(image: imageBack, style: .plain, target: self, action: nil)
+        self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.tintColor = .white
     }
     

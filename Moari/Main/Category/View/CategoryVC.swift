@@ -15,16 +15,8 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
     
     @IBOutlet weak var categoryTitleLabel: UILabel!
     @IBOutlet weak var categoryVCTitleLabelTopConstraint: NSLayoutConstraint!
-    
-//    @IBAction func makeImageTest(_ sender: Any) {
-//        let image = UIView.makeImage(with: self.view)
-//        print(image)
-//        self.testImageView.image = image
-//    }
-//    @IBOutlet weak var testImageView: UIImageView!
-    
+
     weak var actor: CategoryActorDelegate?
-    weak var mainDelegate: MainVCDelegate?
     
     var logoButton: UIButton = UIButton()
     
@@ -39,11 +31,20 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
         
         self.categoryCollectionView.delegate = self
         self.categoryCollectionView.dataSource = self
-        self.mainDelegate = MainVC.shared
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setCategoryVCUI()
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.navigationController?.navigationBar.barStyle = .black
     }
 }
+    
+//    @IBAction func makeImageTest(_ sender: Any) {
+//        let image = UIView.makeImage(with: self.view)
+//        print(image)
+//        self.testImageView.image = image
+//    }
+//    @IBOutlet weak var testImageView: UIImageView!
+    

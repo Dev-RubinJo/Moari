@@ -34,6 +34,9 @@
 		432E0F94240A2C0C00ADD122 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0F92240A2C0C00ADD122 /* TestVC.swift */; };
 		432E0F95240A2C0C00ADD122 /* TestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 432E0F93240A2C0C00ADD122 /* TestVC.xib */; };
 		432E0FC9240A586000ADD122 /* MainProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FC8240A586000ADD122 /* MainProtocol.swift */; };
+		432E0FCD240A8B8A00ADD122 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FCA240A8B8A00ADD122 /* MenuViewController.swift */; };
+		432E0FCE240A8B8A00ADD122 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FCB240A8B8A00ADD122 /* RootViewController.swift */; };
+		432E0FCF240A8B8A00ADD122 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FCC240A8B8A00ADD122 /* DrawerController.swift */; };
 		434D2B3A23F2A7FE00E1E0D1 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */; };
 		4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198823F1A2B7008B9F84 /* AppDelegate.swift */; };
 		4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */; };
@@ -153,6 +156,9 @@
 		432E0F92240A2C0C00ADD122 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		432E0F93240A2C0C00ADD122 /* TestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestVC.xib; sourceTree = "<group>"; };
 		432E0FC8240A586000ADD122 /* MainProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocol.swift; sourceTree = "<group>"; };
+		432E0FCA240A8B8A00ADD122 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		432E0FCB240A8B8A00ADD122 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		432E0FCC240A8B8A00ADD122 /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
 		434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 		4362198523F1A2B7008B9F84 /* Moari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4362198823F1A2B7008B9F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -325,6 +331,9 @@
 		430B4E96240941A8004046F9 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				432E0FCC240A8B8A00ADD122 /* DrawerController.swift */,
+				432E0FCA240A8B8A00ADD122 /* MenuViewController.swift */,
+				432E0FCB240A8B8A00ADD122 /* RootViewController.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1134,6 +1143,7 @@
 				430B4E72240793AD004046F9 /* CurationProtocol.swift in Sources */,
 				4384022C24026D0100ECA42E /* SignUpVC+Router.swift in Sources */,
 				43CF869823F29C040062B846 /* UIColor.swift in Sources */,
+				432E0FCD240A8B8A00ADD122 /* MenuViewController.swift in Sources */,
 				430B4E8D2408D0C2004046F9 /* CategoryVC+UICollectionView.swift in Sources */,
 				430B4E762407947F004046F9 /* CurationVC+Router.swift in Sources */,
 				430B4E802407A594004046F9 /* CurationDataManager.swift in Sources */,
@@ -1152,6 +1162,7 @@
 				43CF86C323F29DD00062B846 /* SplashVC.swift in Sources */,
 				438402282402649300ECA42E /* SignUpDataResponse.swift in Sources */,
 				430B4E782407948B004046F9 /* CategoryVC+Router.swift in Sources */,
+				432E0FCF240A8B8A00ADD122 /* DrawerController.swift in Sources */,
 				430B4EA02409441F004046F9 /* DrawerVC.swift in Sources */,
 				4365F75C24067DC3008232EF /* SignUpActor+Alert.swift in Sources */,
 				439BE64023FE29AB00EC77A9 /* FindEmailPasswordActor.swift in Sources */,
@@ -1160,6 +1171,7 @@
 				43840213240105D500ECA42E /* SignInActor+Alert.swift in Sources */,
 				43CF86A423F29C820062B846 /* ColorPalette.swift in Sources */,
 				43CF86C023F29DC10062B846 /* SplashDataResponse.swift in Sources */,
+				432E0FCE240A8B8A00ADD122 /* RootViewController.swift in Sources */,
 				4365F75A24067DB9008232EF /* SignUpActor+PopUp.swift in Sources */,
 				438402112401054C00ECA42E /* SignInVC+Router.swift in Sources */,
 				430B4E6124076764004046F9 /* SignUpActor+PopUpDelegate.swift in Sources */,

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SideMenu
 
 extension SignUpVC: SignUpVCRouterDelegate {
     
@@ -44,8 +43,7 @@ extension SignUpVC: SignUpVCRouterDelegate {
     }
     
     func presentMainVC() {
-        let mainRootVC = MainVC.makeMainVC
-        let mainVC = SideMenuNavigationController(rootViewController: mainRootVC)
+        let mainVC = MainVC.makeMainVC
         
         self.window?.rootViewController = mainVC
         self.window?.makeKeyAndVisible()

@@ -70,6 +70,7 @@ class SignInVC: BaseVC, SignInVCProtocol {
         
         self.findEmailPasswordLabel.textColor = .signInBottomLabels
         self.signUpLabel.textColor = .signInBottomLabels
+        UIApplication.shared.statusBarStyle = .default
     }
     
     func setDarkModeUI() {
@@ -84,6 +85,7 @@ class SignInVC: BaseVC, SignInVCProtocol {
         
         self.findEmailPasswordLabel.textColor = .signInBottomLabels
         self.signUpLabel.textColor = .signInBottomLabels
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     func setSystemColorModeUI() {

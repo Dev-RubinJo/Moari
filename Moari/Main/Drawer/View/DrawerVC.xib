@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMQ-9P-ifk">
-                    <rect key="frame" x="30" y="141" width="126" height="53"/>
+                    <rect key="frame" x="30" y="141" width="280" height="53"/>
                     <string key="text">감성님의
 모아 놓은 리뷰</string>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="22"/>
@@ -31,6 +31,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="sMQ-9P-ifk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="d88-Nr-TV6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sMQ-9P-ifk" secondAttribute="trailing" constant="10" id="hSC-LG-kin"/>
                 <constraint firstItem="sMQ-9P-ifk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="141" id="z6M-Cr-peN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
