@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1022,6 +1022,7 @@
 				4362198223F1A2B6008B9F84 /* Frameworks */,
 				4362198323F1A2B6008B9F84 /* Resources */,
 				43D53E4A23FAE328005DFC4A /* ShellScript */,
+				45BCC2B912B3E787962CDAA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1144,6 +1145,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}\"\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		45BCC2B912B3E787962CDAA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moari/Pods-Moari-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moari/Pods-Moari-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moari/Pods-Moari-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		7BC79A57ECE982CF7422E9AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
