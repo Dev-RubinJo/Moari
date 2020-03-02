@@ -6,6 +6,8 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
+import UIKit
+
 extension CategoryVC: CategoryVCRouterDelegate {
     
     static var makeCategoryVC: CategoryVC {
@@ -27,10 +29,9 @@ extension CategoryVC: CategoryVCRouterDelegate {
     }
     
     func presentAddReviewVC() {
-        // TODO: AddReviewVC 띄우기
-        // Actor로 옮기기
         let addReviewVC = AddReviewVC.makeAddReviewVC
+        self.navigationController?.pushViewController(addReviewVC, animated: true)
         //        addReviewVC.modalPresentationStyle = .fullScreen
-        self.present(addReviewVC, animated: true, completion: nil)
+//        self.present(addReviewVC, animated: true, completion: nil)
     }
 }

@@ -53,6 +53,7 @@
 		432E0FFE240BA80F00ADD122 /* AddReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 432E0FFC240BA80F00ADD122 /* AddReviewVC.xib */; };
 		432E1000240BBBB100ADD122 /* AddReviewVC+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FFF240BBBB100ADD122 /* AddReviewVC+Router.swift */; };
 		432E1002240BF30C00ADD122 /* CategoryDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1001240BF30C00ADD122 /* CategoryDataResponse.swift */; };
+		432E1028240CEAE600ADD122 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1027240CEAE600ADD122 /* UITextView.swift */; };
 		434D2B3A23F2A7FE00E1E0D1 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */; };
 		4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198823F1A2B7008B9F84 /* AppDelegate.swift */; };
 		4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */; };
@@ -191,6 +192,7 @@
 		432E0FFC240BA80F00ADD122 /* AddReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddReviewVC.xib; sourceTree = "<group>"; };
 		432E0FFF240BBBB100ADD122 /* AddReviewVC+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddReviewVC+Router.swift"; sourceTree = "<group>"; };
 		432E1001240BF30C00ADD122 /* CategoryDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataResponse.swift; sourceTree = "<group>"; };
+		432E1027240CEAE600ADD122 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 		4362198523F1A2B7008B9F84 /* Moari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4362198823F1A2B7008B9F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -930,6 +932,7 @@
 				43CF869D23F29C400062B846 /* String.swift */,
 				4384021824014ED000ECA42E /* UIImage.swift */,
 				430B4E812408A4A6004046F9 /* UIView.swift */,
+				432E1027240CEAE600ADD122 /* UITextView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1286,6 +1289,7 @@
 				438402112401054C00ECA42E /* SignInVC+Router.swift in Sources */,
 				430B4E6124076764004046F9 /* SignUpActor+PopUpDelegate.swift in Sources */,
 				432E0FE8240B869100ADD122 /* ReviewDetailVC.swift in Sources */,
+				432E1028240CEAE600ADD122 /* UITextView.swift in Sources */,
 				439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */,
 				430B4E69240792DD004046F9 /* CategoryVC.swift in Sources */,
 				438402262402648300ECA42E /* SignUpDataManager.swift in Sources */,
