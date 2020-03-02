@@ -54,10 +54,29 @@
 		432E1000240BBBB100ADD122 /* AddReviewVC+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FFF240BBBB100ADD122 /* AddReviewVC+Router.swift */; };
 		432E1002240BF30C00ADD122 /* CategoryDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1001240BF30C00ADD122 /* CategoryDataResponse.swift */; };
 		432E1028240CEAE600ADD122 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1027240CEAE600ADD122 /* UITextView.swift */; };
+		432E102F240D0EC700ADD122 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E102E240D0EC700ADD122 /* ImageFetcher.swift */; };
+		432E1031240D0EE600ADD122 /* SingleImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1030240D0EE600ADD122 /* SingleImageSaver.swift */; };
+		432E1033240D0EFC00ADD122 /* SingleImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1032240D0EFC00ADD122 /* SingleImageFetcher.swift */; };
+		432E1035240D0F1100ADD122 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1034240D0F1100ADD122 /* Utilities.swift */; };
+		432E1037240D0F2800ADD122 /* CameraShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1036240D0F2800ADD122 /* CameraShot.swift */; };
+		432E1039240D0F4300ADD122 /* CameraGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1038240D0F4300ADD122 /* CameraGlobals.swift */; };
+		432E103B240D0F5400ADD122 /* VolumeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E103A240D0F5400ADD122 /* VolumeControl.swift */; };
+		432E103D240D0F7600ADD122 /* PhotoLibraryAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E103C240D0F7600ADD122 /* PhotoLibraryAuthorizer.swift */; };
+		432E103F240D0F9700ADD122 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E103E240D0F9700ADD122 /* UIButtonExtensions.swift */; };
+		432E1041240D0FA800ADD122 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1040240D0FA800ADD122 /* UIViewExtensions.swift */; };
+		432E1043240D0FBB00ADD122 /* CroppingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1042240D0FBB00ADD122 /* CroppingParameters.swift */; };
+		432E1046240D0FE100ADD122 /* PhotoLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1045240D0FE100ADD122 /* PhotoLibraryVC.swift */; };
+		432E1048240D0FFE00ADD122 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1047240D0FFE00ADD122 /* CameraVC.swift */; };
+		432E104D240D105000ADD122 /* ConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E104B240D105000ADD122 /* ConfirmVC.swift */; };
+		432E104E240D105000ADD122 /* ConfirmVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 432E104C240D105000ADD122 /* ConfirmVC.xib */; };
+		432E1050240D107F00ADD122 /* CameraVCConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E104F240D107F00ADD122 /* CameraVCConstraint.swift */; };
+		432E1053240D10C000ADD122 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1052240D10C000ADD122 /* ImageCell.swift */; };
+		432E1055240D10D200ADD122 /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1054240D10D200ADD122 /* PermissionsView.swift */; };
+		432E1057240D10E500ADD122 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1056240D10E500ADD122 /* CameraView.swift */; };
+		432E1059240D114600ADD122 /* CropOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1058240D114600ADD122 /* CropOverlay.swift */; };
 		434D2B3A23F2A7FE00E1E0D1 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */; };
 		4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198823F1A2B7008B9F84 /* AppDelegate.swift */; };
 		4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */; };
-		4362199223F1A2B7008B9F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4362199123F1A2B7008B9F84 /* Assets.xcassets */; };
 		4362199523F1A2B7008B9F84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4362199323F1A2B7008B9F84 /* LaunchScreen.storyboard */; };
 		436219A023F1A2B7008B9F84 /* MoariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362199F23F1A2B7008B9F84 /* MoariTests.swift */; };
 		436219AB23F242FA008B9F84 /* Pods_Moari.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1DA8A874583CB34F6191E8 /* Pods_Moari.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -193,6 +212,26 @@
 		432E0FFF240BBBB100ADD122 /* AddReviewVC+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddReviewVC+Router.swift"; sourceTree = "<group>"; };
 		432E1001240BF30C00ADD122 /* CategoryDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataResponse.swift; sourceTree = "<group>"; };
 		432E1027240CEAE600ADD122 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		432E102E240D0EC700ADD122 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		432E1030240D0EE600ADD122 /* SingleImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageSaver.swift; sourceTree = "<group>"; };
+		432E1032240D0EFC00ADD122 /* SingleImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageFetcher.swift; sourceTree = "<group>"; };
+		432E1034240D0F1100ADD122 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		432E1036240D0F2800ADD122 /* CameraShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraShot.swift; sourceTree = "<group>"; };
+		432E1038240D0F4300ADD122 /* CameraGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGlobals.swift; sourceTree = "<group>"; };
+		432E103A240D0F5400ADD122 /* VolumeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeControl.swift; sourceTree = "<group>"; };
+		432E103C240D0F7600ADD122 /* PhotoLibraryAuthorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryAuthorizer.swift; sourceTree = "<group>"; };
+		432E103E240D0F9700ADD122 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		432E1040240D0FA800ADD122 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		432E1042240D0FBB00ADD122 /* CroppingParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroppingParameters.swift; sourceTree = "<group>"; };
+		432E1045240D0FE100ADD122 /* PhotoLibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryVC.swift; sourceTree = "<group>"; };
+		432E1047240D0FFE00ADD122 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		432E104B240D105000ADD122 /* ConfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmVC.swift; sourceTree = "<group>"; };
+		432E104C240D105000ADD122 /* ConfirmVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmVC.xib; sourceTree = "<group>"; };
+		432E104F240D107F00ADD122 /* CameraVCConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVCConstraint.swift; sourceTree = "<group>"; };
+		432E1052240D10C000ADD122 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		432E1054240D10D200ADD122 /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
+		432E1056240D10E500ADD122 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		432E1058240D114600ADD122 /* CropOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropOverlay.swift; sourceTree = "<group>"; };
 		434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 		4362198523F1A2B7008B9F84 /* Moari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4362198823F1A2B7008B9F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -434,6 +473,57 @@
 				432E0FFF240BBBB100ADD122 /* AddReviewVC+Router.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		432E102C240D0EA200ADD122 /* CameraControllVC */ = {
+			isa = PBXGroup;
+			children = (
+				432E1051240D10AA00ADD122 /* Views */,
+				432E1044240D0FCA00ADD122 /* ViewControllers */,
+				432E102D240D0EB100ADD122 /* Utilities */,
+			);
+			path = CameraControllVC;
+			sourceTree = "<group>";
+		};
+		432E102D240D0EB100ADD122 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				432E102E240D0EC700ADD122 /* ImageFetcher.swift */,
+				432E1030240D0EE600ADD122 /* SingleImageSaver.swift */,
+				432E1032240D0EFC00ADD122 /* SingleImageFetcher.swift */,
+				432E1034240D0F1100ADD122 /* Utilities.swift */,
+				432E1036240D0F2800ADD122 /* CameraShot.swift */,
+				432E1038240D0F4300ADD122 /* CameraGlobals.swift */,
+				432E103A240D0F5400ADD122 /* VolumeControl.swift */,
+				432E103C240D0F7600ADD122 /* PhotoLibraryAuthorizer.swift */,
+				432E103E240D0F9700ADD122 /* UIButtonExtensions.swift */,
+				432E1040240D0FA800ADD122 /* UIViewExtensions.swift */,
+				432E1042240D0FBB00ADD122 /* CroppingParameters.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		432E1044240D0FCA00ADD122 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				432E1045240D0FE100ADD122 /* PhotoLibraryVC.swift */,
+				432E1047240D0FFE00ADD122 /* CameraVC.swift */,
+				432E104B240D105000ADD122 /* ConfirmVC.swift */,
+				432E104C240D105000ADD122 /* ConfirmVC.xib */,
+				432E104F240D107F00ADD122 /* CameraVCConstraint.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		432E1051240D10AA00ADD122 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				432E1052240D10C000ADD122 /* ImageCell.swift */,
+				432E1054240D10D200ADD122 /* PermissionsView.swift */,
+				432E1056240D10E500ADD122 /* CameraView.swift */,
+				432E1058240D114600ADD122 /* CropOverlay.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		434D2B3723F2A7E100E1E0D1 /* Main */ = {
@@ -894,6 +984,7 @@
 		43CF868F23F29BAD0062B846 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				432E102C240D0EA200ADD122 /* CameraControllVC */,
 				43CF869023F29BB80062B846 /* Enum */,
 				43CF869123F29BBD0062B846 /* Protocol */,
 				43CF869223F29BC30062B846 /* Extension */,
@@ -1025,7 +1116,6 @@
 				4362198223F1A2B6008B9F84 /* Frameworks */,
 				4362198323F1A2B6008B9F84 /* Resources */,
 				43D53E4A23FAE328005DFC4A /* ShellScript */,
-				45BCC2B912B3E787962CDAA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1106,7 +1196,6 @@
 				430B4EA12409441F004046F9 /* DrawerVC.xib in Resources */,
 				430B4E6A240792DD004046F9 /* CategoryVC.xib in Resources */,
 				43CF86C423F29DD00062B846 /* SplashVC.xib in Resources */,
-				4362199223F1A2B7008B9F84 /* Assets.xcassets in Resources */,
 				430B4E662407926D004046F9 /* MainVC.xib in Resources */,
 				4365F7602406B68C008232EF /* SignUp.storyboard in Resources */,
 				432E0FDF240B800400ADD122 /* DeleteCategory.storyboard in Resources */,
@@ -1117,6 +1206,7 @@
 				43D53E4923FAE191005DFC4A /* GoogleService-Info.plist in Resources */,
 				430B4E6E240792EE004046F9 /* CurationVC.xib in Resources */,
 				432E0FD1240B7EF700ADD122 /* AddCategory.storyboard in Resources */,
+				432E104E240D105000ADD122 /* ConfirmVC.xib in Resources */,
 				432E0FE9240B869100ADD122 /* ReviewDetailVC.xib in Resources */,
 				43D53E4E23FAE7DD005DFC4A /* SignInVC.xib in Resources */,
 			);
@@ -1148,23 +1238,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}\"\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
-		};
-		45BCC2B912B3E787962CDAA5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Moari/Pods-Moari-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Moari/Pods-Moari-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moari/Pods-Moari-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		7BC79A57ECE982CF7422E9AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1218,14 +1291,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				43CF869C23F29C2B0062B846 /* UIViewController.swift in Sources */,
+				432E1033240D0EFC00ADD122 /* SingleImageFetcher.swift in Sources */,
 				430B4E652407926D004046F9 /* MainVC.swift in Sources */,
 				43CF869423F29BDE0062B846 /* Device.swift in Sources */,
 				432E0FD3240B7F0C00ADD122 /* AddCategory.swift in Sources */,
 				4384020F2401040000ECA42E /* SplashVC+Router.swift in Sources */,
 				439BE63C23FE298800EC77A9 /* FindEmailPasswordDataManager.swift in Sources */,
+				432E103B240D0F5400ADD122 /* VolumeControl.swift in Sources */,
 				430B4E7024079301004046F9 /* CategoryProtocol.swift in Sources */,
+				432E1048240D0FFE00ADD122 /* CameraVC.swift in Sources */,
+				432E1043240D0FBB00ADD122 /* CroppingParameters.swift in Sources */,
 				43D53E4D23FAE7DD005DFC4A /* SignInVC.swift in Sources */,
+				432E1053240D10C000ADD122 /* ImageCell.swift in Sources */,
 				4365F7642406B6B0008232EF /* SignUpPopUpDelegate.swift in Sources */,
+				432E1037240D0F2800ADD122 /* CameraShot.swift in Sources */,
+				432E103D240D0F7600ADD122 /* PhotoLibraryAuthorizer.swift in Sources */,
 				43CF869623F29BF30062B846 /* BaseVCProtocol.swift in Sources */,
 				4384021924014ED000ECA42E /* UIImage.swift in Sources */,
 				43D53E5623FAEA12005DFC4A /* SignInResponse.swift in Sources */,
@@ -1236,6 +1316,7 @@
 				439BE63A23FE294E00EC77A9 /* FindEmailPasswordProtocol.swift in Sources */,
 				4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */,
 				430B4E6D240792EE004046F9 /* CurationVC.swift in Sources */,
+				432E1046240D0FE100ADD122 /* PhotoLibraryVC.swift in Sources */,
 				432E1000240BBBB100ADD122 /* AddReviewVC+Router.swift in Sources */,
 				43840215240117BA00ECA42E /* FindEmailPasswordVC+Router.swift in Sources */,
 				4384021C2401590900ECA42E /* FindEmailPasswordVC+SetUI.swift in Sources */,
@@ -1243,13 +1324,17 @@
 				43CF86BA23F29DA00062B846 /* SplashProtocol.swift in Sources */,
 				43CF86A223F29C6A0062B846 /* IndicatorView.swift in Sources */,
 				430B4E7C2407A49D004046F9 /* CategoryDataManager.swift in Sources */,
+				432E1059240D114600ADD122 /* CropOverlay.swift in Sources */,
 				432E0FE1240B800B00ADD122 /* DeleteCategory.swift in Sources */,
+				432E1050240D107F00ADD122 /* CameraVCConstraint.swift in Sources */,
 				43CF86A023F29C550062B846 /* BaseVC.swift in Sources */,
 				4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */,
 				43CF86BE23F29DB50062B846 /* SplashActor.swift in Sources */,
 				438402242402647900ECA42E /* SignUpActor.swift in Sources */,
 				430A998E23F4F70700586CB0 /* ServerAddress.swift in Sources */,
+				432E104D240D105000ADD122 /* ConfirmVC.swift in Sources */,
 				430B4E72240793AD004046F9 /* CurationProtocol.swift in Sources */,
+				432E1055240D10D200ADD122 /* PermissionsView.swift in Sources */,
 				4384022C24026D0100ECA42E /* SignUpVC+Router.swift in Sources */,
 				43CF869823F29C040062B846 /* UIColor.swift in Sources */,
 				432E0FCD240A8B8A00ADD122 /* MenuViewController.swift in Sources */,
@@ -1258,12 +1343,14 @@
 				430B4E762407947F004046F9 /* CurationVC+Router.swift in Sources */,
 				430B4E802407A594004046F9 /* CurationDataManager.swift in Sources */,
 				43D53E5223FAE98F005DFC4A /* SignInActor.swift in Sources */,
+				432E1035240D0F1100ADD122 /* Utilities.swift in Sources */,
 				43CF86BC23F29DAB0062B846 /* SplashDataManager.swift in Sources */,
 				43CF869E23F29C400062B846 /* String.swift in Sources */,
 				439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */,
 				439BE63E23FE29A000EC77A9 /* FindEmailPasswordDataResponse.swift in Sources */,
 				4365F75824062368008232EF /* SignUpVC+SetUI.swift in Sources */,
 				430B4E9424090CFD004046F9 /* CurationVC+SetUI.swift in Sources */,
+				432E1031240D0EE600ADD122 /* SingleImageSaver.swift in Sources */,
 				43CF869A23F29C1A0062B846 /* UIButton.swift in Sources */,
 				438402212402646B00ECA42E /* SignUpVC.swift in Sources */,
 				43D53E5423FAE9DC005DFC4A /* SignInDataManager.swift in Sources */,
@@ -1274,14 +1361,17 @@
 				438402282402649300ECA42E /* SignUpDataResponse.swift in Sources */,
 				430B4E782407948B004046F9 /* CategoryVC+Router.swift in Sources */,
 				432E0FCF240A8B8A00ADD122 /* DrawerController.swift in Sources */,
+				432E103F240D0F9700ADD122 /* UIButtonExtensions.swift in Sources */,
 				430B4EA02409441F004046F9 /* DrawerVC.swift in Sources */,
 				432E0FFD240BA80F00ADD122 /* AddReviewVC.swift in Sources */,
 				4365F75C24067DC3008232EF /* SignUpActor+Alert.swift in Sources */,
 				439BE64023FE29AB00EC77A9 /* FindEmailPasswordActor.swift in Sources */,
 				430B4E822408A4A6004046F9 /* UIView.swift in Sources */,
+				432E1057240D10E500ADD122 /* CameraView.swift in Sources */,
 				43840213240105D500ECA42E /* SignInActor+Alert.swift in Sources */,
 				432E0FF8240BA7A200ADD122 /* AddReviewDataResponse.swift in Sources */,
 				43CF86A423F29C820062B846 /* ColorPalette.swift in Sources */,
+				432E102F240D0EC700ADD122 /* ImageFetcher.swift in Sources */,
 				43CF86C023F29DC10062B846 /* SplashDataResponse.swift in Sources */,
 				432E0FCE240A8B8A00ADD122 /* RootViewController.swift in Sources */,
 				432E0FD9240B7F4100ADD122 /* EditCategory.swift in Sources */,
@@ -1292,8 +1382,10 @@
 				432E1028240CEAE600ADD122 /* UITextView.swift in Sources */,
 				439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */,
 				430B4E69240792DD004046F9 /* CategoryVC.swift in Sources */,
+				432E1039240D0F4300ADD122 /* CameraGlobals.swift in Sources */,
 				438402262402648300ECA42E /* SignUpDataManager.swift in Sources */,
 				4384022A2402649D00ECA42E /* SignUpProtocol.swift in Sources */,
+				432E1041240D0FA800ADD122 /* UIViewExtensions.swift in Sources */,
 				432E0FF6240BA79400ADD122 /* AddReviewDataManager.swift in Sources */,
 				430B4E872408B310004046F9 /* CategoryCell.swift in Sources */,
 				4365F75E240692D4008232EF /* SignUpVC+UITextFieldDelegate.swift in Sources */,
