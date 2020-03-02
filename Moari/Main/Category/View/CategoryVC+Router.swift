@@ -21,4 +21,16 @@ extension CategoryVC: CategoryVCRouterDelegate {
             return vc
         }
     }
+    
+    func presentCategoryDetailVC() {
+        // TODO: CategoryDetailVC 띄우기
+    }
+    
+    func presentAddReviewVC() {
+        // TODO: AddReviewVC 띄우기
+        // Actor로 옮기기
+        let addReviewVC = AddReviewVC.makeAddReviewVC
+        //        addReviewVC.modalPresentationStyle = .fullScreen
+        self.present(addReviewVC, animated: true, completion: nil)
+    }
 }

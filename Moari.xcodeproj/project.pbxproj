@@ -52,6 +52,7 @@
 		432E0FFD240BA80F00ADD122 /* AddReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FFB240BA80F00ADD122 /* AddReviewVC.swift */; };
 		432E0FFE240BA80F00ADD122 /* AddReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 432E0FFC240BA80F00ADD122 /* AddReviewVC.xib */; };
 		432E1000240BBBB100ADD122 /* AddReviewVC+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E0FFF240BBBB100ADD122 /* AddReviewVC+Router.swift */; };
+		432E1002240BF30C00ADD122 /* CategoryDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E1001240BF30C00ADD122 /* CategoryDataResponse.swift */; };
 		434D2B3A23F2A7FE00E1E0D1 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */; };
 		4362198923F1A2B7008B9F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198823F1A2B7008B9F84 /* AppDelegate.swift */; };
 		4362198B23F1A2B7008B9F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362198A23F1A2B7008B9F84 /* SceneDelegate.swift */; };
@@ -189,6 +190,7 @@
 		432E0FFB240BA80F00ADD122 /* AddReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewVC.swift; sourceTree = "<group>"; };
 		432E0FFC240BA80F00ADD122 /* AddReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddReviewVC.xib; sourceTree = "<group>"; };
 		432E0FFF240BBBB100ADD122 /* AddReviewVC+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddReviewVC+Router.swift"; sourceTree = "<group>"; };
+		432E1001240BF30C00ADD122 /* CategoryDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataResponse.swift; sourceTree = "<group>"; };
 		434D2B3923F2A7FE00E1E0D1 /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 		4362198523F1A2B7008B9F84 /* Moari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4362198823F1A2B7008B9F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -607,6 +609,7 @@
 			isa = PBXGroup;
 			children = (
 				430B4E7B2407A49D004046F9 /* CategoryDataManager.swift */,
+				432E1001240BF30C00ADD122 /* CategoryDataResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1229,6 +1232,7 @@
 				4384022C24026D0100ECA42E /* SignUpVC+Router.swift in Sources */,
 				43CF869823F29C040062B846 /* UIColor.swift in Sources */,
 				432E0FCD240A8B8A00ADD122 /* MenuViewController.swift in Sources */,
+				432E1002240BF30C00ADD122 /* CategoryDataResponse.swift in Sources */,
 				430B4E8D2408D0C2004046F9 /* CategoryVC+UICollectionView.swift in Sources */,
 				430B4E762407947F004046F9 /* CurationVC+Router.swift in Sources */,
 				430B4E802407A594004046F9 /* CurationDataManager.swift in Sources */,

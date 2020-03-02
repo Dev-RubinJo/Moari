@@ -15,4 +15,12 @@ class CategoryActor: CategoryActorDelegate {
     
     weak var dataManager: CategoryDataManagerDelegate?
     
+    func didLoadCategoryVC(vc: CategoryVC) {
+        
+    }
+    
+    func didTapAddReviewButton() {
+        self.view?.presentAddReviewVC()
+    }
+    
 }
