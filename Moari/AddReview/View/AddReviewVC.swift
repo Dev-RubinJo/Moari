@@ -46,10 +46,33 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol, UITextViewDelegate {
     
     weak var actor: AddReviewActorDelegate?
     var isAdd: Bool?
+    var isReviewExist: Bool?
+    var baseHeight: CGFloat = 0
+    var contentTextViewHeight: CGSize = CGSize(width: 0, height: 0)
+    
+    lazy var keyboardHeight: CGFloat = {
+        switch UIScreen.main.nativeBounds.height {
+        case 1136, 1920: // se1
+            return 265
+        case 1334, 2436:
+            //                print("iPhone 6/6S/7/8")
+            return 225
+        case 1792, 2688:
+            //                print("iPhone XR, XS MAX")
+            return 350
+        default:
+            return 300
+        }
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.setUpScrollView()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        self.baseHeight = self.shareImageBaseView.bounds.height + 127
+        
+        self.setUpScrollView()
         self.navigationItem.title = "작성하기"
         self.navigationController?.navigationBar.barStyle = .default
         UIApplication.shared.statusBarStyle = .default
@@ -60,14 +83,18 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol, UITextViewDelegate {
     }
     
     func setUpScrollView() {
+        // TODO: 기종별로 최적화 된 사이즈 지정하기
+        self.resizeContentTextView()
+        print(self.contentTextViewHeight.height)
         self.contentView.snp.makeConstraints { make in
-            make.height.equalTo(1000)
+            make.height.equalTo(self.baseHeight + self.contentTextViewHeight.height)
         }
     }
     
     func updateScrollView(heightValue value: CGFloat) {
-        self.contentView.snp.makeConstraints { make in
-            make.height.equalTo(value)
+//        self.contentTextViewHeight = self.contentTextView.sizeThatFits(CGSize(width: contentTextView.frame.size.width, height: CGFloat(CGFloat.greatestFiniteMagnitude)))
+        self.contentView.snp.updateConstraints { make in
+            make.height.equalTo(value + self.contentTextViewHeight.height)
         }
     }
     
@@ -80,7 +107,14 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol, UITextViewDelegate {
             self.reviewContentPlaceholderLabel.isHidden = true
             self.reviewContentTextView.centerVertically()
         case self.contentTextView:
-            fallthrough
+            self.resizeContentTextView()
+            self.updateScrollView(heightValue: self.baseHeight + 265)
+            // 11promax = 346
+            // 11 = 346
+            // 11pro = 220
+            // 6s+ = 265
+            // 8 = 220
+            // se = 261
         default:
             break
         }
@@ -88,6 +122,7 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol, UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         switch textView {
+            // TODO: 제목 25자, 한줄평 100자 벨리데이션 추가
         case self.reviewTitleTextView:
             self.reviewTitlePlaceholderLabel.isHidden = true
             self.reviewTitleTextView.centerVertically()
@@ -95,7 +130,9 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol, UITextViewDelegate {
             self.reviewContentPlaceholderLabel.isHidden = true
             self.reviewContentTextView.centerVertically()
         case self.contentTextView:
-            fallthrough
+            self.resizeContentTextView()
+            print(self.contentTextViewHeight.height)
+            self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + self.keyboardHeight)
         default:
             break
         }
@@ -112,12 +149,43 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol, UITextViewDelegate {
                 self.reviewContentPlaceholderLabel.isHidden = false
             }
         case self.contentTextView:
-            fallthrough
+            self.updateScrollView(heightValue: self.baseHeight)
         default:
             break
         }
     }
+    
+    func resizeContentTextView() {
+        let fixedWidth = self.contentTextView.frame.size.width
+        self.contentTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        let newSize = self.contentTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        var newFrame = self.contentTextView.frame
+        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        self.contentTextView.frame = newFrame;
+        self.contentTextViewHeight.height = newSize.height
+    }
+    
+    @objc func keyboardWillShow(notification:NSNotification) {
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        
+        print("키보드 : \(keyboardHeight)")
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 //        self.scrollView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
 //        self.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
 //        self.scrollView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true

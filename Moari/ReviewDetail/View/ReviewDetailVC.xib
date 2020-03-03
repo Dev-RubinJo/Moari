@@ -18,12 +18,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" id="JK0-o2-8Ig">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" id="JK0-o2-8Ig">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="1000" translatesAutoresizingMaskIntoConstraints="NO" id="JBV-yC-cwn">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="898" translatesAutoresizingMaskIntoConstraints="NO" id="JBV-yC-cwn">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1148.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlN-Ik-4eo">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -172,10 +172,18 @@
                                         <color key="titleColor" red="0.76078431369999999" green="0.094117647060000004" blue="0.35686274509999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                     </state>
                                 </button>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nG9-9e-5Fx">
-                                    <rect key="frame" x="24" y="541" width="366" height="439"/>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nG9-9e-5Fx">
+                                    <rect key="frame" x="24" y="541" width="366" height="587.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                    <mutableString key="text">가나다라마바ㅏ사압자ㅓㅑㅇ너매ㅑㅜㅇㄹ배ㅕ졷ㅇ래봊ㄷ래ㅑㅓㅁ내ㅑㅓ매ㅑ저래ㅑ벚ㄷ래ㅑㅓ먀ㅐ언랴매ㅓㄴㅇ래ㅑ벚대루ㅐㅈ어ㅜㅐㅑㅈ돕래ㅑㅓㅁ내랴ㅓ매ㅑㄴ어배ㅑ저래ㅑ문야러ㅜ매ㅑ오래ㅑ벚ㄹ댜ㅐㅓㅁ내우ㅏ래몯래ㅑ봊대ㅑㄹ매ㅑㅇ래ㅑ먿랴ㅓㅂ댜러매ㅑㄴ오메ㅓㅂ도레ㅑㅐㅂㅈ도래ㅕ모어랴모ㅔㅐㅑㅕ노ㅔ벼ㅐㅈㄷ래ㅑㅁ졷ㄹㅇㅁ\ㄴㅇㄹㅁ\ㄴㅇㄹ\\\ㅁㅇㄹ\
+ㅇㄹ
+ㅁㄴㅇㄹ
+ㅁ
+ㅇㄹㅁㄴㅇㄹㅁㅇㄴㄹ
+ㅁㅇㄹㅁㅇㄹㅁㄴㅇ램래ㅑㅂ줃러ㅐㅜㅁ애ㅓㅜㅐㅑㄴ우래ㅑ무러부쟈뎌로ㅝㅁ우래ㅓㅁ냐ㅐ려ㅗㅈ뎌ㅐㅑ뤄ㅏㅜㅇ러문우ㅗ래ㅑㅕ봊ㄷ래ㅑㅕㅗㅜ마ㅓㄴ우라ㅓ뭉랴ㅕㅗ불
+ㅁㄴㅇ러문ㅇㄹ먀녕랴ㅕㅠㅂㄷㄹ3ㅑ저ㅠ야ㅓ뉴ㅏ런ㅇ라ㅓ뮤ㅜㄴ아ㅓ로ㅑㅕㄷ조랴ㅓㅠ아ㅓㄴ류먀ㅕㅗ랴ㅔㅕㅂ졷려ㅐ모래ㅑ덜제ㅐㅕㅂ조허ㅏㅣㅁ노[-ㅕㅔㅐㄹㅁㄴㅇㄹㅁㄴㅇ러ㅑㅐ멍ㄴ라ㅣ믄ㅇ;ㅣㄹㅁ;ㅣㅇ러;ㅐㅑㅂㄷ러ㅣㅏㅁ능리;ㅓㅁ;ㅣㅑ러;매ㅑㅓㄹ대ㅑㅁ;ㅇ리ㅏㅓ;밍너ㅏ럅잳러;ㅣ어나라ㅣ머랴더무읖마넝ㄹ;ㅐㅑㅓㅁ재ㅑㄷㄹ;ㅓㅂㅈㄷ러망ㄴ러ㅣ;ㅁㅇ너림ㄴ웊;ㅣㅏㅁㄴ어;ㅣ멎ㄷㄱ려ㅓㅂㅈㄷ러'ㅁㄴㄹ
+ㅁ낭루미;ㄴ얼;ㅣㅁ언ㄹ'ㅣㅇ버
+ㄹㅂㄷ래ㅓ래ㅑㄷ머;ㅏㅓㅇ;ㅣㅏㅓㅁㄴ;ㅣㅇㅂ9젿[0ㅂ젿럄얼니ㅓㅇㄹ;ㅣㅁ언ㄹ뱢도허ㅜㅠ파ㅜㅍ;ㅣㅜ 매ㅜㄴㅇ파 뭉래;먀ㅓㄷ;리미다러ㅐㅑㅂㅈㄷ래ㅏ미눙ㄹ;ㅣㅏㄴㅁㄹㅇ;</mutableString>
                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="17"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
