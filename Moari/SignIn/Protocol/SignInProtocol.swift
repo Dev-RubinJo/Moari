@@ -37,6 +37,8 @@ protocol SignInActorDelegate: class {
     func didTapFindEmailPasswordLabel()
     
     func didTapSignUpLabel()
+    
+    func successSignIn()
 }
 
 protocol SignInAlertActorDelegate: class {
@@ -49,7 +51,7 @@ protocol SignInAlertActorDelegate: class {
 
 protocol SignInDataManagerDelegate: class {
     
-    var actor: SignInActorDelegate? { get set }
+    var actor: (SignInActorDelegate & SignInAlertActorDelegate)? { get set }
     
     func signIn(fromVC vc: SignInVC, email: String, password: String)
 }

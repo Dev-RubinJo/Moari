@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CurationCell" reuseIdentifier="CurationCell" id="gTV-IL-0wX" customClass="CurationCell" customModule="Moari" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVJ-jd-8vC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lzt-W8-aya">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="de6-3c-AzW">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                    </imageView>
+                                    <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdp-jJ-64i">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uml-Fy-Xup">
+                                        <rect key="frame" x="22" y="85" width="370" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fT0-cZ-l2g">
+                                                <rect key="frame" x="0.0" y="0.0" width="370" height="70"/>
+                                                <string key="text">제목 25자 제한 어때요!
+이상한가</string>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="26"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="fT0-cZ-l2g" secondAttribute="trailing" id="Cco-QR-Rk0"/>
+                                            <constraint firstItem="fT0-cZ-l2g" firstAttribute="leading" secondItem="Uml-Fy-Xup" secondAttribute="leading" id="M6A-Yq-r9G"/>
+                                            <constraint firstItem="fT0-cZ-l2g" firstAttribute="top" secondItem="Uml-Fy-Xup" secondAttribute="top" id="RS2-5D-qra"/>
+                                            <constraint firstAttribute="bottom" secondItem="fT0-cZ-l2g" secondAttribute="bottom" id="Xgo-uz-i7q"/>
+                                            <constraint firstAttribute="height" constant="70" id="n1u-Js-k3F"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyF-Oi-oJ8">
+                                        <rect key="frame" x="145.66666666666666" y="172" width="122.99999999999997" height="33"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starRate7" translatesAutoresizingMaskIntoConstraints="NO" id="EZz-Sp-FN0">
+                                                <rect key="frame" x="0.0" y="0.0" width="123" height="33"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="EZz-Sp-FN0" firstAttribute="leading" secondItem="OyF-Oi-oJ8" secondAttribute="leading" id="9R9-rU-ZcB"/>
+                                            <constraint firstAttribute="bottom" secondItem="EZz-Sp-FN0" secondAttribute="bottom" id="EZn-nV-6TJ"/>
+                                            <constraint firstAttribute="height" constant="33" id="Fsn-lg-34U"/>
+                                            <constraint firstAttribute="trailing" secondItem="EZz-Sp-FN0" secondAttribute="trailing" id="O7o-Xs-glf"/>
+                                            <constraint firstAttribute="width" constant="123" id="pU6-tz-rr4"/>
+                                            <constraint firstItem="EZz-Sp-FN0" firstAttribute="top" secondItem="OyF-Oi-oJ8" secondAttribute="top" id="vpY-ud-zYJ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1M0-DZ-KMB">
+                                        <rect key="frame" x="22" y="215" width="370" height="179"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하늘에는 하나에 지나가는 이름을 시인의 나의 마디씩 봅니다. 이국 벌레는 그리워 풀이 이름자 봅니다. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2b-Bk-IYW">
+                                                <rect key="frame" x="0.0" y="0.0" width="370" height="179"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="C2b-Bk-IYW" secondAttribute="trailing" id="Ge9-4Y-3sb"/>
+                                            <constraint firstAttribute="bottom" secondItem="C2b-Bk-IYW" secondAttribute="bottom" id="Rk7-4U-2RA"/>
+                                            <constraint firstItem="C2b-Bk-IYW" firstAttribute="top" secondItem="1M0-DZ-KMB" secondAttribute="top" id="a8L-Yw-aSn"/>
+                                            <constraint firstItem="C2b-Bk-IYW" firstAttribute="leading" secondItem="1M0-DZ-KMB" secondAttribute="leading" id="o8p-3t-PJM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="1M0-DZ-KMB" secondAttribute="bottom" constant="20" id="2FW-A8-OFS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uml-Fy-Xup" secondAttribute="trailing" constant="22" id="37E-09-PhE"/>
+                                    <constraint firstItem="fdp-jJ-64i" firstAttribute="leading" secondItem="Lzt-W8-aya" secondAttribute="leading" id="3Qd-di-CBl"/>
+                                    <constraint firstAttribute="bottom" secondItem="fdp-jJ-64i" secondAttribute="bottom" id="4Sc-Yc-1fE"/>
+                                    <constraint firstAttribute="trailing" secondItem="de6-3c-AzW" secondAttribute="trailing" id="4TC-Uu-CIG"/>
+                                    <constraint firstItem="Uml-Fy-Xup" firstAttribute="leading" secondItem="Lzt-W8-aya" secondAttribute="leading" constant="22" id="Gdn-ws-M2g"/>
+                                    <constraint firstItem="de6-3c-AzW" firstAttribute="top" secondItem="Lzt-W8-aya" secondAttribute="top" id="HpH-tz-boy"/>
+                                    <constraint firstItem="OyF-Oi-oJ8" firstAttribute="top" secondItem="Uml-Fy-Xup" secondAttribute="bottom" constant="17" id="SAx-HU-Ztt"/>
+                                    <constraint firstItem="OyF-Oi-oJ8" firstAttribute="centerX" secondItem="Lzt-W8-aya" secondAttribute="centerX" id="SGt-bJ-R0f"/>
+                                    <constraint firstItem="1M0-DZ-KMB" firstAttribute="top" secondItem="OyF-Oi-oJ8" secondAttribute="bottom" constant="10" id="ckW-yV-hVq"/>
+                                    <constraint firstAttribute="trailing" secondItem="fdp-jJ-64i" secondAttribute="trailing" id="dkn-y0-LS5"/>
+                                    <constraint firstAttribute="bottom" secondItem="de6-3c-AzW" secondAttribute="bottom" id="duV-b2-1ks"/>
+                                    <constraint firstItem="de6-3c-AzW" firstAttribute="leading" secondItem="Lzt-W8-aya" secondAttribute="leading" id="dxH-vg-ftm"/>
+                                    <constraint firstItem="1M0-DZ-KMB" firstAttribute="leading" secondItem="Lzt-W8-aya" secondAttribute="leading" constant="22" id="ewt-fu-R2o"/>
+                                    <constraint firstItem="Uml-Fy-Xup" firstAttribute="top" secondItem="Lzt-W8-aya" secondAttribute="top" constant="85" id="f6x-7j-a8L"/>
+                                    <constraint firstAttribute="trailing" secondItem="1M0-DZ-KMB" secondAttribute="trailing" constant="22" id="krI-WE-Dvk"/>
+                                    <constraint firstItem="fdp-jJ-64i" firstAttribute="top" secondItem="Lzt-W8-aya" secondAttribute="top" id="zOW-ki-VDG"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYS-hA-ttl">
+                                <rect key="frame" x="24" y="434" width="366" height="436"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBq-Ul-0Wy">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="436"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <mutableString key="text">하늘에는 하나에 지나가는 이름을 시인의 나의 마디씩 봅니다. 이국 벌레는 그리워 풀이 이름자 봅니다. 시와 노루, 한 무엇인지 봅니다. 별 이름자 불러 사람들의 내 많은 써 슬퍼하는 버리었습니다. 오면 아스라히 슬퍼하는 계집애들의 피어나듯이 사람들의 다하지 이런 까닭입니다. 별을 하나에 이름과, 별 강아지, 이름과 봅니다. 가슴속에 때 흙으로 하늘에는 무성할 위에 오면 봅니다. 다하지 하늘에는 이국 계집애들의 별 풀이 내린 벌써 릴케 있습니다. 새워 멀리 다 다 라이너 별빛이 봅니다. 된 그리고 하나에 풀이 봅니다. </mutableString>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="zBq-Ul-0Wy" firstAttribute="leading" secondItem="eYS-hA-ttl" secondAttribute="leading" id="2U6-bb-bU4"/>
+                                    <constraint firstAttribute="trailing" secondItem="zBq-Ul-0Wy" secondAttribute="trailing" id="7gm-Lk-bch"/>
+                                    <constraint firstItem="zBq-Ul-0Wy" firstAttribute="top" secondItem="eYS-hA-ttl" secondAttribute="top" id="EQU-9x-uXk"/>
+                                    <constraint firstAttribute="bottom" secondItem="zBq-Ul-0Wy" secondAttribute="bottom" id="Sgt-I9-iHe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.517064631" green="0.39951804279999997" blue="0.4274525642" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="eYS-hA-ttl" firstAttribute="top" secondItem="Lzt-W8-aya" secondAttribute="bottom" constant="20" id="BGd-sI-uGF"/>
+                            <constraint firstItem="eYS-hA-ttl" firstAttribute="leading" secondItem="UVJ-jd-8vC" secondAttribute="leading" constant="24" id="EjO-gV-R9G"/>
+                            <constraint firstAttribute="trailing" secondItem="Lzt-W8-aya" secondAttribute="trailing" id="TRQ-JZ-V4D"/>
+                            <constraint firstItem="Lzt-W8-aya" firstAttribute="centerX" secondItem="UVJ-jd-8vC" secondAttribute="centerX" id="mgv-9c-HhC"/>
+                            <constraint firstItem="Lzt-W8-aya" firstAttribute="width" secondItem="Lzt-W8-aya" secondAttribute="height" multiplier="1:1" id="mpM-if-uft"/>
+                            <constraint firstAttribute="bottom" secondItem="eYS-hA-ttl" secondAttribute="bottom" constant="26" id="ua9-Gr-hBQ"/>
+                            <constraint firstItem="Lzt-W8-aya" firstAttribute="leading" secondItem="UVJ-jd-8vC" secondAttribute="leading" id="x0s-sA-VW1"/>
+                            <constraint firstItem="Lzt-W8-aya" firstAttribute="top" secondItem="UVJ-jd-8vC" secondAttribute="top" id="xe0-w5-iiv"/>
+                            <constraint firstAttribute="trailing" secondItem="eYS-hA-ttl" secondAttribute="trailing" constant="24" id="yyD-li-1PJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="UVJ-jd-8vC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XIV-DC-kpu"/>
+                <constraint firstItem="UVJ-jd-8vC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jZI-sn-TSm"/>
+                <constraint firstAttribute="bottom" secondItem="UVJ-jd-8vC" secondAttribute="bottom" id="s6c-iQ-jHj"/>
+                <constraint firstAttribute="trailing" secondItem="UVJ-jd-8vC" secondAttribute="trailing" id="yar-r6-v4d"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="backgroundColorView" destination="UVJ-jd-8vC" id="L4M-ph-ypT"/>
+                <outlet property="backgroundImageView" destination="de6-3c-AzW" id="ZDj-RS-yzv"/>
+                <outlet property="curationCellTopConstraint" destination="xe0-w5-iiv" id="lBk-PJ-AFQ"/>
+                <outlet property="reviewContentLabel" destination="zBq-Ul-0Wy" id="ucu-at-LHP"/>
+                <outlet property="reviewSimpleContentLabel" destination="C2b-Bk-IYW" id="4Ov-u6-ech"/>
+                <outlet property="reviewStarRateImageView" destination="EZz-Sp-FN0" id="2fc-qe-fw0"/>
+                <outlet property="reviewTitleLabel" destination="fT0-cZ-l2g" id="nB5-zm-aUO"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="mainBackgroundImage" width="375" height="812"/>
+        <image name="starRate7" width="116" height="27"/>
+    </resources>
+</document>

@@ -10,6 +10,7 @@ import ObjectMapper
 
 struct Category {
     var categoryName: String!
+    var categoryId: Int!
 }
 extension Category: Mappable {
     init?(map: Map) {
@@ -17,6 +18,7 @@ extension Category: Mappable {
     
     mutating func mapping(map: Map) {
         categoryName <- map["categoryName"]
+        categoryId <- map["idcategory"]
     }
     
     

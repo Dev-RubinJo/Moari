@@ -52,7 +52,16 @@
                                         </imageView>
                                         <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-cG-ms0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navigationTitleLogoCategoryDark" translatesAutoresizingMaskIntoConstraints="NO" id="fc1-IU-Z3K">
+                                                    <rect key="frame" x="358" y="17" width="39" height="31"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="fc1-IU-Z3K" secondAttribute="trailing" constant="17" id="Gex-CY-hD0"/>
+                                                <constraint firstItem="fc1-IU-Z3K" firstAttribute="top" secondItem="raZ-cG-ms0" secondAttribute="top" constant="17" id="zSJ-Dv-VWb"/>
+                                            </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m6-O6-7Ir">
                                             <rect key="frame" x="14" y="12" width="32" height="32"/>
@@ -237,6 +246,7 @@
     </objects>
     <resources>
         <image name="imagePickButton" width="32" height="32"/>
+        <image name="navigationTitleLogoCategoryDark" width="39" height="31"/>
         <image name="reviewContentBorderView" width="333" height="120"/>
         <image name="reviewStarRatioBorderView" width="125" height="35"/>
         <image name="reviewTitleBorderView" width="333" height="71"/>

@@ -21,7 +21,16 @@ class FindEmailPasswordDataManager: FindEmailPasswordDataManagerDelegate {
             let headers = ["Content-Type": "application/json"]
             let parameters: Parameters = ["email": email]
             
-            Alamofire.request("\(Server.api)", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            Alamofire.request("\(Server.api)/validation/user", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .validate()
+                .responseObject(completionHandler: {(response: DataResponse<FindEmailPasswordResponse>) in
+                    switch response.result {
+                    case .success(let findResponse):
+                        break
+                    case .failure(let error):
+                        print(error)
+                    }
+                })
         } else {
             self.actor?.presentInvalidEmailAlert(toVC: vc)
         }
@@ -32,7 +41,16 @@ class FindEmailPasswordDataManager: FindEmailPasswordDataManagerDelegate {
         let headers = ["Content-Type": "application/json"]
         let parameters: Parameters = ["email": email]
         
-        Alamofire.request("\(Server.api)", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        Alamofire.request("\(Server.api)/find/user", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        .validate()
+            .responseObject(completionHandler: { (response: DataResponse<FindEmailPasswordResponse>) in
+                switch response.result {
+                case .success(let findResponse):
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            })
         
     }
 }

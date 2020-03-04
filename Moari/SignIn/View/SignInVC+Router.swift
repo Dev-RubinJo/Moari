@@ -33,34 +33,19 @@ extension SignInVC: SignInVCRouterDelegate {
             return vc
         }
     }
-    // TODO: MainVC 만들어서 넣기
     
     func presentMainVC() {
         let mainVC = MainVC.makeMainVC
-        
         self.window?.rootViewController = mainVC
         self.window?.makeKeyAndVisible()
+        UIView.transition(with: self.window!, duration: 0.2, options: .transitionCrossDissolve, animations: nil, completion: nil)
     }
     
-//    func presentMainVC() {
-//        let mainRootVC = MainVC.makeMainVC
-//        let menuVC = DrawerVC()
-//        let mainVC = DrawerController()
-//
-//        mainVC.setViewController(mainRootVC, for: .none)
-//        mainVC.setViewController(menuVC, for: .left)
-//
-//
-//        self.window?.rootViewController = mainVC
-//        self.window?.makeKeyAndVisible()
-//    }
-    
-    // TODO: FindEmailPasswordVC 만들어서 넣기
     func presentFindEmailPasswordVC() {
         let findVC = FindEmailPasswordVC.makeFindEmailPasswordVC
         self.navigationController?.pushViewController(findVC, animated: true)
     }
-    // TODO: SignUpVC 만들어서 넣기
+    
     func presentSignUpVC() {
         let signUpVC = SignUpVC.makeSignUpVC
         self.navigationController?.pushViewController(signUpVC, animated: true)

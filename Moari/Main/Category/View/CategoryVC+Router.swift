@@ -26,6 +26,8 @@ extension CategoryVC: CategoryVCRouterDelegate {
     
     func presentCategoryDetailVC() {
         // TODO: CategoryDetailVC 띄우기
+        let categoryDetailVC = CategoryDetailVC.makeCategoryDetailVC
+        self.navigationController?.pushViewController(categoryDetailVC, animated: true)
     }
     
     func presentAddReviewVC() {

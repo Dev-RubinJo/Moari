@@ -68,8 +68,6 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
         self.baseHeight = self.shareImageBaseView.bounds.height + 127
         
         self.setUpScrollView()
@@ -163,15 +161,6 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol, UITextViewDelegate {
         newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
         self.contentTextView.frame = newFrame;
         self.contentTextViewHeight.height = newSize.height
-    }
-    
-    @objc func keyboardWillShow(notification:NSNotification) {
-        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
-        let keyboardFrame:NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
-        let keyboardRectangle = keyboardFrame.cgRectValue
-        let keyboardHeight = keyboardRectangle.height
-        
-        print("키보드 : \(keyboardHeight)")
     }
 }
 

@@ -26,7 +26,13 @@ protocol CategoryActorDelegate: class {
     
     var dataManager: CategoryDataManagerDelegate? { get set }
     
+    var categoryList: [Category] { get }
+    
+    func setCategoryList(category: Category)
+    
     func didLoadCategoryVC(vc: CategoryVC)
+    
+    func didTapCategoryCell(_ index: Int)
     
     func didTapAddReviewButton()
 }
@@ -36,4 +42,8 @@ protocol CategoryDataManagerDelegate: class {
     var actor: CategoryActorDelegate? { get set }
     
     func loadCategoryList(toVC vc: CategoryVC)
+    
+    func addCategory(toVC vc: CategoryVC)
+    
+    func deleteCategory(toVC vc: CategoryVC)
 }

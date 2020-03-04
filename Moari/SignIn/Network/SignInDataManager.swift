@@ -14,7 +14,7 @@ class SignInDataManager: SignInDataManagerDelegate {
     static let shared = SignInDataManager()
     private init() {}
     
-    weak var actor: SignInActorDelegate?
+    weak var actor: (SignInActorDelegate & SignInAlertActorDelegate)?
     
     func signIn(fromVC vc: SignInVC, email: String, password: String) {
         let headers = ["Content-Type": "application/json"]
@@ -31,10 +31,13 @@ class SignInDataManager: SignInDataManagerDelegate {
                     case 200:
                         UserDefaults.standard.set(signInResponse.jwt, forKey: "LoginToken")
                         UserDefaults.standard.set(signInResponse.name, forKey: "NickName")
-                        print("로그인 성공")
+                        self.actor?.successSignIn()
                     case 310:
                         print("이메일을 확인해주세요")
-                        fallthrough
+                        self.actor?.presentValidationAlert(toVC: vc, email: false, password: true)
+                    case 311:
+                        // 비밀번호 틀린 Alert만들기
+                        print("비밀번호가 틀림")
                     case 312:
                         print("비활성화 된 계정입니다. 고객센터")
                         fallthrough

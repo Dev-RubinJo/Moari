@@ -11,7 +11,6 @@ import UIKit
 extension CategoryVC {
     
     func setCategoryVCUI() {
-        
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.logoButton.setImage(UIImage(named: "navigationTitleLogoCategoryDark"), for: .normal)

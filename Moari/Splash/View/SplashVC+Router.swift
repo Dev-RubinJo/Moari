@@ -37,9 +37,9 @@ extension SplashVC: SplashVCRouterDelegate {
     
     func presentMainVC() {
         let mainVC = MainVC.makeMainVC
-
         self.window?.rootViewController = mainVC
         self.window?.makeKeyAndVisible()
+        UIView.transition(with: self.window!, duration: 0.2, options: .transitionCrossDissolve, animations: nil, completion: nil)
     }
     
     func presentSignInVC() {

@@ -15,12 +15,28 @@ class CategoryActor: CategoryActorDelegate {
     
     weak var dataManager: CategoryDataManagerDelegate?
     
+    private var _categoryList: [Category] = []
+    
+    var categoryList: [Category] {
+        get {
+            return self._categoryList
+        }
+    }
+    
+    func setCategoryList(category: Category) {
+        self._categoryList.append(category)
+    }
+    
     func didLoadCategoryVC(vc: CategoryVC) {
-        
+        self.dataManager?.loadCategoryList(toVC: vc)
+    }
+    
+    func didTapCategoryCell(_ index: Int) {
+        // TODO: 카테고리 리뷰 리스트 api엮기
+        self.view?.presentCategoryDetailVC()
     }
     
     func didTapAddReviewButton() {
         self.view?.presentAddReviewVC()
     }
-    
 }

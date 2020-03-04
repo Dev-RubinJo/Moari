@@ -25,6 +25,10 @@ class SignInActor: SignInActorDelegate {
     func didTapSignUpLabel() {
         self.view?.presentSignUpVC()
     }
+    
+    func successSignIn() {
+        self.view?.presentMainVC()
+    }
 }
 extension SignInActor {
     private func checkTextFields(vc: SignInVC) {
