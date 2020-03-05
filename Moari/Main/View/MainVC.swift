@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KWDrawerController
 
 class MainVC: UITabBarController {
 
@@ -14,18 +15,31 @@ class MainVC: UITabBarController {
         super.viewDidLoad()
         self.delegate = self
 
-        let categoryRootVC = RootViewController(mainViewController: CategoryVC.makeCategoryVC, topNavigationLeftImage: UIImage(named: "drawerMenuDark"))
-        let categoryDrawerVC = DrawerVC()
-        let categoryVC = DrawerController(rootViewController: categoryRootVC, menuController: categoryDrawerVC)
-        categoryVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 0)
         
-        let curationRootVC = RootViewController(mainViewController: CurationVC.makeCurationVC, topNavigationLeftImage: UIImage(named: "drawerMenuDark"))
-        let curationDrawerVC = DrawerVC()
-        let curationVC = DrawerController(rootViewController: curationRootVC, menuController: curationDrawerVC)
-        curationVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        let categoryRootVC = UINavigationController(rootViewController: CategoryVC.makeCategoryVC)
+        categoryRootVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 0)
         
-        let tabbarList = [categoryVC, curationVC]
+        let curationRootVC = UINavigationController(rootViewController: CurationVC.makeCurationVC)
+        curationRootVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        
+        let tabbarList = [categoryRootVC, curationRootVC]
         self.viewControllers = tabbarList
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setDrawerConfig()
+    }
+    
+    func setDrawerConfig() {
+        self.drawerController?.setAbsolute(true, for: .left)
+        self.drawerController?.getSideOption(for: .left)?.isShadow = false
+        self.drawerController?.getSideOption(for: .left)?.isFadeScreen = true
+        self.drawerController?.getSideOption(for: .left)?.isBlur = false
+        self.drawerController?.getSideOption(for: .left)?.isOverflowAnimation = false
+        self.drawerController?.getSideOption(for: .left)?.isGesture = true
+        self.drawerController?.getSideOption(for: .left)?.isTapToClose = true
+        self.drawerController?.setBringToFront(true, for: .left)
     }
     
     static var makeMainVC: MainVC {

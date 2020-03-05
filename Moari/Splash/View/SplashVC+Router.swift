@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KWDrawerController
 
 extension SplashVC: SplashVCRouterDelegate {
     
@@ -36,10 +37,16 @@ extension SplashVC: SplashVCRouterDelegate {
     }
     
     func presentMainVC() {
-        let mainVC = MainVC.makeMainVC
+        let mainRootVC = MainVC.makeMainVC
+        let mainDrawerVC = DrawerVC()
+        let mainVC = DrawerController()
+
+        mainVC.setViewController(mainRootVC, for: .none)
+        mainVC.setViewController(mainDrawerVC, for: .left)
+        
         self.window?.rootViewController = mainVC
         self.window?.makeKeyAndVisible()
-        UIView.transition(with: self.window!, duration: 0.2, options: .transitionCrossDissolve, animations: nil, completion: nil)
+        UIView.transition(with: self.window!, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
     }
     
     func presentSignInVC() {
@@ -47,5 +54,10 @@ extension SplashVC: SplashVCRouterDelegate {
         self.window?.rootViewController = signInVC
         self.window?.makeKeyAndVisible()
         UIView.transition(with: self.window!, duration: 0.2, options: .transitionCrossDissolve, animations: nil, completion: nil)
+    }
+    
+    /// 앱잠금이 있을경우 띄워주는 VC
+    func presentAppLockVC() {
+        
     }
 }

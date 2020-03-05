@@ -3,7 +3,7 @@
 
 target 'Moari' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_modular_headers!
+  use_frameworks!
   
   # Pods for Moari
   pod 'Alamofire'
@@ -14,6 +14,8 @@ target 'Moari' do
   pod 'SwiftyJSON'
   pod 'RealmSwift'
   
+  # Drawer View Controller
+  pod 'KWDrawerController', '~> 4.2'
   # Star Rating Library
   pod 'Cosmos', '~> 21.0'
   
