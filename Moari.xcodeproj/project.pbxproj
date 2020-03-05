@@ -95,6 +95,7 @@
 		43878182240FD58200C39B8B /* CategoryDetailVC+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878181240FD58200C39B8B /* CategoryDetailVC+UICollectionView.swift */; };
 		43878186240FE26200C39B8B /* CurationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878184240FE26200C39B8B /* CurationCell.swift */; };
 		43878187240FE26200C39B8B /* CurationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43878185240FE26200C39B8B /* CurationCell.xib */; };
+		4387818A240FF64800C39B8B /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878189240FF64800C39B8B /* ReviewModel.swift */; };
 		439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */; };
 		439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */; };
 		439BE63A23FE294E00EC77A9 /* FindEmailPasswordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */; };
@@ -249,6 +250,7 @@
 		43878181240FD58200C39B8B /* CategoryDetailVC+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryDetailVC+UICollectionView.swift"; sourceTree = "<group>"; };
 		43878184240FE26200C39B8B /* CurationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurationCell.swift; sourceTree = "<group>"; };
 		43878185240FE26200C39B8B /* CurationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurationCell.xib; sourceTree = "<group>"; };
+		43878189240FF64800C39B8B /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+SetUI.swift"; sourceTree = "<group>"; };
 		439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailPasswordProtocol.swift; sourceTree = "<group>"; };
@@ -717,6 +719,7 @@
 		435EAC5223FAA09200FF1AD8 /* Actor */ = {
 			isa = PBXGroup;
 			children = (
+				43878188240FF63300C39B8B /* Entity */,
 				43837952240F541B00317F3D /* CategoryDetailActor.swift */,
 			);
 			path = Actor;
@@ -892,6 +895,14 @@
 				43878185240FE26200C39B8B /* CurationCell.xib */,
 			);
 			path = CurationCell;
+			sourceTree = "<group>";
+		};
+		43878188240FF63300C39B8B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				43878189240FF64800C39B8B /* ReviewModel.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		439BE62A23FC54A700EC77A9 /* Extension */ = {
@@ -1275,6 +1286,7 @@
 				43CF869423F29BDE0062B846 /* Device.swift in Sources */,
 				432E0FD3240B7F0C00ADD122 /* AddCategory.swift in Sources */,
 				4384020F2401040000ECA42E /* SplashVC+Router.swift in Sources */,
+				4387818A240FF64800C39B8B /* ReviewModel.swift in Sources */,
 				439BE63C23FE298800EC77A9 /* FindEmailPasswordDataManager.swift in Sources */,
 				430B4E7024079301004046F9 /* CategoryProtocol.swift in Sources */,
 				43D53E4D23FAE7DD005DFC4A /* SignInVC.swift in Sources */,

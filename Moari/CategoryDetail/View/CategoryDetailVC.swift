@@ -32,11 +32,3 @@ class CategoryDetailVC: BaseVC, CategoryDetailVCProtocol {
 // 롱클릭 이벤트 => 리뷰 삭제
 // 상단 플러스버튼 => 리뷰 추가
 // 셀 클릭 이벤트 => 리뷰 보기
-
-
-// se = 320
-// 8 = 375
-// 6s+ = 414
-// 11pro = 375
-// 11 = 414
-// 11pro max = 414
