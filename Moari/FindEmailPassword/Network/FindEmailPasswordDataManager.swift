@@ -26,7 +26,12 @@ class FindEmailPasswordDataManager: FindEmailPasswordDataManagerDelegate {
                 .responseObject(completionHandler: {(response: DataResponse<FindEmailPasswordResponse>) in
                     switch response.result {
                     case .success(let findResponse):
-                        break
+                        switch findResponse.code {
+                        case 200:
+                            self.actor?.registeredEmail(updateVC: vc)
+                        default:
+                            self.actor?.notRegisteredEmail(updateVC: vc)
+                        }
                     case .failure(let error):
                         print(error)
                     }
@@ -37,7 +42,7 @@ class FindEmailPasswordDataManager: FindEmailPasswordDataManagerDelegate {
         
     }
     
-    func sendTemporaryPassword(email: String) {
+    func sendTemporaryPassword(fromVC vc: FindEmailPasswordVC, email: String) {
         let headers = ["Content-Type": "application/json"]
         let parameters: Parameters = ["email": email]
         
@@ -46,7 +51,13 @@ class FindEmailPasswordDataManager: FindEmailPasswordDataManagerDelegate {
             .responseObject(completionHandler: { (response: DataResponse<FindEmailPasswordResponse>) in
                 switch response.result {
                 case .success(let findResponse):
-                    break
+                    switch findResponse.code {
+                    case 200:
+                        self.actor?.sendTemporaryPassword(updateVC: vc)
+                    default:
+                        break
+                    }
+                    
                 case .failure(let error):
                     print(error)
                 }
