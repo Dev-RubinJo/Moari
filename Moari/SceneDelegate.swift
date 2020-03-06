@@ -36,24 +36,64 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
+        if appLockConfig {
+            if let imageView : UIImageView = UIApplication.shared.keyWindow?.subviews.last?.viewWithTag(1001) as? UIImageView {
+                imageView.removeFromSuperview()
+            }
+        } else {
+            UserDefaults.standard.set(false, forKey: "NeedAppPassword")
+        }
+        
+        
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
+        let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
+        if appLockConfig {
+            let imageView = UIImageView(frame: self.window!.bounds)
+            imageView.tag = 1001
+            imageView.image = UIImage(named: "logoImageDark") //your image goes here
+            UIApplication.shared.windows.first?.subviews.last?.addSubview(imageView)
+        } else {
+            UserDefaults.standard.set(false, forKey: "NeedAppPassword")
+        }
+        
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        print("EnterForeground")
+//        let tempVC = SplashVC.makeSplashVC
+//        self.window?.rootViewController?.present(tempVC, animated: false, completion: nil)
+//        self.appDelegate.setLocalAuthentication()
+        let needAppPassword = UserDefaults.standard.bool(forKey: "NeedAppPassword")
+        guard let appPassword = UserDefaults.standard.string(forKey: "AppPassword") else {
+            return
+        }
+        if needAppPassword {
+            
+        } else {
+            
+        }
+        
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        print("EnterBackground")
+        let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
+        if appLockConfig {
+            UserDefaults.standard.set(true, forKey: "NeedAppPassword")
+        } else {
+            UserDefaults.standard.set(false, forKey: "NeedAppPassword")
+        }
     }
 
 
 }
-

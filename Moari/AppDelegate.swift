@@ -8,21 +8,15 @@
 
 import UIKit
 import Firebase
+import LocalAuthentication
 //import BackgroundTasks
 import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    private let _tokenHeaders = ["x-access-Token": UserDefaults.standard.string(forKey: "LoginToken") ?? ""]
-    
+    private let authContext = LAContext()
     var window: UIWindow?
-    
-    var getLoginTokenHeader: [String: String] {
-        get {
-            return self._tokenHeaders
-        }
-    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -55,6 +49,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    }
 //    func test() {}
     
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        if let imageView : UIImageView = UIApplication.shared.keyWindow?.subviews.last?.viewWithTag(1001) as? UIImageView {
+            imageView.removeFromSuperview()
+        }
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        let imageView = UIImageView(frame: self.window!.bounds)
+        imageView.tag = 1001
+        imageView.image = UIImage(named: "logoImageDark") //your image goes here
+
+        UIApplication.shared.keyWindow?.subviews.last?.addSubview(imageView)
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
+        if appLockConfig {
+            UserDefaults.standard.set(true, forKey: "NeedAppPassword")
+        } else {
+            UserDefaults.standard.set(false, forKey: "NeedAppPassword")
+        }
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        let needAppPassword = UserDefaults.standard.bool(forKey: "NeedAppPassword")
+        guard let appPassword = UserDefaults.standard.string(forKey: "AppPassword") else {
+            return
+        }
+        if needAppPassword {
+            
+        } else {
+            
+        }
+        self.setLocalAuthentication()
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        
+    }
+    
     // MARK: UISceneSession Lifecycle
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -71,4 +105,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
 }
-
+extension AppDelegate {
+    func setLocalAuthentication() {
+        var description = ""
+        if self.authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+            switch self.authContext.biometryType {
+            case .faceID:
+                description = "잠금 해제를 위해 Face Id로 인증합니다."
+            case .touchID:
+                description = "잠금 해제를 위해 Touch Id로 인증합니다."
+            case .none:
+                print(description)
+                break
+            @unknown default:
+                break
+            }
+        }
+        
+        
+        self.authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: description) { (success, error) in
+            if success {
+                print("touchId")
+                print(success)
+                DispatchQueue.main.async {
+        
+                }
+                
+            } else {
+                
+            }
+            print(error)
+        }
+    }
+}
