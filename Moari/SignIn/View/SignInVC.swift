@@ -35,8 +35,8 @@ class SignInVC: BaseVC, SignInVCProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setColorModeUI()
-        //        self.setDarkModeUI()
-        //        self.emailTextField.delegate = self
+        
+        self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.setSignInVCUI()
         

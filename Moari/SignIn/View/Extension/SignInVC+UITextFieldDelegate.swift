@@ -13,6 +13,7 @@ extension SignInVC: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         switch textField {
         case self.emailTextField:
+            print(string)
             // 엔터 -> skip
             if string == "\n" {
                 if textField == self.emailTextField {
@@ -38,22 +39,17 @@ extension SignInVC: UITextFieldDelegate {
             //지금까지 입력된 값
             var currentString = textField.text!
             currentString.append(string)
-            
-            if textField == self.emailTextField {
-                
-            }
-            
+
             if textField == self.passwordTextField {
                 if currentString.count > 16 {
                     return false
                 }
             }
-            
             textField.text = currentString
             return false
         default:
             return false
         }
-        return false
+        return true
     }
 }

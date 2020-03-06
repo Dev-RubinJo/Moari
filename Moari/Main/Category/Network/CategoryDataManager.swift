@@ -18,7 +18,6 @@ class CategoryDataManager: CategoryDataManagerDelegate {
     
     func loadCategoryList(toVC vc: CategoryVC) {
         guard let loginToken = UserDefaults.standard.string(forKey: "LoginToken") else {
-            
             return
         }
         let headers: [String: String] = ["x-access-Token": loginToken]

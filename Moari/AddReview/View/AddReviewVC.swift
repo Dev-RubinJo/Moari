@@ -101,12 +101,18 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol, UITextViewDelegate {
         case self.reviewTitleTextView:
             self.reviewTitlePlaceholderLabel.isHidden = true
             self.reviewTitleTextView.centerVertically()
+            
         case self.reviewContentTextView:
             self.reviewContentPlaceholderLabel.isHidden = true
             self.reviewContentTextView.centerVertically()
+            
         case self.contentTextView:
             self.resizeContentTextView()
             self.updateScrollView(heightValue: self.baseHeight + 265)
+            var point = contentTextView.frame.origin
+            point.y = point.y - 261
+            point.x = point.x - 22
+            self.scrollView.setContentOffset(point, animated: true)
             // 11promax = 346
             // 11 = 346
             // 11pro = 220
@@ -124,13 +130,24 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol, UITextViewDelegate {
         case self.reviewTitleTextView:
             self.reviewTitlePlaceholderLabel.isHidden = true
             self.reviewTitleTextView.centerVertically()
+            
         case self.reviewContentTextView:
             self.reviewContentPlaceholderLabel.isHidden = true
             self.reviewContentTextView.centerVertically()
+            
         case self.contentTextView:
             self.resizeContentTextView()
-            print(self.contentTextViewHeight.height)
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + self.keyboardHeight)
+//            var point = contentTextView.frame.origin
+//            point.y = point.y - 261
+//            point.x = point.x - 22
+//
+//            if let selectedRange = self.contentTextView.selectedTextRange {
+//                let cursorPosition = self.contentTextView.offset(from: self.contentTextView.beginningOfDocument, to: selectedRange.start)
+//                print("\(cursorPosition)")
+//            }
+            
+//            self.scrollView.setContentOffset(point, animated: true)
         default:
             break
         }
@@ -161,6 +178,25 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol, UITextViewDelegate {
         newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
         self.contentTextView.frame = newFrame;
         self.contentTextViewHeight.height = newSize.height
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        switch textView {
+            // TODO: 제목 25자, 한줄평 100자 벨리데이션 추가
+        case self.reviewTitleTextView:
+            guard let str = textView.text else { return true }
+            let newLength = str.count + text.count - range.length
+            return newLength <= 25
+            
+        case self.reviewContentTextView:
+            guard let str = textView.text else { return true }
+            let newLength = str.count + text.count - range.length
+            return newLength <= 100
+            
+        default:
+            break
+        }
+        return true
     }
 }
 

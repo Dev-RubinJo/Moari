@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KWDrawerController
 
 extension SignInVC: SignInVCRouterDelegate {
     
@@ -35,10 +36,16 @@ extension SignInVC: SignInVCRouterDelegate {
     }
     
     func presentMainVC() {
-        let mainVC = MainVC.makeMainVC
+        let mainRootVC = MainVC.makeMainVC
+        let mainDrawerVC = DrawerVC()
+        let mainVC = DrawerController()
+
+        mainVC.setViewController(mainRootVC, for: .none)
+        mainVC.setViewController(mainDrawerVC, for: .left)
+        
         self.window?.rootViewController = mainVC
         self.window?.makeKeyAndVisible()
-        UIView.transition(with: self.window!, duration: 0.2, options: .transitionCrossDissolve, animations: nil, completion: nil)
+        UIView.transition(with: self.window!, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
     }
     
     func presentFindEmailPasswordVC() {
