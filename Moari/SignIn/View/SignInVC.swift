@@ -34,7 +34,6 @@ class SignInVC: BaseVC, SignInVCProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setColorModeUI()
         
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
@@ -55,77 +54,5 @@ class SignInVC: BaseVC, SignInVCProtocol {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        self.setColorModeUI()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        switch self.theme {
-        case 0:
-            return .default
-        case 1:
-            return .lightContent
-        case 2:
-            if #available(iOS 13.0, *) {
-                self.setSystemColorModeUI()
-            } else {
-                fallthrough
-            }
-            return .default
-        default:
-            return .default
-        }
-    }
-    
-    func setLightModeUI() {
-        self.logoImageView.image = UIImage(named: "logoImageLight")
-        self.signInTitleLabel.textColor = .black
-        
-        self.emailTextField.backgroundColor = .textFieldGrayLight
-        self.passwordTextField.backgroundColor = .textFieldGrayLight
-        
-        self.signInButtonLabel.textColor = .defaultPink
-        self.signInButtonLabel.layer.borderColor = UIColor.defaultPink.cgColor
-        
-        self.findEmailPasswordLabel.textColor = .signInBottomLabels
-        self.signUpLabel.textColor = .signInBottomLabels
-    }
-    
-    func setDarkModeUI() {
-        self.logoImageView.image = UIImage(named: "logoImageDark")
-        self.signInTitleLabel.textColor = .white
-        
-        self.emailTextField.backgroundColor = .textFieldGrayDark
-        self.passwordTextField.backgroundColor = .textFieldGrayDark
-        
-        self.signInButtonLabel.textColor = .defaultPink
-        self.signInButtonLabel.layer.borderColor = UIColor.defaultPink.cgColor
-        
-        self.findEmailPasswordLabel.textColor = .signInBottomLabels
-        self.signUpLabel.textColor = .signInBottomLabels
-    }
-    
-    func setSystemColorModeUI() {
-        if self.isDarkMode {
-            self.setDarkModeUI()
-        } else {
-            self.setLightModeUI()
-        }
-    }
-    
-    func setColorModeUI() {
-        switch self.theme {
-        case 0:
-            self.setLightModeUI()
-        case 1:
-            self.setDarkModeUI()
-        case 2:
-            if #available(iOS 13.0, *) {
-                self.setSystemColorModeUI()
-            } else {
-                fallthrough
-            }
-        default:
-            self.setLightModeUI()
-        }
     }
 }

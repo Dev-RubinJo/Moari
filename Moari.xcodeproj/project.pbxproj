@@ -93,6 +93,8 @@
 		43878186240FE26200C39B8B /* CurationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878184240FE26200C39B8B /* CurationCell.swift */; };
 		43878187240FE26200C39B8B /* CurationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43878185240FE26200C39B8B /* CurationCell.xib */; };
 		4387818A240FF64800C39B8B /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878189240FF64800C39B8B /* ReviewModel.swift */; };
+		4394D71224133D0700856B02 /* AddReviewVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4394D71124133D0700856B02 /* AddReviewVC+SetUI.swift */; };
+		4394D71424133D1700856B02 /* AddReviewVC+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4394D71324133D1700856B02 /* AddReviewVC+UITextView.swift */; };
 		439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */; };
 		439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */; };
 		439BE63A23FE294E00EC77A9 /* FindEmailPasswordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */; };
@@ -245,6 +247,8 @@
 		43878184240FE26200C39B8B /* CurationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurationCell.swift; sourceTree = "<group>"; };
 		43878185240FE26200C39B8B /* CurationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurationCell.xib; sourceTree = "<group>"; };
 		43878189240FF64800C39B8B /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		4394D71124133D0700856B02 /* AddReviewVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddReviewVC+SetUI.swift"; sourceTree = "<group>"; };
+		4394D71324133D1700856B02 /* AddReviewVC+UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddReviewVC+UITextView.swift"; sourceTree = "<group>"; };
 		439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+SetUI.swift"; sourceTree = "<group>"; };
 		439BE63223FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		439BE63923FE294E00EC77A9 /* FindEmailPasswordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailPasswordProtocol.swift; sourceTree = "<group>"; };
@@ -438,6 +442,7 @@
 		432E0FEE240B9F6F00ADD122 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4394D71024133CE800856B02 /* Extension */,
 				432E0FFB240BA80F00ADD122 /* AddReviewVC.swift */,
 				432E0FFC240BA80F00ADD122 /* AddReviewVC.xib */,
 				432E0FFF240BBBB100ADD122 /* AddReviewVC+Router.swift */,
@@ -775,6 +780,7 @@
 			isa = PBXGroup;
 			children = (
 				43CF868F23F29BAD0062B846 /* Config */,
+				4394D70F2412AAD400856B02 /* AppLock */,
 				43CF86B123F29D270062B846 /* Splash */,
 				435EAC3923FA9E5500FF1AD8 /* SignIn */,
 				439BE63423FE28F000EC77A9 /* FindEmailPassword */,
@@ -886,6 +892,22 @@
 				43878189240FF64800C39B8B /* ReviewModel.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		4394D70F2412AAD400856B02 /* AppLock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppLock;
+			sourceTree = "<group>";
+		};
+		4394D71024133CE800856B02 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4394D71124133D0700856B02 /* AddReviewVC+SetUI.swift */,
+				4394D71324133D1700856B02 /* AddReviewVC+UITextView.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		439BE62A23FC54A700EC77A9 /* Extension */ = {
@@ -1306,6 +1328,7 @@
 				43840215240117BA00ECA42E /* FindEmailPasswordVC+Router.swift in Sources */,
 				43878182240FD58200C39B8B /* CategoryDetailVC+UICollectionView.swift in Sources */,
 				4384021C2401590900ECA42E /* FindEmailPasswordVC+SetUI.swift in Sources */,
+				4394D71424133D1700856B02 /* AddReviewVC+UITextView.swift in Sources */,
 				4365F7622406B69C008232EF /* SignUp.swift in Sources */,
 				43CF86BA23F29DA00062B846 /* SplashProtocol.swift in Sources */,
 				43CF86A223F29C6A0062B846 /* IndicatorView.swift in Sources */,
@@ -1356,6 +1379,7 @@
 				4365F75A24067DB9008232EF /* SignUpActor+PopUp.swift in Sources */,
 				4383795F240F5A4700317F3D /* CategoryDetailVC+Router.swift in Sources */,
 				438402112401054C00ECA42E /* SignInVC+Router.swift in Sources */,
+				4394D71224133D0700856B02 /* AddReviewVC+SetUI.swift in Sources */,
 				430B4E6124076764004046F9 /* SignUpActor+PopUpDelegate.swift in Sources */,
 				432E0FE8240B869100ADD122 /* ReviewDetailVC.swift in Sources */,
 				43837957240F543500317F3D /* CategoryDetailDataResponse.swift in Sources */,

@@ -23,52 +23,20 @@ class FindEmailPasswordVC: BaseVC, FindEmailPasswordVCProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setColorModeUI()
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.setFindEmailPasswordVCUI()
         self.initTapListener()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        self.setColorModeUI()
-    }
-    
-    func setLightModeUI() {
-        self.emailTextField.backgroundColor = .textFieldGrayLight
-        self.checkEmailButton.layer.borderColor = UIColor.black.cgColor
-        self.checkEmailButton.layer.borderWidth = 1
-        self.checkEmailButton.tintColor = .black
-    }
-    
-    func setDarkModeUI() {
-        self.emailTextField.backgroundColor = .textFieldGrayDark
-        self.checkEmailButton.layer.borderColor = UIColor.white.cgColor
-        self.checkEmailButton.layer.borderWidth = 1
-        self.checkEmailButton.tintColor = .white
-    }
-    
-    func setSystemColorModeUI() {
-        if self.isDarkMode {
-            self.setDarkModeUI()
-        } else {
-            self.setLightModeUI()
-        }
-    }
-    
-    func setColorModeUI() {
-        self.sendTemporaryPasswordButton.setTitleColor(.defaultPink, for: .normal)
-        self.sendTemporaryPasswordButton.layer.borderColor = UIColor.defaultPink.cgColor
-        // TODO: SetUI로 옮기기
-        self.sendTemporaryPasswordButton.layer.borderWidth = 1
-        switch self.theme {
-        case 0:
-            self.setLightModeUI()
-        case 1:
-            self.setDarkModeUI()
-        case 2:
-            self.setSystemColorModeUI()
-        default:
-            self.setLightModeUI()
-        }
+        self.setFindEmailPasswordVCUI()
     }
 }

@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         let imageView = UIImageView(frame: self.window!.bounds)
         imageView.tag = 1001
-        imageView.image = UIImage(named: "logoImageDark") //your image goes here
+        imageView.image = UIImage(named: "mainBackgroundImage") //your image goes here
 
         UIApplication.shared.keyWindow?.subviews.last?.addSubview(imageView)
     }
@@ -105,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
 }
-extension AppDelegate {
+extension AppDelegate {    
     func setLocalAuthentication() {
         var description = ""
         if self.authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {

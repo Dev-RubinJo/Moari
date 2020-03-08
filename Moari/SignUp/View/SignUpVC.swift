@@ -56,77 +56,15 @@ class SignUpVC: BaseVC, SignUpVCProtocol {
         self.passwordTextField.delegate = self
         self.passwordCheckTextField.delegate = self
         self.nickNameTextField.delegate = self
-        
-        self.setColorModeUI()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.setSignUpVCUI()
         self.initTapListener()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        self.setColorModeUI()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        switch self.theme {
-        case 0:
-            return .default
-        case 1:
-            return .lightContent
-        case 2:
-            if #available(iOS 13.0, *) {
-                self.setSystemColorModeUI()
-            } else {
-                fallthrough
-            }
-            return .default
-        default:
-            return .default
-        }
-    }
-    
-    func setLightModeUI() {
-        self.emailTextField.backgroundColor = .textFieldGrayLight
-        self.passwordTextField.backgroundColor = .textFieldGrayLight
-        self.passwordCheckTextField.backgroundColor = .textFieldGrayLight
-        self.nickNameTextField.backgroundColor = .textFieldGrayLight
-        
-        self.usingTermArrowImageView.image = UIImage(named: "goNextICLight")
-        self.personalTermArrowImageView.image = UIImage(named: "goNextICLight")
-    }
-    
-    func setDarkModeUI() {
-        self.emailTextField.backgroundColor = .textFieldGrayDark
-        self.passwordTextField.backgroundColor = .textFieldGrayDark
-        self.passwordCheckTextField.backgroundColor = .textFieldGrayDark
-        self.nickNameTextField.backgroundColor = .textFieldGrayDark
-        
-        self.usingTermArrowImageView.image = UIImage(named: "goNextICDark")
-        self.personalTermArrowImageView.image = UIImage(named: "goNextICDark")
-    }
-    
-    func setSystemColorModeUI() {
-        if self.isDarkMode {
-            self.setDarkModeUI()
-        } else {
-            self.setLightModeUI()
-        }
-    }
-    
-    func setColorModeUI() {
-        self.signUpButton.setTitleColor(.defaultPink, for: .normal)
-        self.signUpButton.layer.borderColor = UIColor.defaultPink.cgColor
-        // TODO: SetUI로 옮기기
-        self.signUpButton.layer.borderWidth = 1
-        switch self.theme {
-        case 0:
-            self.setLightModeUI()
-        case 1:
-            self.setDarkModeUI()
-        case 2:
-            self.setSystemColorModeUI()
-        default:
-            self.setLightModeUI()
-        }
+        self.setSignUpVCUI()
     }
 }

@@ -11,8 +11,8 @@ import UIKit
 extension FindEmailPasswordVC {
     
     func setFindEmailPasswordVCUI() {
-        
         self.navigationItem.title = "FIND_EMAIL_PASSWORD_TITLE".localized
+        
         self.findEmailPasswordGuideLabel.text = "FIND_EMAIL_PASSWORD_GUIDE_LABEL".localized
         
         let emailTextFieldPlaceholder = NSAttributedString(string: "EMAIL".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.signInBottomBorderBar])
@@ -26,11 +26,20 @@ extension FindEmailPasswordVC {
         let checkEmailButtonTitle = NSAttributedString(string: "FIND_EMAIL_PASSWORD_CHECK_EMAIL_BUTTON_TITLE".localized, attributes: [NSAttributedString.Key.font: buttonTitleFont!])
         self.checkEmailButton.setAttributedTitle(checkEmailButtonTitle, for: .normal)
         self.checkEmailButton.layer.cornerRadius = 3
+        if #available(iOS 13.0, *) {
+            self.checkEmailButton.layer.borderColor = UIColor.systemWBColor.cgColor
+        } else {
+            self.checkEmailButton.layer.borderColor = UIColor.black.cgColor
+        }
+        self.checkEmailButton.layer.borderWidth = 1
+        
         
         let sendTemporaryPasswordButtonTitle = NSAttributedString(string: "FIND_EMAIL_PASSWORD_SEND_TEMP_PASSWORD_BUTTON_TITLE".localized, attributes: [NSAttributedString.Key.font: buttonTitleFont!])
         self.sendTemporaryPasswordButton.setAttributedTitle(sendTemporaryPasswordButtonTitle, for: .normal)
         self.sendTemporaryPasswordButton.tintColor = .defaultPink
         self.sendTemporaryPasswordButton.layer.cornerRadius = 3
+        self.sendTemporaryPasswordButton.layer.borderColor = UIColor.defaultPink.cgColor
+        self.sendTemporaryPasswordButton.layer.borderWidth = 1
         
         
         self.alertLabel.isHidden = true

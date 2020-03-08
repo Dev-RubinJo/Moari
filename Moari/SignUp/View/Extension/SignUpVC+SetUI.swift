@@ -42,8 +42,14 @@ extension SignUpVC {
         
         self.usingTermLabel.text = "USING_POLICY_LABEL".localized
         self.personalTermLabel.text = "PERSONAL_POLICY_LABEL".localized
+        
+        self.usingTermArrowImageView.image = UIImage(named: "goNextButton")
+        self.personalTermArrowImageView.image = UIImage(named: "goNextButton")
+        
         self.signUpButton.setTitle("SIGN_UP_BUTTON".localized, for: .normal)
         self.signUpButton.layer.cornerRadius = 3
+        self.signUpButton.layer.borderColor = UIColor.defaultPink.cgColor
+        self.signUpButton.layer.borderWidth = 1
         
         if self.isIphone == .iPhone {
             

@@ -18,66 +18,10 @@ class SplashVC: BaseVC, SplashVCProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setColorModeUI()
+        self.logoImageView.image = UIImage(named: "logoImage")
         self.delay(0.5) { [weak self] in
             self?.actor?.didLoadSplash(fromVC: self!)
         }
     }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        self.setColorModeUI()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        switch self.theme {
-        case 0:
-            return .default
-        case 1:
-            return .lightContent
-        case 2:
-            if #available(iOS 13.0, *) {
-                self.setSystemColorModeUI()
-            } else {
-                fallthrough
-            }
-            return .default
-        default:
-            return .default
-        }
-    }
-    
-    func setLightModeUI() {
-        self.logoImageView.image = UIImage(named: "logoImageLight")
-    }
-    
-    func setDarkModeUI() {
-        self.logoImageView.image = UIImage(named: "logoImageDark")
-    }
-    
-    func setSystemColorModeUI() {
-        if self.isDarkMode {
-            self.logoImageView.image = UIImage(named: "logoImageDark")
-        } else {
-            // User Interface is Light
-            self.logoImageView.image = UIImage(named: "logoImageLight")
-        }
-    }
-    
-    func setColorModeUI() {
-        switch self.theme {
-        case 0:
-            self.setLightModeUI()
-        case 1:
-            self.setDarkModeUI()
-        case 2:
-            if #available(iOS 13.0, *) {
-                self.setSystemColorModeUI()
-            } else {
-                fallthrough
-            }
-        default:
-            self.setLightModeUI()
-        }
-    }
+    // 다크모드 지원은 어떻게?
 }

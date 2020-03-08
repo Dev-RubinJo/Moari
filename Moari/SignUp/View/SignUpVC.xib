@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,6 +34,7 @@
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A06-4T-Sgt">
                     <rect key="frame" x="48" y="46" width="224" height="40"/>
+                    <color key="backgroundColor" name="TextFieldBackgroundGray"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="ZFW-8V-Te6"/>
                     </constraints>
@@ -41,6 +43,7 @@
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 6자리 이상" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Wk-YX-pg4">
                     <rect key="frame" x="48" y="94" width="224" height="40"/>
+                    <color key="backgroundColor" name="TextFieldBackgroundGray"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="3Jc-2J-GEl"/>
                     </constraints>
@@ -49,6 +52,7 @@
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xjv-tE-iLY">
                     <rect key="frame" x="48" y="142" width="224" height="40"/>
+                    <color key="backgroundColor" name="TextFieldBackgroundGray"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="FXD-ft-nsG"/>
                     </constraints>
@@ -57,6 +61,7 @@
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ETT-sp-Fto">
                     <rect key="frame" x="48" y="190" width="224" height="40"/>
+                    <color key="backgroundColor" name="TextFieldBackgroundGray"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="vRS-Ae-U03"/>
                     </constraints>
@@ -89,7 +94,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goNextICLight" translatesAutoresizingMaskIntoConstraints="NO" id="VT3-sV-0aS">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goNextButton" translatesAutoresizingMaskIntoConstraints="NO" id="VT3-sV-0aS">
                                     <rect key="frame" x="178" y="0.0" width="11" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="11" id="4U7-39-G4K"/>
@@ -116,7 +121,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goNextICLight" translatesAutoresizingMaskIntoConstraints="NO" id="PGq-1A-Nkd">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goNextButton" translatesAutoresizingMaskIntoConstraints="NO" id="PGq-1A-Nkd">
                                     <rect key="frame" x="178" y="0.0" width="11" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="11" id="iIG-Nx-Wv4"/>
@@ -155,7 +160,10 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="2vT-o2-VMo"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" red="0.76078431369999999" green="0.094117647060000004" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -186,6 +194,9 @@
     </objects>
     <resources>
         <image name="checkOff" width="15" height="14"/>
-        <image name="goNextICLight" width="5" height="9"/>
+        <image name="goNextButton" width="5" height="9"/>
+        <namedColor name="TextFieldBackgroundGray">
+            <color white="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
     </resources>
 </document>

@@ -12,8 +12,8 @@
             <connections>
                 <outlet property="drawerBackgroundView" destination="i5M-Pr-FkT" id="bLR-0z-HZ3"/>
                 <outlet property="drawerViewTitleLabel" destination="sMQ-9P-ifk" id="JPJ-iN-2kW"/>
+                <outlet property="editUserInfoView" destination="gnI-yX-Y2V" id="Atd-P0-2jh"/>
                 <outlet property="editUserLabel" destination="uWs-eI-iNl" id="ErF-CQ-9zG"/>
-                <outlet property="editUserView" destination="gnI-yX-Y2V" id="Atd-P0-2jh"/>
                 <outlet property="instagramLabel" destination="JyE-xa-VJz" id="YLY-Al-zSd"/>
                 <outlet property="instagramView" destination="Npo-tl-KGA" id="QZj-B6-9Zp"/>
                 <outlet property="menuTopConstraint" destination="3AY-8m-iKV" id="5Pv-cx-O7I"/>
@@ -37,7 +37,7 @@
                     <string key="text">감성님의
 모아 놓은 리뷰</string>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="22"/>
-                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Gamgsung" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwY-Dl-Aag">

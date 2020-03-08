@@ -32,6 +32,7 @@ extension CategoryVC: CategoryVCRouterDelegate {
     
     func presentAddReviewVC() {
         let addReviewVC = AddReviewVC.makeAddReviewVC
+        addReviewVC.isAdd = true
         self.navigationController?.pushViewController(addReviewVC, animated: true)
         //        addReviewVC.modalPresentationStyle = .fullScreen
 //        self.present(addReviewVC, animated: true, completion: nil)

@@ -22,6 +22,7 @@ extension SignInVC {
         } else if self.deviceLocale.isEqual("en") { // 영어일때
             
         }
+        self.signInButtonLabel.layer.borderColor = UIColor.defaultPink.cgColor
         
         self.signInTitleLabel.attributedText = signInTitleLabelAttributedString
         self.emailTextField.layer.cornerRadius = 3

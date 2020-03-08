@@ -51,6 +51,11 @@ extension UIViewController {
         get {
             UserDefaults.standard.integer(forKey: "Theme")
         }
+        
+        set {
+            self.theme = newValue
+            UserDefaults.standard.set(newValue, forKey: "Theme")
+        }
     }
     
     /// 디바이스 언어(앱 언어)가 어떤건지 가져올 수 있는 프로퍼티

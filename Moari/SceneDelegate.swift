@@ -20,10 +20,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.windowScene = windowScene
         self.window?.rootViewController = SplashVC.makeSplashVC
         self.window?.makeKeyAndVisible()
+        
+        let theme = UserDefaults.standard.integer(forKey: "Theme")
+        switch theme {
+        case 0:
+            self.setLightTheme()
+        case 1:
+            self.setDarkTheme()
+        case 2:
+            self.setSystemTheme()
+        default:
+//            self.setLightTheme()
+            self.setSystemTheme()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -55,7 +69,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if appLockConfig {
             let imageView = UIImageView(frame: self.window!.bounds)
             imageView.tag = 1001
-            imageView.image = UIImage(named: "logoImageDark") //your image goes here
+            imageView.image = UIImage(named: "mainBackgroundImage") //your image goes here
             UIApplication.shared.windows.first?.subviews.last?.addSubview(imageView)
         } else {
             UserDefaults.standard.set(false, forKey: "NeedAppPassword")
@@ -86,7 +100,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-        print("EnterBackground")
         let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
         if appLockConfig {
             UserDefaults.standard.set(true, forKey: "NeedAppPassword")
@@ -94,6 +107,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UserDefaults.standard.set(false, forKey: "NeedAppPassword")
         }
     }
+}
+@available(iOS 13.0, *)
+extension SceneDelegate {
+    func setLightTheme() {
+        self.window?.overrideUserInterfaceStyle = .light
+    }
 
-
+    func setDarkTheme() {
+        self.window?.overrideUserInterfaceStyle = .dark
+    }
+    
+    func setSystemTheme() {
+        self.window?.overrideUserInterfaceStyle = .unspecified
+    }
 }

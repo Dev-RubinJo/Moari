@@ -18,8 +18,8 @@ class BaseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initBaseVC()
-        self.setLocalAuthentication()
-        self.setBaseColorModeUI()
+//        self.setLocalAuthentication()
+//        self.setBaseColorModeUI()
         UITextField.appearance().tintColor = .cursorColor
         UITextView.appearance().tintColor = .cursorColor
 //        self.tabBarController?.tabBar.isHidden = true
@@ -28,7 +28,12 @@ class BaseVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.initBaseVC()
-        self.setBaseColorModeUI()
+//        self.setBaseColorModeUI()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.initBaseVC()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -50,72 +55,45 @@ class BaseVC: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: .navigationBarBottomBorder)
         let navigationTitleFont = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navigationTitleFont!]
-    }
-    
-    func setBaseLightModeUI() {
-        let imageBack = UIImage(named: "backArrowLight")
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage()
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage()
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(image: imageBack, style: .plain, target: self, action: nil)
-        self.navigationController?.navigationBar.topItem?.title = ""
-        self.navigationController?.navigationBar.tintColor = .black
-    }
-    
-    func setBaseDarkModeUI() {
-        let imageBack = UIImage(named: "backArrowDark")
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage()
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage()
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(image: imageBack, style: .plain, target: self, action: nil)
-        self.navigationController?.navigationBar.topItem?.title = ""
-        self.navigationController?.navigationBar.tintColor = .white
-    }
-    
-    func setBaseSystemColorModeUI() {
-        if self.isDarkMode {
-            self.setBaseDarkModeUI()
-        } else {
-            self.setBaseLightModeUI()
-        }
-    }
-    
-    func setBaseColorModeUI() {
-        switch self.theme {
-        case 0:
-            self.setBaseLightModeUI()
-        case 1:
-            self.setBaseDarkModeUI()
-        case 2:
-            self.setBaseSystemColorModeUI()
-        default:
-            self.setBaseLightModeUI()
-        }
-    }
-    
-    /// Touch Id, Face Id Example
-    func setLocalAuthentication() {
-        var description = ""
-        if self.authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
-            switch self.authContext.biometryType {
-            case .faceID:
-                description = "잠금 해제를 위해 Face Id로 인증합니다."
-            case .touchID:
-                description = "잠금 해제를 위해 Touch Id로 인증합니다."
-            case .none:
-                print(description)
-                break
-            @unknown default:
-                break
-            }
-        }
         
-//        self.authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: description) { (success, error) in
-//            if success {
-//
-//            } else {
-//
-//            }
-//        }
+        let imageBack = UIImage(named: "backArrow")
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage()
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage()
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(image: imageBack, style: .plain, target: self, action: nil)
+        //        if #available(iOS 13.0, *) {
+        //            self.navigationController?.navigationBar.tintColor = .systemGray6
+        //        } else {
+        //            // Fallback on earlier versions
+        //        }
     }
+    
+    
+    
+            // /// Touch Id, Face Id Example
+            //    func setLocalAuthentication() {
+            //        var description = ""
+            //        if self.authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+            //            switch self.authContext.biometryType {
+            //            case .faceID:
+            //                description = "잠금 해제를 위해 Face Id로 인증합니다."
+            //            case .touchID:
+            //                description = "잠금 해제를 위해 Touch Id로 인증합니다."
+            //            case .none:
+            //                print(description)
+            //                break
+            //            @unknown default:
+            //                break
+            //            }
+            //        }
+        
+            //        self.authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: description) { (success, error) in
+            //            if success {
+            //
+            //            } else {
+            //
+            //            }
+            //        }
+            //    }
     
     func appearIndicator() {
         self.indicator.show()
@@ -131,3 +109,11 @@ class BaseVC: UIViewController {
     }
 }
 
+
+// Theme Change Example
+
+/*
+ if #available(iOS 13.0, *) {
+     (self.view.window?.windowScene?.delegate as! SceneDelegate).setDarkTheme()
+ }
+ */
