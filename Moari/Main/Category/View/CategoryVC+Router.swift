@@ -31,10 +31,16 @@ extension CategoryVC: CategoryVCRouterDelegate {
     }
     
     func presentAddReviewVC() {
-        let addReviewVC = AddReviewVC.makeAddReviewVC
-        addReviewVC.isAdd = true
-        self.navigationController?.pushViewController(addReviewVC, animated: true)
-        //        addReviewVC.modalPresentationStyle = .fullScreen
-//        self.present(addReviewVC, animated: true, completion: nil)
+        let addReviewRootVC = AddReviewVC.makeAddReviewVC
+        let addReviewVC = UINavigationController.init(rootViewController: addReviewRootVC)
+        addReviewRootVC.isAdd = true
+        for category in self.actor?.categoryList ?? [] {
+            if category.categoryId == 0 {
+                break
+            }
+            addReviewRootVC.actor?.setCategoryList(category: CategoryForReview(name: category.categoryName, id: category.categoryId))
+        }
+        addReviewVC.modalPresentationStyle = .fullScreen
+        self.present(addReviewVC, animated: true, completion: nil)
     }
 }

@@ -51,8 +51,8 @@ class BaseVC: UIViewController {
         self.hideKeyboardWhenTappedAround()
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.topItem?.title = ""
-        self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: .navigationBarBottomBorder)
         let navigationTitleFont = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navigationTitleFont!]
         

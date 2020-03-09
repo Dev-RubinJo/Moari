@@ -22,7 +22,7 @@ extension AddReviewVC: UITextViewDelegate {
         case self.contentTextView:
             self.resizeContentTextView()
             self.updateScrollView(heightValue: self.baseHeight + self.keyboardHeight)
-            var point = contentTextView.frame.origin
+            var point = self.contentTextView.frame.origin
             point.y = point.y - self.keyboardHeight - 4
             point.x = point.x - 22
             self.scrollView.setContentOffset(point, animated: true)
@@ -72,14 +72,15 @@ extension AddReviewVC: UITextViewDelegate {
             if self.reviewTitleTextView.text! == "" {
                 self.reviewTitlePlaceholderLabel.isHidden = false
             }
-            self.updateScrollView(heightValue: self.baseHeight)
+            self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height)
         case self.reviewContentTextView:
             if self.reviewContentTextView.text! == "" {
                 self.reviewContentPlaceholderLabel.isHidden = false
             }
-            self.updateScrollView(heightValue: self.baseHeight)
+            self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height)
         case self.contentTextView:
-            self.updateScrollView(heightValue: self.baseHeight)
+            self.resizeContentTextView()
+            self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height)
         default:
             break
         }
@@ -93,6 +94,7 @@ extension AddReviewVC: UITextViewDelegate {
         newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
         self.contentTextView.frame = newFrame;
         self.contentTextViewHeight.height = newSize.height
+//        print(self.contentTextViewHeight.height)
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

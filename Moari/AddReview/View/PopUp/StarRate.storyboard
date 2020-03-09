@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Star Rate-->
+        <scene sceneID="Mci-Zo-ICR">
+            <objects>
+                <viewController storyboardIdentifier="StarRate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UpS-Ys-gpN" customClass="StarRate" customModule="Moari" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ce5-e8-S66">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVF-Wo-8MY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcQ-26-QXj">
+                                <rect key="frame" x="67.5" y="243.5" width="240" height="180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3x-g8-W2q">
+                                        <rect key="frame" x="0.0" y="129.5" width="240" height="1"/>
+                                        <color key="backgroundColor" name="PopUpBolderColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="dlL-VZ-0vC"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfd-0M-rWf">
+                                        <rect key="frame" x="119.5" y="130.5" width="1" height="49.5"/>
+                                        <color key="backgroundColor" name="PopUpBolderColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="Zp6-NV-ydi"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIM-lC-TeL">
+                                        <rect key="frame" x="120.5" y="130.5" width="119.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" red="0.76078431369999999" green="0.094117647060000004" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYz-ug-mlg">
+                                        <rect key="frame" x="0.0" y="130.5" width="119.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <state key="normal" title="취소">
+                                            <color key="titleColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9W-QH-rmv">
+                                        <rect key="frame" x="105" y="30" width="30" height="21"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uig-b1-E8h" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="35" y="75" width="170" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                <color key="value" name="SystemWBColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                <color key="value" name="SystemWBColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="filledBorderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                <color key="value" name="SystemWBColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="starRateEmpty"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="starRateFilled"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="k9W-QH-rmv" firstAttribute="top" secondItem="TcQ-26-QXj" secondAttribute="top" constant="30" id="51A-Xj-Ml3"/>
+                                    <constraint firstAttribute="width" constant="240" id="9XS-4G-FOL"/>
+                                    <constraint firstItem="aIM-lC-TeL" firstAttribute="top" secondItem="m3x-g8-W2q" secondAttribute="bottom" id="AKm-9n-Mof"/>
+                                    <constraint firstAttribute="bottom" secondItem="aIM-lC-TeL" secondAttribute="bottom" id="FP8-ui-gtn"/>
+                                    <constraint firstAttribute="height" constant="180" id="NVS-31-ZFd"/>
+                                    <constraint firstItem="uig-b1-E8h" firstAttribute="centerX" secondItem="TcQ-26-QXj" secondAttribute="centerX" id="SEX-A6-jLn"/>
+                                    <constraint firstItem="aIM-lC-TeL" firstAttribute="leading" secondItem="wfd-0M-rWf" secondAttribute="trailing" id="SjF-Bm-W7a"/>
+                                    <constraint firstAttribute="bottom" secondItem="wfd-0M-rWf" secondAttribute="bottom" id="Tuu-xK-0be"/>
+                                    <constraint firstAttribute="trailing" secondItem="aIM-lC-TeL" secondAttribute="trailing" id="V6X-eA-l8k"/>
+                                    <constraint firstItem="mYz-ug-mlg" firstAttribute="top" secondItem="m3x-g8-W2q" secondAttribute="bottom" id="VyT-Tw-RnP"/>
+                                    <constraint firstItem="wfd-0M-rWf" firstAttribute="top" secondItem="m3x-g8-W2q" secondAttribute="bottom" id="c3M-nn-PX9"/>
+                                    <constraint firstItem="k9W-QH-rmv" firstAttribute="centerX" secondItem="TcQ-26-QXj" secondAttribute="centerX" id="ecR-uh-Eau"/>
+                                    <constraint firstAttribute="bottom" secondItem="m3x-g8-W2q" secondAttribute="bottom" constant="49.5" id="iYQ-sX-mwq"/>
+                                    <constraint firstItem="uig-b1-E8h" firstAttribute="centerY" secondItem="TcQ-26-QXj" secondAttribute="centerY" id="ink-ZM-cFB"/>
+                                    <constraint firstItem="m3x-g8-W2q" firstAttribute="leading" secondItem="TcQ-26-QXj" secondAttribute="leading" id="lu3-c6-duR"/>
+                                    <constraint firstAttribute="bottom" secondItem="mYz-ug-mlg" secondAttribute="bottom" id="m1N-Gy-SEw"/>
+                                    <constraint firstAttribute="trailing" secondItem="m3x-g8-W2q" secondAttribute="trailing" id="mZh-01-iDj"/>
+                                    <constraint firstItem="mYz-ug-mlg" firstAttribute="leading" secondItem="TcQ-26-QXj" secondAttribute="leading" id="mbu-2j-RnA"/>
+                                    <constraint firstItem="wfd-0M-rWf" firstAttribute="centerX" secondItem="TcQ-26-QXj" secondAttribute="centerX" id="oUO-b2-VGA"/>
+                                    <constraint firstItem="wfd-0M-rWf" firstAttribute="leading" secondItem="mYz-ug-mlg" secondAttribute="trailing" id="x4N-EC-vZj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="nVF-Wo-8MY" secondAttribute="bottom" id="HSq-74-jGn"/>
+                            <constraint firstItem="nVF-Wo-8MY" firstAttribute="leading" secondItem="Ce5-e8-S66" secondAttribute="leading" id="Oy2-7R-Da9"/>
+                            <constraint firstItem="nVF-Wo-8MY" firstAttribute="top" secondItem="Ce5-e8-S66" secondAttribute="top" id="SS8-eE-w8y"/>
+                            <constraint firstItem="TcQ-26-QXj" firstAttribute="centerY" secondItem="Ce5-e8-S66" secondAttribute="centerY" id="aod-LD-Xop"/>
+                            <constraint firstAttribute="trailing" secondItem="nVF-Wo-8MY" secondAttribute="trailing" id="j7I-Zf-KV4"/>
+                            <constraint firstItem="TcQ-26-QXj" firstAttribute="centerX" secondItem="Ce5-e8-S66" secondAttribute="centerX" id="lHm-cD-2FT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T45-j4-1k8"/>
+                    </view>
+                    <connections>
+                        <outlet property="outsideView" destination="nVF-Wo-8MY" id="F7n-We-Afa"/>
+                        <outlet property="starRateCancelButton" destination="mYz-ug-mlg" id="cxA-yS-CU9"/>
+                        <outlet property="starRateCosmosView" destination="uig-b1-E8h" id="lSk-gi-3NK"/>
+                        <outlet property="starRateDoneButton" destination="aIM-lC-TeL" id="XOH-eW-75A"/>
+                        <outlet property="starRatePopUpTitleLabel" destination="k9W-QH-rmv" id="dBa-wY-uvg"/>
+                        <outlet property="starRatePopUpView" destination="TcQ-26-QXj" id="0Qf-ub-mIh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyi-UT-xMv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76.811594202898561" y="24.776785714285712"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="starRateEmpty" width="24" height="24"/>
+        <image name="starRateFilled" width="24" height="24"/>
+        <namedColor name="PopUpBolderColor">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SystemWBColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+    </resources>
+</document>

@@ -28,19 +28,17 @@ extension CategoryVC {
 //        guard let userName = UserDefaults.standard.string(forKey: "NickName") else { return }
         if self.deviceLocale.isEqual("ko") { // 한국어일때
             // \(userName)님의 리뷰\n20개가 모였습니다.
-            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "감성님의 리뷰\n20개가 모였습니다.", attributes: [
-              .font: UIFont(name: "AppleSDGothicNeo-Thin", size: 28.0)!,
-              .foregroundColor: UIColor(white: 1.0, alpha: 1.0),
+            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "루빈님의 리뷰\n20개가 모였습니다.", attributes: [
+              .font: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 28.0)!,
               .kern: 0.0
             ])
-            categoryTitleLabelAttributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 28.0)!, range: NSRange(location: 0, length: 2))
+            categoryTitleLabelAttributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-Thin", size: 28.0)!, range: NSRange(location: 0, length: 2))
         } else if self.deviceLocale.isEqual("en") { // 영어일때
-            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "감성님의 리뷰\n20개가 모였습니다.", attributes: [
-              .font: UIFont(name: "AppleSDGothicNeo-Thin", size: 28.0)!,
-              .foregroundColor: UIColor(white: 1.0, alpha: 1.0),
+            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "Hi! 루빈\nYou've collected 20reviews.", attributes: [
+              .font: UIFont(name: "AppleSDGothicNeo-Thin", size: 27.0)!,
               .kern: 0.0
             ])
-            categoryTitleLabelAttributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 28.0)!, range: NSRange(location: 0, length: 2))
+            categoryTitleLabelAttributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 27.0)!, range: NSRange(location: 4, length: 2))
         }
         self.categoryTitleLabel.attributedText = categoryTitleLabelAttributedString
         
@@ -61,6 +59,10 @@ extension CategoryVC {
     
     func initTapListener() {
         self.logoButton.addTarget(self, action: #selector(self.pressTitleButton(_:)), for: .touchUpInside)
+        
+        let longPressGestureListener = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureForPresentPopUp(_:)))
+        longPressGestureListener.minimumPressDuration = 0.7
+        self.categoryCollectionView.addGestureRecognizer(longPressGestureListener)
     }
     
     @objc func pressTitleButton(_ sender: UIButton) {
@@ -73,5 +75,36 @@ extension CategoryVC {
 
     @objc func pressAddReviewButton(_ sender: UIBarButtonItem) {
         self.actor?.didTapAddReviewButton()
+    }
+}
+
+
+extension CategoryVC {
+    
+    // MARK: long press Gesture
+    @objc func longPressGestureForPresentPopUp(_ gesture: UIGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            guard let selectedIndexPath = self.categoryCollectionView.indexPathForItem(at: gesture.location(in: self.categoryCollectionView)) else { return }
+            if (self.actor?.categoryList[selectedIndexPath.item])!.categoryId == 0 || (self.actor?.categoryList[selectedIndexPath.item])!.categoryId == 1 || (self.actor?.categoryList[selectedIndexPath.item])!.categoryId == 2 || (self.actor?.categoryList[selectedIndexPath.item])!.categoryId == 3 || (self.actor?.categoryList[selectedIndexPath.item])!.categoryId == 4 {
+                break
+            } else {
+                
+                // TODO: actor로 옮기기
+                let editCategoryPopUpStoryboard = UIStoryboard(name: "EditCategory", bundle: nil)
+                guard let editCategoryPopUpView = editCategoryPopUpStoryboard.instantiateViewController(withIdentifier: "EditCategory") as? EditCategory else { return }
+                editCategoryPopUpView.modalPresentationStyle = .custom
+                editCategoryPopUpView.modalTransitionStyle = .crossDissolve
+                
+                // TODO: Delegate 적용하기
+                
+                self.present(editCategoryPopUpView, animated: true, completion: nil)
+            }
+            
+        case .ended:
+            fallthrough
+        default:
+            self.categoryCollectionView.reloadData()
+        }
     }
 }

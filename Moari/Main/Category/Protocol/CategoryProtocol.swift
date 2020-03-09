@@ -30,6 +30,10 @@ protocol CategoryActorDelegate: class {
     
     func setCategoryList(category: Category)
     
+    func removeCategory(categoryId id: Int)
+    
+    func removeAllCategoryListObjcet()
+    
     func didLoadCategoryVC(vc: CategoryVC)
     
     func didTapCategoryCell(_ index: Int)

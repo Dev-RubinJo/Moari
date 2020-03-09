@@ -40,6 +40,7 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
         self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: .clear)
         
         self.actor?.didLoadCategoryVC(vc: self)
+        print("category")
     }
 }
     

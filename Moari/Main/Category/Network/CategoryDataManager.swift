@@ -29,8 +29,10 @@ class CategoryDataManager: CategoryDataManagerDelegate {
                 case .success(let categoryResponse):
                     switch categoryResponse.code {
                     case 200:
+                        self.actor?.removeAllCategoryListObjcet()
                         for category in categoryResponse.result {
                             self.actor?.setCategoryList(category: category)
+                            print(category)
                         }
                         if self.actor?.categoryList.count ?? 0 < 8 {
                             for _ in 0 ..< (8 - (self.actor?.categoryList.count ?? 0)) {
@@ -42,6 +44,7 @@ class CategoryDataManager: CategoryDataManagerDelegate {
                                 }
                             }
                         }
+                        print("reload")
                         vc.categoryCollectionView.reloadData()
                     default:
                         break

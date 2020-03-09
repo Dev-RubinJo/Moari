@@ -21,8 +21,17 @@ protocol AddReviewActorDelegate: class {
     var view: AddReviewVCRouterDelegate? { get set }
     
     var dataManager: AddReviewDataManagerDelegate? { get set }
+    
+    var categoryList: [CategoryForReview] { get }
+    
+    func setCategoryList(category: CategoryForReview)
+    
+    func updateStarRateImageView(updateVC vc: AddReviewVC, value: Double)
 }
 
 protocol AddReviewDataManagerDelegate: class {
+    
     var actor: AddReviewActorDelegate? { get set }
+    
+    
 }

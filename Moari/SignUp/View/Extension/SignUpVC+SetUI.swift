@@ -12,6 +12,8 @@ extension SignUpVC {
     func setSignUpVCUI() {
         self.navigationItem.title = "SIGN_UP_TITLE".localized
         
+        self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: .navigationBarBottomBorder)
+        
         let emailTextFieldPlaceholder = NSAttributedString(string: "EMAIL".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.signInBottomBorderBar])
         self.emailTextField.attributedPlaceholder = emailTextFieldPlaceholder
         let emailPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 11, height: 0))

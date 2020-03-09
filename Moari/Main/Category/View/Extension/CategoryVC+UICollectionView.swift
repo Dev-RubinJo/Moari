@@ -42,10 +42,21 @@ extension CategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: 카테고리를 선택하고 선택한 카테고리의 리뷰들 띄우기
+        // 롱클릭 이벤트 1 ~ 4번째 카테고리는 적용 안되도록 하기
+        // 롱클릭 이벤트 0번 카테고리는 적용 안되도록 하기
+        
         if self.actor?.categoryList[indexPath.item].categoryId != 0 {
             self.actor?.didTapCategoryCell(indexPath.item)
         } else {
-            // TODO: 추가하기 플로우 넣기
+            // TODO: 추가하기 플로우 Actor로 옮기기
+            let addCategoryPopUpStoryboard = UIStoryboard(name: "AddCategory", bundle: nil)
+            guard let addCategoryPopUpView = addCategoryPopUpStoryboard.instantiateViewController(withIdentifier: "AddCategory") as? AddCategory else { return }
+            addCategoryPopUpView.delegate = self
+            addCategoryPopUpView.categoryActor = self.actor
+            addCategoryPopUpView.modalPresentationStyle = .custom
+            addCategoryPopUpView.modalTransitionStyle = .crossDissolve
+            
+            self.present(addCategoryPopUpView, animated: true, completion: nil)
         }
     }
     
@@ -72,5 +83,13 @@ extension CategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             break
         }
         return CGSize()
+    }
+}
+
+
+
+extension CategoryVC: AddCategoryPopUpDelegate {
+    func didTapAddCategoryDoneButton() {
+        print(1)
     }
 }

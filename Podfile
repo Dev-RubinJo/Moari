@@ -18,6 +18,7 @@ target 'Moari' do
   pod 'KWDrawerController', '~> 4.2'
   # Star Rating Library
   pod 'Cosmos', '~> 21.0'
+  pod 'TinyConstraints'
   
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'

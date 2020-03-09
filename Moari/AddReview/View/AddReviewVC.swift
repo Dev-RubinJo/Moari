@@ -30,6 +30,7 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     
     @IBOutlet weak var starRateView: UIView!
     @IBOutlet weak var starRateBorderImageView: UIImageView!
+    @IBOutlet weak var starRateImageView: UIImageView!
     
     
     @IBOutlet weak var reviewContentView: UIView!
@@ -53,7 +54,7 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     
     var isAdd: Bool?
 //    var isReviewExist: Bool?
-    
+    var starRateValue: Double = 0
     var baseHeight: CGFloat = 0
     var contentTextViewHeight: CGSize = CGSize(width: 0, height: 0)
     
@@ -77,13 +78,14 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.baseHeight = self.shareImageBaseView.bounds.height + 127
-        
         self.setUpScrollView()
+        
         UIApplication.shared.statusBarStyle = .default
         self.setAddReviewVCUI()
         self.reviewTitleTextView.delegate = self
         self.reviewContentTextView.delegate = self
         self.contentTextView.delegate = self
+        self.selectDateTextField.delegate = self
         
         self.initTapListener()
     }

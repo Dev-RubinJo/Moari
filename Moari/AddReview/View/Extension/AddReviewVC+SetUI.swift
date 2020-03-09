@@ -15,6 +15,11 @@ extension AddReviewVC {
         // TODO: 작성하기 다국어 지원으로 변경하기
         self.navigationItem.title = "작성하기"
         
+        let appendReviewButton = UIBarButtonItem(image: UIImage(named: "appendReview"), style: .plain, target: self, action: #selector(self.pressAppendReviewButton(_:)))
+        let closeReviewButton = UIBarButtonItem(image: UIImage(named: "closeButton"), style: .plain, target: self, action: #selector(self.pressCloseReviewButton(_:)))
+        
+        self.navigationItem.rightBarButtonItem = appendReviewButton
+        
         self.shareReviewButton.setImage(UIImage(named: "shareIc"), for: .normal)
         self.editReviewButton.setImage(UIImage(named: "editReview"), for: .normal)
         self.deleteReviewButton.setImage(UIImage(named: "deleteReview"), for: .normal)
@@ -38,6 +43,7 @@ extension AddReviewVC {
                 // TODO: 다국어 지원하기
                 self.selectDateTextField.text = "날짜"
                 self.selectDateTextField.textColor = .defaultPink
+                self.navigationItem.leftBarButtonItem = closeReviewButton
             } else {
                 self.reviewTitleBorderImageView.isHidden = true
                 self.starRateBorderImageView.isHidden = true
@@ -52,10 +58,20 @@ extension AddReviewVC {
         }
     }
     
+    @objc func pressAppendReviewButton(_ sender: UIBarButtonItem) {
+        // TODO: 리뷰 작성완료 기능 넣기
+        print(1)
+    }
+    
+    @objc func pressCloseReviewButton(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - set ScrollView
     func setUpScrollView() {
         // TODO: 기종별로 최적화 된 사이즈 지정하기
         self.resizeContentTextView()
-//        print(self.contentTextViewHeight.height)
+//        print(self.baseHeight + self.contentTextViewHeight.height)
         self.contentView.snp.makeConstraints { make in
             make.height.equalTo(self.baseHeight + self.contentTextViewHeight.height)
         }
@@ -68,6 +84,9 @@ extension AddReviewVC {
         }
     }
     
+    
+    
+    // MARK: - set Picker
     func showDatePicker(){
         //Formate Date
         self.datePicker.datePickerMode = .date
@@ -83,13 +102,13 @@ extension AddReviewVC {
         
         self.selectDateTextField.inputAccessoryView = toolbar
         self.selectDateTextField.inputView = self.datePicker
-        self.updateScrollView(heightValue: self.baseHeight + self.keyboardHeight)
-        
     }
+    
     @objc func donedatePicker(){
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy. MM. dd"
         self.selectDateTextField.text = formatter.string(from: self.datePicker.date)
+        self.selectDateTextField.endEditing(true)
         self.view.endEditing(true)
     }
     
@@ -102,20 +121,29 @@ extension AddReviewVC {
     func initTapListener() {
         self.editImageButton.addTarget(self, action: #selector(self.pressEditImageButton(_:)), for: .touchUpInside)
         
-        self.selectDateTextField.addTarget(self, action: #selector(self.pressSelectDateTextField(_:)), for: .touchUpInside)
+        let starRateImageViewListener: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.pressStarRateImageView(_:)))
+        self.starRateImageView.isUserInteractionEnabled = true
+        self.starRateImageView.addGestureRecognizer(starRateImageViewListener)
     }
     
     @objc func pressEditImageButton(_ sender: UIButton) {
         
     }
     
-    @objc func pressSelectCategoryButton(_ sender: UIButton) {
-        
+    @objc func pressStarRateImageView(_ sender: UIImageView) {
+        print(self.starRateValue)
+        // TODO: 여기서 띄워주는 행위 엑터로 옯기기
+        let starRatePopUpStoryboard = UIStoryboard(name: "StarRate", bundle: nil)
+        guard let starRatePopUpView = starRatePopUpStoryboard.instantiateViewController(withIdentifier: "StarRate") as? StarRate else { return }
+        starRatePopUpView.delegate = self
+        starRatePopUpView.modalPresentationStyle = .custom
+        starRatePopUpView.modalTransitionStyle = .crossDissolve
+        starRatePopUpView.value = self.starRateValue
+        self.present(starRatePopUpView, animated: true, completion: nil)
     }
     
-    @objc func pressSelectDateTextField(_ sender: UITextField) {
-        sender.text = ""
-        sender.textColor = .signInBottomLabels
+    @objc func pressSelectCategoryButton(_ sender: UIButton) {
+        
     }
     
     @objc func pressEditReviewButton(_ sender: UIButton) {
@@ -130,6 +158,12 @@ extension AddReviewVC {
         
     }
 }
+extension AddReviewVC: StarRatePopUpDelegate {
+    func didTapDoneButton(_ value: Double) {
+        self.starRateValue = value
+        self.actor?.updateStarRateImageView(updateVC: self, value: value)
+    }
+}
+
 // 이미지 피커 컨트롤러 필요(크롭기능 적용)
 // 카테고리 선택 피커 필요
-

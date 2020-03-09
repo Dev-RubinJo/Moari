@@ -1,7 +1,124 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Add Category-->
+        <scene sceneID="WJZ-gp-hHq">
+            <objects>
+                <viewController storyboardIdentifier="AddCategory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vwI-rs-tRo" customClass="AddCategory" customModule="Moari" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tX2-YF-dYi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1u7-0k-ncn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xT9-p2-inL">
+                                <rect key="frame" x="40" y="194" width="240" height="180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74G-46-uKV">
+                                        <rect key="frame" x="0.0" y="129.5" width="240" height="1"/>
+                                        <color key="backgroundColor" name="PopUpBolderColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="oIq-V0-fQM"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q85-SO-QlB">
+                                        <rect key="frame" x="119.5" y="130.5" width="1" height="49.5"/>
+                                        <color key="backgroundColor" name="PopUpBolderColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="uRG-V0-xV7"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQw-IL-Js6">
+                                        <rect key="frame" x="0.0" y="130.5" width="119.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <state key="normal" title="취소">
+                                            <color key="titleColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T16-qN-b8a">
+                                        <rect key="frame" x="120.5" y="130.5" width="119.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" red="0.76078431369999999" green="0.094117647060000004" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="카테고리 제목" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v5M-kK-lp0">
+                                        <rect key="frame" x="20" y="48" width="200" height="21"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrQ-nU-5VG">
+                                        <rect key="frame" x="20" y="69" width="200" height="1"/>
+                                        <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="tE7-qh-uSu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="v5M-kK-lp0" secondAttribute="trailing" constant="20" id="30X-xA-BRJ"/>
+                                    <constraint firstItem="Q85-SO-QlB" firstAttribute="leading" secondItem="nQw-IL-Js6" secondAttribute="trailing" id="8Ed-aw-j69"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q85-SO-QlB" secondAttribute="bottom" id="9sU-9j-5LX"/>
+                                    <constraint firstItem="LrQ-nU-5VG" firstAttribute="trailing" secondItem="v5M-kK-lp0" secondAttribute="trailing" id="Aqk-hT-tYa"/>
+                                    <constraint firstItem="Q85-SO-QlB" firstAttribute="top" secondItem="74G-46-uKV" secondAttribute="bottom" id="BEc-YO-lT6"/>
+                                    <constraint firstAttribute="bottom" secondItem="nQw-IL-Js6" secondAttribute="bottom" id="G8L-wG-vA9"/>
+                                    <constraint firstItem="T16-qN-b8a" firstAttribute="leading" secondItem="Q85-SO-QlB" secondAttribute="trailing" id="UWv-3j-8z8"/>
+                                    <constraint firstItem="74G-46-uKV" firstAttribute="leading" secondItem="xT9-p2-inL" secondAttribute="leading" id="Xkb-vB-yUZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="74G-46-uKV" secondAttribute="trailing" id="Y10-vE-7yE"/>
+                                    <constraint firstItem="LrQ-nU-5VG" firstAttribute="leading" secondItem="v5M-kK-lp0" secondAttribute="leading" id="Ykj-br-vpJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="T16-qN-b8a" secondAttribute="bottom" id="a5J-2S-Nbq"/>
+                                    <constraint firstItem="LrQ-nU-5VG" firstAttribute="top" secondItem="v5M-kK-lp0" secondAttribute="bottom" id="cfm-Hj-xyy"/>
+                                    <constraint firstAttribute="width" constant="240" id="e3c-Mr-7LC"/>
+                                    <constraint firstItem="T16-qN-b8a" firstAttribute="top" secondItem="74G-46-uKV" secondAttribute="bottom" id="eHm-Zr-upJ"/>
+                                    <constraint firstItem="nQw-IL-Js6" firstAttribute="top" secondItem="74G-46-uKV" secondAttribute="bottom" id="eTe-23-cGJ"/>
+                                    <constraint firstItem="v5M-kK-lp0" firstAttribute="centerX" secondItem="xT9-p2-inL" secondAttribute="centerX" id="gSX-Y5-NyH"/>
+                                    <constraint firstItem="Q85-SO-QlB" firstAttribute="centerX" secondItem="xT9-p2-inL" secondAttribute="centerX" id="jfy-au-8Ft"/>
+                                    <constraint firstItem="v5M-kK-lp0" firstAttribute="leading" secondItem="xT9-p2-inL" secondAttribute="leading" constant="20" id="kov-2s-iWh"/>
+                                    <constraint firstItem="v5M-kK-lp0" firstAttribute="top" secondItem="xT9-p2-inL" secondAttribute="top" constant="48" id="r9Z-Lj-zNC"/>
+                                    <constraint firstAttribute="trailing" secondItem="T16-qN-b8a" secondAttribute="trailing" id="raL-We-jy3"/>
+                                    <constraint firstAttribute="height" constant="180" id="sQz-NF-HKM"/>
+                                    <constraint firstItem="nQw-IL-Js6" firstAttribute="leading" secondItem="xT9-p2-inL" secondAttribute="leading" id="tVf-vn-gdq"/>
+                                    <constraint firstAttribute="bottom" secondItem="74G-46-uKV" secondAttribute="bottom" constant="49.5" id="uHo-Yz-hed"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1u7-0k-ncn" secondAttribute="trailing" id="2S3-7V-t46"/>
+                            <constraint firstItem="1u7-0k-ncn" firstAttribute="top" secondItem="tX2-YF-dYi" secondAttribute="top" id="2cn-55-5Ow"/>
+                            <constraint firstItem="xT9-p2-inL" firstAttribute="centerY" secondItem="tX2-YF-dYi" secondAttribute="centerY" id="MDS-wr-wzk"/>
+                            <constraint firstItem="1u7-0k-ncn" firstAttribute="leading" secondItem="tX2-YF-dYi" secondAttribute="leading" id="Md9-Bi-cWE"/>
+                            <constraint firstItem="xT9-p2-inL" firstAttribute="centerX" secondItem="tX2-YF-dYi" secondAttribute="centerX" id="n3O-EH-7tB"/>
+                            <constraint firstAttribute="bottom" secondItem="1u7-0k-ncn" secondAttribute="bottom" id="osl-Uh-EL1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xUn-oJ-P1g"/>
+                    </view>
+                    <connections>
+                        <outlet property="addCategoryCancelButton" destination="nQw-IL-Js6" id="8bM-Pb-nJY"/>
+                        <outlet property="addCategoryDoneButton" destination="T16-qN-b8a" id="1NW-N9-N9M"/>
+                        <outlet property="addCategoryPopUpTextField" destination="v5M-kK-lp0" id="M6o-6d-612"/>
+                        <outlet property="addCategoryPopUpView" destination="xT9-p2-inL" id="YlX-Z2-ukN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRP-Yx-gaX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106.875" y="151.05633802816902"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="PopUpBolderColor">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -27,6 +27,19 @@ class CategoryActor: CategoryActorDelegate {
         self._categoryList.append(category)
     }
     
+    func removeCategory(categoryId id: Int) {
+        for categoryIndex in 0 ..< self.categoryList.count {
+            if self.categoryList[categoryIndex].categoryId == id {
+                self._categoryList.remove(at: categoryIndex)
+                break
+            }
+        }
+    }
+    
+    func removeAllCategoryListObjcet() {
+        self._categoryList.removeAll()
+    }
+    
     func didLoadCategoryVC(vc: CategoryVC) {
         self.dataManager?.loadCategoryList(toVC: vc)
     }

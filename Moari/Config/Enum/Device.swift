@@ -12,3 +12,4 @@ enum Device {
     case iPhone
     case iPad
 }
+

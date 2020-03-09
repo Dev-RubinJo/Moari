@@ -6,4 +6,7 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
-import Foundation
+protocol AddCategoryPopUpDelegate: class {
+    
+    func didTapAddCategoryDoneButton()
+}
