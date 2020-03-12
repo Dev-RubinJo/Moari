@@ -9,11 +9,8 @@ import UIKit
 
 class SplashActor: SplashActorDelegate {
     
-    static let shared = SplashActor()
-    private init() {}
-    
     weak var view: SplashVCRouterDelegate?
-    weak var dataManager: SplashDataManagerDelegate?
+    var dataManager: SplashDataManagerDelegate?
     
     func didLoadSplash(fromVC vc: SplashVC) {
         self.dataManager?.checkToken(fromVC: vc)
@@ -25,5 +22,9 @@ class SplashActor: SplashActorDelegate {
     
     func invalidToken() {
         self.view?.presentSignInVC()
+    }
+    
+    deinit {
+        print("splash deinit actor")
     }
 }

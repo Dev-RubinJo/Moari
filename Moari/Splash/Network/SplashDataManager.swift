@@ -11,9 +11,6 @@ import AlamofireObjectMapper
 
 class SplashDataManager: SplashDataManagerDelegate {
     
-    static let shared = SplashDataManager()
-    private init() {}
-    
     weak var actor: (SplashActorDelegate & SplashAlertActorDelegate)?
     
     func checkToken(fromVC vc: SplashVC) {
@@ -38,8 +35,12 @@ class SplashDataManager: SplashDataManagerDelegate {
                         self.actor?.invalidToken()
                     }
                 case .failure(_ ):
-                    print("error")
+                    vc.presentAlert(title: "서버 오류!", message: "서버와의 연결이 원활하지 않습니다")
                 }
             })
+    }
+    
+    deinit {
+        print("splash deinit dataManager")
     }
 }

@@ -13,19 +13,15 @@ extension SplashVC: SplashVCRouterDelegate {
     
     weak var window: UIWindow? {
         get {
-            if #available(iOS 13.0, *) {
-                return UIApplication.shared.windows.first ?? UIWindow.init(frame: UIScreen.main.bounds)
-            } else {
-                return UIApplication.shared.keyWindow
-            }
+            return UIApplication.shared.windows.first
         }
     }
     
     static var makeSplashVC: SplashVC {
         get {
             let vc = SplashVC()
-            let actor = SplashActor.shared
-            let dataManager = SplashDataManager.shared
+            let actor = SplashActor()
+            let dataManager = SplashDataManager()
             
             vc.actor = actor
             actor.view = vc

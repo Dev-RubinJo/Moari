@@ -9,12 +9,10 @@
 import UIKit
 
 class SplashVC: BaseVC, SplashVCProtocol {
-    
+
     @IBOutlet weak var logoImageView: UIImageView!
     
-    static let viewRouter: SplashVCRouterDelegate = SplashVC()
-    
-    weak var actor: SplashActorDelegate?
+    var actor: SplashActorDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,5 +21,10 @@ class SplashVC: BaseVC, SplashVCProtocol {
             self?.actor?.didLoadSplash(fromVC: self!)
         }
     }
+    
+    deinit {
+        print("splash deinit vc")
+    }
+    
     // 다크모드 지원은 어떻게?
 }
