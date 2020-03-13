@@ -24,8 +24,8 @@ extension SignInVC: SignInVCRouterDelegate {
     static var makeSignInVC: SignInVC {
         get {
             let vc = SignInVC()
-            let actor = SignInActor.shared
-            let dataManager = SignInDataManager.shared
+            let actor = SignInActor()
+            let dataManager = SignInDataManager()
             
             vc.actor = actor
             actor.view = vc

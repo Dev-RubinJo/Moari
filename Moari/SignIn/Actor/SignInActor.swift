@@ -8,11 +8,8 @@
 
 class SignInActor: SignInActorDelegate {
     
-    static let shared = SignInActor()
-    private init() {}
-    
     weak var view: SignInVCRouterDelegate?
-    weak var dataManager: SignInDataManagerDelegate?
+    var dataManager: SignInDataManagerDelegate?
     
     func didTapSignInButton(fromVC vc: SignInVC) {
         self.checkTextFields(vc: vc)
@@ -28,6 +25,10 @@ class SignInActor: SignInActorDelegate {
     
     func successSignIn() {
         self.view?.presentMainVC()
+    }
+    
+    deinit {
+        print("signIn actor deinit")
     }
 }
 extension SignInActor {

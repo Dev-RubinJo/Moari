@@ -11,9 +11,6 @@ import AlamofireObjectMapper
 
 class SignInDataManager: SignInDataManagerDelegate {
     
-    static let shared = SignInDataManager()
-    private init() {}
-    
     weak var actor: (SignInActorDelegate & SignInAlertActorDelegate)?
     
     func signIn(fromVC vc: SignInVC, email: String, password: String) {
@@ -51,5 +48,9 @@ class SignInDataManager: SignInDataManagerDelegate {
                     print(error)
                 }
             })
+    }
+    
+    deinit {
+        print("signIn dataManager deinit")
     }
 }

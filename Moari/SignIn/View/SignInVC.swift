@@ -27,7 +27,7 @@ class SignInVC: BaseVC, SignInVCProtocol {
     /// 이메일찾기, 회원가입 가운데 뷰 x축 좌표
     @IBOutlet weak var borderBarViewCenterConstraint: NSLayoutConstraint!
     
-    weak var actor: SignInActorDelegate?
+    var actor: SignInActorDelegate?
     
     var emailTextFieldPlaceholder = NSAttributedString(string: "EMAIL".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.signInBottomBorderBar])
     var passwordTextFieldPlaceholder = NSAttributedString(string: "PASSWORD".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.signInBottomBorderBar])
@@ -54,5 +54,9 @@ class SignInVC: BaseVC, SignInVCProtocol {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+    }
+    
+    deinit {
+        print("signIn vc deinit")
     }
 }
