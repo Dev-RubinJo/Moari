@@ -14,18 +14,34 @@ class CategoryDetailVC: BaseVC, CategoryDetailVCProtocol {
     @IBOutlet weak var categoryDetailCollectionView: UICollectionView!
     
     weak var actor: CategoryDetailActorDelegate?
+    var category: Category?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.barStyle = .default
-        UIApplication.shared.statusBarStyle = .default
         
         self.categoryDetailCollectionView.delegate = self
         self.categoryDetailCollectionView.dataSource = self
         
         let categoryDetailCellNib = UINib(nibName: "CategoryDetailCell", bundle: nil)
         self.categoryDetailCollectionView.register(categoryDetailCellNib, forCellWithReuseIdentifier: "CategoryDetailCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let theme = UserDefaults.standard.integer(forKey: "Theme")
+        switch theme {
+        case 0:
+            UIApplication.shared.statusBarStyle = .default
+        case 1:
+            UIApplication.shared.statusBarStyle = .lightContent
+        case 2:
+            UIApplication.shared.statusBarStyle = .default
+        default:
+            UIApplication.shared.statusBarStyle = .default
+        }
+        self.actor?.didLoadCategoryDetailList(fromVC: self)
     }
 }
 

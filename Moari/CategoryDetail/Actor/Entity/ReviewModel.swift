@@ -12,9 +12,9 @@ struct Review {
     var reviewCategory: Int!
     var title: String!
     var imageUrl: String!
-    var starRate: Float!
+    var starRate: Double!
     
-    init(reviewId: Int, reviewCategory: Int, title: String, imageUrl: String, starRate: Float) {
+    init(reviewId: Int, reviewCategory: Int, title: String, imageUrl: String, starRate: Double) {
         self.reviewId = reviewId
         self.reviewCategory = reviewCategory
         self.title = title

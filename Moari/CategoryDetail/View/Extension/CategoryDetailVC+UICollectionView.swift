@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 extension CategoryDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return self.actor?.reviewList.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -18,8 +19,22 @@ extension CategoryDetailVC: UICollectionViewDelegate, UICollectionViewDataSource
             return UICollectionViewCell()
         }
         
+        if let review = self.actor?.reviewList[indexPath.item] {
+            let url = URL(string: "\(review.imageUrl ?? "")")
+            cell.backgroundImageView.kf.setImage(with: url)
+            cell.reviewTitleLabel.text = review.title
+            self.actor?.updateStarRateImageView(updateCell: cell, value: review.starRate)
+        }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let category = self.category else { return }
+        if let id = category.categoryId, let reviewId = self.actor?.reviewList[indexPath.item].reviewId {
+            self.actor?.didTapReviewCell(reviewCategory: id, reviewId: reviewId)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

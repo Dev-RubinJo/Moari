@@ -13,7 +13,7 @@ struct ReviewResult {
     var reviewCategory: Int!
     var title: String!
     var imageUrl: String!
-    var starRate: Float!
+    var starRate: Double!
 }
 extension ReviewResult: Mappable {
     init?(map: Map) {
@@ -25,5 +25,39 @@ extension ReviewResult: Mappable {
         title <- map["title"]
         imageUrl <- map["image"]
         starRate <- map["grade"]
+    }
+}
+
+struct CategoryDetailResponse {
+    var isSuccess: Bool!
+    var code: Int!
+    var message: String!
+    var result: [ReviewResult]!
+}
+extension CategoryDetailResponse: Mappable {
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        isSuccess <- map["isSuccess"]
+        code <- map["code"]
+        message <- map["message"]
+        result <- map["result"]
+    }
+}
+
+struct CategoryDetailDeleteResponse {
+    var isSuccess: Bool!
+    var code: Int!
+    var message: String!
+}
+extension CategoryDetailDeleteResponse: Mappable {
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        isSuccess <- map["isSuccess"]
+        code <- map["code"]
+        message <- map["message"]
     }
 }
