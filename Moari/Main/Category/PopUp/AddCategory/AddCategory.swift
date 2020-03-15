@@ -15,8 +15,9 @@ class AddCategory: BaseVC {
     @IBOutlet weak var addCategoryDoneButton: UIButton!
     @IBOutlet weak var addCategoryCancelButton: UIButton!
     
-    weak var delegate: AddCategoryPopUpDelegate?
-    weak var categoryActor: CategoryActorDelegate?
+    var category: Category?
+    weak var delegate: EditCategoryDelegate?
+    weak var categoryActor: (CategoryActorDelegate)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,18 @@ class AddCategory: BaseVC {
 extension AddCategory {
     
     @objc func pressAddCategoryDoneButton(_ sender: UIButton) {
-//        self.categoryActor. <- 여기에 추가하는 api를 엮을 수 있도록 하기
-        self.delegate?.didTapAddCategoryDoneButton()
+        guard let categoryVC = self.delegate?.getCategoryVC() else { return }
+        if self.addCategoryPopUpTextField.text == "" {
+            self.presentAlert(title: "카테고리가 비어있어요", message: "카테고리를 입력해주세요!")
+            return
+        }
+        if self.category == nil {
+            self.categoryActor?.didTapAddCategoryDoneButton(toVC: categoryVC, categoryName: self.addCategoryPopUpTextField.text!)
+        } else {
+            guard let id = self.category?.categoryId else { return }
+            self.categoryActor?.didTapEditCategoryDoneButton(toVC: categoryVC, categoryName: self.addCategoryPopUpTextField.text!, categoryId: id)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     

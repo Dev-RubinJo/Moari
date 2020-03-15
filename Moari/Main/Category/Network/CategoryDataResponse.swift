@@ -41,3 +41,19 @@ extension CategoryListResponse: Mappable {
         result <- map["result"]
     }
 }
+
+struct CategoryDefaultResponse {
+    var isSuccess: Bool!
+    var code: Int!
+    var message: String!
+}
+extension CategoryDefaultResponse: Mappable {
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        isSuccess <- map["isSuccess"]
+        code <- map["code"]
+        message <- map["message"]
+    }
+}

@@ -16,9 +16,14 @@ extension AddReviewVC {
         self.navigationItem.title = "작성하기"
         
         let appendReviewButton = UIBarButtonItem(image: UIImage(named: "appendReview"), style: .plain, target: self, action: #selector(self.pressAppendReviewButton(_:)))
-        let closeReviewButton = UIBarButtonItem(image: UIImage(named: "closeButton"), style: .plain, target: self, action: #selector(self.pressCloseReviewButton(_:)))
+        let closeReviewButton = UIBarButtonItem(image: UIImage(named: "closeButtonDefault"), style: .plain, target: self, action: #selector(self.pressCloseReviewButton(_:)))
         
         self.navigationItem.rightBarButtonItem = appendReviewButton
+        
+        if let category = self.categoryId, let review = self.reviewId {
+            self.actor?.didLoadReview(updateVC: self, categoryId: category, reviewId: review)
+            
+        }
         
         self.shareReviewButton.setImage(UIImage(named: "shareIc"), for: .normal)
         self.editReviewButton.setImage(UIImage(named: "editReview"), for: .normal)
@@ -39,21 +44,33 @@ extension AddReviewVC {
                 self.editReviewButton.isHidden = true
                 self.deleteReviewButton.isHidden = true
                 self.editImageButton.isHidden = false
+                self.selectDateTextField.isUserInteractionEnabled = true
                 
                 // TODO: 다국어 지원하기
                 self.selectDateTextField.text = "날짜"
                 self.selectDateTextField.textColor = .defaultPink
                 self.navigationItem.leftBarButtonItem = closeReviewButton
+                self.setUpScrollView()
             } else {
+                self.navigationItem.title = ""
+                
                 self.reviewTitleBorderImageView.isHidden = true
+                self.reviewTitlePlaceholderLabel.isHidden = true
                 self.starRateBorderImageView.isHidden = true
                 self.reviewContentBorderImageView.isHidden = true
+                self.reviewContentPlaceholderLabel.isHidden = true
                 self.shareReviewButton.isHidden = false
                 self.editReviewButton.isHidden = false
                 self.deleteReviewButton.isHidden = true
                 self.editImageButton.isHidden = true
+                self.selectDateTextField.isUserInteractionEnabled = false
+                self.reviewTitleTextView.isEditable = false
+                self.reviewContentTextView.isEditable = false
+                self.contentTextView.isEditable = false
+                
                 
                 self.selectDateTextField.textColor = .signInBottomLabels
+                
             }
         }
     }
@@ -124,6 +141,9 @@ extension AddReviewVC {
         let starRateImageViewListener: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.pressStarRateImageView(_:)))
         self.starRateImageView.isUserInteractionEnabled = true
         self.starRateImageView.addGestureRecognizer(starRateImageViewListener)
+        
+        
+        self.shareReviewButton.addTarget(self, action: #selector(self.pressShareReviewButton(_:)), for: .touchUpInside)
     }
     
     @objc func pressEditImageButton(_ sender: UIButton) {
@@ -131,7 +151,6 @@ extension AddReviewVC {
     }
     
     @objc func pressStarRateImageView(_ sender: UIImageView) {
-        print(self.starRateValue)
         // TODO: 여기서 띄워주는 행위 엑터로 옯기기
         let starRatePopUpStoryboard = UIStoryboard(name: "StarRate", bundle: nil)
         guard let starRatePopUpView = starRatePopUpStoryboard.instantiateViewController(withIdentifier: "StarRate") as? StarRate else { return }
@@ -151,7 +170,11 @@ extension AddReviewVC {
     }
     
     @objc func pressShareReviewButton(_ sender: UIButton) {
+        let image = UIView.makeImage(with: self.shareImageBaseView)
+        let shareViewController = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        shareViewController.popoverPresentationController?.sourceView = self.view
         
+        self.present(shareViewController, animated: true, completion: nil)
     }
     
     @objc func pressDeleteReviewButton(_ sender: UIButton) {

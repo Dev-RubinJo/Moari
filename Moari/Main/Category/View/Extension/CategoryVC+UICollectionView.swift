@@ -46,17 +46,11 @@ extension CategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         // 롱클릭 이벤트 0번 카테고리는 적용 안되도록 하기
         
         if self.actor?.categoryList[indexPath.item].categoryId != 0 {
+            guard let category = self.actor?.categoryList[indexPath.item] else { return }
+            self.category = category
             self.actor?.didTapCategoryCell(indexPath.item)
         } else {
-            // TODO: 추가하기 플로우 Actor로 옮기기
-            let addCategoryPopUpStoryboard = UIStoryboard(name: "AddCategory", bundle: nil)
-            guard let addCategoryPopUpView = addCategoryPopUpStoryboard.instantiateViewController(withIdentifier: "AddCategory") as? AddCategory else { return }
-            addCategoryPopUpView.delegate = self
-            addCategoryPopUpView.categoryActor = self.actor
-            addCategoryPopUpView.modalPresentationStyle = .custom
-            addCategoryPopUpView.modalTransitionStyle = .crossDissolve
-            
-            self.present(addCategoryPopUpView, animated: true, completion: nil)
+            self.actor?.presentAddCategoryPopUp(fromVC: self, category: nil)
         }
     }
     

@@ -16,9 +16,10 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
     @IBOutlet weak var categoryTitleLabel: UILabel!
     @IBOutlet weak var categoryVCTitleLabelTopConstraint: NSLayoutConstraint!
 
-    weak var actor: CategoryActorDelegate?
+    weak var actor: (CategoryActorDelegate & CategoryPopUpActorDelegate)?
     
     var logoButton: UIButton = UIButton()
+    var category: Category = Category()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,6 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
         self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: .clear)
         
         self.actor?.didLoadCategoryVC(vc: self)
-        print("category")
     }
 }
     

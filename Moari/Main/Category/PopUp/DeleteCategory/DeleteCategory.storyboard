@@ -1,7 +1,115 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Delete Category-->
+        <scene sceneID="9mV-aA-KfM">
+            <objects>
+                <viewController storyboardIdentifier="DeleteCategory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HIr-xI-Ffp" customClass="DeleteCategory" customModule="Moari" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wPy-Fg-wGC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWq-eU-jil">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="882-Mf-Der">
+                                <rect key="frame" x="87" y="358" width="240" height="180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbb-Cr-FdO">
+                                        <rect key="frame" x="0.0" y="129.5" width="240" height="1"/>
+                                        <color key="backgroundColor" name="PopUpBolderColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="6pK-Es-hDD"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u08-WZ-3vj">
+                                        <rect key="frame" x="119.5" y="130.5" width="1" height="49.5"/>
+                                        <color key="backgroundColor" name="PopUpBolderColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="ECq-LA-ygd"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcj-Z2-VEI">
+                                        <rect key="frame" x="0.0" y="130.5" width="119.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <state key="normal" title="취소">
+                                            <color key="titleColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdF-DS-UE1">
+                                        <rect key="frame" x="120.5" y="130.5" width="119.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" red="0.76078431369999999" green="0.094117647060000004" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="드라마 카테고리를삭제하시겠습니까?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MT-sq-amH">
+                                        <rect key="frame" x="50" y="40" width="140" height="41"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="OdF-DS-UE1" secondAttribute="bottom" id="0DG-8w-mbp"/>
+                                    <constraint firstAttribute="width" constant="240" id="26r-fi-3Lv"/>
+                                    <constraint firstAttribute="height" constant="180" id="62v-X1-Ome"/>
+                                    <constraint firstItem="OdF-DS-UE1" firstAttribute="top" secondItem="vbb-Cr-FdO" secondAttribute="bottom" id="Cbg-vl-PPH"/>
+                                    <constraint firstItem="OdF-DS-UE1" firstAttribute="leading" secondItem="u08-WZ-3vj" secondAttribute="trailing" id="HWS-1c-dJ0"/>
+                                    <constraint firstItem="vcj-Z2-VEI" firstAttribute="top" secondItem="vbb-Cr-FdO" secondAttribute="bottom" id="IHy-k3-jIe"/>
+                                    <constraint firstItem="vbb-Cr-FdO" firstAttribute="leading" secondItem="882-Mf-Der" secondAttribute="leading" id="Kcg-lW-RMy"/>
+                                    <constraint firstAttribute="bottom" secondItem="vbb-Cr-FdO" secondAttribute="bottom" constant="49.5" id="MmG-Zv-npq"/>
+                                    <constraint firstAttribute="bottom" secondItem="u08-WZ-3vj" secondAttribute="bottom" id="OBb-ub-kHR"/>
+                                    <constraint firstItem="vcj-Z2-VEI" firstAttribute="leading" secondItem="882-Mf-Der" secondAttribute="leading" id="Oan-xa-LN5"/>
+                                    <constraint firstItem="u08-WZ-3vj" firstAttribute="top" secondItem="vbb-Cr-FdO" secondAttribute="bottom" id="W04-aq-Uwu"/>
+                                    <constraint firstAttribute="trailing" secondItem="0MT-sq-amH" secondAttribute="trailing" constant="50" id="We7-na-PWV"/>
+                                    <constraint firstItem="u08-WZ-3vj" firstAttribute="centerX" secondItem="882-Mf-Der" secondAttribute="centerX" id="YR1-AI-jK7"/>
+                                    <constraint firstAttribute="trailing" secondItem="OdF-DS-UE1" secondAttribute="trailing" id="bIK-rd-3De"/>
+                                    <constraint firstAttribute="bottom" secondItem="vcj-Z2-VEI" secondAttribute="bottom" id="fWI-j1-vO2"/>
+                                    <constraint firstItem="0MT-sq-amH" firstAttribute="leading" secondItem="882-Mf-Der" secondAttribute="leading" constant="50" id="fau-09-2oo"/>
+                                    <constraint firstAttribute="trailing" secondItem="vbb-Cr-FdO" secondAttribute="trailing" id="lI3-9d-1Ah"/>
+                                    <constraint firstItem="u08-WZ-3vj" firstAttribute="leading" secondItem="vcj-Z2-VEI" secondAttribute="trailing" id="pwK-g0-wOS"/>
+                                    <constraint firstItem="0MT-sq-amH" firstAttribute="centerX" secondItem="882-Mf-Der" secondAttribute="centerX" id="wFO-F8-Dwf"/>
+                                    <constraint firstItem="0MT-sq-amH" firstAttribute="top" secondItem="882-Mf-Der" secondAttribute="top" constant="40" id="wrx-6w-Qpp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lWq-eU-jil" firstAttribute="leading" secondItem="wPy-Fg-wGC" secondAttribute="leading" id="9Ik-QI-sR1"/>
+                            <constraint firstAttribute="bottom" secondItem="lWq-eU-jil" secondAttribute="bottom" id="GAS-C8-r0t"/>
+                            <constraint firstAttribute="trailing" secondItem="lWq-eU-jil" secondAttribute="trailing" id="GIU-DU-iGE"/>
+                            <constraint firstItem="882-Mf-Der" firstAttribute="centerY" secondItem="wPy-Fg-wGC" secondAttribute="centerY" id="fCJ-ZU-faZ"/>
+                            <constraint firstItem="lWq-eU-jil" firstAttribute="top" secondItem="wPy-Fg-wGC" secondAttribute="top" id="p19-hC-MQS"/>
+                            <constraint firstItem="882-Mf-Der" firstAttribute="centerX" secondItem="wPy-Fg-wGC" secondAttribute="centerX" id="s7Q-K4-ehD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bBD-QD-fcU"/>
+                    </view>
+                    <connections>
+                        <outlet property="deletePopUpCancelButton" destination="vcj-Z2-VEI" id="GmP-AT-3pa"/>
+                        <outlet property="deletePopUpDoneButton" destination="OdF-DS-UE1" id="B2E-9v-o2g"/>
+                        <outlet property="deletePopUpLabel" destination="0MT-sq-amH" id="dIM-bh-0we"/>
+                        <outlet property="deletePopUpView" destination="882-Mf-Der" id="mhx-z3-Xx9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwA-6f-Rzh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157" y="140"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="PopUpBolderColor">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

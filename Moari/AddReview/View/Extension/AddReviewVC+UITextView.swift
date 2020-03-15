@@ -22,10 +22,12 @@ extension AddReviewVC: UITextViewDelegate {
         case self.contentTextView:
             self.resizeContentTextView()
             self.updateScrollView(heightValue: self.baseHeight + self.keyboardHeight)
+            self.contentTextViewBottomConstraint.constant = 10 + self.keyboardHeight
             var point = self.contentTextView.frame.origin
             point.y = point.y - self.keyboardHeight - 4
             point.x = point.x - 22
             self.scrollView.setContentOffset(point, animated: true)
+            self.scrollToCursorPosition()
             // 11promax = 346
             // 11 = 346
             // 11pro = 220
@@ -51,6 +53,8 @@ extension AddReviewVC: UITextViewDelegate {
         case self.contentTextView:
             self.resizeContentTextView()
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + self.keyboardHeight)
+            self.contentTextViewBottomConstraint.constant = 10 + self.keyboardHeight
+            self.scrollToCursorPosition()
             //            var point = contentTextView.frame.origin
             //            point.y = point.y - 261
             //            point.x = point.x - 22
@@ -80,21 +84,39 @@ extension AddReviewVC: UITextViewDelegate {
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height)
         case self.contentTextView:
             self.resizeContentTextView()
-            self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height)
+            self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + 10)
+            self.contentTextViewBottomConstraint.constant = 10
         default:
             break
         }
     }
     
+    private func scrollToCursorPosition() {
+        let caret = self.contentTextView.caretRect(for: self.contentTextView.selectedTextRange!.start)
+        let cursorRect: CGRect = CGRect.init(x: caret.maxX, y: caret.maxY, width: caret.width, height: self.contentView.bounds.height)
+        
+        self.scrollView.scrollRectToVisible(cursorRect, animated: true)
+    }
+    
     func resizeContentTextView() {
-        let fixedWidth = self.contentTextView.frame.size.width
-        self.contentTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        let newSize = self.contentTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        var newFrame = self.contentTextView.frame
-        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-        self.contentTextView.frame = newFrame;
-        self.contentTextViewHeight.height = newSize.height
-//        print(self.contentTextViewHeight.height)
+        if self.contentTextView.text != " " && self.contentTextView.text != "" {
+            let fixedWidth = self.contentTextView.frame.size.width
+            let newSize = self.contentTextView.sizeThatFits(CGSize(width: fixedWidth, height: .infinity))
+            self.contentTextView.constraints.forEach { (constraint) in // ---- 3
+                if constraint.firstAttribute == .height {
+                    constraint.constant = newSize.height
+                }
+            }
+            self.contentTextViewHeight.height = newSize.height
+            print(self.contentTextViewHeight.height)
+        } else {
+            let fixedWidth = self.contentTextView.frame.size.width
+            let newSize = self.contentTextView.sizeThatFits(CGSize(width: fixedWidth, height: .infinity))
+            self.contentTextViewHeight.height = newSize.height
+            
+            print(self.contentTextViewHeight.height)
+        }
+        
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

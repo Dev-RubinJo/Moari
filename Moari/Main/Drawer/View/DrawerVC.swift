@@ -60,7 +60,7 @@ class DrawerVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.securitySettingSwitch.isOn = UserDefaults.standard.bool(forKey: "AppLockConfig") ?? false
+        self.securitySettingSwitch.isOn = UserDefaults.standard.bool(forKey: "AppLockConfig")
     }
     
     
@@ -93,10 +93,10 @@ extension DrawerVC {
         if UIDevice().userInterfaceIdiom == .phone {
             switch UIScreen.main.nativeBounds.height {
             case 1136, 1334, 1920:
-                self.securitySettingLabel.text = "Face ID"
+                self.securitySettingLabel.text = "Touch ID"
             case 2436, 1792, 2688:
                 //                print("iPhone XR, XS MAX")
-                self.securitySettingLabel.text = "Touch ID"
+                self.securitySettingLabel.text = "Face ID"
             default:
                 self.securitySettingView.isHidden = true
             }
@@ -120,17 +120,21 @@ extension DrawerVC {
     }
     
     @objc func pressSearchView(_ sender: UIView) {
-        print("search")
+        self.present(SearchVC(), animated: true, completion: nil)
         self.drawerController?.closeSide()
     }
     
     @objc func pressEditUserInfoView(_ sender: UIView) {
-        print("editUser")
+        let userInfoVC = UserInfoVC.makeUserInfoVC
+        self.present(userInfoVC, animated: true, completion: nil)
         self.drawerController?.closeSide()
     }
     
     @objc func pressThemeModeView(_ sender: UIView) {
-        print("ThemeMode")
+        let editThemeVC = EditThemeVC.makeEditThemeVC
+        editThemeVC.modalPresentationStyle = .fullScreen
+        
+        self.present(editThemeVC, animated: true, completion: nil)
         self.drawerController?.closeSide()
     }
     

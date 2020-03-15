@@ -24,12 +24,16 @@ extension UIColor {
     @nonobjc class var defaultPink: UIColor {
       return UIColor(red: 212.0 / 255.0, green: 0.0, blue: 91.0 / 255.0, alpha: 1.0)
     }
+    
+    static let deletePopUpAttributeColor = UIColor(named: "DeletePopUpAttributeColor")!
 
     /// System black and white color
     static let systemWBColor = UIColor(named: "SystemWBColor")!
     
     /// TextField background Color
     static let textFieldBackgroundGray = UIColor(named: "TextFieldBackgroundGray")!
+    
+    static let categoryNameColor = UIColor(named: "CategoryNameColor")!
     
     /// SignInVC Bottom Label Border bar Color
     @nonobjc class var signInBottomBorderBar: UIColor {

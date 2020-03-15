@@ -27,6 +27,7 @@ extension CategoryVC: CategoryVCRouterDelegate {
     func presentCategoryDetailVC() {
         // TODO: CategoryDetailVC 띄우기
         let categoryDetailVC = CategoryDetailVC.makeCategoryDetailVC
+        categoryDetailVC.category = self.category
         self.navigationController?.pushViewController(categoryDetailVC, animated: true)
     }
     
@@ -34,12 +35,6 @@ extension CategoryVC: CategoryVCRouterDelegate {
         let addReviewRootVC = AddReviewVC.makeAddReviewVC
         let addReviewVC = UINavigationController.init(rootViewController: addReviewRootVC)
         addReviewRootVC.isAdd = true
-        for category in self.actor?.categoryList ?? [] {
-            if category.categoryId == 0 {
-                break
-            }
-            addReviewRootVC.actor?.setCategoryList(category: CategoryForReview(name: category.categoryName, id: category.categoryId))
-        }
         addReviewVC.modalPresentationStyle = .fullScreen
         self.present(addReviewVC, animated: true, completion: nil)
     }

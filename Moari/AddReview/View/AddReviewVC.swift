@@ -49,10 +49,13 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     @IBOutlet weak var deleteReviewButton: UIButton!
     
     @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var contentTextViewBottomConstraint: NSLayoutConstraint!
     
     weak var actor: AddReviewActorDelegate?
     
     var isAdd: Bool?
+    var reviewId: Int?
+    var categoryId: Int?
 //    var isReviewExist: Bool?
     var starRateValue: Double = 0
     var baseHeight: CGFloat = 0
@@ -78,21 +81,35 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.baseHeight = self.shareImageBaseView.bounds.height + 127
-        self.setUpScrollView()
         
-        UIApplication.shared.statusBarStyle = .default
-        self.setAddReviewVCUI()
+        
         self.reviewTitleTextView.delegate = self
         self.reviewContentTextView.delegate = self
         self.contentTextView.delegate = self
         self.selectDateTextField.delegate = self
         
+        self.setAddReviewVCUI()
         self.initTapListener()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.setAddReviewVCUI()
+        let theme = UserDefaults.standard.integer(forKey: "Theme")
+        switch theme {
+        case 0:
+            UIApplication.shared.statusBarStyle = .default
+            break
+        case 1:
+            UIApplication.shared.statusBarStyle = .lightContent
+            break
+        case 2:
+            UIApplication.shared.statusBarStyle = .default
+            break
+        default:
+            UIApplication.shared.statusBarStyle = .default
+            break
+        }
+        print(self.actor?.categoryList)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

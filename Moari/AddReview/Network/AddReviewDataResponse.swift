@@ -6,4 +6,48 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
+
+struct ReviewDetail {
+    var reviewId: Int!
+    var categoryId: Int!
+    var title: String!
+    var simpleContent: String!
+    var imageUrl: String!
+    var starRate: Double!
+    var reviewContent: String!
+    var reviewDate: String!
+}
+extension ReviewDetail: Mappable {
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        reviewId <- map["idboard"]
+        categoryId <- map["categoryType"]
+        title <- map["title"]
+        simpleContent <- map["content"]
+        imageUrl <- map["image"]
+        starRate <- map["grade"]
+        reviewContent <- map["review"]
+        reviewDate <- map["reviewDate"]
+    }
+}
+
+struct ReviewDetailResponse {
+    var isSuccess: Bool!
+    var code: Int!
+    var message: String!
+    var result: [ReviewDetail]!
+}
+extension ReviewDetailResponse: Mappable {
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        isSuccess <- map["isSuccess"]
+        code <- map["code"]
+        message <- map["message"]
+        result <- map["result"]
+    }
+}

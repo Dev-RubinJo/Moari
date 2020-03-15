@@ -52,4 +52,16 @@ class CategoryActor: CategoryActorDelegate {
     func didTapAddReviewButton() {
         self.view?.presentAddReviewVC()
     }
+    
+    func didTapAddCategoryDoneButton(toVC vc: CategoryVC, categoryName name: String) {
+        self.dataManager?.addCategory(toVC: vc, categoryName: name)
+    }
+    
+    func didTapEditCategoryDoneButton(toVC vc: CategoryVC, categoryName name: String, categoryId id: Int) {
+        self.dataManager?.editCategoryName(toVC: vc, CategoryName: name, categoryId: id)
+    }
+    
+    func didTapDeleteCategoryButton(toVC vc: CategoryVC, categoryId id: Int) {
+        self.dataManager?.deleteCategory(toVC: vc, categoryId: id)
+    }
 }

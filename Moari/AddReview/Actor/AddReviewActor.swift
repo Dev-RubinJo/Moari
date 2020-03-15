@@ -17,6 +17,7 @@ class AddReviewActor: AddReviewActorDelegate {
     weak var dataManager: AddReviewDataManagerDelegate?
     
     private var _categoryList: [CategoryForReview] = []
+    
     var categoryList: [CategoryForReview] {
         get {
             self._categoryList
@@ -25,6 +26,14 @@ class AddReviewActor: AddReviewActorDelegate {
     
     func setCategoryList(category: CategoryForReview) {
         self._categoryList.append(category)
+    }
+    
+    func removeAllCategory() {
+        self._categoryList.removeAll()
+    }
+    
+    func didLoadReview(updateVC vc: AddReviewVC, categoryId category: Int, reviewId id: Int) {
+        self.dataManager?.loadReviewDetail(fromVC: vc, categoryId: category, reviewId: id)
     }
     
     func updateStarRateImageView(updateVC vc: AddReviewVC, value: Double) {

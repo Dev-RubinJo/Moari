@@ -61,7 +61,7 @@ extension CategoryVC {
         self.logoButton.addTarget(self, action: #selector(self.pressTitleButton(_:)), for: .touchUpInside)
         
         let longPressGestureListener = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureForPresentPopUp(_:)))
-        longPressGestureListener.minimumPressDuration = 0.7
+        longPressGestureListener.minimumPressDuration = 0.5
         self.categoryCollectionView.addGestureRecognizer(longPressGestureListener)
     }
     
@@ -89,16 +89,7 @@ extension CategoryVC {
             if (self.actor?.categoryList[selectedIndexPath.item])!.categoryId == 0 || (self.actor?.categoryList[selectedIndexPath.item])!.categoryId == 1 || (self.actor?.categoryList[selectedIndexPath.item])!.categoryId == 2 || (self.actor?.categoryList[selectedIndexPath.item])!.categoryId == 3 || (self.actor?.categoryList[selectedIndexPath.item])!.categoryId == 4 {
                 break
             } else {
-                
-                // TODO: actor로 옮기기
-                let editCategoryPopUpStoryboard = UIStoryboard(name: "EditCategory", bundle: nil)
-                guard let editCategoryPopUpView = editCategoryPopUpStoryboard.instantiateViewController(withIdentifier: "EditCategory") as? EditCategory else { return }
-                editCategoryPopUpView.modalPresentationStyle = .custom
-                editCategoryPopUpView.modalTransitionStyle = .crossDissolve
-                
-                // TODO: Delegate 적용하기
-                
-                self.present(editCategoryPopUpView, animated: true, completion: nil)
+                self.actor?.presentEditCategoryPopUp(fromVC: self, category: self.actor?.categoryList[selectedIndexPath.item])
             }
             
         case .ended:

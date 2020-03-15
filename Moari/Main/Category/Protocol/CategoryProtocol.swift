@@ -8,7 +8,7 @@
 
 protocol CategoryVCProtocol: BaseVCProtocol {
     
-    var actor: CategoryActorDelegate? { get set }
+    var actor: (CategoryActorDelegate & CategoryPopUpActorDelegate)? { get set }
 }
 
 protocol CategoryVCRouterDelegate: class {
@@ -39,15 +39,32 @@ protocol CategoryActorDelegate: class {
     func didTapCategoryCell(_ index: Int)
     
     func didTapAddReviewButton()
+    
+    func didTapAddCategoryDoneButton(toVC vc: CategoryVC, categoryName name: String)
+    
+    func didTapEditCategoryDoneButton(toVC vc: CategoryVC, categoryName name: String, categoryId id: Int)
+    
+    func didTapDeleteCategoryButton(toVC vc: CategoryVC, categoryId id: Int)
+}
+
+protocol CategoryPopUpActorDelegate: class {
+    
+    func presentAddCategoryPopUp(fromVC vc: CategoryVC, category: Category?)
+    
+    func presentEditCategoryPopUp(fromVC vc: CategoryVC, category: Category?)
+    
+    func presentDeleteCategoryPopUp(fromVC vc: CategoryVC, category: Category?)
 }
 
 protocol CategoryDataManagerDelegate: class {
     
-    var actor: CategoryActorDelegate? { get set }
+    var actor: (CategoryActorDelegate & CategoryPopUpActorDelegate)? { get set }
     
     func loadCategoryList(toVC vc: CategoryVC)
     
-    func addCategory(toVC vc: CategoryVC)
+    func addCategory(toVC vc: CategoryVC, categoryName name: String)
     
-    func deleteCategory(toVC vc: CategoryVC)
+    func editCategoryName(toVC vc: CategoryVC, CategoryName name: String, categoryId id: Int)
+    
+    func deleteCategory(toVC vc: CategoryVC, categoryId id: Int)
 }

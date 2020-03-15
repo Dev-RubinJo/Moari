@@ -19,6 +19,8 @@ target 'Moari' do
   # Star Rating Library
   pod 'Cosmos', '~> 21.0'
   pod 'TinyConstraints'
+  # ImagePickerWith Crop
+  pod 'ALCameraViewController'
   
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'

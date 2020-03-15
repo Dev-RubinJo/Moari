@@ -15,6 +15,11 @@ class EditCategory: BaseVC {
     @IBOutlet weak var editCategoryDeleteButton: UIButton!
     @IBOutlet weak var editCategoryNameButton: UIButton!
     
+    // category를 받아올 변수
+    var category: Category?
+    weak var delegate: EditCategoryDelegate?
+    weak var categoryActor: (CategoryActorDelegate & CategoryPopUpActorDelegate)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,12 +39,17 @@ extension EditCategory {
     }
     
     @objc func pressEditCategoryNameButton(_ sender: UIButton) {
+        
+        // TODO: VC에서 띄우는 방향 찾기
+        // TODO: 수정하기 플로우 Actor로 옮기기
+        let categoryVC = self.delegate?.getCategoryVC()
         self.dismiss(animated: true, completion: nil)
+        self.categoryActor?.presentAddCategoryPopUp(fromVC: categoryVC!, category: self.category)
     }
     
     @objc func pressEditCategoryDeleteButton(_ sender: UIButton) {
-        
-        
+        let categoryVC = self.delegate?.getCategoryVC()
         self.dismiss(animated: true, completion: nil)
+        self.categoryActor?.presentDeleteCategoryPopUp(fromVC: categoryVC!, category: self.category)
     }
 }

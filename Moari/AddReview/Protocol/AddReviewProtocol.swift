@@ -25,6 +25,10 @@ protocol AddReviewActorDelegate: class {
     var categoryList: [CategoryForReview] { get }
     
     func setCategoryList(category: CategoryForReview)
+
+    func removeAllCategory()
+    
+    func didLoadReview(updateVC vc: AddReviewVC, categoryId category: Int, reviewId id: Int)
     
     func updateStarRateImageView(updateVC vc: AddReviewVC, value: Double)
 }
@@ -33,5 +37,7 @@ protocol AddReviewDataManagerDelegate: class {
     
     var actor: AddReviewActorDelegate? { get set }
     
+    func loadReviewDetail(fromVC vc: AddReviewVC, categoryId category: Int, reviewId id: Int)
     
+    func writeReview(fromVC vc: AddReviewVC, categoryId category: Int, reviewId id: Int?)
 }
