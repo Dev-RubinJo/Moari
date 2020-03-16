@@ -11,8 +11,8 @@ target 'Moari' do
   pod 'AlamofireObjectMapper'
   pod 'SnapKit'
   pod 'Kingfisher', '~> 5.0'
-  pod 'SwiftyJSON'
-  pod 'RealmSwift'
+  # pod 'SwiftyJSON'
+  # pod 'RealmSwift'
   
   # Drawer View Controller
   pod 'KWDrawerController', '~> 4.2'
@@ -20,7 +20,8 @@ target 'Moari' do
   pod 'Cosmos', '~> 21.0'
   pod 'TinyConstraints'
   # ImagePickerWith Crop
-  pod 'ALCameraViewController'
+  # pod 'ALCameraViewController'
+  pod 'Mantis', '~> 1.0.0'
   
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
