@@ -20,14 +20,26 @@ extension Category: Mappable {
         categoryName <- map["categoryName"]
         categoryId <- map["idcategory"]
     }
+}
+struct UserInfo {
+    var name: String!
+    var reviewCount: Int!
+}
+extension UserInfo: Mappable {
+    init?(map: Map) {
+    }
     
-    
+    mutating func mapping(map: Map) {
+        name <- map["name"]
+        reviewCount <- map["cnt"]
+    }
 }
 
 struct CategoryListResponse {
     var isSuccess: Bool!
     var code: Int!
     var message: String!
+    var userInfo: UserInfo!
     var result: [Category]!
 }
 extension CategoryListResponse: Mappable {
@@ -38,6 +50,7 @@ extension CategoryListResponse: Mappable {
         isSuccess <- map["isSuccess"]
         code <- map["code"]
         message <- map["message"]
+        userInfo <- map["userInfo"]
         result <- map["result"]
     }
 }

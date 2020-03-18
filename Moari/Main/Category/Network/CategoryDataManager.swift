@@ -29,6 +29,9 @@ class CategoryDataManager: CategoryDataManagerDelegate {
                 case .success(let categoryResponse):
                     switch categoryResponse.code {
                     case 200:
+                        UserDefaults.standard.set(categoryResponse.userInfo.name, forKey: "NickName")
+                        UserDefaults.standard.set(categoryResponse.userInfo.reviewCount, forKey: "ReviewCount")
+                        
                         self.actor?.removeAllCategoryListObjcet()
                         for category in categoryResponse.result {
                             self.actor?.setCategoryList(category: category)
@@ -78,14 +81,6 @@ class CategoryDataManager: CategoryDataManagerDelegate {
                 case .success(let categoryResponse):
                     switch categoryResponse.code {
                     case 200:
-                        let addReviewRootVC = AddReviewVC.makeAddReviewVC
-                        addReviewRootVC.actor?.removeAllCategory()
-                        for category in self.actor?.categoryList ?? [] {
-                            if category.categoryId == 0 {
-                                break
-                            }
-                            addReviewRootVC.actor?.setCategoryList(category: CategoryForReview(name: category.categoryName, id: category.categoryId))
-                        }
                         self.loadCategoryList(toVC: vc)
                     default:
                         break
@@ -112,14 +107,6 @@ class CategoryDataManager: CategoryDataManagerDelegate {
                 case .success(let categoryResponse):
                     switch categoryResponse.code {
                     case 200:
-                        let addReviewRootVC = AddReviewVC.makeAddReviewVC
-                        addReviewRootVC.actor?.removeAllCategory()
-                        for category in self.actor?.categoryList ?? [] {
-                            if category.categoryId == 0 {
-                                break
-                            }
-                            addReviewRootVC.actor?.setCategoryList(category: CategoryForReview(name: category.categoryName, id: category.categoryId))
-                        }
                         self.loadCategoryList(toVC: vc)
                     default:
                         break
