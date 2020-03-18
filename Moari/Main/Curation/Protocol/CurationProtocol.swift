@@ -21,9 +21,21 @@ protocol CurationActorDelegate: class {
     var view: CurationVCRouterDelegate? { get set }
     
     var dataManager: CurationDataManagerDelegate? { get set }
+    
+    var curationList: [Curation] { get }
+    
+    func didLoadCuration(fromVC vc: CurationVC)
+    
+    func setCurationList(curation: Curation)
+    
+    func removeAllCurationList()
+    
+     func updateStarRateImageView(updateCell cell: CurationCell, value: Double)
 }
 
 protocol CurationDataManagerDelegate: class {
     
     var actor: CurationActorDelegate? { get set }
+    
+    func loadCuration(toVC vc: CurationVC)
 }
