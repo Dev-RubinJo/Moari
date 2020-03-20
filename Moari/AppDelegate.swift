@@ -58,7 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         let imageView = UIImageView(frame: self.window!.bounds)
         imageView.tag = 1001
-        imageView.image = UIImage(named: "mainBackgroundImage") //your image goes here
+        imageView.image = UIImage(named: "imgAppLock")
+        imageView.contentMode = .scaleAspectFill
 
         UIApplication.shared.keyWindow?.subviews.last?.addSubview(imageView)
     }
@@ -78,11 +79,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         if needAppPassword {
-            
-        } else {
-            
+            let appLockVC = AppLockVC()
+            self.window?.rootViewController?.present(appLockVC, animated: false, completion: nil)
         }
-        self.setLocalAuthentication()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -104,37 +103,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-}
-extension AppDelegate {    
-    func setLocalAuthentication() {
-        var description = ""
-        if self.authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
-            switch self.authContext.biometryType {
-            case .faceID:
-                description = "잠금 해제를 위해 Face Id로 인증합니다."
-            case .touchID:
-                description = "잠금 해제를 위해 Touch Id로 인증합니다."
-            case .none:
-                print(description)
-                break
-            @unknown default:
-                break
-            }
-        }
-        
-        
-        self.authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: description) { (success, error) in
-            if success {
-                print("touchId")
-                print(success)
-                DispatchQueue.main.async {
-        
-                }
-                
-            } else {
-                
-            }
-            print(error)
-        }
-    }
 }

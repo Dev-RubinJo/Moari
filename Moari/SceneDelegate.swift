@@ -55,8 +55,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if let imageView : UIImageView = UIApplication.shared.keyWindow?.subviews.last?.viewWithTag(1001) as? UIImageView {
                 imageView.removeFromSuperview()
             }
-        } else {
-            UserDefaults.standard.set(false, forKey: "NeedAppPassword")
         }
         
         
@@ -69,27 +67,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if appLockConfig {
             let imageView = UIImageView(frame: self.window!.bounds)
             imageView.tag = 1001
-            imageView.image = UIImage(named: "mainBackgroundImage") //your image goes here
+            imageView.image = UIImage(named: "imgAppLock")
+            imageView.contentMode = .scaleAspectFill
             UIApplication.shared.windows.first?.subviews.last?.addSubview(imageView)
-        } else {
-            UserDefaults.standard.set(false, forKey: "NeedAppPassword")
-        }
-        
+        }        
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
-        print("EnterForeground")
-//        let tempVC = SplashVC.makeSplashVC
-//        self.window?.rootViewController?.present(tempVC, animated: false, completion: nil)
-//        self.appDelegate.setLocalAuthentication()
         let needAppPassword = UserDefaults.standard.bool(forKey: "NeedAppPassword")
-        guard let appPassword = UserDefaults.standard.string(forKey: "AppPassword") else {
-            return
-        }
+//        guard let appPassword = UserDefaults.standard.string(forKey: "AppPassword") else {
+//            return
+//        }
         if needAppPassword {
-            
+            let appLockVC = AppLockVC()
+            appLockVC.modalPresentationStyle = .fullScreen
+            if let imageView : UIImageView = UIApplication.shared.keyWindow?.subviews.last?.viewWithTag(1001) as? UIImageView {
+                imageView.removeFromSuperview()
+            }
+            // TODO: 앱딜리게이트부터 실행이 되는 플로우일때랑 아닐때 나눠서 mainVC(CategoryVC에서 띄울지, 신델리게이트에서 띄울지 정하기)
+            self.window?.rootViewController?.present(appLockVC, animated: false, completion: nil)
         } else {
             
         }
