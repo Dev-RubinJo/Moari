@@ -10,7 +10,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppLockVC" customModule="Moari" customModuleProvider="target">
             <connections>
+                <outlet property="buttonEight" destination="Bb5-3K-Dkx" id="mO3-F0-4Sd"/>
+                <outlet property="buttonFive" destination="eCM-P1-8Xr" id="AjQ-ba-3OJ"/>
+                <outlet property="buttonFour" destination="ihI-L9-b7a" id="RwT-Bg-mK4"/>
+                <outlet property="buttonNine" destination="AIn-Mc-acZ" id="PGZ-y4-X6I"/>
+                <outlet property="buttonOne" destination="omx-Lf-O8g" id="ijS-iT-vhh"/>
+                <outlet property="buttonSeven" destination="Swb-cQ-jbe" id="Mxf-N0-hZG"/>
+                <outlet property="buttonSix" destination="5ag-Ao-3dB" id="pWg-s2-hfd"/>
+                <outlet property="buttonThree" destination="eUV-qz-R0o" id="ndX-HP-MAw"/>
+                <outlet property="buttonTwo" destination="oXE-CA-lWP" id="2H8-jQ-thW"/>
+                <outlet property="buttonZero" destination="jR3-m2-jdY" id="Mnx-Ee-Fxw"/>
+                <outlet property="firstPwdView" destination="dLN-cB-Tyg" id="t2y-gZ-MgR"/>
+                <outlet property="fourthPwdView" destination="Gt6-hZ-bVw" id="a9W-tw-lAC"/>
                 <outlet property="mainLogoTopConstraint" destination="753-s7-nHM" id="dzL-bn-oIt"/>
+                <outlet property="passwordDeleteButton" destination="VeE-Rq-jT9" id="hKC-hn-MPu"/>
+                <outlet property="secondPwdView" destination="H9a-lY-Ud0" id="cZo-jm-bse"/>
+                <outlet property="thirdPwdView" destination="QwD-Wv-IAR" id="VAs-WJ-R6h"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,74 +35,131 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="BP5-W5-xwL">
-                    <rect key="frame" x="143" y="244" width="128" height="106"/>
+                    <rect key="frame" x="143" y="324" width="128" height="106"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="128" id="MW8-lu-qOf"/>
+                        <constraint firstAttribute="height" constant="106" id="QTY-Hl-5Mf"/>
+                    </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wml-7Z-ZAZ">
                     <rect key="frame" x="0.0" y="550" width="414" height="312"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XGj-fC-aZ8">
-                            <rect key="frame" x="0.0" y="10" width="414" height="100"/>
+                            <rect key="frame" x="0.0" y="10" width="414" height="70"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omx-Lf-O8g">
-                                    <rect key="frame" x="0.0" y="0.0" width="131.5" height="100"/>
-                                    <state key="normal" title="Button"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omx-Lf-O8g">
+                                    <rect key="frame" x="0.0" y="0.0" width="131.5" height="70"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                    <state key="normal" title="1">
+                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXE-CA-lWP">
-                                    <rect key="frame" x="141.5" y="0.0" width="131" height="100"/>
-                                    <state key="normal" title="Button"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXE-CA-lWP">
+                                    <rect key="frame" x="141.5" y="0.0" width="131" height="70"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                    <state key="normal" title="2">
+                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUV-qz-R0o">
-                                    <rect key="frame" x="282.5" y="0.0" width="131.5" height="100"/>
-                                    <state key="normal" title="Button"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUV-qz-R0o">
+                                    <rect key="frame" x="282.5" y="0.0" width="131.5" height="70"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                    <state key="normal" title="3">
+                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="iMf-Q5-Slq"/>
+                                <constraint firstAttribute="height" constant="70" id="iMf-Q5-Slq"/>
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zbT-qh-AJM">
-                            <rect key="frame" x="0.0" y="110" width="414" height="100"/>
+                            <rect key="frame" x="0.0" y="80" width="414" height="70"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihI-L9-b7a">
-                                    <rect key="frame" x="0.0" y="0.0" width="131.5" height="100"/>
-                                    <state key="normal" title="Button"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="131.5" height="70"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                    <state key="normal" title="4">
+                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCM-P1-8Xr">
-                                    <rect key="frame" x="141.5" y="0.0" width="131" height="100"/>
-                                    <state key="normal" title="Button"/>
+                                    <rect key="frame" x="141.5" y="0.0" width="131" height="70"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                    <state key="normal" title="5">
+                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ag-Ao-3dB">
-                                    <rect key="frame" x="282.5" y="0.0" width="131.5" height="100"/>
-                                    <state key="normal" title="Button"/>
+                                    <rect key="frame" x="282.5" y="0.0" width="131.5" height="70"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                    <state key="normal" title="6">
+                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="dU7-6f-pH6"/>
+                                <constraint firstAttribute="height" constant="70" id="dU7-6f-pH6"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zr4-8C-Kzn">
+                            <rect key="frame" x="0.0" y="150" width="414" height="70"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swb-cQ-jbe">
+                                    <rect key="frame" x="0.0" y="0.0" width="138" height="70"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                    <state key="normal" title="7">
+                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bb5-3K-Dkx">
+                                    <rect key="frame" x="138" y="0.0" width="138" height="70"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                    <state key="normal" title="8">
+                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIn-Mc-acZ">
+                                    <rect key="frame" x="276" y="0.0" width="138" height="70"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                    <state key="normal" title="9">
+                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="byX-NS-fM1"/>
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vxt-gr-MsW">
-                            <rect key="frame" x="0.0" y="210" width="414" height="100"/>
+                            <rect key="frame" x="0.0" y="220" width="414" height="70"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ax-X5-6Xm">
-                                    <rect key="frame" x="0.0" y="0.0" width="131.5" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="131.5" height="70"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jR3-m2-jdY">
-                                    <rect key="frame" x="141.5" y="0.0" width="131" height="100"/>
-                                    <state key="normal" title="Button"/>
+                                    <rect key="frame" x="141.5" y="0.0" width="131" height="70"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                    <state key="normal" title="0">
+                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeE-Rq-jT9">
-                                    <rect key="frame" x="282.5" y="0.0" width="131.5" height="100"/>
-                                    <state key="normal" title="Button"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeE-Rq-jT9">
+                                    <rect key="frame" x="282.5" y="0.0" width="131.5" height="70"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="delete.left" catalog="system"/>
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="Z2Q-u2-Atk"/>
+                                <constraint firstAttribute="height" constant="70" id="Z2Q-u2-Atk"/>
                             </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
+                        <constraint firstItem="Zr4-8C-Kzn" firstAttribute="leading" secondItem="Wml-7Z-ZAZ" secondAttribute="leading" id="5hM-sv-o7x"/>
                         <constraint firstItem="XGj-fC-aZ8" firstAttribute="leading" secondItem="Wml-7Z-ZAZ" secondAttribute="leading" id="5sL-L2-E0g"/>
                         <constraint firstItem="vxt-gr-MsW" firstAttribute="leading" secondItem="Wml-7Z-ZAZ" secondAttribute="leading" id="89Y-pR-YHH"/>
                         <constraint firstItem="zbT-qh-AJM" firstAttribute="top" secondItem="XGj-fC-aZ8" secondAttribute="bottom" id="AJN-X8-T24"/>
@@ -95,13 +167,16 @@
                         <constraint firstAttribute="trailing" secondItem="zbT-qh-AJM" secondAttribute="trailing" id="FI2-lB-peN"/>
                         <constraint firstItem="zbT-qh-AJM" firstAttribute="leading" secondItem="Wml-7Z-ZAZ" secondAttribute="leading" id="Ve9-bM-ILh"/>
                         <constraint firstAttribute="trailing" secondItem="vxt-gr-MsW" secondAttribute="trailing" id="YkP-Vx-KaK"/>
-                        <constraint firstItem="vxt-gr-MsW" firstAttribute="top" secondItem="zbT-qh-AJM" secondAttribute="bottom" id="ZSK-oy-qsb"/>
+                        <constraint firstItem="vxt-gr-MsW" firstAttribute="top" secondItem="zbT-qh-AJM" secondAttribute="bottom" constant="70" id="ZSK-oy-qsb"/>
+                        <constraint firstItem="Zr4-8C-Kzn" firstAttribute="top" secondItem="zbT-qh-AJM" secondAttribute="bottom" id="e8h-Zq-vId"/>
+                        <constraint firstItem="vxt-gr-MsW" firstAttribute="top" secondItem="Zr4-8C-Kzn" secondAttribute="bottom" id="en9-dW-Qim"/>
+                        <constraint firstAttribute="trailing" secondItem="Zr4-8C-Kzn" secondAttribute="trailing" id="iOW-kE-dv7"/>
                         <constraint firstItem="XGj-fC-aZ8" firstAttribute="top" secondItem="Wml-7Z-ZAZ" secondAttribute="top" constant="10" id="pzi-P6-FJw"/>
                         <constraint firstAttribute="trailing" secondItem="XGj-fC-aZ8" secondAttribute="trailing" id="qcG-Pt-3F1"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4b-T5-TzX">
-                    <rect key="frame" x="0.0" y="350" width="414" height="50"/>
+                    <rect key="frame" x="0.0" y="430" width="414" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGY-VA-NKy">
                             <rect key="frame" x="77" y="40" width="50" height="5"/>
@@ -194,7 +269,7 @@
             <constraints>
                 <constraint firstItem="Wml-7Z-ZAZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0rF-i9-rQF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="o4b-T5-TzX" secondAttribute="trailing" id="2N3-CT-kxm"/>
-                <constraint firstItem="BP5-W5-xwL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="753-s7-nHM"/>
+                <constraint firstItem="BP5-W5-xwL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="280" id="753-s7-nHM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wml-7Z-ZAZ" secondAttribute="trailing" id="DiP-6p-bBu"/>
                 <constraint firstItem="BP5-W5-xwL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Gkw-gT-A2S"/>
                 <constraint firstItem="o4b-T5-TzX" firstAttribute="top" secondItem="BP5-W5-xwL" secondAttribute="bottom" id="VRx-iF-Ff4"/>
@@ -202,10 +277,11 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Wml-7Z-ZAZ" secondAttribute="bottom" id="p6S-xb-prx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="140.57971014492756" y="152.67857142857142"/>
+            <point key="canvasLocation" x="138.75" y="152.11267605633802"/>
         </view>
     </objects>
     <resources>
+        <image name="delete.left" catalog="system" width="64" height="52"/>
         <image name="logoImage" width="128" height="106"/>
     </resources>
 </document>
