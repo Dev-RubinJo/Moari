@@ -25,20 +25,26 @@ extension CategoryVC {
         self.navigationItem.rightBarButtonItem = addReviewButton
         
         var categoryTitleLabelAttributedString = NSMutableAttributedString()
-//        guard let userName = UserDefaults.standard.string(forKey: "NickName") else { return }
+        guard let userName = UserDefaults.standard.string(forKey: "NickName") else { return }
+        let reviewCount = UserDefaults.standard.integer(forKey: "ReviewCount")
         if self.deviceLocale.isEqual("ko") { // 한국어일때
             // \(userName)님의 리뷰\n20개가 모였습니다.
-            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "루빈님의 리뷰\n20개가 모였습니다.", attributes: [
-              .font: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 28.0)!,
+            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "\(userName)님의 리뷰\n\(reviewCount)개가 모였습니다.", attributes: [
+              .font: UIFont(name: "AppleSDGothicNeo-Thin", size: 28.0)!,
               .kern: 0.0
             ])
-            categoryTitleLabelAttributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-Thin", size: 28.0)!, range: NSRange(location: 0, length: 2))
+            categoryTitleLabelAttributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 28.0)!, range: NSRange(location: 0, length: userName.count))
         } else if self.deviceLocale.isEqual("en") { // 영어일때
-            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "Hi! 루빈\nYou've collected 20reviews.", attributes: [
-              .font: UIFont(name: "AppleSDGothicNeo-Thin", size: 27.0)!,
+            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "\(userName)님의 리뷰\n\(reviewCount)개가 모였습니다.", attributes: [
+              .font: UIFont(name: "AppleSDGothicNeo-Thin", size: 28.0)!,
               .kern: 0.0
             ])
-            categoryTitleLabelAttributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 27.0)!, range: NSRange(location: 4, length: 2))
+            categoryTitleLabelAttributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 28.0)!, range: NSRange(location: 0, length: userName.count))
+//            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "Hi! 루빈\nYou've collected 20reviews.", attributes: [
+//              .font: UIFont(name: "AppleSDGothicNeo-Thin", size: 27.0)!,
+//              .kern: 0.0
+//            ])
+//            categoryTitleLabelAttributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 27.0)!, range: NSRange(location: 4, length: 2))
         }
         self.categoryTitleLabel.attributedText = categoryTitleLabelAttributedString
         
@@ -60,7 +66,7 @@ extension CategoryVC {
     func initTapListener() {
         self.logoButton.addTarget(self, action: #selector(self.pressTitleButton(_:)), for: .touchUpInside)
         
-        let longPressGestureListener = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureForPresentPopUp(_:)))
+        let longPressGestureListener = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureForEditCategoryPopUp(_:)))
         longPressGestureListener.minimumPressDuration = 0.5
         self.categoryCollectionView.addGestureRecognizer(longPressGestureListener)
     }
@@ -82,7 +88,7 @@ extension CategoryVC {
 extension CategoryVC {
     
     // MARK: long press Gesture
-    @objc func longPressGestureForPresentPopUp(_ gesture: UIGestureRecognizer) {
+    @objc func longPressGestureForEditCategoryPopUp(_ gesture: UIGestureRecognizer) {
         switch gesture.state {
         case .began:
             guard let selectedIndexPath = self.categoryCollectionView.indexPathForItem(at: gesture.location(in: self.categoryCollectionView)) else { return }
