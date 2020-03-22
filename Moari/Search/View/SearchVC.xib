@@ -25,7 +25,7 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="DVR-bM-e2W">
                     <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="COF-BN-T1C">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="COF-BN-T1C">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -40,12 +40,15 @@
                             <state key="normal" image="closeButtonDefault"/>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="검색하기" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGS-k4-kd1">
-                            <rect key="frame" x="53" y="10" width="321" height="30"/>
+                            <rect key="frame" x="53" y="10" width="311" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRF-QI-hzx">
-                            <rect key="frame" x="384" y="14" width="10" height="22"/>
+                            <rect key="frame" x="374" y="14" width="20" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="u2k-c6-uwz"/>
+                            </constraints>
                             <state key="normal" image="textFieldClear"/>
                         </button>
                     </subviews>

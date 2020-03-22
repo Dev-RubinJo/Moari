@@ -51,3 +51,19 @@ extension ReviewDetailResponse: Mappable {
         result <- map["result"]
     }
 }
+
+struct WriteReviewResponse {
+    var isSuccess: Bool!
+    var code: Int!
+    var message: String!
+}
+extension WriteReviewResponse: Mappable {
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        isSuccess <- map["isSuccess"]
+        code <- map["code"]
+        message <- map["message"]
+    }
+}

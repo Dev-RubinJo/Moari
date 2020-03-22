@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Out-->
+        <scene sceneID="nFp-kX-Flh">
+            <objects>
+                <viewController storyboardIdentifier="SignOut" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0F7-yH-Mku" customClass="SignOut" customModule="Moari" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IFR-vg-KLW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tus-co-oDv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aji-Vd-m20">
+                                <rect key="frame" x="87" y="358" width="240" height="180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Drg-g6-ird">
+                                        <rect key="frame" x="0.0" y="129.5" width="240" height="1"/>
+                                        <color key="backgroundColor" name="PopUpBolderColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="S5G-m3-z5b"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PE-P7-SvN">
+                                        <rect key="frame" x="119.5" y="130.5" width="1" height="49.5"/>
+                                        <color key="backgroundColor" name="PopUpBolderColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="XBe-5V-9o3"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ww-DV-Guf">
+                                        <rect key="frame" x="0.0" y="130.5" width="119.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <state key="normal" title="취소">
+                                            <color key="titleColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkL-xl-G1y">
+                                        <rect key="frame" x="120.5" y="130.5" width="119.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <state key="normal" title="네">
+                                            <color key="titleColor" red="0.76078431369999999" green="0.094117647060000004" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그아웃하시겠습니까?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxT-lG-Raa">
+                                        <rect key="frame" x="20" y="50" width="200" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Drg-g6-ird" secondAttribute="trailing" id="6x1-9o-bLC"/>
+                                    <constraint firstAttribute="trailing" secondItem="zkL-xl-G1y" secondAttribute="trailing" id="BCl-2b-cGe"/>
+                                    <constraint firstAttribute="bottom" secondItem="zkL-xl-G1y" secondAttribute="bottom" id="BF0-TO-Loi"/>
+                                    <constraint firstItem="zkL-xl-G1y" firstAttribute="top" secondItem="Drg-g6-ird" secondAttribute="bottom" id="FmN-0K-Owv"/>
+                                    <constraint firstItem="2Ww-DV-Guf" firstAttribute="top" secondItem="Drg-g6-ird" secondAttribute="bottom" id="LlW-tW-lcr"/>
+                                    <constraint firstItem="Drg-g6-ird" firstAttribute="leading" secondItem="aji-Vd-m20" secondAttribute="leading" id="Otv-fM-2qf"/>
+                                    <constraint firstAttribute="bottom" secondItem="2PE-P7-SvN" secondAttribute="bottom" id="R4W-aP-211"/>
+                                    <constraint firstAttribute="trailing" secondItem="PxT-lG-Raa" secondAttribute="trailing" constant="20" id="T7f-5Y-xiJ"/>
+                                    <constraint firstItem="2PE-P7-SvN" firstAttribute="centerX" secondItem="aji-Vd-m20" secondAttribute="centerX" id="U66-ml-9xv"/>
+                                    <constraint firstItem="2PE-P7-SvN" firstAttribute="leading" secondItem="2Ww-DV-Guf" secondAttribute="trailing" id="Whu-9S-fey"/>
+                                    <constraint firstItem="zkL-xl-G1y" firstAttribute="leading" secondItem="2PE-P7-SvN" secondAttribute="trailing" id="Xp3-VH-qKc"/>
+                                    <constraint firstItem="PxT-lG-Raa" firstAttribute="top" secondItem="aji-Vd-m20" secondAttribute="top" constant="50" id="by5-Oi-8DH"/>
+                                    <constraint firstItem="PxT-lG-Raa" firstAttribute="leading" secondItem="aji-Vd-m20" secondAttribute="leading" constant="20" id="d05-VC-60i"/>
+                                    <constraint firstAttribute="width" constant="240" id="jy3-90-7IZ"/>
+                                    <constraint firstItem="2Ww-DV-Guf" firstAttribute="leading" secondItem="aji-Vd-m20" secondAttribute="leading" id="lLe-6z-DuK"/>
+                                    <constraint firstItem="PxT-lG-Raa" firstAttribute="centerX" secondItem="aji-Vd-m20" secondAttribute="centerX" id="ngA-DU-eU3"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Ww-DV-Guf" secondAttribute="bottom" id="rLN-FC-wlJ"/>
+                                    <constraint firstAttribute="height" constant="180" id="uS0-98-eMu"/>
+                                    <constraint firstItem="2PE-P7-SvN" firstAttribute="top" secondItem="Drg-g6-ird" secondAttribute="bottom" id="unT-Ge-bHw"/>
+                                    <constraint firstAttribute="bottom" secondItem="Drg-g6-ird" secondAttribute="bottom" constant="49.5" id="wM6-rN-mo5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aji-Vd-m20" firstAttribute="centerX" secondItem="IFR-vg-KLW" secondAttribute="centerX" id="9HR-l2-ZEd"/>
+                            <constraint firstAttribute="trailing" secondItem="Tus-co-oDv" secondAttribute="trailing" id="Jzq-lL-lF4"/>
+                            <constraint firstItem="Tus-co-oDv" firstAttribute="leading" secondItem="IFR-vg-KLW" secondAttribute="leading" id="TIQ-u6-cUO"/>
+                            <constraint firstAttribute="bottom" secondItem="Tus-co-oDv" secondAttribute="bottom" id="erc-ii-GTa"/>
+                            <constraint firstItem="aji-Vd-m20" firstAttribute="centerY" secondItem="IFR-vg-KLW" secondAttribute="centerY" id="fN5-lR-SGX"/>
+                            <constraint firstItem="Tus-co-oDv" firstAttribute="top" secondItem="IFR-vg-KLW" secondAttribute="top" id="nNF-F5-2vh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wmO-lr-mRD"/>
+                    </view>
+                    <connections>
+                        <outlet property="signOutCancelButton" destination="2Ww-DV-Guf" id="Oxp-bL-gKq"/>
+                        <outlet property="signOutDoneButton" destination="zkL-xl-G1y" id="HX7-Hr-KOr"/>
+                        <outlet property="signOutPopUpTitleLabel" destination="PxT-lG-Raa" id="mPb-Ht-5H2"/>
+                        <outlet property="signOutPopUpView" destination="aji-Vd-m20" id="6d0-fb-Hca"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCx-Fl-m7s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="-6"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="PopUpBolderColor">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

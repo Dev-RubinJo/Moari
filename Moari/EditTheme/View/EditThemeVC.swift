@@ -28,6 +28,26 @@ class EditThemeVC: BaseVC, EditThemeVCProtocol {
         super.viewDidLoad()
         self.setEditThemeVCUI()
         self.initTapListener()
+        
+        let theme = UserDefaults.standard.integer(forKey: "Theme")
+        switch theme {
+        case 0:
+            if #available(iOS 13.0, *) {
+                UIApplication.shared.statusBarStyle = .darkContent
+            } else {
+                UIApplication.shared.statusBarStyle = .default
+            }
+            break
+        case 1:
+            UIApplication.shared.statusBarStyle = .lightContent
+            break
+        case 2:
+            UIApplication.shared.statusBarStyle = .default
+            break
+        default:
+            UIApplication.shared.statusBarStyle = .default
+            break
+        }
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -73,6 +93,7 @@ extension EditThemeVC {
         self.dismiss(animated: true, completion: nil)
     }
     @objc func setSystemThemeSwitch(_ sender: UISwitch) {
+        UIApplication.shared.statusBarStyle = .default
         UserDefaults.standard.set(2, forKey: "Theme")
         if self.darkModeSwitch.isOn || self.lightModeSwitch.isOn {
             self.darkModeSwitch.isOn = false
@@ -84,6 +105,11 @@ extension EditThemeVC {
         
     }
     @objc func setLightThemeSwitch(_ sender: UISwitch) {
+        if #available(iOS 13.0, *) {
+            UIApplication.shared.statusBarStyle = .darkContent
+        } else {
+            UIApplication.shared.statusBarStyle = .default
+        }
         UserDefaults.standard.set(0, forKey: "Theme")
         if self.darkModeSwitch.isOn || self.usingDeviceConfigSwitch.isOn {
             self.darkModeSwitch.isOn = false
@@ -94,6 +120,7 @@ extension EditThemeVC {
         }
     }
     @objc func setDarkThemeSwitch(_ sender: UISwitch) {
+        UIApplication.shared.statusBarStyle = .lightContent
         UserDefaults.standard.set(1, forKey: "Theme")
         if self.usingDeviceConfigSwitch.isOn || self.lightModeSwitch.isOn {
             self.usingDeviceConfigSwitch.isOn = false

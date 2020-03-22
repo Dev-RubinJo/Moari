@@ -8,11 +8,9 @@
 
 import UIKit
 import SnapKit
-import LocalAuthentication
 
 class DrawerVC: UIViewController {
     
-    private let authContext = LAContext()
     private let moariInstaAddress = "https://www.instagram.com/moari_review/?hl=ko"
     
     @IBOutlet var drawerBackgroundView: UIView!
@@ -36,17 +34,11 @@ class DrawerVC: UIViewController {
     
     @IBOutlet weak var menuTopConstraint: NSLayoutConstraint!
     
-    var testName = "루빈"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        
-        self.setDrawerVCUI()
         self.initTapListener()
-        
         if #available(iOS 13.0, *) {
-            
         } else {
             self.themeModeView.isHidden = true
             self.securitySettingView.snp.makeConstraints { make in
@@ -61,6 +53,7 @@ class DrawerVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.securitySettingSwitch.isOn = UserDefaults.standard.bool(forKey: "AppLockConfig")
+        self.setDrawerVCUI()
     }
     
     
@@ -70,20 +63,21 @@ class DrawerVC: UIViewController {
 extension DrawerVC {
     func setDrawerVCUI() {
         self.getBioAuthInfo()
+        guard let userName = UserDefaults.standard.string(forKey: "NickName") else { return }
         if self.deviceLocale == "ko" {
-            let attributedString = NSMutableAttributedString(string: "\(testName)님의\n모아 놓은 리뷰", attributes: [
+            let attributedString = NSMutableAttributedString(string: "\(userName)님의\n모아 놓은 리뷰", attributes: [
               .font: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 22.0)!,
               .kern: 0.0
             ])
-            attributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-Thin", size: 22.0)!, range: NSRange(location: 0, length: testName.count))
+            attributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-Thin", size: 22.0)!, range: NSRange(location: 0, length: userName.count))
             
             self.drawerViewTitleLabel.attributedText = attributedString
         } else if self.deviceLocale == "en" {
-            let attributedString = NSMutableAttributedString(string: "\(testName)님의\n모아 놓은 리뷰", attributes: [
+            let attributedString = NSMutableAttributedString(string: "\(userName)님의\n모아 놓은 리뷰", attributes: [
               .font: UIFont(name: "AppleSDGothicNeo-Thin", size: 22.0)!,
               .kern: 0.0
             ])
-            attributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 22.0)!, range: NSRange(location: 0, length: testName.count))
+            attributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 22.0)!, range: NSRange(location: 0, length: userName.count))
             
             self.drawerViewTitleLabel.attributedText = attributedString
         }
@@ -120,12 +114,16 @@ extension DrawerVC {
     }
     
     @objc func pressSearchView(_ sender: UIView) {
-        self.present(SearchVC(), animated: true, completion: nil)
+        let searchRootVC = SearchVC.makeSearchVC
+        let searchVC = UINavigationController.init(rootViewController: searchRootVC)
+        searchVC.modalPresentationStyle = .fullScreen
+        self.present(searchVC, animated: true, completion: nil)
         self.drawerController?.closeSide()
     }
     
     @objc func pressEditUserInfoView(_ sender: UIView) {
         let userInfoVC = UserInfoVC.makeUserInfoVC
+        userInfoVC.modalPresentationStyle = .fullScreen
         self.present(userInfoVC, animated: true, completion: nil)
         self.drawerController?.closeSide()
     }
@@ -139,12 +137,15 @@ extension DrawerVC {
     }
     
     @objc func setAppLock(_ sender: UISwitch) {
-        UserDefaults.standard.set(sender.isOn, forKey: "AppLockConfig")
+       
         if sender.isOn {
             // TODO: 스위치를 킬때마다 새로 설정할 것인지
-            
+            let appLockVC = AppLockVC()
+            appLockVC.modalPresentationStyle = .fullScreen
+            self.present(appLockVC, animated: true, completion: nil)
         } else {
-            
+            UserDefaults.standard.set(false, forKey: "AppLockConfig")
+            UserDefaults.standard.set(false, forKey: "NeedAppPassword")
         }
     }
 }

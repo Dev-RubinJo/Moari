@@ -12,6 +12,7 @@ struct SplashDataResponse {
     var isSuccess: Bool!
     var code: Int!
     var name: String!
+    var email: String!
     var message: String!
 }
 extension SplashDataResponse: Mappable {
@@ -22,6 +23,7 @@ extension SplashDataResponse: Mappable {
         isSuccess <- map["isSuccess"]
         code <- map["code"]
         name <- map["name"]
+        email <- map["email"]
         message <- map["message"]
     }
 }

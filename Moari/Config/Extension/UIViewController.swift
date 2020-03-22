@@ -107,14 +107,14 @@ extension UIViewController {
 /*
  if UIDevice().userInterfaceIdiom == .phone {
  switch UIScreen.main.nativeBounds.height {
- case 1136: se1
+ case 1136: // se1
      
      break;
  case 1334:
      //                print("iPhone 6/6S/7/8")
      
      break;
- case 1920, 2208:
+ case 1920:
      //                print("iPhone 6+/6S+/7+/8+")
           
      break;

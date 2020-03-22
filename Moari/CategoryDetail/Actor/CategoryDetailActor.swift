@@ -42,6 +42,25 @@ class CategoryDetailActor: CategoryDetailActorDelegate {
         self.dataManager?.getReviewList(fromVC: vc)
     }
     
+    func presentDeleteReviewPopUp(fromVC vc: CategoryDetailVC, reviewId id: Int) {
+        let deleteReviewPopUpStoryboard = UIStoryboard(name: "DeleteReview", bundle: nil)
+        guard let deleteReviewPopUpView = deleteReviewPopUpStoryboard.instantiateViewController(withIdentifier: "DeleteReview") as? DeleteReview else { return }
+        deleteReviewPopUpView.modalPresentationStyle = .custom
+        deleteReviewPopUpView.modalTransitionStyle = .crossDissolve
+        deleteReviewPopUpView.delegate = vc
+        deleteReviewPopUpView.reviewId = id
+        vc.present(deleteReviewPopUpView, animated: true, completion: nil)
+    }
+    
+    func deleteReviewAction(fromVC vc: CategoryDetailVC, reviewId id: Int) {
+        for reviewIndex in 0 ..< self._reviewList.count - 1 {
+            if self.reviewList[reviewIndex].reviewId == id {
+                self._reviewList.remove(at: reviewIndex)
+            }
+        }
+        self.dataManager?.deleteReview(fromVC: vc, reviewId: id)
+    }
+    
     func updateStarRateImageView(updateCell cell: CategoryDetailCell, value: Double) {
         switch value {
         case 0.0:
@@ -71,6 +90,11 @@ class CategoryDetailActor: CategoryDetailActorDelegate {
     
     func didTapReviewCell(reviewCategory category: Int, reviewId id: Int) {
         self.view?.presentReviewDetailVC(reviewCategory: category, reviewId: id)
+    }
+    
+    func didTapAddReviewButton(fromVC vc: CategoryDetailVC) {
+        guard let categoryId = vc.category?.categoryId else { return }
+        self.view?.presentAddReviewVC(categoryId: categoryId)
     }
 }
 

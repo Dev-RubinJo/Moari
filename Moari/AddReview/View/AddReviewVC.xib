@@ -16,6 +16,7 @@
                 <outlet property="contentTextView" destination="wk3-o8-Rle" id="lBb-mE-gIL"/>
                 <outlet property="contentTextViewBottomConstraint" destination="A3r-t8-P8h" id="FUc-7j-T9B"/>
                 <outlet property="contentView" destination="cbJ-CD-glD" id="LvC-Mk-Snz"/>
+                <outlet property="contentViewPlaceholderLabel" destination="gh4-8e-GTm" id="XFW-EF-3KA"/>
                 <outlet property="deleteReviewButton" destination="Gyn-ZX-SbD" id="oFW-zH-lQp"/>
                 <outlet property="editImageButton" destination="3m6-O6-7Ir" id="fDe-Si-wUe"/>
                 <outlet property="editReviewButton" destination="iVz-nB-vLX" id="Wuq-ah-kf4"/>
@@ -44,7 +45,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWJ-uu-xfK">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWJ-uu-xfK">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <subviews>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="843" translatesAutoresizingMaskIntoConstraints="NO" id="cbJ-CD-glD">
@@ -56,7 +57,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="DMH-Ag-TjQ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                         </imageView>
-                                        <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-cG-ms0">
+                                        <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-cG-ms0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navigationTitleLogoCategoryDark" translatesAutoresizingMaskIntoConstraints="NO" id="fc1-IU-Z3K">
@@ -256,15 +257,23 @@
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용을 써주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-8e-GTm">
+                                    <rect key="frame" x="21.999999999999993" y="541" width="111.33333333333331" height="20"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="17"/>
+                                    <color key="textColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="iVz-nB-vLX" firstAttribute="top" secondItem="MhV-G0-LaW" secondAttribute="bottom" constant="14" id="4DD-xE-4d4"/>
                                 <constraint firstItem="Gyn-ZX-SbD" firstAttribute="top" secondItem="MhV-G0-LaW" secondAttribute="bottom" constant="14" id="5LO-pl-g8F"/>
                                 <constraint firstAttribute="bottom" secondItem="wk3-o8-Rle" secondAttribute="bottom" id="A3r-t8-P8h"/>
+                                <constraint firstItem="gh4-8e-GTm" firstAttribute="top" secondItem="wk3-o8-Rle" secondAttribute="top" id="Cwb-eW-ITS"/>
                                 <constraint firstItem="1fe-nP-cco" firstAttribute="leading" secondItem="cbJ-CD-glD" secondAttribute="leading" constant="22" id="IYP-yt-X4d"/>
                                 <constraint firstItem="veP-k7-96U" firstAttribute="top" secondItem="MhV-G0-LaW" secondAttribute="bottom" constant="14" id="JoZ-wL-48W"/>
                                 <constraint firstItem="MhV-G0-LaW" firstAttribute="leading" secondItem="cbJ-CD-glD" secondAttribute="leading" id="Ogr-HO-POx"/>
+                                <constraint firstItem="gh4-8e-GTm" firstAttribute="leading" secondItem="wk3-o8-Rle" secondAttribute="leading" id="S1J-5P-1VY"/>
                                 <constraint firstAttribute="trailing" secondItem="MhV-G0-LaW" secondAttribute="trailing" id="SUM-HD-L1L"/>
                                 <constraint firstItem="1fe-nP-cco" firstAttribute="top" secondItem="Htp-QG-Wvc" secondAttribute="bottom" constant="24" id="TFS-ei-Wxg"/>
                                 <constraint firstItem="MhV-G0-LaW" firstAttribute="top" secondItem="cbJ-CD-glD" secondAttribute="top" id="UJw-Ln-Ddm"/>

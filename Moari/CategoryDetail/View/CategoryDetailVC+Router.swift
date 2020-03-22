@@ -6,6 +6,8 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
+import UIKit
+
 extension CategoryDetailVC: CategoryDetailVCRouterDelegate {
     
     static var makeCategoryDetailVC: CategoryDetailVC {
@@ -28,5 +30,14 @@ extension CategoryDetailVC: CategoryDetailVCRouterDelegate {
         reviewDetailVC.reviewId = id
         reviewDetailVC.categoryId = category
         self.navigationController?.pushViewController(reviewDetailVC, animated: true)
+    }
+    
+    func presentAddReviewVC(categoryId id: Int) {
+        let addReviewRootVC = AddReviewVC.makeAddReviewVC
+        let addReviewVC = UINavigationController.init(rootViewController: addReviewRootVC)
+        addReviewRootVC.isAdd = true
+        addReviewRootVC.categoryId = id
+        addReviewVC.modalPresentationStyle = .fullScreen
+        self.present(addReviewVC, animated: true, completion: nil)
     }
 }

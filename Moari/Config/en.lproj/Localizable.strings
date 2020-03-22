@@ -7,40 +7,40 @@
 */
 
 // SplashActor >> presentInvalidTokenAlert
-"OUT_OF_TOKEN_TITLE" = "Sign-In session expired";
-"OUT_OF_TOKEN_CONTENT" = "Your Sign-In session has expired. Please Sign-In again!";
+"OUT_OF_TOKEN_TITLE" = "로그인 세션 만료";
+"OUT_OF_TOKEN_CONTENT" = "로그인 세션이 만료되었습니다. 다시 로그인해주세요!";
 
 // EmailTextField Placeholder
-"EMAIL" = "email";
+"EMAIL" = "이메일";
 // SignInVC >> PasswordTextField Placeholder
-"PASSWORD" = "password";
+"PASSWORD" = "비밀번호";
 // SignInVC >> SignInButtonLabel
-"SIGNIN" = "Sign In";
+"SIGNIN" = "로그인";
 // SignInVC >> SignUpLabel
-"SIGNUP" = "Sign Up";
+"SIGNUP" = "회원가입";
 
 // FindEmailPasswordVC >> NavigationBar Title
-"FIND_EMAIL_PASSWORD_TITLE" = "Find Email/Password";
+"FIND_EMAIL_PASSWORD_TITLE" = "이메일/비밀번호 찾기";
 
 // FindEmailPasswordVC >> Guide Content
-"FIND_EMAIL_PASSWORD_GUIDE_LABEL" = "We can send you a temporary password\nAfter verifying your email";
+"FIND_EMAIL_PASSWORD_GUIDE_LABEL" = "먼저 가입된 이메일인지 확인 후,\n임시 비밀번호를 발송할 수 있습니다.";
 
 // FindEmailPasswordVC >> checkEmailButtonTitle
-"FIND_EMAIL_PASSWORD_CHECK_EMAIL_BUTTON_TITLE" = "Checking for registered email";
+"FIND_EMAIL_PASSWORD_CHECK_EMAIL_BUTTON_TITLE" = "가입된 이메일인지 확인하기";
 
 // FindEmailPasswordVC >> sendTemporaryPasswordButtonTitle
-"FIND_EMAIL_PASSWORD_SEND_TEMP_PASSWORD_BUTTON_TITLE" = "Send a temporary password";
+"FIND_EMAIL_PASSWORD_SEND_TEMP_PASSWORD_BUTTON_TITLE" = "위의 이메일로 임시 비밀번호 발송";
 
 // FindEmailPasswordVC >> AlertLabel(registered Email)
-"REGISTERED_EMAIL" = "* This email is registered!";
+"REGISTERED_EMAIL" = "* 가입된 이메일입니다!";
 // FindEmailPasswordVC >> AlertLabel(not registered Email)
-"NOT_REGISTERED_EMAIL" = "* This email is not registered!%@Please check again";
+"NOT_REGISTERED_EMAIL" = "* 가입된 이메일이 아닙니다!%@다시 확인해주세요";
 
 // FindEmailPasswordVC >> temporaryPasswordAlertLabel
-"SEND_TEMPORARY_PASSWORD" = "* Temporary password has been sent";
+"SEND_TEMPORARY_PASSWORD" = "* 임시 비밀번호가 전송되었습니다";
 
 // SignUpVC >> Navigation Bar Title
-"SIGN_UP_TITLE" = "Sign Up";
+"SIGN_UP_TITLE" = "회원가입";
 
 // SignUpVC >> PasswordTextField Placeholder
 "PASSWORD_SIGN_UP_PLACEHOLDER" = "비밀번호 (6자리 이상)";
@@ -55,7 +55,7 @@
 "PERSONAL_POLICY_LABEL" = "개인정보 수집이용 동의";
 
 // SignUpVC >> SignUpButton Title
-"SIGN_UP_BUTTON" = "Sign Up";
+"SIGN_UP_BUTTON" = "회원가입하기";
 
 // SignUpPopUp >> SignUpPopUp Title
 "SIGNUP_POPUP_TITLE" = "가입이 완료되었습니다!";
@@ -64,11 +64,100 @@
 
 // ALERT
 // Invalid Email And Password
-"INVALID_EMAIL_PASSWORD_TITLE" = "Email and password were entered incorrectly";
-"INVALID_EMAIL_PASSWORD_MESSAGE" = "Please check your email and password again and enter it!";
+"INVALID_EMAIL_PASSWORD_TITLE" = "이메일과 비밀번호가 잘못 입력되었습니다";
+"INVALID_EMAIL_PASSWORD_MESSAGE" = "이메일과 비밀번호를 다시 한번 확인하여 입력해주세요!";
 
-"INVALID_EMAIL_TITLE" = "It's wrong Email";
-"INVALID_EMAIL_MESSAGE" = "Please check your email again and enter it!";
+"INVALID_EMAIL_TITLE" = "이메일이 잘못 입력되었습니다";
+"INVALID_EMAIL_MESSAGE" = "이메일을 다시 한번 확인하여 입력해주세요!";
 
-"INVALID_PASSWORD_TITLE" = "Password format is incorrect";
-"INVALID_PASSWORD_MESSAGE" = "Please enter 8 to 16 digits according to the password format(case-sensitive English, numeric)!";
+"INVALID_PASSWORD_TITLE" = "비밀번호 형식이 맞지 않습니다";
+"INVALID_PASSWORD_MESSAGE" = "비밀번호 형식(대소문자 영어, 숫자)에 맞춰서 8 ~ 16자리를 입력해주세요!";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ // SplashActor >> presentInvalidTokenAlert
+ "OUT_OF_TOKEN_TITLE" = "Sign-In session expired";
+ "OUT_OF_TOKEN_CONTENT" = "Your Sign-In session has expired. Please Sign-In again!";
+
+ // EmailTextField Placeholder
+ "EMAIL" = "email";
+ // SignInVC >> PasswordTextField Placeholder
+ "PASSWORD" = "password";
+ // SignInVC >> SignInButtonLabel
+ "SIGNIN" = "Sign In";
+ // SignInVC >> SignUpLabel
+ "SIGNUP" = "Sign Up";
+
+ // FindEmailPasswordVC >> NavigationBar Title
+ "FIND_EMAIL_PASSWORD_TITLE" = "Find Email/Password";
+
+ // FindEmailPasswordVC >> Guide Content
+ "FIND_EMAIL_PASSWORD_GUIDE_LABEL" = "We can send you a temporary password\nAfter verifying your email";
+
+ // FindEmailPasswordVC >> checkEmailButtonTitle
+ "FIND_EMAIL_PASSWORD_CHECK_EMAIL_BUTTON_TITLE" = "Checking for registered email";
+
+ // FindEmailPasswordVC >> sendTemporaryPasswordButtonTitle
+ "FIND_EMAIL_PASSWORD_SEND_TEMP_PASSWORD_BUTTON_TITLE" = "Send a temporary password";
+
+ // FindEmailPasswordVC >> AlertLabel(registered Email)
+ "REGISTERED_EMAIL" = "* This email is registered!";
+ // FindEmailPasswordVC >> AlertLabel(not registered Email)
+ "NOT_REGISTERED_EMAIL" = "* This email is not registered!%@Please check again";
+
+ // FindEmailPasswordVC >> temporaryPasswordAlertLabel
+ "SEND_TEMPORARY_PASSWORD" = "* Temporary password has been sent";
+
+ // SignUpVC >> Navigation Bar Title
+ "SIGN_UP_TITLE" = "Sign Up";
+
+ // SignUpVC >> PasswordTextField Placeholder
+ "PASSWORD_SIGN_UP_PLACEHOLDER" = "비밀번호 (6자리 이상)";
+ // SignUpVC >> PasswordCheckTextField Placeholder
+ "PASSWORD_CHECK_PLACEHOLDER" = "비밀번호 확인";
+ // SignUpVC >> NickNameTextField Placeholder
+ "NICKNAME_PLACEHOLDER" = "닉네임";
+
+ // SignUpVC >> usingPolicy Label
+ "USING_POLICY_LABEL" = "모아리 이용약관 동의";
+ // SignUpVC >> personalPolicy Label
+ "PERSONAL_POLICY_LABEL" = "개인정보 수집이용 동의";
+
+ // SignUpVC >> SignUpButton Title
+ "SIGN_UP_BUTTON" = "Sign Up";
+
+ // SignUpPopUp >> SignUpPopUp Title
+ "SIGNUP_POPUP_TITLE" = "가입이 완료되었습니다!";
+ // SignUpPopUp >> SignUpPopUp Button
+ "SIGNUP_POPUP_BUTTON" = "로그인하기";
+
+ // ALERT
+ // Invalid Email And Password
+ "INVALID_EMAIL_PASSWORD_TITLE" = "Email and password were entered incorrectly";
+ "INVALID_EMAIL_PASSWORD_MESSAGE" = "Please check your email and password again and enter it!";
+
+ "INVALID_EMAIL_TITLE" = "It's wrong Email";
+ "INVALID_EMAIL_MESSAGE" = "Please check your email again and enter it!";
+
+ "INVALID_PASSWORD_TITLE" = "Password format is incorrect";
+ "INVALID_PASSWORD_MESSAGE" = "Please enter 8 to 16 digits according to the password format(case-sensitive English, numeric)!";
+
+ */

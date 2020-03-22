@@ -15,10 +15,8 @@ extension AddReviewVC {
         // TODO: 작성하기 다국어 지원으로 변경하기
         self.navigationItem.title = "작성하기"
         
-        let appendReviewButton = UIBarButtonItem(image: UIImage(named: "appendReview"), style: .plain, target: self, action: #selector(self.pressAppendReviewButton(_:)))
-        let closeReviewButton = UIBarButtonItem(image: UIImage(named: "closeButtonDefault"), style: .plain, target: self, action: #selector(self.pressCloseReviewButton(_:)))
-        
-        self.navigationItem.rightBarButtonItem = appendReviewButton
+        self.appendReviewButton = UIBarButtonItem(image: UIImage(named: "appendReview"), style: .plain, target: self, action: #selector(self.pressAppendReviewButton(_:)))
+        self.closeReviewButton = UIBarButtonItem(image: UIImage(named: "closeButtonDefault"), style: .plain, target: self, action: #selector(self.pressCloseReviewButton(_:)))
         
         if let category = self.categoryId, let review = self.reviewId {
             self.actor?.didLoadReview(updateVC: self, categoryId: category, reviewId: review)
@@ -28,6 +26,8 @@ extension AddReviewVC {
         self.shareReviewButton.setImage(UIImage(named: "shareIc"), for: .normal)
         self.editReviewButton.setImage(UIImage(named: "editReview"), for: .normal)
         self.deleteReviewButton.setImage(UIImage(named: "deleteReview"), for: .normal)
+        
+        self.backgroundImageView.image = UIImage(named: "defaultImage")
         
         
         self.datePicker = UIDatePicker()
@@ -45,11 +45,13 @@ extension AddReviewVC {
                 self.deleteReviewButton.isHidden = true
                 self.editImageButton.isHidden = false
                 self.selectDateTextField.isUserInteractionEnabled = true
+                self.contentViewPlaceholderLabel.isHidden = false
                 
                 // TODO: 다국어 지원하기
                 self.selectDateTextField.text = "날짜"
                 self.selectDateTextField.textColor = .defaultPink
-                self.navigationItem.leftBarButtonItem = closeReviewButton
+                self.navigationItem.leftBarButtonItem = self.closeReviewButton
+                self.navigationItem.rightBarButtonItem = self.appendReviewButton
                 self.setUpScrollView()
             } else {
                 self.navigationItem.title = ""
@@ -67,6 +69,7 @@ extension AddReviewVC {
                 self.reviewTitleTextView.isEditable = false
                 self.reviewContentTextView.isEditable = false
                 self.contentTextView.isEditable = false
+                self.contentViewPlaceholderLabel.isHidden = true
                 
                 
                 self.selectDateTextField.textColor = .signInBottomLabels
@@ -77,7 +80,15 @@ extension AddReviewVC {
     
     @objc func pressAppendReviewButton(_ sender: UIBarButtonItem) {
         // TODO: 리뷰 작성완료 기능 넣기
-        print(1)
+        if self.isEdit {
+            if let id = self.review?.reviewId {
+                self.actor?.editReview(fromVC: self, reviewId: id)
+            }
+        } else {
+            if let categoryId = self.categoryId {
+                self.actor?.addReview(fromVC: self, categoryId: categoryId)
+            }
+        }
     }
     
     @objc func pressCloseReviewButton(_ sender: UIBarButtonItem) {
@@ -88,16 +99,14 @@ extension AddReviewVC {
     func setUpScrollView() {
         // TODO: 기종별로 최적화 된 사이즈 지정하기
         self.resizeContentTextView()
-//        print(self.baseHeight + self.contentTextViewHeight.height)
         self.contentView.snp.makeConstraints { make in
             make.height.equalTo(self.baseHeight + self.contentTextViewHeight.height)
         }
     }
     
     func updateScrollView(heightValue value: CGFloat) {
-        //        self.contentTextViewHeight = self.contentTextView.sizeThatFits(CGSize(width: contentTextView.frame.size.width, height: CGFloat(CGFloat.greatestFiniteMagnitude)))
         self.contentView.snp.updateConstraints { make in
-            make.height.equalTo(value + self.contentTextViewHeight.height)
+            make.height.equalTo(value)
         }
     }
     
@@ -111,9 +120,9 @@ extension AddReviewVC {
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.donedatePicker));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelDatePicker));
         toolbar.tintColor = .systemWBColor
         toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         
@@ -142,12 +151,21 @@ extension AddReviewVC {
         self.starRateImageView.isUserInteractionEnabled = true
         self.starRateImageView.addGestureRecognizer(starRateImageViewListener)
         
-        
+        self.selectCategoryButton.addTarget(self, action: #selector(self.pressSelectCategoryButton(_:)), for: .touchUpInside)
+        self.editReviewButton.addTarget(self, action: #selector(self.pressEditReviewButton(_:)), for: .touchUpInside)
         self.shareReviewButton.addTarget(self, action: #selector(self.pressShareReviewButton(_:)), for: .touchUpInside)
+        self.deleteReviewButton.addTarget(self, action: #selector(self.pressDeleteReviewButton(_:)), for: .touchUpInside)
     }
     
+    // 이미지 피커 컨트롤러 필요(크롭기능 적용)
     @objc func pressEditImageButton(_ sender: UIButton) {
+        let imagePickPopUpStoryboard = UIStoryboard(name: "ImagePick", bundle: nil)
+        guard let imagePickPopUpView = imagePickPopUpStoryboard.instantiateViewController(withIdentifier: "ImagePick") as? ImagePick else { return }
+        imagePickPopUpView.modalPresentationStyle = .custom
+        imagePickPopUpView.modalTransitionStyle = .crossDissolve
+        imagePickPopUpView.delegate = self
         
+        self.present(imagePickPopUpView, animated: true, completion: nil)
     }
     
     @objc func pressStarRateImageView(_ sender: UIImageView) {
@@ -162,11 +180,41 @@ extension AddReviewVC {
     }
     
     @objc func pressSelectCategoryButton(_ sender: UIButton) {
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
         
+        guard let categoryList = self.actor?.categoryList else { return }
+        for category in categoryList {
+            let action = UIAlertAction(title: "\(category.categoryName)", style: .default) { _ in
+                self.categoryId = category.categoryId
+                DispatchQueue.main.async {
+                    self.selectCategoryButton.setTitle("\(category.categoryName)", for: .normal)
+                }
+            }
+            optionMenu.addAction(action)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+        })
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
     @objc func pressEditReviewButton(_ sender: UIButton) {
+        self.isEdit = true
+        self.navigationItem.rightBarButtonItem = self.appendReviewButton
         
+        self.reviewTitleBorderImageView.isHidden = false
+        self.reviewTitlePlaceholderLabel.isHidden = true
+        self.starRateBorderImageView.isHidden = false
+        self.reviewContentBorderImageView.isHidden = false
+        self.reviewContentPlaceholderLabel.isHidden = true
+        self.shareReviewButton.isHidden = true
+        self.editReviewButton.isHidden = true
+        self.deleteReviewButton.isHidden = false
+        self.editImageButton.isHidden = false
+        self.reviewTitleTextView.isEditable = true
+        self.reviewContentTextView.isEditable = true
+        self.contentTextView.isEditable = true
     }
     
     @objc func pressShareReviewButton(_ sender: UIButton) {
@@ -178,9 +226,14 @@ extension AddReviewVC {
     }
     
     @objc func pressDeleteReviewButton(_ sender: UIButton) {
-        
+        let deleteAction: UIAlertAction = UIAlertAction(title: "삭제", style: .default) { _ in
+            guard let id = self.reviewId else { return }
+            self.actor?.deleteReview(fromVC: self, reviewId: id)
+        }
+        self.presentAlertWithAction(title: "삭제하기", message: "정말로 리뷰를 삭제하실껀가요?", deleteAction)
     }
 }
+
 extension AddReviewVC: StarRatePopUpDelegate {
     func didTapDoneButton(_ value: Double) {
         self.starRateValue = value
@@ -188,5 +241,46 @@ extension AddReviewVC: StarRatePopUpDelegate {
     }
 }
 
-// 이미지 피커 컨트롤러 필요(크롭기능 적용)
-// 카테고리 선택 피커 필요
+// Camera, Library
+extension AddReviewVC: ImagePickDelegate {
+    func openLibrary(){
+        self.picker.sourceType = .photoLibrary
+        self.picker.modalPresentationStyle = .fullScreen
+        DispatchQueue.main.async {
+            self.present(self.picker, animated: false, completion: nil)
+        }
+    }
+    
+    func openCamera(){
+        self.picker.sourceType = .camera
+        self.picker.modalPresentationStyle = .fullScreen
+        DispatchQueue.main.async {
+            self.present(self.picker, animated: false, completion: nil)
+        }
+    }
+    
+    func didTapImageByLibraryButton() {
+        self.openLibrary()
+    }
+    
+    func didTapImageByCameraButton() {
+        self.openCamera()
+    }
+}
+
+import Mantis
+extension AddReviewVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate, CropViewControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else { return }
+        picker.dismiss(animated: true, completion: nil)
+        
+        let cropImageController = Mantis.cropViewController(image: image)
+        cropImageController.modalPresentationStyle = .fullScreen
+        cropImageController.delegate = self
+        self.present(cropImageController, animated: true, completion: nil)
+    }
+    
+    func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation) {
+        self.backgroundImageView.image = cropped
+    }
+}

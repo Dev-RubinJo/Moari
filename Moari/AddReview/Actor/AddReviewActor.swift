@@ -11,29 +11,38 @@ import UIKit
 class AddReviewActor: AddReviewActorDelegate {
     
     static let shared = AddReviewActor()
-    private init() {}
     
     weak var view: AddReviewVCRouterDelegate?
     weak var dataManager: AddReviewDataManagerDelegate?
     
-    private var _categoryList: [CategoryForReview] = []
-    
     var categoryList: [CategoryForReview] {
         get {
-            self._categoryList
+            CategoryList.shared.categoryList
         }
     }
     
     func setCategoryList(category: CategoryForReview) {
-        self._categoryList.append(category)
+        CategoryList.shared.appendCategoryToCategoryList(category: category)
     }
     
     func removeAllCategory() {
-        self._categoryList.removeAll()
+        CategoryList.shared.removeAllCategoryInCategoryList()
     }
     
     func didLoadReview(updateVC vc: AddReviewVC, categoryId category: Int, reviewId id: Int) {
         self.dataManager?.loadReviewDetail(fromVC: vc, categoryId: category, reviewId: id)
+    }
+    
+    func addReview(fromVC vc: AddReviewVC, categoryId category: Int) {
+        self.dataManager?.writeReview(fromVC: vc, categoryId: category, reviewId: nil)
+    }
+    
+    func editReview(fromVC vc: AddReviewVC, reviewId id: Int) {
+        self.dataManager?.writeReview(fromVC: vc, categoryId: 0, reviewId: id)
+    }
+    
+    func deleteReview(fromVC vc: AddReviewVC, reviewId id: Int) {
+        self.dataManager?.deleteReview(fromVC: vc, reviewId: id)
     }
     
     func updateStarRateImageView(updateVC vc: AddReviewVC, value: Double) {

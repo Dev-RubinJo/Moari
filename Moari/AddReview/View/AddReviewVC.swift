@@ -50,10 +50,26 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var contentTextViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var contentViewPlaceholderLabel: UILabel!
     
     weak var actor: AddReviewActorDelegate?
     
+//    unowned var picker: UIImagePickerController {
+//        get {
+//            return UIImagePickerController()
+//        }
+//    }
+    
+    let picker: UIImagePickerController = UIImagePickerController()
+    
+    var appendReviewButton = UIBarButtonItem()
+    var closeReviewButton = UIBarButtonItem()
+    
+    var isEdit: Bool = false
     var isAdd: Bool?
+    
+    var review: ReviewDetail?
+    
     var reviewId: Int?
     var categoryId: Int?
 //    var isReviewExist: Bool?
@@ -82,11 +98,12 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
         super.viewDidLoad()
         self.baseHeight = self.shareImageBaseView.bounds.height + 127
         
-        
         self.reviewTitleTextView.delegate = self
         self.reviewContentTextView.delegate = self
         self.contentTextView.delegate = self
         self.selectDateTextField.delegate = self
+        
+        self.picker.delegate = self
         
         self.setAddReviewVCUI()
         self.initTapListener()
@@ -94,10 +111,18 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.reviewTitleTextView.centerVertically()
+        self.reviewContentTextView.centerVertically()
+        
         let theme = UserDefaults.standard.integer(forKey: "Theme")
         switch theme {
         case 0:
-            UIApplication.shared.statusBarStyle = .default
+            if #available(iOS 13.0, *) {
+                UIApplication.shared.statusBarStyle = .darkContent
+            } else {
+                UIApplication.shared.statusBarStyle = .default
+            }
             break
         case 1:
             UIApplication.shared.statusBarStyle = .lightContent
@@ -109,7 +134,7 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
             UIApplication.shared.statusBarStyle = .default
             break
         }
-        print(self.actor?.categoryList)
+//        print(self.actor?.categoryList)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

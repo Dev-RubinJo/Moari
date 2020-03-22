@@ -27,6 +27,7 @@ class SplashDataManager: SplashDataManagerDelegate {
                 case .success(let checkTokenResponse):
                     switch checkTokenResponse.code {
                     case 200:
+                        UserDefaults.standard.set(checkTokenResponse.email, forKey: "UserEmail")
                         self.actor?.vaildToken()
                     case 403:
                         self.actor?.presentInvalidTokenAlert(toVC: vc)

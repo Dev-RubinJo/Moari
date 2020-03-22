@@ -2,7 +2,7 @@
 //  CategoryDetailProtocol.swift
 //  Moari
 //
-//  Created by YooBin Jo on 2020/03/04.
+//  Created by YooBin Jo on 
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
@@ -16,6 +16,8 @@ protocol CategoryDetailVCRouterDelegate: class {
     static var makeCategoryDetailVC: CategoryDetailVC { get }
     
     func presentReviewDetailVC(reviewCategory category: Int, reviewId id: Int)
+    
+    func presentAddReviewVC(categoryId id: Int)
 }
 
 protocol CategoryDetailActorDelegate: class {
@@ -37,12 +39,18 @@ protocol CategoryDetailActorDelegate: class {
     func updateStarRateImageView(updateCell cell: CategoryDetailCell, value: Double)
     
     func didTapReviewCell(reviewCategory category: Int, reviewId id: Int)
+    
+    func presentDeleteReviewPopUp(fromVC vc: CategoryDetailVC, reviewId id: Int)
+    
+    func deleteReviewAction(fromVC vc: CategoryDetailVC, reviewId id: Int)
+    
+    func didTapAddReviewButton(fromVC vc: CategoryDetailVC)
 }
 
-protocol CategoryDetailPopUpActorDelegate: class {
-    
-    func presentDeleteReviewPopUp()
-}
+//protocol CategoryDetailPopUpActorDelegate: class {
+//
+//    func presentDeleteReviewPopUp()
+//}
 
 protocol CategoryDetailDataManagerDelegate: class {
     

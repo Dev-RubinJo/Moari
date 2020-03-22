@@ -6,12 +6,28 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
+import Foundation
+
 class UserInfoActor: UserInfoActorDelegate {
-    
-    static let shared = UserInfoActor()
-    private init() {}
-    
+
     weak var view: UserInfoVCRouterDelegate?
-    weak var dataManager: UserInfoDataManagerDelegate?
+    var dataManager: UserInfoDataManagerDelegate?
     
+    func didTapEditUserInfoButton(fromVC vc: UserInfoVC, nickName name: String?, password: String?) {
+        if let name = name, let password = password {
+            self.dataManager?.editUserInfo(fromVC: vc, nickName: name, password: password)
+        } else if let name = name {
+            self.dataManager?.editUserInfo(fromVC: vc, nickName: name, password: nil)
+        } else if let password = password {
+            self.dataManager?.editUserInfo(fromVC: vc, nickName: nil, password: password)
+        }
+    }
+    
+    func didTapSignOutButton(fromVC vc: UserInfoVC) {
+        UserDefaults.standard.removeObject(forKey: "LoginToken")
+    }
+    
+    func didTapFinalDeleteUserButton(fromVC vc: UserInfoVC) {
+        self.dataManager?.deleteUser(fromVC: vc)
+    }
 }

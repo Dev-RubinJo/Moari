@@ -8,16 +8,13 @@
 
 import UIKit
 import KWDrawerController
+import SafariServices
 
 extension SignUpVC: SignUpVCRouterDelegate {
     
     weak var window: UIWindow? {
         get {
-            if #available(iOS 13.0, *) {
-                return UIApplication.shared.windows.first ?? UIWindow.init(frame: UIScreen.main.bounds)
-            } else {
-                return UIApplication.shared.keyWindow
-            }
+            UIApplication.shared.windows.first
         }
     }
     
@@ -37,10 +34,18 @@ extension SignUpVC: SignUpVCRouterDelegate {
     
     func presentUsingPolicyView() {
         self.usingPolicyCheck = true
+        guard let url = URL(string: "https://webtoondaram.s3.ap-northeast-2.amazonaws.com/agree.html") else { return }
+        let usingPolicyWebView = SFSafariViewController(url: url)
+        self.present(usingPolicyWebView, animated: true, completion: nil)
+        //  https://webtoondaram.s3.ap-northeast-2.amazonaws.com/agree.html
     }
     
     func presentPersonPolicyView() {
         self.personalPolicyCheck = true
+        guard let url = URL(string: "https://webtoondaram.s3.ap-northeast-2.amazonaws.com/infoagree.html") else { return }
+        let usingPolicyWebView = SFSafariViewController(url: url)
+        self.present(usingPolicyWebView, animated: true, completion: nil)
+        //  https://webtoondaram.s3.ap-northeast-2.amazonaws.com/infoagree.html
     }
     
     func presentMainVC() {

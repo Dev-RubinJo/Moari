@@ -26,6 +26,8 @@ class CategoryDetailVC: BaseVC, CategoryDetailVCProtocol {
         
         let categoryDetailCellNib = UINib(nibName: "CategoryDetailCell", bundle: nil)
         self.categoryDetailCollectionView.register(categoryDetailCellNib, forCellWithReuseIdentifier: "CategoryDetailCell")
+        self.setCategoryDetailVCUI()
+        self.initTapListener()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,15 +35,65 @@ class CategoryDetailVC: BaseVC, CategoryDetailVCProtocol {
         let theme = UserDefaults.standard.integer(forKey: "Theme")
         switch theme {
         case 0:
-            UIApplication.shared.statusBarStyle = .default
+            if #available(iOS 13.0, *) {
+                UIApplication.shared.statusBarStyle = .darkContent
+            } else {
+                UIApplication.shared.statusBarStyle = .default
+            }
+            break
         case 1:
             UIApplication.shared.statusBarStyle = .lightContent
+            break
         case 2:
             UIApplication.shared.statusBarStyle = .default
+            break
         default:
             UIApplication.shared.statusBarStyle = .default
+            break
         }
         self.actor?.didLoadCategoryDetailList(fromVC: self)
+    }
+}
+extension CategoryDetailVC {
+    
+    func setCategoryDetailVCUI() {
+        let addReviewButton = UIBarButtonItem(image: UIImage(named: "addReview"), style: .plain, target: self, action: #selector(self.pressAddReviewButton(_:)))
+
+        self.navigationItem.rightBarButtonItem = addReviewButton
+    }
+    
+    func initTapListener() {
+        let deleteLongPressGesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureForDeleteReviewPopUp(_:)))
+        deleteLongPressGesture.minimumPressDuration = 0.5
+        self.categoryDetailCollectionView.addGestureRecognizer(deleteLongPressGesture)
+    }
+    
+    @objc func pressAddReviewButton(_ sender: UIBarButtonItem) {
+        self.actor?.didTapAddReviewButton(fromVC: self)
+    }
+    
+    // MARK: long press Gesture
+    @objc func longPressGestureForDeleteReviewPopUp(_ gesture: UIGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            guard let selectedIndexPath = self.categoryDetailCollectionView.indexPathForItem(at: gesture.location(in: self.categoryDetailCollectionView)) else { return }
+            
+            guard let reviewId = self.actor?.reviewList[selectedIndexPath.item].reviewId else { return }
+            self.actor?.presentDeleteReviewPopUp(fromVC: self, reviewId: reviewId)
+            
+        case .ended:
+            fallthrough
+        default:
+            self.categoryDetailCollectionView.reloadData()
+        }
+    }
+}
+
+
+extension CategoryDetailVC: DeleteReviewDelegate {
+    
+    func didTapDeletePopUpDoneButton(reviewId id: Int) {
+        self.actor?.deleteReviewAction(fromVC: self, reviewId: id)
     }
 }
 

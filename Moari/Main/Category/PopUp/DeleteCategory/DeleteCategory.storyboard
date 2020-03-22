@@ -53,7 +53,7 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="드라마 카테고리를삭제하시겠습니까?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MT-sq-amH">
-                                        <rect key="frame" x="50" y="40" width="140" height="41"/>
+                                        <rect key="frame" x="50" y="44" width="140" height="41"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -80,7 +80,7 @@
                                     <constraint firstAttribute="trailing" secondItem="vbb-Cr-FdO" secondAttribute="trailing" id="lI3-9d-1Ah"/>
                                     <constraint firstItem="u08-WZ-3vj" firstAttribute="leading" secondItem="vcj-Z2-VEI" secondAttribute="trailing" id="pwK-g0-wOS"/>
                                     <constraint firstItem="0MT-sq-amH" firstAttribute="centerX" secondItem="882-Mf-Der" secondAttribute="centerX" id="wFO-F8-Dwf"/>
-                                    <constraint firstItem="0MT-sq-amH" firstAttribute="top" secondItem="882-Mf-Der" secondAttribute="top" constant="40" id="wrx-6w-Qpp"/>
+                                    <constraint firstItem="0MT-sq-amH" firstAttribute="top" secondItem="882-Mf-Der" secondAttribute="top" constant="44" id="wrx-6w-Qpp"/>
                                 </constraints>
                             </view>
                         </subviews>

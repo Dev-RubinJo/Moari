@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Final Delete User-->
+        <scene sceneID="hxO-17-O3e">
+            <objects>
+                <viewController storyboardIdentifier="FinalDeleteUser" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qJL-iu-BvD" customClass="FinalDeleteUser" customModule="Moari" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xfF-sy-lMs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Y-Ms-43i">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dL2-6G-FkB">
+                                <rect key="frame" x="87" y="358" width="240" height="180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHo-pJ-CPO">
+                                        <rect key="frame" x="0.0" y="129.5" width="240" height="1"/>
+                                        <color key="backgroundColor" name="PopUpBolderColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="B5R-g8-Rps"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pv-Lx-hJr">
+                                        <rect key="frame" x="119.5" y="130.5" width="1" height="49.5"/>
+                                        <color key="backgroundColor" name="PopUpBolderColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="pas-SA-swy"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rk-Ay-aBt">
+                                        <rect key="frame" x="0.0" y="130.5" width="119.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <state key="normal" title="취소">
+                                            <color key="titleColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bw1-fF-gXb">
+                                        <rect key="frame" x="120.5" y="130.5" width="119.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <state key="normal" title="네">
+                                            <color key="titleColor" red="0.76078431369999999" green="0.094117647060000004" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GC-9O-hVU">
+                                        <rect key="frame" x="20" y="30" width="200" height="61.5"/>
+                                        <string key="text">탈퇴 시 
+계정을 복구할 수 없습니다.
+정말 탈퇴하시겠습니까?</string>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="1pv-Lx-hJr" firstAttribute="top" secondItem="bHo-pJ-CPO" secondAttribute="bottom" id="0tb-fJ-Gal"/>
+                                    <constraint firstItem="bHo-pJ-CPO" firstAttribute="leading" secondItem="dL2-6G-FkB" secondAttribute="leading" id="2yT-1W-kMG"/>
+                                    <constraint firstItem="1pv-Lx-hJr" firstAttribute="leading" secondItem="9rk-Ay-aBt" secondAttribute="trailing" id="53z-nc-BxF"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bw1-fF-gXb" secondAttribute="bottom" id="5ir-UI-sKC"/>
+                                    <constraint firstAttribute="trailing" secondItem="bHo-pJ-CPO" secondAttribute="trailing" id="5s2-C3-sZB"/>
+                                    <constraint firstAttribute="trailing" secondItem="2GC-9O-hVU" secondAttribute="trailing" constant="20" id="6Om-Tm-tPd"/>
+                                    <constraint firstAttribute="bottom" secondItem="9rk-Ay-aBt" secondAttribute="bottom" id="79U-J6-zr4"/>
+                                    <constraint firstAttribute="bottom" secondItem="1pv-Lx-hJr" secondAttribute="bottom" id="Eka-ES-DTt"/>
+                                    <constraint firstAttribute="width" constant="240" id="ICA-k2-OXN"/>
+                                    <constraint firstItem="2GC-9O-hVU" firstAttribute="leading" secondItem="dL2-6G-FkB" secondAttribute="leading" constant="20" id="Lfg-Bh-1Mn"/>
+                                    <constraint firstItem="2GC-9O-hVU" firstAttribute="centerX" secondItem="dL2-6G-FkB" secondAttribute="centerX" id="P4s-EK-xgx"/>
+                                    <constraint firstItem="Bw1-fF-gXb" firstAttribute="leading" secondItem="1pv-Lx-hJr" secondAttribute="trailing" id="TWo-Nh-Oyb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bw1-fF-gXb" secondAttribute="trailing" id="WSh-d7-w1R"/>
+                                    <constraint firstItem="9rk-Ay-aBt" firstAttribute="top" secondItem="bHo-pJ-CPO" secondAttribute="bottom" id="f2I-bc-SeO"/>
+                                    <constraint firstItem="2GC-9O-hVU" firstAttribute="top" secondItem="dL2-6G-FkB" secondAttribute="top" constant="30" id="gIn-WR-uh6"/>
+                                    <constraint firstItem="9rk-Ay-aBt" firstAttribute="leading" secondItem="dL2-6G-FkB" secondAttribute="leading" id="gbp-OF-N2f"/>
+                                    <constraint firstItem="Bw1-fF-gXb" firstAttribute="top" secondItem="bHo-pJ-CPO" secondAttribute="bottom" id="s8X-2A-svd"/>
+                                    <constraint firstItem="1pv-Lx-hJr" firstAttribute="centerX" secondItem="dL2-6G-FkB" secondAttribute="centerX" id="xfY-je-gi2"/>
+                                    <constraint firstAttribute="bottom" secondItem="bHo-pJ-CPO" secondAttribute="bottom" constant="49.5" id="yro-Dz-Z9i"/>
+                                    <constraint firstAttribute="height" constant="180" id="zNv-j6-oTt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Z5Y-Ms-43i" secondAttribute="bottom" id="2nL-iD-ttc"/>
+                            <constraint firstAttribute="trailing" secondItem="Z5Y-Ms-43i" secondAttribute="trailing" id="F99-Az-Yon"/>
+                            <constraint firstItem="dL2-6G-FkB" firstAttribute="centerX" secondItem="xfF-sy-lMs" secondAttribute="centerX" id="FpG-49-cPx"/>
+                            <constraint firstItem="dL2-6G-FkB" firstAttribute="centerY" secondItem="xfF-sy-lMs" secondAttribute="centerY" id="b1x-oC-tn5"/>
+                            <constraint firstItem="Z5Y-Ms-43i" firstAttribute="leading" secondItem="xfF-sy-lMs" secondAttribute="leading" id="i5U-zr-5Ui"/>
+                            <constraint firstItem="Z5Y-Ms-43i" firstAttribute="top" secondItem="xfF-sy-lMs" secondAttribute="top" id="x6S-6R-cJl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uK6-bn-Mug"/>
+                    </view>
+                    <connections>
+                        <outlet property="finalDeleteUserCancelButton" destination="9rk-Ay-aBt" id="l0H-uR-14h"/>
+                        <outlet property="finalDeleteUserDoneButton" destination="Bw1-fF-gXb" id="4wY-io-YT9"/>
+                        <outlet property="finalDeleteUserPopUpTitleLabel" destination="2GC-9O-hVU" id="UoQ-JR-Vg1"/>
+                        <outlet property="finalDeleteUserPopUpView" destination="dL2-6G-FkB" id="7ek-SH-Pai"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="juI-rU-cDm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="PopUpBolderColor">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

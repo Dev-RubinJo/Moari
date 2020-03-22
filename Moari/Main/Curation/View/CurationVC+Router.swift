@@ -11,8 +11,8 @@ extension CurationVC: CurationVCRouterDelegate {
     static var makeCurationVC: CurationVC {
         get {
             let vc = CurationVC()
-            let actor = CurationActor.shared
-            let dataManager = CurationDataManager.shared
+            let actor = CurationActor()
+            let dataManager = CurationDataManager()
             
             vc.actor = actor
             actor.view = vc

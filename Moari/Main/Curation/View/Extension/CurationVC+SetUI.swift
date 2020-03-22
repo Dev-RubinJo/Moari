@@ -16,9 +16,13 @@ extension CurationVC {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.logoButton.setImage(UIImage(named: "navigationTitleLogoCurationDark"), for: .normal)
         self.navigationItem.titleView = self.logoButton
-        self.navigationController?.navigationBar.tintColor = .white        
+        self.navigationController?.navigationBar.tintColor = .white
+        
+        let drawerViewButton = UIBarButtonItem(image: UIImage(named: "drawerMenuDark"), style: .plain, target: self, action: #selector(self.pressDrawerViewButton(_:)))
 
         let addReviewButton = UIBarButtonItem(image: UIImage(named: "addReviewDark"), style: .plain, target: self, action: #selector(self.pressAddReviewButton(_:)))
+        
+        self.navigationItem.leftBarButtonItem = drawerViewButton
         self.navigationItem.rightBarButtonItem = addReviewButton
         
         if self.isIphone == .iPhone {
@@ -34,6 +38,10 @@ extension CurationVC {
     
     @objc func pressTitleButton(_ sender: UIButton) {
         self.tabBarController?.selectedIndex = 0
+    }
+    
+    @objc func pressDrawerViewButton(_ sender: UIBarButtonItem) {
+        self.drawerController?.openSide(.left)
     }
     
     @objc func pressAddReviewButton(_ sender: UIBarButtonItem) {

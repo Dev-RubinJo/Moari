@@ -26,6 +26,7 @@ class SignInDataManager: SignInDataManagerDelegate {
                 case .success(let signInResponse):
                     switch signInResponse.code{
                     case 200:
+                        UserDefaults.standard.set(email, forKey: "UserEmail")
                         UserDefaults.standard.set(signInResponse.jwt, forKey: "LoginToken")
                         UserDefaults.standard.set(signInResponse.name, forKey: "NickName")
                         self.actor?.successSignIn()

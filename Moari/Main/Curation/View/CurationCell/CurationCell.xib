@@ -111,10 +111,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYS-hA-ttl">
                                 <rect key="frame" x="24" y="434" width="366" height="436"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBq-Ul-0Wy">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBq-Ul-0Wy">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="436"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <mutableString key="text">하늘에는 하나에 지나가는 이름을 시인의 나의 마디씩 봅니다. 이국 벌레는 그리워 풀이 이름자 봅니다. 시와 노루, 한 무엇인지 봅니다. 별 이름자 불러 사람들의 내 많은 써 슬퍼하는 버리었습니다. 오면 아스라히 슬퍼하는 계집애들의 피어나듯이 사람들의 다하지 이런 까닭입니다. 별을 하나에 이름과, 별 강아지, 이름과 봅니다. 가슴속에 때 흙으로 하늘에는 무성할 위에 오면 봅니다. 다하지 하늘에는 이국 계집애들의 별 풀이 내린 벌써 릴케 있습니다. 새워 멀리 다 다 라이너 별빛이 봅니다. 된 그리고 하나에 풀이 봅니다. </mutableString>
+                                        <string key="text">하늘에는 하나에 지나가는 이름을 시인의 나의 마디씩 봅니다. 이국 벌레는 그리워 풀이 이름자 봅니다. 시와 노루, 한 무엇인지 봅니다. 별 이름자 불러 사람들의 내 많은 써 슬퍼하는 버리었습니다. 오면 아스라히 슬퍼하는 계집애들의 피어나듯이 사람들의 다하지 이런 까닭입니다. 별을 하나에 이름과, 별 강아지, 이름과 봅니다. 가슴속에 때 흙으로 하늘에는 무성할 위에 오면 봅니다. 다하지 하늘에는 이국 계집애들의 별 풀이 내린 벌써 릴케 있습니다. 새워 멀리 다 다 라이너 별빛이 봅니다. 된 그리고 하나에 풀이 봅니다. </string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

@@ -21,13 +21,12 @@ extension AddReviewVC: UITextViewDelegate {
             self.updateScrollView(heightValue: self.baseHeight + self.keyboardHeight)
         case self.contentTextView:
             self.resizeContentTextView()
-            self.updateScrollView(heightValue: self.baseHeight + self.keyboardHeight)
-            self.contentTextViewBottomConstraint.constant = 10 + self.keyboardHeight
+            self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + self.keyboardHeight)
             var point = self.contentTextView.frame.origin
             point.y = point.y - self.keyboardHeight - 4
             point.x = point.x - 22
             self.scrollView.setContentOffset(point, animated: true)
-            self.scrollToCursorPosition()
+//            self.scrollToCursorPosition()
             // 11promax = 346
             // 11 = 346
             // 11pro = 220
@@ -53,7 +52,6 @@ extension AddReviewVC: UITextViewDelegate {
         case self.contentTextView:
             self.resizeContentTextView()
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + self.keyboardHeight)
-            self.contentTextViewBottomConstraint.constant = 10 + self.keyboardHeight
             self.scrollToCursorPosition()
             //            var point = contentTextView.frame.origin
             //            point.y = point.y - 261
@@ -83,7 +81,6 @@ extension AddReviewVC: UITextViewDelegate {
             }
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height)
         case self.contentTextView:
-            self.resizeContentTextView()
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + 10)
             self.contentTextViewBottomConstraint.constant = 10
         default:
@@ -108,15 +105,16 @@ extension AddReviewVC: UITextViewDelegate {
                 }
             }
             self.contentTextViewHeight.height = newSize.height
-            print(self.contentTextViewHeight.height)
         } else {
             let fixedWidth = self.contentTextView.frame.size.width
-            let newSize = self.contentTextView.sizeThatFits(CGSize(width: fixedWidth, height: .infinity))
-            self.contentTextViewHeight.height = newSize.height
+            let textView = UITextView(frame: CGRect(x: 0, y: 0, width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+            textView.text = self.contentTextView.text
+            textView.font = self.contentTextView.font
             
-            print(self.contentTextViewHeight.height)
+            textView.sizeToFit()
+            self.contentTextViewHeight.height = textView.frame.height
+
         }
-        
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

@@ -9,6 +9,7 @@
 import Alamofire
 import AlamofireObjectMapper
 import Kingfisher
+import FirebaseStorage
 
 class AddReviewDataManager: AddReviewDataManagerDelegate {
     
@@ -30,6 +31,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                     switch reviewResponse.code {
                     case 200:
                         let review = reviewResponse.result[0]
+                        vc.review = review
                         let imageUrl = URL(string: review.imageUrl)
                         vc.backgroundImageView.kf.setImage(with: imageUrl!)
                         vc.reviewTitleTextView.text = review.title
@@ -64,11 +66,126 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
         guard let loginToken = UserDefaults.standard.string(forKey: "LoginToken") else {
             return
         }
-        let headers: [String: String] = ["x-access-Token": loginToken]
+        let headers: [String: String] = [
+            "x-access-Token": loginToken,
+            "Content-Type": "application/json"
+        ]
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
         if let reviewId = id {
-            
+            if let image = vc.backgroundImageView.image {
+                let storageReference = Storage.storage().reference().child("iOS/\(UserDefaults.standard.string(forKey: "NickName")!)/\(vc.categoryId!).png")
+                let imageData = image.jpegData(compressionQuality: 0.1)
+                vc.appearIndicator()
+                storageReference.putData(imageData!, metadata:  metadata) { (metadata, error) in
+                    storageReference.downloadURL { (url, error) in
+                        let parameters: Parameters = [
+                            "categoryType": vc.review!.categoryId!,
+                            "title": vc.reviewTitleTextView.text!,
+                            "content": vc.reviewContentTextView.text!,
+                            "image": "\(url!)",
+                            "grade": "\(vc.starRateValue)",
+                            "review": vc.contentTextView.text!,
+                            "reviewDate": vc.selectDateTextField.text!.replace(target: ". ", withString: "-")
+                        ]
+                        print(reviewId)
+                        print(parameters)
+                        Alamofire.request("\(Server.api)/review/\(reviewId)", method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+                            .validate()
+                            .responseObject(completionHandler: { (response: DataResponse<WriteReviewResponse>) in
+                                switch response.result {
+                                case .success(let writeResponse):
+                                    print(writeResponse)
+                                    vc.reviewTitleBorderImageView.isHidden = true
+                                    vc.reviewTitlePlaceholderLabel.isHidden = true
+                                    vc.starRateBorderImageView.isHidden = true
+                                    vc.reviewContentBorderImageView.isHidden = true
+                                    vc.reviewContentPlaceholderLabel.isHidden = true
+                                    vc.shareReviewButton.isHidden = false
+                                    vc.editReviewButton.isHidden = false
+                                    vc.deleteReviewButton.isHidden = true
+                                    vc.editImageButton.isHidden = true
+                                    vc.selectDateTextField.isUserInteractionEnabled = false
+                                    vc.reviewTitleTextView.isEditable = false
+                                    vc.reviewContentTextView.isEditable = false
+                                    vc.contentTextView.isEditable = false
+                                    vc.contentViewPlaceholderLabel.isHidden = true
+                                    vc.navigationItem.rightBarButtonItem = nil
+                                    vc.disappearIndicator()
+                                case .failure(let error):
+                                    print(error)
+                                }
+                            })
+                    }
+                }
+            }
         } else {
+//            if vc.backgroundImageView.image == UIImage(named: "defaultImageMoari") {
+//                vc.backgroundImageView.image = UIImage(named: "defaultImageMoari")
+//            }
+            if let image = vc.backgroundImageView.image {
+                let storageReference = Storage.storage().reference().child("iOS/\(UserDefaults.standard.string(forKey: "NickName")!)/\(vc.reviewTitleTextView.text!).png")
+                let imageData = image.jpegData(compressionQuality: 0.1)
+                vc.appearIndicator()
+                storageReference.putData(imageData!, metadata:  metadata) { (metadata, error) in
+                    storageReference.downloadURL { (url, error) in
+                        let parameters: Parameters = [
+                            "title": vc.reviewTitleTextView.text!,
+                            "content": vc.reviewContentTextView.text!,
+                            "image": "\(url!)",
+                            "grade": vc.starRateValue,
+                            "review": vc.contentTextView.text!,
+                            "reviewDate": vc.selectDateTextField.text!.replace(target: ". ", withString: "-")
+                        ]
+                        
+                        Alamofire.request("\(Server.api)/category/\(category)/review", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+                        .validate()
+                            .responseObject(completionHandler: { (response: DataResponse<WriteReviewResponse>) in
+                                switch response.result {
+                                case .success( _):
+                                    vc.isAdd = false
+                                    vc.reviewTitleBorderImageView.isHidden = true
+                                    vc.reviewTitlePlaceholderLabel.isHidden = true
+                                    vc.starRateBorderImageView.isHidden = true
+                                    vc.reviewContentBorderImageView.isHidden = true
+                                    vc.reviewContentPlaceholderLabel.isHidden = true
+                                    vc.shareReviewButton.isHidden = false
+                                    vc.editReviewButton.isHidden = false
+                                    vc.deleteReviewButton.isHidden = true
+                                    vc.editImageButton.isHidden = true
+                                    vc.selectDateTextField.isUserInteractionEnabled = false
+                                    vc.reviewTitleTextView.isEditable = false
+                                    vc.reviewContentTextView.isEditable = false
+                                    vc.contentTextView.isEditable = false
+                                    vc.contentViewPlaceholderLabel.isHidden = true
+                                    vc.navigationItem.rightBarButtonItem = nil
+                                    vc.disappearIndicator()
+                                case .failure(let error):
+                                    print(error)
+                                }
+                            })
+                    }
+                }
+            }
             
         }
+    }
+    
+    func deleteReview(fromVC vc: AddReviewVC, reviewId id: Int) {
+        guard let loginToken = UserDefaults.standard.string(forKey: "LoginToken") else {
+            return
+        }
+        let headers: [String: String] = ["x-access-Token": loginToken]
+        
+        Alamofire.request("\(Server.api)/review/\(id)", method: .delete, encoding: JSONEncoding.default, headers: headers)
+        .validate()
+            .responseObject(completionHandler: {(response: DataResponse<WriteReviewResponse>) in
+                switch response.result {
+                case .success( _):
+                    vc.navigationController?.popViewController(animated: true)
+                case .failure(let error):
+                    print(error)
+                }
+            })
     }
 }

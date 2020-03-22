@@ -30,6 +30,12 @@ protocol AddReviewActorDelegate: class {
     
     func didLoadReview(updateVC vc: AddReviewVC, categoryId category: Int, reviewId id: Int)
     
+    func addReview(fromVC vc: AddReviewVC, categoryId category: Int)
+    
+    func editReview(fromVC vc: AddReviewVC, reviewId id: Int)
+    
+    func deleteReview(fromVC vc: AddReviewVC, reviewId id: Int)
+    
     func updateStarRateImageView(updateVC vc: AddReviewVC, value: Double)
 }
 
@@ -40,4 +46,6 @@ protocol AddReviewDataManagerDelegate: class {
     func loadReviewDetail(fromVC vc: AddReviewVC, categoryId category: Int, reviewId id: Int)
     
     func writeReview(fromVC vc: AddReviewVC, categoryId category: Int, reviewId id: Int?)
+    
+    func deleteReview(fromVC vc: AddReviewVC, reviewId id: Int)
 }
