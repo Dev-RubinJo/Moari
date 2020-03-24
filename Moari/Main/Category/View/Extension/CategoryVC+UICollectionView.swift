@@ -21,17 +21,17 @@ extension CategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         if self.actor?.categoryList.count ?? 0 > 0 {
             if self.actor?.categoryList[indexPath.item].categoryId != 0 {
                 cell.categotyCellBackgroundView.alpha = 0.2
-                cell.categoryCellBorderView.alpha = 0.6
+                cell.categoryCellBorderView.alpha = 0.7
                 cell.categoryCellBorderView.layer.borderColor = UIColor.white.cgColor
-                cell.categoryCellBorderView.layer.borderWidth = 0.7
+                cell.categoryCellBorderView.layer.borderWidth = 0.5
                 // TODO: 기본제공 카테고리 영문화 적용하기
                 // if categoryId 로 구분하면 될듯하다
                 cell.categoryTitleLabel.text = self.actor?.categoryList[indexPath.item].categoryName
             } else {
                 cell.categotyCellBackgroundView.alpha = 0.1
-                cell.categoryCellBorderView.alpha = 0.3
+                cell.categoryCellBorderView.alpha = 0.45
                 cell.categoryCellBorderView.layer.borderColor = UIColor.white.cgColor
-                cell.categoryCellBorderView.layer.borderWidth = 0.7
+                cell.categoryCellBorderView.layer.borderWidth = 0.5
                 // TODO: 추가하기 영문화
                 cell.categoryTitleLabel.text = "추가하기"
                 cell.categoryTitleLabel.font = UIFont(name: "AppleSDGothicNeo-UltraLight", size: 16)

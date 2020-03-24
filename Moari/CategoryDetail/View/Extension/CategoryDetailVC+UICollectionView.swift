@@ -37,6 +37,12 @@ extension CategoryDetailVC: UICollectionViewDelegate, UICollectionViewDataSource
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if self.actor?.reviewList.count == indexPath.item + 1 {
+            self.actor?.loadCategoryDetailListMore(fromVC: self, reviewCount: indexPath.item + 1)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch self.isIphone {
         case .iPhone:

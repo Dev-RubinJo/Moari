@@ -59,6 +59,7 @@ extension AddReviewVC {
                 self.reviewTitleBorderImageView.isHidden = true
                 self.reviewTitlePlaceholderLabel.isHidden = true
                 self.starRateBorderImageView.isHidden = true
+                self.starRateView.isUserInteractionEnabled = false
                 self.reviewContentBorderImageView.isHidden = true
                 self.reviewContentPlaceholderLabel.isHidden = true
                 self.shareReviewButton.isHidden = false
@@ -86,6 +87,7 @@ extension AddReviewVC {
             }
         } else {
             if let categoryId = self.categoryId {
+                self.starRateView.isUserInteractionEnabled = false
                 self.actor?.addReview(fromVC: self, categoryId: categoryId)
             }
         }
@@ -206,6 +208,7 @@ extension AddReviewVC {
         self.reviewTitleBorderImageView.isHidden = false
         self.reviewTitlePlaceholderLabel.isHidden = true
         self.starRateBorderImageView.isHidden = false
+        self.starRateView.isUserInteractionEnabled = true
         self.reviewContentBorderImageView.isHidden = false
         self.reviewContentPlaceholderLabel.isHidden = true
         self.shareReviewButton.isHidden = true

@@ -26,10 +26,10 @@ extension ReviewDetail: Mappable {
         reviewId <- map["idboard"]
         categoryId <- map["categoryType"]
         title <- map["title"]
-        simpleContent <- map["content"]
+        simpleContent <- map["review"]
         imageUrl <- map["image"]
         starRate <- map["grade"]
-        reviewContent <- map["review"]
+        reviewContent <- map["content"]
         reviewDate <- map["reviewDate"]
     }
 }

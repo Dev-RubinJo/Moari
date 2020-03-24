@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import SafariServices
 
 class DrawerVC: UIViewController {
     
@@ -111,6 +112,10 @@ extension DrawerVC {
         self.themeModeView.addGestureRecognizer(didTapThemeModeView)
         
         self.securitySettingSwitch.addTarget(self, action: #selector(self.setAppLock(_:)), for: .valueChanged)
+        
+        let instagramLabelListener: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.pressMoariInstagramLabel(_:)))
+        self.instagramLabel.isUserInteractionEnabled = true
+        self.instagramLabel.addGestureRecognizer(instagramLabelListener)
     }
     
     @objc func pressSearchView(_ sender: UIView) {
@@ -147,5 +152,13 @@ extension DrawerVC {
             UserDefaults.standard.set(false, forKey: "AppLockConfig")
             UserDefaults.standard.set(false, forKey: "NeedAppPassword")
         }
+    }
+    
+    @objc func pressMoariInstagramLabel(_ sender: UILabel) {
+        let urlString = "https://www.instagram.com/moari_review/?hl=ko"
+        guard let moariUrl = URL(string: urlString) else { return }
+        let moariWebVC = SFSafariViewController(url: moariUrl)
+        self.present(moariWebVC, animated: true, completion: nil)
+        self.drawerController?.closeSide()
     }
 }

@@ -34,6 +34,7 @@ extension SignUpVC: SignUpVCRouterDelegate {
     
     func presentUsingPolicyView() {
         self.usingPolicyCheck = true
+        self.usingTermCheckButtonImageView.image = UIImage(named: "checkOn")
         guard let url = URL(string: "https://webtoondaram.s3.ap-northeast-2.amazonaws.com/agree.html") else { return }
         let usingPolicyWebView = SFSafariViewController(url: url)
         self.present(usingPolicyWebView, animated: true, completion: nil)
@@ -42,6 +43,7 @@ extension SignUpVC: SignUpVCRouterDelegate {
     
     func presentPersonPolicyView() {
         self.personalPolicyCheck = true
+        self.personalTermCheckButtonImageView.image = UIImage(named: "checkOn")
         guard let url = URL(string: "https://webtoondaram.s3.ap-northeast-2.amazonaws.com/infoagree.html") else { return }
         let usingPolicyWebView = SFSafariViewController(url: url)
         self.present(usingPolicyWebView, animated: true, completion: nil)

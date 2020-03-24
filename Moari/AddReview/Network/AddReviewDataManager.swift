@@ -82,10 +82,10 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                         let parameters: Parameters = [
                             "categoryType": vc.review!.categoryId!,
                             "title": vc.reviewTitleTextView.text!,
-                            "content": vc.reviewContentTextView.text!,
+                            "content": vc.contentTextView.text!,
                             "image": "\(url!)",
-                            "grade": "\(vc.starRateValue)",
-                            "review": vc.contentTextView.text!,
+                            "grade": vc.starRateValue,
+                            "review": vc.reviewContentTextView.text!,
                             "reviewDate": vc.selectDateTextField.text!.replace(target: ". ", withString: "-")
                         ]
                         print(reviewId)
@@ -129,12 +129,13 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                 vc.appearIndicator()
                 storageReference.putData(imageData!, metadata:  metadata) { (metadata, error) in
                     storageReference.downloadURL { (url, error) in
+                        print(error)
                         let parameters: Parameters = [
                             "title": vc.reviewTitleTextView.text!,
-                            "content": vc.reviewContentTextView.text!,
+                            "content": vc.contentTextView.text!,
                             "image": "\(url!)",
                             "grade": vc.starRateValue,
-                            "review": vc.contentTextView.text!,
+                            "review": vc.reviewContentTextView.text!,
                             "reviewDate": vc.selectDateTextField.text!.replace(target: ". ", withString: "-")
                         ]
                         

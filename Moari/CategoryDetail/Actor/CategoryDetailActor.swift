@@ -42,6 +42,10 @@ class CategoryDetailActor: CategoryDetailActorDelegate {
         self.dataManager?.getReviewList(fromVC: vc)
     }
     
+    func loadCategoryDetailListMore(fromVC vc: CategoryDetailVC, reviewCount count: Int) {
+        self.dataManager?.reloadReviewList(fromVC: vc, reviewCount: count)
+    }
+    
     func presentDeleteReviewPopUp(fromVC vc: CategoryDetailVC, reviewId id: Int) {
         let deleteReviewPopUpStoryboard = UIStoryboard(name: "DeleteReview", bundle: nil)
         guard let deleteReviewPopUpView = deleteReviewPopUpStoryboard.instantiateViewController(withIdentifier: "DeleteReview") as? DeleteReview else { return }

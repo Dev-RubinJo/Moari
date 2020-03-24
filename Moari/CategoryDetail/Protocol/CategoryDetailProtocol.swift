@@ -36,6 +36,8 @@ protocol CategoryDetailActorDelegate: class {
     
     func didLoadCategoryDetailList(fromVC vc: CategoryDetailVC)
     
+    func loadCategoryDetailListMore(fromVC vc: CategoryDetailVC, reviewCount count: Int)
+    
     func updateStarRateImageView(updateCell cell: CategoryDetailCell, value: Double)
     
     func didTapReviewCell(reviewCategory category: Int, reviewId id: Int)
