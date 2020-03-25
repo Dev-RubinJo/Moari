@@ -20,8 +20,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cZQ-nx-mRJ">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="oy6-ba-ZY9">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -30,11 +30,11 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.5738261938" green="0.43561869860000002" blue="0.47164183859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="cZQ-nx-mRJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AyX-o2-Y69"/>
                 <constraint firstAttribute="bottom" secondItem="cZQ-nx-mRJ" secondAttribute="bottom" id="OTt-j7-XvS"/>
-                <constraint firstItem="cZQ-nx-mRJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SSl-sg-SlJ"/>
+                <constraint firstItem="cZQ-nx-mRJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SSl-sg-SlJ"/>
                 <constraint firstAttribute="trailing" secondItem="cZQ-nx-mRJ" secondAttribute="trailing" id="kVh-22-KGl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

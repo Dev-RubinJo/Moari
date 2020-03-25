@@ -20,6 +20,7 @@ extension AddReviewVC: UITextViewDelegate {
             self.reviewContentTextView.centerVertically()
             self.updateScrollView(heightValue: self.baseHeight + self.keyboardHeight)
         case self.contentTextView:
+            self.contentViewPlaceholderLabel.isHidden = true
             self.resizeContentTextView()
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + self.keyboardHeight)
             var point = self.contentTextView.frame.origin

@@ -66,7 +66,11 @@ extension CurationVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let screenSize = UIScreen.main.bounds.size
+//        var screenSize = UIScreen.main.bounds.size
+//        screenSize.height = screenSize.height - (self.navigationController?.navigationBar.bounds.height)!
+        var screenSize = CGSize()
+        screenSize.height = self.curationCollectionView.bounds.height
+        screenSize.width = self.curationCollectionView.bounds.width
         
         return screenSize
     }
