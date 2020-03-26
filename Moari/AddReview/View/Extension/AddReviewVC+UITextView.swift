@@ -96,16 +96,7 @@ extension AddReviewVC: UITextViewDelegate {
         
         self.scrollView.scrollRectToVisible(cursorRect, animated: true)
     }
-    
-//    func setTextViewLineSpacing(_ textView: UITextView, fontSize: CGFloat) {
-//        let attrString = NSMutableAttributedString(string: textView.text!)
-//        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.lineSpacing = 8
-//        attrString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: fontSize)!, range: NSMakeRange(0, attrString.length))
-//        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
-//        textView.attributedText = attrString
-//    }
-    
+
     func resizeContentTextView() {
         if self.contentTextView.text != " " && self.contentTextView.text != "" {
             

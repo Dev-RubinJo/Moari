@@ -52,6 +52,7 @@ class CategoryDataManager: CategoryDataManagerDelegate {
                             CategoryList.shared.appendCategoryToCategoryList(category: CategoryForReview(name: category.categoryName, id: category.categoryId))
                         }
                         vc.reviewCount = categoryResponse.userInfo.reviewCount
+                        vc.setCategoryVCUI()
                         vc.categoryCollectionView.reloadData()
                     default:
                         break

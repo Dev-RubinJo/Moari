@@ -11,6 +11,20 @@ import UIKit
 // 참고 = https://stackoverflow.com/questions/24126678/close-ios-keyboard-by-touching-anywhere-using-swift
 extension UIViewController {
     
+    
+    // https://stackoverflow.com/questions/7312059/programmatically-get-height-of-navigation-bar
+    var topbarHeight: CGFloat {
+        if #available(iOS 13.0, *) {
+            return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
+                (self.navigationController?.navigationBar.frame.height ?? 0.0)
+        } else {
+            // Fallback on earlier versions
+            let height = UIApplication.shared.statusBarFrame.size.height +
+            (self.navigationController?.navigationBar.frame.height ?? 0.0)
+            return height
+        }
+    }
+    
     /// 다크모드인지 아닌지 확인할 수 있도록 하는 프로퍼티
     var isDarkMode: Bool {
         get {

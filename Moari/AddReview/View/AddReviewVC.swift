@@ -55,6 +55,9 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     var actor: AddReviewActorDelegate?
     
     let picker: UIImagePickerController = UIImagePickerController()
+    /// 선택한 이미지를 저장하는 변수
+    var image: UIImage? = UIImage(named: "defaultImage")
+    var imageUrl: String = ""
     
     var appendReviewButton = UIBarButtonItem()
     var closeReviewButton = UIBarButtonItem()

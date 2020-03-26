@@ -20,14 +20,23 @@ extension AddReviewVC {
         
         if let category = self.categoryId, let review = self.reviewId {
             self.actor?.didLoadReview(updateVC: self, categoryId: category, reviewId: review)
-            
+        }
+        
+        if let categoryId = self.categoryId {
+            let categoryList = CategoryList.shared.categoryList
+            for category in categoryList {
+                if categoryId == category.categoryId {
+                    self.selectCategoryButton.setTitle(category.categoryName, for: .normal)
+                    break
+                }
+            }
         }
         
         self.shareReviewButton.setImage(UIImage(named: "shareIc"), for: .normal)
         self.editReviewButton.setImage(UIImage(named: "editReview"), for: .normal)
         self.deleteReviewButton.setImage(UIImage(named: "deleteReview"), for: .normal)
         
-        self.backgroundImageView.image = UIImage(named: "defaultImage")
+        self.backgroundImageView.image = self.image
         
         
         self.datePicker = UIDatePicker()
@@ -224,6 +233,8 @@ extension AddReviewVC {
         self.reviewTitleTextView.isEditable = true
         self.reviewContentTextView.isEditable = true
         self.contentTextView.isEditable = true
+        
+        self.selectCategoryButton.isUserInteractionEnabled = true
     }
     
     @objc func pressShareReviewButton(_ sender: UIButton) {
@@ -291,5 +302,6 @@ extension AddReviewVC: UIImagePickerControllerDelegate, UINavigationControllerDe
     
     func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation) {
         self.backgroundImageView.image = cropped
+        self.image = cropped
     }
 }

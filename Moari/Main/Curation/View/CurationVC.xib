@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,8 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cZQ-nx-mRJ">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cZQ-nx-mRJ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="oy6-ba-ZY9">
                         <size key="itemSize" width="50" height="50"/>
@@ -34,7 +34,7 @@
             <constraints>
                 <constraint firstItem="cZQ-nx-mRJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AyX-o2-Y69"/>
                 <constraint firstAttribute="bottom" secondItem="cZQ-nx-mRJ" secondAttribute="bottom" id="OTt-j7-XvS"/>
-                <constraint firstItem="cZQ-nx-mRJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SSl-sg-SlJ"/>
+                <constraint firstItem="cZQ-nx-mRJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SSl-sg-SlJ"/>
                 <constraint firstAttribute="trailing" secondItem="cZQ-nx-mRJ" secondAttribute="trailing" id="kVh-22-KGl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -6,6 +6,8 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
+import UIKit
+
 protocol CurationVCProtocol: BaseVCProtocol {
     
     var actor: CurationActorDelegate? { get set }
@@ -31,6 +33,10 @@ protocol CurationActorDelegate: class {
     func removeAllCurationList()
     
      func updateStarRateImageView(updateCell cell: CurationCell, value: Double)
+    
+    func setTextViewLineSpacing(_ textView: UITextView, lineSpace: CGFloat, fontSize: CGFloat, color: UIColor, textAlignment: NSTextAlignment)
+    
+     func setLabelLineSpacing(_ label: UILabel, lineSpace: CGFloat, fontSize: CGFloat, color: UIColor, textAlignment: NSTextAlignment)
 }
 
 protocol CurationDataManagerDelegate: class {

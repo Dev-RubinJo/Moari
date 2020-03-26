@@ -50,13 +50,18 @@ extension CurationVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
                 return UICollectionViewCell()
             }
             //        cell.backgroundColorView.backgroundColor = 지정할 컬러
-            self.curationCollectionView.backgroundColor = cell.backgroundColorView.backgroundColor
+            
+            cell.curationCellTopConstraint.constant = self.topbarHeight
+            
+//            self.curationCollectionView.backgroundColor = cell.backgroundColorView.backgroundColor
             guard let imageUrlString = self.actor?.curationList[indexPath.item].imageUrl else { return UICollectionViewCell() }
             let imageUrl = URL(string: imageUrlString)
             cell.backgroundImageView.kf.setImage(with: imageUrl)
             cell.reviewTitleLabel.text = self.actor?.curationList[indexPath.item].title
             cell.reviewSimpleContentLabel.text = self.actor?.curationList[indexPath.item].simpleContent
+            self.actor?.setLabelLineSpacing(cell.reviewSimpleContentLabel, lineSpace: 5.0, fontSize: 20.0, color: .white, textAlignment: .center)
             cell.reviewContentLabel.text = self.actor?.curationList[indexPath.item].reviewContent
+            self.actor?.setTextViewLineSpacing(cell.reviewContentLabel, lineSpace: 6, fontSize: 17.0, color: .white, textAlignment: .natural)
             self.actor?.updateStarRateImageView(updateCell: cell, value: self.actor?.curationList[indexPath.item].starRate ?? 0)
             
             return cell

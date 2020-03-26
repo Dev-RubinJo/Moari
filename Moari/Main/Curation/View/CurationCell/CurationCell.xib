@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,7 +37,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="370" height="70"/>
                                                 <string key="text">제목 25자 제한 어때요!
 이상한가</string>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="26"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="29"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -52,28 +52,27 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyF-Oi-oJ8">
-                                        <rect key="frame" x="145.66666666666666" y="172" width="122.99999999999997" height="33"/>
+                                        <rect key="frame" x="127" y="172" width="160" height="43.333333333333343"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starRate7" translatesAutoresizingMaskIntoConstraints="NO" id="EZz-Sp-FN0">
-                                                <rect key="frame" x="0.0" y="0.0" width="123" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="43.333333333333336"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="EZz-Sp-FN0" firstAttribute="leading" secondItem="OyF-Oi-oJ8" secondAttribute="leading" id="9R9-rU-ZcB"/>
                                             <constraint firstAttribute="bottom" secondItem="EZz-Sp-FN0" secondAttribute="bottom" id="EZn-nV-6TJ"/>
-                                            <constraint firstAttribute="height" constant="33" id="Fsn-lg-34U"/>
+                                            <constraint firstAttribute="width" secondItem="OyF-Oi-oJ8" secondAttribute="height" multiplier="122:33" id="Gzs-8C-Jwc"/>
                                             <constraint firstAttribute="trailing" secondItem="EZz-Sp-FN0" secondAttribute="trailing" id="O7o-Xs-glf"/>
-                                            <constraint firstAttribute="width" constant="123" id="pU6-tz-rr4"/>
                                             <constraint firstItem="EZz-Sp-FN0" firstAttribute="top" secondItem="OyF-Oi-oJ8" secondAttribute="top" id="vpY-ud-zYJ"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1M0-DZ-KMB">
-                                        <rect key="frame" x="22" y="215" width="370" height="179"/>
+                                        <rect key="frame" x="22" y="225.33333333333337" width="370" height="168.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하늘에는 하나에 지나가는 이름을 시인의 나의 마디씩 봅니다. 이국 벌레는 그리워 풀이 이름자 봅니다. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2b-Bk-IYW">
-                                                <rect key="frame" x="0.0" y="0.0" width="370" height="179"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="370" height="168.66666666666666"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -94,10 +93,12 @@
                                     <constraint firstItem="fdp-jJ-64i" firstAttribute="leading" secondItem="Lzt-W8-aya" secondAttribute="leading" id="3Qd-di-CBl"/>
                                     <constraint firstAttribute="bottom" secondItem="fdp-jJ-64i" secondAttribute="bottom" id="4Sc-Yc-1fE"/>
                                     <constraint firstAttribute="trailing" secondItem="de6-3c-AzW" secondAttribute="trailing" id="4TC-Uu-CIG"/>
+                                    <constraint firstAttribute="trailing" secondItem="OyF-Oi-oJ8" secondAttribute="trailing" constant="127" id="APN-KL-rhM"/>
                                     <constraint firstItem="Uml-Fy-Xup" firstAttribute="leading" secondItem="Lzt-W8-aya" secondAttribute="leading" constant="22" id="Gdn-ws-M2g"/>
                                     <constraint firstItem="de6-3c-AzW" firstAttribute="top" secondItem="Lzt-W8-aya" secondAttribute="top" id="HpH-tz-boy"/>
                                     <constraint firstItem="OyF-Oi-oJ8" firstAttribute="top" secondItem="Uml-Fy-Xup" secondAttribute="bottom" constant="17" id="SAx-HU-Ztt"/>
                                     <constraint firstItem="OyF-Oi-oJ8" firstAttribute="centerX" secondItem="Lzt-W8-aya" secondAttribute="centerX" id="SGt-bJ-R0f"/>
+                                    <constraint firstItem="OyF-Oi-oJ8" firstAttribute="leading" secondItem="Lzt-W8-aya" secondAttribute="leading" constant="127" id="Zca-tj-6Mq"/>
                                     <constraint firstItem="1M0-DZ-KMB" firstAttribute="top" secondItem="OyF-Oi-oJ8" secondAttribute="bottom" constant="10" id="ckW-yV-hVq"/>
                                     <constraint firstAttribute="trailing" secondItem="fdp-jJ-64i" secondAttribute="trailing" id="dkn-y0-LS5"/>
                                     <constraint firstAttribute="bottom" secondItem="de6-3c-AzW" secondAttribute="bottom" id="duV-b2-1ks"/>

@@ -20,8 +20,13 @@ extension CategoryDetailVC: UICollectionViewDelegate, UICollectionViewDataSource
         }
         
         if let review = self.actor?.reviewList[indexPath.item] {
-            let url = URL(string: "\(review.imageUrl ?? "")")
-            cell.backgroundImageView.kf.setImage(with: url)
+            if review.imageUrl != "" {
+                let url = URL(string: "\(review.imageUrl ?? "")")
+                cell.backgroundImageView.kf.setImage(with: url)
+            } else {
+                cell.backgroundImageView.image = UIImage(named: "defaultImage")
+            }
+            
             cell.reviewTitleLabel.text = review.title
             self.actor?.updateStarRateImageView(updateCell: cell, value: review.starRate)
         }

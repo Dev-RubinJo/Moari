@@ -27,10 +27,10 @@ extension Curation: Mappable {
         categoryId <- map["categoryType"]
         userNo <- map["userIdx"]
         title <- map["title"]
-        simpleContent <- map["content"]
+        simpleContent <- map["review"]
         imageUrl <- map["image"]
         starRate <- map["grade"]
-        reviewContent <- map["review"]
+        reviewContent <- map["content"]
     }
 }
 
