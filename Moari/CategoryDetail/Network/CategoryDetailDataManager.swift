@@ -11,8 +11,6 @@ import AlamofireObjectMapper
 
 class CategoryDetailDataManager: CategoryDetailDataManagerDelegate {
     
-    static let shared = CategoryDetailDataManager()
-    
     weak var actor: CategoryDetailActorDelegate?
     
     func getReviewList(fromVC vc: CategoryDetailVC) {

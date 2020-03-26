@@ -6,6 +6,8 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 
+import UIKit
+
 protocol AddReviewVCProtocol: BaseVCProtocol {
     
     var actor: AddReviewActorDelegate? { get set }
@@ -37,6 +39,8 @@ protocol AddReviewActorDelegate: class {
     func deleteReview(fromVC vc: AddReviewVC, reviewId id: Int)
     
     func updateStarRateImageView(updateVC vc: AddReviewVC, value: Double)
+    
+    func setTextViewLineSpacing(_ textView: UITextView, lineSpace: CGFloat, fontSize: CGFloat, color: UIColor, textAlignment: NSTextAlignment)
 }
 
 protocol AddReviewDataManagerDelegate: class {

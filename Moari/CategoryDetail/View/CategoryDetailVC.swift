@@ -13,7 +13,7 @@ class CategoryDetailVC: BaseVC, CategoryDetailVCProtocol {
     /// 선택한 카테고리에 대한 리뷰 리스트를 띄워주는 콜렉션 뷰
     @IBOutlet weak var categoryDetailCollectionView: UICollectionView!
     
-    weak var actor: CategoryDetailActorDelegate?
+    var actor: CategoryDetailActorDelegate?
     var category: Category?
 
     override func viewDidLoad() {

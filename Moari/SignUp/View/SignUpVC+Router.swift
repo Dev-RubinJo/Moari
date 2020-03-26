@@ -21,8 +21,8 @@ extension SignUpVC: SignUpVCRouterDelegate {
     static var makeSignUpVC: SignUpVC {
         get {
             let vc = SignUpVC()
-            let actor = SignUpActor.shared
-            let dataManager = SignUpDataManager.shared
+            let actor = SignUpActor()
+            let dataManager = SignUpDataManager()
             
             vc.actor = actor
             actor.view = vc

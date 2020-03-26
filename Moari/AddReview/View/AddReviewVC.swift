@@ -52,13 +52,7 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     @IBOutlet weak var contentTextViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentViewPlaceholderLabel: UILabel!
     
-    weak var actor: AddReviewActorDelegate?
-    
-//    unowned var picker: UIImagePickerController {
-//        get {
-//            return UIImagePickerController()
-//        }
-//    }
+    var actor: AddReviewActorDelegate?
     
     let picker: UIImagePickerController = UIImagePickerController()
     

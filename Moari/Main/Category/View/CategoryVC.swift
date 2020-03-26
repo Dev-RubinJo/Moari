@@ -16,10 +16,11 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
     @IBOutlet weak var categoryTitleLabel: UILabel!
     @IBOutlet weak var categoryVCTitleLabelTopConstraint: NSLayoutConstraint!
 
-    weak var actor: (CategoryActorDelegate & CategoryPopUpActorDelegate)?
+    var actor: (CategoryActorDelegate & CategoryPopUpActorDelegate)?
     
     var logoButton: UIButton = UIButton()
     var category: Category = Category()
+    var reviewCount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()

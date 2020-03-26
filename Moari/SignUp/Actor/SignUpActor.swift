@@ -10,11 +10,8 @@ import Foundation
 
 class SignUpActor: SignUpActorDelegate {
     
-    static let shared = SignUpActor()
-    private init() {}
-    
     weak var view: (SignUpVCProtocol & SignUpVCRouterDelegate)?
-    weak var dataManager: SignUpDataManagerDelegate?
+    var dataManager: SignUpDataManagerDelegate?
     
     func didTapUsingTermLabel() {
         self.view?.presentUsingPolicyView()

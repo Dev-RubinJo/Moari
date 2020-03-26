@@ -80,7 +80,13 @@ extension AddReviewVC {
     }
     
     @objc func pressAppendReviewButton(_ sender: UIBarButtonItem) {
-        // TODO: 리뷰 작성완료 기능 넣기
+        if self.reviewTitleTextView.text == "" ||
+        self.selectCategoryButton.titleLabel?.text == "카테고리 선택" ||
+            self.selectDateTextField.text == "날짜" {
+            self.presentAlert(title: "내용 입력", message: "필수 내용(제목, 카테고리, 날짜)를 입력해주세요!")
+            return
+        }
+        
         if self.isEdit {
             if let id = self.review?.reviewId {
                 self.actor?.editReview(fromVC: self, reviewId: id)

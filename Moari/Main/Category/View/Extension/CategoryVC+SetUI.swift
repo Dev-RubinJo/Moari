@@ -26,16 +26,16 @@ extension CategoryVC {
         
         var categoryTitleLabelAttributedString = NSMutableAttributedString()
         guard let userName = UserDefaults.standard.string(forKey: "NickName") else { return }
-        let reviewCount = UserDefaults.standard.integer(forKey: "ReviewCount")
+        self.reviewCount = UserDefaults.standard.integer(forKey: "ReviewCount")
         if self.deviceLocale.isEqual("ko") { // 한국어일때
             // \(userName)님의 리뷰\n20개가 모였습니다.
-            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "\(userName)님의 리뷰\n\(reviewCount)개가 모였습니다.", attributes: [
+            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "\(userName)님의 리뷰\n\(self.reviewCount)개가 모였습니다.", attributes: [
               .font: UIFont(name: "AppleSDGothicNeo-Thin", size: 28.0)!,
               .kern: 0.0
             ])
             categoryTitleLabelAttributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 28.0)!, range: NSRange(location: 0, length: userName.count))
         } else if self.deviceLocale.isEqual("en") { // 영어일때
-            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "\(userName)님의 리뷰\n\(reviewCount)개가 모였습니다.", attributes: [
+            categoryTitleLabelAttributedString = NSMutableAttributedString(string: "\(userName)님의 리뷰\n\(self.reviewCount)개가 모였습니다.", attributes: [
               .font: UIFont(name: "AppleSDGothicNeo-Thin", size: 28.0)!,
               .kern: 0.0
             ])

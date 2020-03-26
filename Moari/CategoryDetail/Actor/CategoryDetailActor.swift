@@ -10,10 +10,8 @@ import UIKit
 
 class CategoryDetailActor: CategoryDetailActorDelegate {
     
-    static let shared = CategoryDetailActor()
-    
     weak var view: CategoryDetailVCRouterDelegate?
-    weak var dataManager: CategoryDetailDataManagerDelegate?
+    var dataManager: CategoryDetailDataManagerDelegate?
     
     var _reviewList: [Review] = []
     

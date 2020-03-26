@@ -13,9 +13,6 @@ import FirebaseStorage
 
 class AddReviewDataManager: AddReviewDataManagerDelegate {
     
-    static let shared = AddReviewDataManager()
-    private init() {}
-    
     weak var actor: AddReviewActorDelegate?
     
     func loadReviewDetail(fromVC vc: AddReviewVC, categoryId category: Int, reviewId id: Int) {
@@ -32,12 +29,15 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                     case 200:
                         let review = reviewResponse.result[0]
                         vc.review = review
+                        vc.starRateValue = review.starRate
                         let imageUrl = URL(string: review.imageUrl)
                         vc.backgroundImageView.kf.setImage(with: imageUrl!)
                         vc.reviewTitleTextView.text = review.title
                         vc.reviewTitleTextView.centerVertically()
                         self.actor?.updateStarRateImageView(updateVC: vc, value: review.starRate)
                         vc.reviewContentTextView.text = review.simpleContent
+                        
+                        self.actor?.setTextViewLineSpacing(vc.reviewContentTextView, lineSpace: 5, fontSize: 19.0, color: .white, textAlignment: .center)
                         vc.reviewContentTextView.centerVertically()
                         
                         if let categoryList = self.actor?.categoryList {
@@ -70,6 +70,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
             "x-access-Token": loginToken,
             "Content-Type": "application/json"
         ]
+        
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         if let reviewId = id {
@@ -129,7 +130,6 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                 vc.appearIndicator()
                 storageReference.putData(imageData!, metadata:  metadata) { (metadata, error) in
                     storageReference.downloadURL { (url, error) in
-                        print(error)
                         let parameters: Parameters = [
                             "title": vc.reviewTitleTextView.text!,
                             "content": vc.contentTextView.text!,

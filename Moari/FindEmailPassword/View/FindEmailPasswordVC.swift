@@ -19,7 +19,7 @@ class FindEmailPasswordVC: BaseVC, FindEmailPasswordVCProtocol {
     /// 임시 비밀번호가 전송되었는지 아닌지 확인할 수 있도록 해주는 Label
     @IBOutlet weak var temporaryPasswordAlertLabel: UILabel!
     
-    weak var actor: FindEmailPasswordActorDelegate?
+    var actor: FindEmailPasswordActorDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

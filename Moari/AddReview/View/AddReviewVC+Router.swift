@@ -11,8 +11,8 @@ extension AddReviewVC: AddReviewVCRouterDelegate {
     static var makeAddReviewVC: AddReviewVC {
         get {
             let vc = AddReviewVC()
-            let actor = AddReviewActor.shared
-            let dataManager = AddReviewDataManager.shared
+            let actor = AddReviewActor()
+            let dataManager = AddReviewDataManager()
             
             vc.actor = actor
             actor.view = vc

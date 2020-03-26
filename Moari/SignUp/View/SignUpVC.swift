@@ -27,7 +27,7 @@ class SignUpVC: BaseVC, SignUpVCProtocol {
     
     @IBOutlet weak var signUpButton: UIButton!
     
-    weak var actor: (SignUpActorDelegate & SignUpAlertActorDelegate)?
+    var actor: (SignUpActorDelegate & SignUpAlertActorDelegate)?
     
     var email: String {
         get {

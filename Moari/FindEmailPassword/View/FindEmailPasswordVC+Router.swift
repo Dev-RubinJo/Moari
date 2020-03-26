@@ -11,8 +11,8 @@ extension FindEmailPasswordVC: FindEmailPasswordVCRouterDelegate {
     static var makeFindEmailPasswordVC: FindEmailPasswordVC {
         get {
             let vc = FindEmailPasswordVC()
-            let actor = FindEmailPasswordActor.shared
-            let dataManager = FindEmailPasswordDataManager.shared
+            let actor = FindEmailPasswordActor()
+            let dataManager = FindEmailPasswordDataManager()
             
             vc.actor = actor
             actor.view = vc

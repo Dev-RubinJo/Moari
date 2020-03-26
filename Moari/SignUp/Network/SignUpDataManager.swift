@@ -12,9 +12,6 @@ import AlamofireObjectMapper
 
 class SignUpDataManager: SignUpDataManagerDelegate {
     
-    static let shared = SignUpDataManager()
-    private init() {}
-    
     weak var actor: (SignUpActorDelegate & SignUpAlertActorDelegate & SignUpPopUpActorDelegate)?
     
     func signUp(fromVC vc: SignUpVC, email: String, password: String, nickName: String) {

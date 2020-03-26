@@ -11,9 +11,6 @@ import AlamofireObjectMapper
 
 class FindEmailPasswordDataManager: FindEmailPasswordDataManagerDelegate {
     
-    static let shared = FindEmailPasswordDataManager()
-    private init() {}
-    
     weak var actor: (FindEmailPasswordActorDelegate & FindEmailPasswordAlertActorDelegate)?
     
     func checkEmail(fromVC vc: FindEmailPasswordVC, email: String) {

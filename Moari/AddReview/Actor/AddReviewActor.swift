@@ -10,10 +10,8 @@ import UIKit
 
 class AddReviewActor: AddReviewActorDelegate {
     
-    static let shared = AddReviewActor()
-    
     weak var view: AddReviewVCRouterDelegate?
-    weak var dataManager: AddReviewDataManagerDelegate?
+    var dataManager: AddReviewDataManagerDelegate?
     
     var categoryList: [CategoryForReview] {
         get {
@@ -70,6 +68,17 @@ class AddReviewActor: AddReviewActorDelegate {
         default:
             vc.starRateImageView.image = UIImage(named: "starRate10")
         }
+    }
+    
+    func setTextViewLineSpacing(_ textView: UITextView, lineSpace: CGFloat, fontSize: CGFloat, color: UIColor, textAlignment: NSTextAlignment) {
+        let attrString = NSMutableAttributedString(string: textView.text!)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpace
+        attrString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: fontSize)!, range: NSMakeRange(0, attrString.length))
+        attrString.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        attrString.addAttribute(.foregroundColor, value: color, range: NSMakeRange(0, attrString.length))
+        textView.attributedText = attrString
+        textView.textAlignment = textAlignment
     }
 }
 

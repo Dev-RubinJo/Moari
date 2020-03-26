@@ -10,11 +10,8 @@ import UIKit
 
 class FindEmailPasswordActor: FindEmailPasswordActorDelegate {
     
-    static let shared = FindEmailPasswordActor()
-    private init() {}
-    
     weak var view: FindEmailPasswordVCRouterDelegate?
-    weak var dataManager: FindEmailPasswordDataManagerDelegate?
+    var dataManager: FindEmailPasswordDataManagerDelegate?
     
     func didTapCheckForRegisteredEmailButton(fromVC vc: FindEmailPasswordVC) {
         guard let email = vc.emailTextField.text else { return }

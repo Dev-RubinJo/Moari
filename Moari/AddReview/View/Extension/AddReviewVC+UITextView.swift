@@ -47,6 +47,7 @@ extension AddReviewVC: UITextViewDelegate {
             self.reviewTitleTextView.centerVertically()
             
         case self.reviewContentTextView:
+            self.actor?.setTextViewLineSpacing(self.reviewContentTextView, lineSpace: 5, fontSize: 19.0, color: .white, textAlignment: .center)
             self.reviewContentPlaceholderLabel.isHidden = true
             self.reviewContentTextView.centerVertically()
             
@@ -96,8 +97,20 @@ extension AddReviewVC: UITextViewDelegate {
         self.scrollView.scrollRectToVisible(cursorRect, animated: true)
     }
     
+//    func setTextViewLineSpacing(_ textView: UITextView, fontSize: CGFloat) {
+//        let attrString = NSMutableAttributedString(string: textView.text!)
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.lineSpacing = 8
+//        attrString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: fontSize)!, range: NSMakeRange(0, attrString.length))
+//        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+//        textView.attributedText = attrString
+//    }
+    
     func resizeContentTextView() {
         if self.contentTextView.text != " " && self.contentTextView.text != "" {
+            
+            self.actor?.setTextViewLineSpacing(self.contentTextView, lineSpace: 6, fontSize: 17.0, color: .systemWBColor, textAlignment: .natural)
+            
             let fixedWidth = self.contentTextView.frame.size.width
             let newSize = self.contentTextView.sizeThatFits(CGSize(width: fixedWidth, height: .infinity))
             self.contentTextView.constraints.forEach { (constraint) in // ---- 3

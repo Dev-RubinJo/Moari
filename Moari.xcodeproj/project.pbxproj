@@ -565,7 +565,6 @@
 				430B4E952409416D004046F9 /* Drawer */,
 				435EAC3C23FA9E8F00FF1AD8 /* Category */,
 				435EAC3D23FA9E9A00FF1AD8 /* Curation */,
-				4383794D240E988D00317F3D /* Entity */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -578,6 +577,7 @@
 				435EAC4A23FAA06100FF1AD8 /* Actor */,
 				435EAC4923FAA05F00FF1AD8 /* Network */,
 				435EAC4823FAA05D00FF1AD8 /* Protocol */,
+				4383794D240E988D00317F3D /* Entity */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1919,7 +1919,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				EXCLUDED_SOURCE_FILE_NAMES = "";
@@ -1945,7 +1945,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = Moari/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

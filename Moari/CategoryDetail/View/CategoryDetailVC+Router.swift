@@ -13,8 +13,8 @@ extension CategoryDetailVC: CategoryDetailVCRouterDelegate {
     static var makeCategoryDetailVC: CategoryDetailVC {
         get {
             let vc = CategoryDetailVC()
-            let actor = CategoryDetailActor.shared
-            let dataManager = CategoryDetailDataManager.shared
+            let actor = CategoryDetailActor()
+            let dataManager = CategoryDetailDataManager()
             
             vc.actor = actor
             actor.view = vc

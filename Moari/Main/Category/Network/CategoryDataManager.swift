@@ -11,9 +11,6 @@ import AlamofireObjectMapper
 
 class CategoryDataManager: CategoryDataManagerDelegate {
     
-    static let shared = CategoryDataManager()
-    private init() {}
-    
     weak var actor: (CategoryActorDelegate & CategoryPopUpActorDelegate)?
     
     func loadCategoryList(toVC vc: CategoryVC) {
@@ -47,16 +44,14 @@ class CategoryDataManager: CategoryDataManagerDelegate {
                                 }
                             }
                         }
-//                        print("reload")
-                        
-                        let addReviewRootVC = AddReviewVC.makeAddReviewVC
-                        addReviewRootVC.actor?.removeAllCategory()
+                        CategoryList.shared.removeAllCategoryInCategoryList()
                         for category in self.actor?.categoryList ?? [] {
                             if category.categoryId == 0 {
                                 break
                             }
-                            addReviewRootVC.actor?.setCategoryList(category: CategoryForReview(name: category.categoryName, id: category.categoryId))
+                            CategoryList.shared.appendCategoryToCategoryList(category: CategoryForReview(name: category.categoryName, id: category.categoryId))
                         }
+                        vc.reviewCount = categoryResponse.userInfo.reviewCount
                         vc.categoryCollectionView.reloadData()
                     default:
                         break

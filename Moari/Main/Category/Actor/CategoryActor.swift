@@ -8,12 +8,8 @@
 
 class CategoryActor: CategoryActorDelegate {
     
-    static let shared = CategoryActor()
-    private init() {}
-    
     weak var view: CategoryVCRouterDelegate?
-    
-    weak var dataManager: CategoryDataManagerDelegate?
+    var dataManager: CategoryDataManagerDelegate?
     
     private var _categoryList: [Category] = []
     
