@@ -2,6 +2,3 @@
 
 ### TODO
 
-1. 각 화면에 앱에서 나갔다가 들어갔을 때의 Notification Observer 넣기(To Set Theme, Dark or Light)
-2. 
-
