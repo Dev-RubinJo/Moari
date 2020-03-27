@@ -16,6 +16,7 @@ class CurationVC: BaseVC, CurationVCProtocol {
     var actor: CurationActorDelegate?
     
     var logoButton: UIButton = UIButton()
+    let colorSet: [UIColor] = [.curationPink, .curationBlue, .curationDarkGray, .curationBrown, .curationGreen]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class CurationVC: BaseVC, CurationVCProtocol {
         
         self.curationCollectionView.delegate = self
         self.curationCollectionView.dataSource = self
+        self.navigationController?.navigationBar.isTranslucent = true
     }
     
 
@@ -50,10 +52,11 @@ extension CurationVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
                 return UICollectionViewCell()
             }
             //        cell.backgroundColorView.backgroundColor = 지정할 컬러
-            
+            let randNumber = Int(arc4random_uniform(5))
             cell.curationCellTopConstraint.constant = self.topbarHeight
             
-//            self.curationCollectionView.backgroundColor = cell.backgroundColorView.backgroundColor
+            cell.backgroundColorView.backgroundColor = self.colorSet[randNumber]
+            self.view.backgroundColor = cell.backgroundColorView.backgroundColor
             guard let imageUrlString = self.actor?.curationList[indexPath.item].imageUrl else { return UICollectionViewCell() }
             let imageUrl = URL(string: imageUrlString)
             cell.backgroundImageView.kf.setImage(with: imageUrl)

@@ -35,6 +35,13 @@ extension UIColor {
     
     static let categoryNameColor = UIColor(named: "CategoryNameColor")!
     
+    // CurationCellColor
+    static let curationPink: UIColor = UIColor(named: "CurationPink")!
+    static let curationBlue: UIColor = UIColor(named: "CurationBlue")!
+    static let curationDarkGray: UIColor = UIColor(named: "CurationDarkGray")!
+    static let curationBrown: UIColor = UIColor(named: "CurationBrown")!
+    static let curationGreen: UIColor = UIColor(named: "CurationGreen")!
+    
     /// SignInVC Bottom Label Border bar Color
     @nonobjc class var signInBottomBorderBar: UIColor {
       return UIColor(white: 151.0 / 255.0, alpha: 1.0)

@@ -28,6 +28,7 @@ class CategoryDetailVC: BaseVC, CategoryDetailVCProtocol {
         self.categoryDetailCollectionView.register(categoryDetailCellNib, forCellWithReuseIdentifier: "CategoryDetailCell")
         self.setCategoryDetailVCUI()
         self.initTapListener()
+        self.actor?.didLoadCategoryDetailList(fromVC: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +52,6 @@ class CategoryDetailVC: BaseVC, CategoryDetailVCProtocol {
             UIApplication.shared.statusBarStyle = .default
             break
         }
-        self.actor?.didLoadCategoryDetailList(fromVC: self)
     }
 }
 extension CategoryDetailVC {
@@ -96,7 +96,3 @@ extension CategoryDetailVC: DeleteReviewDelegate {
         self.actor?.deleteReviewAction(fromVC: self, reviewId: id)
     }
 }
-
-// 롱클릭 이벤트 => 리뷰 삭제
-// 상단 플러스버튼 => 리뷰 추가
-// 셀 클릭 이벤트 => 리뷰 보기

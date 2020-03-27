@@ -32,6 +32,9 @@ class UserInfoVC: BaseVC, UserInfoVCProtococl {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         self.setUserInfoVCUI()
         self.initTapListener()
     }
@@ -62,6 +65,24 @@ extension UserInfoVC {
         self.passwordCheckTextField.leftView = passwordCheckPaddingView
         self.passwordCheckTextField.leftViewMode = .always
         self.passwordCheckTextField.layer.cornerRadius = 3
+    }
+    
+    @objc func keyboardWillShow(_ sender: Notification) {
+        guard let userInfo = sender.userInfo as? [String: Any] else {return}
+        guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
+        let keyboardHeight = keyboardFrame.cgRectValue.height
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 1136:
+                self.view.frame.origin.y = -keyboardHeight + 120 // 키보드 높이만큼 위로 올라가기
+            default:
+                return
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y = 0 // Move view to original position
     }
     
     func initTapListener() {

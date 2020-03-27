@@ -23,10 +23,18 @@ extension AddReviewVC: UITextViewDelegate {
             self.contentViewPlaceholderLabel.isHidden = true
             self.resizeContentTextView()
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + self.keyboardHeight)
-            var point = self.contentTextView.frame.origin
-            point.y = point.y - self.keyboardHeight - 4
-            point.x = point.x - 22
-            self.scrollView.setContentOffset(point, animated: true)
+
+            
+            //            var point = self.contentTextView.frame.origin
+            //            point.y = point.y - self.keyboardHeight - 4
+            //            point.x = point.x - 22
+            //            self.scrollView.setContentOffset(point, animated: true)
+            
+            let caret = self.contentTextView.caretRect(for: self.contentTextView.selectedTextRange!.start)
+            let cursorRect: CGRect = CGRect.init(x: caret.maxX, y: caret.maxY, width: caret.width, height: self.contentView.bounds.height)
+            
+            self.scrollView.setContentOffset(CGPoint(x: 0.0, y: cursorRect.minY + 50), animated: true)
+            // (cursorRect, animated: true)
 //            self.scrollToCursorPosition()
             // 11promax = 346
             // 11 = 346
@@ -45,7 +53,7 @@ extension AddReviewVC: UITextViewDelegate {
         case self.reviewTitleTextView:
             self.reviewTitlePlaceholderLabel.isHidden = true
             self.reviewTitleTextView.centerVertically()
-            
+            textView.textContainer.maximumNumberOfLines = 2
         case self.reviewContentTextView:
             self.actor?.setTextViewLineSpacing(self.reviewContentTextView, lineSpace: 5, fontSize: 19.0, color: .white, textAlignment: .center)
             self.reviewContentPlaceholderLabel.isHidden = true
@@ -131,9 +139,17 @@ extension AddReviewVC: UITextViewDelegate {
             return newLength <= 25
             
         case self.reviewContentTextView:
+            // MARK: 글자 수 제한하기
             guard let str = textView.text else { return true }
             let newLength = str.count + text.count - range.length
+            
+            // MARK: 라인 수 제한하기
+            let existingLines = textView.text.components(separatedBy: CharacterSet.newlines)
+            let newLines = text.components(separatedBy: CharacterSet.newlines)
+            let linesAfterChange = existingLines.count + newLines.count - 1
+            
             return newLength <= 100
+                && linesAfterChange <= textView.textContainer.maximumNumberOfLines
             
         default:
             break

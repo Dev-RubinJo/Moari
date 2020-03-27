@@ -24,21 +24,6 @@ extension SignUpVC: UITextFieldDelegate {
                 return true
             }
         case self.passwordTextField, self.passwordCheckTextField:
-            // 자동완성 -> false
-            if string == " " {
-                return false
-            }
-            //        // 지우기, 붙여넣기
-            if string.count != 1 {
-                // 지우기는 허용
-                if string.count == 0 {
-                    return true
-                } else {
-                    //                textField.text = nil
-                    return true
-                }
-            }
-            
             if string == "\n" {
                 if textField == self.passwordTextField {
                     self.passwordCheckTextField.becomeFirstResponder()
@@ -53,19 +38,17 @@ extension SignUpVC: UITextFieldDelegate {
             currentString.append(string)
             
             if textField == self.passwordTextField {
-                if currentString.count > 16 {
+                if currentString.count > 20 {
                     return false
                 }
             }
             
             if textField == self.passwordCheckTextField {
-                if currentString.count > 16 {
+                if currentString.count > 20 {
                     return false
                 }
             }
-            
-            textField.text = currentString
-            return false
+            return true
         default:
             return false
         }

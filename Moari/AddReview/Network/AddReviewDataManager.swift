@@ -44,7 +44,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                         self.actor?.updateStarRateImageView(updateVC: vc, value: review.starRate)
                         vc.reviewContentTextView.text = review.simpleContent
                         
-                        self.actor?.setTextViewLineSpacing(vc.reviewContentTextView, lineSpace: 5, fontSize: 19.0, color: .white, textAlignment: .center)
+                        self.actor?.setTextViewLineSpacing(vc.reviewContentTextView, lineSpace: 5, fontSize: (self.actor?.getSimpleReviewFontSize())!, color: .white, textAlignment: .center)
                         vc.reviewContentTextView.centerVertically()
                         
                         if let categoryList = self.actor?.categoryList {
@@ -53,6 +53,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                                     vc.selectCategoryButton.setTitle(category.categoryName , for: .normal)
                                     vc.selectCategoryButton.setTitleColor(.categoryNameColor, for: .normal)
                                     vc.selectCategoryButton.isUserInteractionEnabled = false
+                                    break
                                 }
                             }
                         }
@@ -84,8 +85,8 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
             if vc.backgroundImageView.image != UIImage(named: "defaultImage") {
                 if vc.image != vc.backgroundImageView.image {
                     if let image = vc.backgroundImageView.image {
-                        let storageReference = Storage.storage().reference().child("iOS/\(UserDefaults.standard.string(forKey: "NickName")!)/\(vc.categoryId!).png")
-                        let imageData = image.jpegData(compressionQuality: 0.1)
+                        let storageReference = Storage.storage().reference().child("iOS/\(UserDefaults.standard.string(forKey: "NickName")!)/\(vc.categoryId!).jpg")
+                        let imageData = image.jpegData(compressionQuality: 0.05)
                         vc.appearIndicator()
                         storageReference.putData(imageData!, metadata:  metadata) { (metadata, error) in
                             storageReference.downloadURL { (url, error) in
@@ -98,14 +99,11 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                                     "review": vc.reviewContentTextView.text!,
                                     "reviewDate": vc.selectDateTextField.text!.replace(target: ". ", withString: "-")
                                 ]
-                                print(reviewId)
-                                print(parameters)
                                 Alamofire.request("\(Server.api)/review/\(reviewId)", method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
                                     .validate()
                                     .responseObject(completionHandler: { (response: DataResponse<WriteReviewResponse>) in
                                         switch response.result {
                                         case .success(let writeResponse):
-                                            print(writeResponse)
                                             vc.reviewTitleBorderImageView.isHidden = true
                                             vc.reviewTitlePlaceholderLabel.isHidden = true
                                             vc.starRateBorderImageView.isHidden = true
@@ -139,13 +137,13 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                         "review": vc.reviewContentTextView.text!,
                         "reviewDate": vc.selectDateTextField.text!.replace(target: ". ", withString: "-")
                     ]
-
+                    vc.appearIndicator()
                     Alamofire.request("\(Server.api)/review/\(reviewId)", method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
                         .validate()
                         .responseObject(completionHandler: { (response: DataResponse<WriteReviewResponse>) in
                             switch response.result {
                             case .success(let writeResponse):
-                                print(writeResponse)
+
                                 vc.reviewTitleBorderImageView.isHidden = true
                                 vc.reviewTitlePlaceholderLabel.isHidden = true
                                 vc.starRateBorderImageView.isHidden = true
@@ -167,7 +165,6 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                             }
                         })
                 }
-                
             } else {
                 let parameters: Parameters = [
                     "categoryType": vc.review!.categoryId!,
@@ -178,13 +175,13 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                     "review": vc.reviewContentTextView.text!,
                     "reviewDate": vc.selectDateTextField.text!.replace(target: ". ", withString: "-")
                 ]
-                
+                vc.appearIndicator()
                 Alamofire.request("\(Server.api)/review/\(reviewId)", method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
                     .validate()
                     .responseObject(completionHandler: { (response: DataResponse<WriteReviewResponse>) in
                         switch response.result {
                         case .success(let writeResponse):
-                            print(writeResponse)
+
                             vc.reviewTitleBorderImageView.isHidden = true
                             vc.reviewTitlePlaceholderLabel.isHidden = true
                             vc.starRateBorderImageView.isHidden = true
@@ -213,8 +210,8 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
             //            }
             if vc.backgroundImageView.image != UIImage(named: "defaultImage") {
                 if let image = vc.backgroundImageView.image {
-                    let storageReference = Storage.storage().reference().child("iOS/\(UserDefaults.standard.string(forKey: "NickName")!)/\(vc.reviewTitleTextView.text!).png")
-                    let imageData = image.jpegData(compressionQuality: 0.1)
+                    let storageReference = Storage.storage().reference().child("iOS/\(UserDefaults.standard.string(forKey: "NickName")!)/\(vc.reviewTitleTextView.text!).jpg")
+                    let imageData = image.jpegData(compressionQuality: 0.05)
                     vc.appearIndicator()
                     storageReference.putData(imageData!, metadata:  metadata) { (metadata, error) in
                         storageReference.downloadURL { (url, error) in
@@ -265,7 +262,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                     "review": vc.reviewContentTextView.text!,
                     "reviewDate": vc.selectDateTextField.text!.replace(target: ". ", withString: "-")
                 ]
-                
+                vc.appearIndicator()
                 Alamofire.request("\(Server.api)/category/\(category)/review", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
                     .validate()
                     .responseObject(completionHandler: { (response: DataResponse<WriteReviewResponse>) in

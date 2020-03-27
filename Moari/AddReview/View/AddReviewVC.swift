@@ -23,6 +23,8 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     
     @IBOutlet weak var reviewTitleView: UIView!
     @IBOutlet weak var reviewTitleBorderImageView: UIImageView!
+    @IBOutlet weak var reviewTitleViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var reviewTitleViewHeightConstraint: NSLayoutConstraint!
     // 화면별로 글씨 사이즈 조정하기
     @IBOutlet weak var reviewTitleTextView: UITextView!
     // TODO: 리뷰 작성때는 띄우고 수정할때는 띄우지 말기, isAdd로 구분
@@ -88,6 +90,25 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
             return 350
         default:
             return 300
+        }
+    }()
+    
+    lazy var fontSize: CGFloat = {
+        switch UIScreen.main.nativeBounds.height {
+        case 1136: // se1
+            return 15.0
+        case 1334:
+            //                print("iPhone 6/6S/7/8")
+            return 17.0
+        case 1920:
+            return 19.0
+        case 2436:
+            return 17.0
+        case 1792, 2688:
+            //                print("iPhone XR, XS MAX")
+            return 19.0
+        default:
+            return 19.0
         }
     }()
     

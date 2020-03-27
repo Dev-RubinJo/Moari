@@ -18,10 +18,6 @@ extension AddReviewVC {
         self.appendReviewButton = UIBarButtonItem(image: UIImage(named: "appendReview"), style: .plain, target: self, action: #selector(self.pressAppendReviewButton(_:)))
         self.closeReviewButton = UIBarButtonItem(image: UIImage(named: "closeButtonDefault"), style: .plain, target: self, action: #selector(self.pressCloseReviewButton(_:)))
         
-        if let category = self.categoryId, let review = self.reviewId {
-            self.actor?.didLoadReview(updateVC: self, categoryId: category, reviewId: review)
-        }
-        
         if let categoryId = self.categoryId {
             let categoryList = CategoryList.shared.categoryList
             for category in categoryList {
@@ -43,6 +39,11 @@ extension AddReviewVC {
         self.datePicker.datePickerMode = .date
         
         self.showDatePicker()
+        
+        // MARK: load Review
+        if let category = self.categoryId, let review = self.reviewId {
+            self.actor?.didLoadReview(updateVC: self, categoryId: category, reviewId: review)
+        }
         
         if let isAdd = self.isAdd {
             if isAdd {
@@ -81,11 +82,30 @@ extension AddReviewVC {
                 self.contentTextView.isEditable = false
                 self.contentViewPlaceholderLabel.isHidden = true
                 
-                
                 self.selectDateTextField.textColor = .signInBottomLabels
-                
             }
         }
+        
+        self.reviewContentTextView.textContainer.maximumNumberOfLines = 5
+        
+        switch UIScreen.main.nativeBounds.height {
+        case 1136: // se1
+            self.reviewTitleViewTopConstraint.constant = 60
+            self.reviewTitleViewHeightConstraint.constant = 70
+            self.reviewTitleTextView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 22)
+        case 1334, 2436:
+            //                print("iPhone 6/6S/7/8")
+            self.reviewTitleViewTopConstraint.constant = 64
+            self.reviewTitleViewHeightConstraint.constant = 85
+            self.reviewTitleTextView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 25)
+        default:
+            break
+            //            self.reviewTitleViewTopConstraint.constant = 85
+            //            self.reviewTitleViewHeightConstraint.constant = 86
+            //            self.reviewTitleTextView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 29)
+        }
+        
+        
     }
     
     @objc func pressAppendReviewButton(_ sender: UIBarButtonItem) {
@@ -202,6 +222,7 @@ extension AddReviewVC {
         guard let categoryList = self.actor?.categoryList else { return }
         for category in categoryList {
             let action = UIAlertAction(title: "\(category.categoryName)", style: .default) { _ in
+                self.review?.categoryId = category.categoryId
                 self.categoryId = category.categoryId
                 DispatchQueue.main.async {
                     self.selectCategoryButton.setTitle("\(category.categoryName)", for: .normal)

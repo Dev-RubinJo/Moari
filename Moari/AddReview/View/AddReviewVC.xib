@@ -28,6 +28,8 @@
                 <outlet property="reviewTitlePlaceholderLabel" destination="9KX-0z-mEh" id="h28-T9-jbe"/>
                 <outlet property="reviewTitleTextView" destination="3og-Cr-nsr" id="BuA-IK-ZRr"/>
                 <outlet property="reviewTitleView" destination="cta-oB-cLX" id="KmT-FA-Czq"/>
+                <outlet property="reviewTitleViewHeightConstraint" destination="Efl-gj-xCH" id="em8-wT-O7y"/>
+                <outlet property="reviewTitleViewTopConstraint" destination="wGZ-AB-ybV" id="1gm-TR-ILH"/>
                 <outlet property="scrollView" destination="rWJ-uu-xfK" id="dg0-4Z-dcJ"/>
                 <outlet property="selectCategoryButton" destination="Htp-QG-Wvc" id="kDe-sn-2ym"/>
                 <outlet property="selectDateButton" destination="CLJ-NS-Wrd" id="tWj-Gr-zLh"/>
@@ -51,13 +53,13 @@
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="843" translatesAutoresizingMaskIntoConstraints="NO" id="cbJ-CD-glD">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="843"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhV-G0-LaW">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhV-G0-LaW" userLabel="Base View">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="DMH-Ag-TjQ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                         </imageView>
-                                        <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-cG-ms0">
+                                        <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-cG-ms0" userLabel="Blur View">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navigationTitleLogoCategoryDark" translatesAutoresizingMaskIntoConstraints="NO" id="fc1-IU-Z3K">
@@ -74,7 +76,7 @@
                                             <rect key="frame" x="14" y="12" width="32" height="32"/>
                                             <state key="normal" image="imagePickButton"/>
                                         </button>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cta-oB-cLX">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cta-oB-cLX" userLabel="Review Title View">
                                             <rect key="frame" x="22" y="85" width="370" height="86"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reviewTitleBorderView" translatesAutoresizingMaskIntoConstraints="NO" id="nNr-de-X9K">
@@ -113,7 +115,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="nNr-de-X9K" secondAttribute="bottom" id="vcu-YY-VCf"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2w-Ll-Iqr">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2w-Ll-Iqr" userLabel="Star Rate View">
                                             <rect key="frame" x="127" y="188" width="160" height="43.333333333333343"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reviewStarRatioBorderView" translatesAutoresizingMaskIntoConstraints="NO" id="DvJ-0I-MCz">
@@ -136,7 +138,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="DvJ-0I-MCz" secondAttribute="bottom" id="xQr-in-i1I"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mbc-Ut-lZ3">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mbc-Ut-lZ3" userLabel="Review Content View">
                                             <rect key="frame" x="22" y="241.33333333333337" width="370" height="157.66666666666663"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reviewContentBorderView" translatesAutoresizingMaskIntoConstraints="NO" id="mar-FY-fKy">
@@ -261,7 +263,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용을 써주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-8e-GTm">
-                                    <rect key="frame" x="21.999999999999993" y="541" width="111.33333333333331" height="20"/>
+                                    <rect key="frame" x="22.000000000000007" y="541" width="111.66666666666669" height="20"/>
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="17"/>
                                     <color key="textColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>

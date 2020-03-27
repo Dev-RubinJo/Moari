@@ -10,7 +10,7 @@ import UIKit
 
 class AddReviewActor: AddReviewActorDelegate {
     
-    weak var view: AddReviewVCRouterDelegate?
+    weak var view: (AddReviewVCProtocol & AddReviewVCRouterDelegate)?
     var dataManager: AddReviewDataManagerDelegate?
     
     var categoryList: [CategoryForReview] {
@@ -68,6 +68,10 @@ class AddReviewActor: AddReviewActorDelegate {
         default:
             vc.starRateImageView.image = UIImage(named: "starRate10")
         }
+    }
+    
+    func getSimpleReviewFontSize() -> CGFloat {
+        return self.view!.fontSize
     }
     
     func setTextViewLineSpacing(_ textView: UITextView, lineSpace: CGFloat, fontSize: CGFloat, color: UIColor, textAlignment: NSTextAlignment) {

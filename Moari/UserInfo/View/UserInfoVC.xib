@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,15 +12,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserInfoVC" customModule="Moari" customModuleProvider="target">
             <connections>
                 <outlet property="deleteUserButton" destination="RdM-92-D9B" id="7Re-ez-lo9"/>
-                <outlet property="dismissButton" destination="MAe-oL-Kby" id="T9k-we-tDL"/>
-                <outlet property="editUserInfoButton" destination="I9a-cI-sWw" id="8tS-BE-fma"/>
-                <outlet property="emailGuideLabel" destination="S23-VO-s3X" id="Q6J-Y5-69p"/>
-                <outlet property="emailLabel" destination="7k4-fO-kDC" id="R8O-j0-akl"/>
+                <outlet property="dismissButton" destination="MAe-oL-Kby" id="JOE-Ja-6xU"/>
+                <outlet property="editUserInfoButton" destination="I9a-cI-sWw" id="Cdw-kQ-eJE"/>
+                <outlet property="emailGuideLabel" destination="S23-VO-s3X" id="BNl-HK-a3y"/>
+                <outlet property="emailLabel" destination="7k4-fO-kDC" id="p03-SS-cls"/>
                 <outlet property="passwordCheckTextField" destination="XiR-YW-F8n" id="3EE-X8-Q5i"/>
                 <outlet property="passwordGuideLabel" destination="Twe-nT-2qa" id="ksQ-hj-Rxj"/>
                 <outlet property="passwordTextField" destination="kzn-Cz-TA8" id="BFa-Es-kgo"/>
                 <outlet property="signOutButton" destination="LY7-EZ-CGf" id="Ogb-4v-qxM"/>
-                <outlet property="userInfoVCTitleLabel" destination="d3r-9V-Q0S" id="aAu-1W-FU2"/>
+                <outlet property="userInfoVCTitleLabel" destination="d3r-9V-Q0S" id="aMC-Vt-fFP"/>
                 <outlet property="userNameGuideLabel" destination="EOd-qv-FGT" id="HpP-Ff-Q1Q"/>
                 <outlet property="userNameTextField" destination="5Cm-Zy-eVz" id="Scz-fr-FME"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -35,7 +35,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAe-oL-Kby">
-                            <rect key="frame" x="20" y="5" width="40" height="40"/>
+                            <rect key="frame" x="20" y="14" width="20" height="22"/>
                             <state key="normal" image="closeButtonDefault"/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3r-9V-Q0S">
@@ -45,7 +45,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9a-cI-sWw">
-                            <rect key="frame" x="346" y="7" width="48" height="36"/>
+                            <rect key="frame" x="370" y="14" width="24" height="22"/>
                             <state key="normal" image="appendReview"/>
                         </button>
                     </subviews>
@@ -107,7 +107,7 @@
                         <constraint firstAttribute="height" constant="46" id="Ldx-NJ-T3a"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XiR-YW-F8n">
                     <rect key="frame" x="28" y="409" width="358" height="46"/>
@@ -116,7 +116,7 @@
                         <constraint firstAttribute="height" constant="46" id="CcD-3t-MyS"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LY7-EZ-CGf">
                     <rect key="frame" x="28" y="497" width="90" height="36"/>

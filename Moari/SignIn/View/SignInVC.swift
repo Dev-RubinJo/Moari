@@ -38,6 +38,8 @@ class SignInVC: BaseVC, SignInVCProtocol {
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.setSignInVCUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         self.initTapListener()
     }

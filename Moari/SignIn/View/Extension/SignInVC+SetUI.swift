@@ -64,6 +64,26 @@ extension SignInVC {
         }
     }
     
+    @objc func keyboardWillShow(_ sender: Notification) {
+        guard let userInfo = sender.userInfo as? [String: Any] else {return}
+        guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
+        let keyboardHeight = keyboardFrame.cgRectValue.height
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 1136:
+                self.view.frame.origin.y = -keyboardHeight + 120 // 키보드 높이만큼 위로 올라가기
+            case 1334:
+                self.view.frame.origin.y = -keyboardHeight + 200
+            default:
+                return
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y = 0 // Move view to original position
+    }
+    
     func initTapListener() {
         let signInListener = UITapGestureRecognizer(target: self, action: #selector(self.pressSignInButton(_:)))
         self.signInButtonLabel.isUserInteractionEnabled = true

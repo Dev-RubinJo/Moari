@@ -8,9 +8,11 @@
 
 import UIKit
 
-protocol AddReviewVCProtocol: BaseVCProtocol {
+protocol AddReviewVCProtocol: class, BaseVCProtocol {
     
     var actor: AddReviewActorDelegate? { get set }
+    
+    var fontSize: CGFloat { get }
 }
 
 protocol AddReviewVCRouterDelegate: class {
@@ -20,7 +22,7 @@ protocol AddReviewVCRouterDelegate: class {
 
 protocol AddReviewActorDelegate: class {
     
-    var view: AddReviewVCRouterDelegate? { get set }
+    var view: (AddReviewVCProtocol & AddReviewVCRouterDelegate)? { get set }
     
     var dataManager: AddReviewDataManagerDelegate? { get set }
     
@@ -39,6 +41,8 @@ protocol AddReviewActorDelegate: class {
     func deleteReview(fromVC vc: AddReviewVC, reviewId id: Int)
     
     func updateStarRateImageView(updateVC vc: AddReviewVC, value: Double)
+    
+    func getSimpleReviewFontSize() -> CGFloat
     
     func setTextViewLineSpacing(_ textView: UITextView, lineSpace: CGFloat, fontSize: CGFloat, color: UIColor, textAlignment: NSTextAlignment)
 }

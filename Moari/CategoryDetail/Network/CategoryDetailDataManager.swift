@@ -87,13 +87,10 @@ class CategoryDetailDataManager: CategoryDetailDataManagerDelegate {
                 case .success(let categoryDetailResponse):
                     switch categoryDetailResponse.code {
                     case 200:
-                        
                         vc.categoryDetailCollectionView.reloadData()
                     default:
-                        break
+                        vc.categoryDetailCollectionView.reloadData()
                     }
-                    
-                    break
                 case .failure(let error):
                     print(error)
                 }
