@@ -132,7 +132,6 @@ extension AddReviewVC: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         switch textView {
-        // TODO: 제목 25자, 한줄평 100자 벨리데이션 추가
         case self.reviewTitleTextView:
             guard let str = textView.text else { return true }
             let newLength = str.count + text.count - range.length
