@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -14,51 +14,51 @@
             <objects>
                 <viewController storyboardIdentifier="AddCategory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vwI-rs-tRo" customClass="AddCategory" customModule="Moari" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tX2-YF-dYi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1u7-0k-ncn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xT9-p2-inL">
-                                <rect key="frame" x="40" y="194" width="240" height="180"/>
+                                <rect key="frame" x="67.666666666666686" y="316" width="240" height="180"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74G-46-uKV">
-                                        <rect key="frame" x="0.0" y="129.5" width="240" height="1"/>
+                                        <rect key="frame" x="0.0" y="129.66666666666669" width="240" height="1"/>
                                         <color key="backgroundColor" name="PopUpBolderColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="oIq-V0-fQM"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q85-SO-QlB">
-                                        <rect key="frame" x="119.5" y="130.5" width="1" height="49.5"/>
+                                        <rect key="frame" x="119.33333333333333" y="130.66666666666669" width="1" height="49.333333333333343"/>
                                         <color key="backgroundColor" name="PopUpBolderColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="uRG-V0-xV7"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQw-IL-Js6">
-                                        <rect key="frame" x="0.0" y="130.5" width="119.5" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="130.66666666666669" width="119.33333333333333" height="49.333333333333343"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
                                         <state key="normal" title="취소">
                                             <color key="titleColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T16-qN-b8a">
-                                        <rect key="frame" x="120.5" y="130.5" width="119.5" height="49.5"/>
+                                        <rect key="frame" x="120.33333333333331" y="130.66666666666669" width="119.66666666666669" height="49.333333333333343"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="15"/>
                                         <state key="normal" title="확인">
                                             <color key="titleColor" red="0.76078431369999999" green="0.094117647060000004" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="카테고리 제목" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v5M-kK-lp0">
-                                        <rect key="frame" x="20" y="48" width="200" height="22"/>
+                                        <rect key="frame" x="20" y="57" width="200" height="22"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrQ-nU-5VG">
-                                        <rect key="frame" x="20" y="70" width="200" height="1"/>
+                                        <rect key="frame" x="20" y="79" width="200" height="1"/>
                                         <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="tE7-qh-uSu"/>
@@ -85,7 +85,7 @@
                                     <constraint firstItem="v5M-kK-lp0" firstAttribute="centerX" secondItem="xT9-p2-inL" secondAttribute="centerX" id="gSX-Y5-NyH"/>
                                     <constraint firstItem="Q85-SO-QlB" firstAttribute="centerX" secondItem="xT9-p2-inL" secondAttribute="centerX" id="jfy-au-8Ft"/>
                                     <constraint firstItem="v5M-kK-lp0" firstAttribute="leading" secondItem="xT9-p2-inL" secondAttribute="leading" constant="20" id="kov-2s-iWh"/>
-                                    <constraint firstItem="v5M-kK-lp0" firstAttribute="top" secondItem="xT9-p2-inL" secondAttribute="top" constant="48" id="r9Z-Lj-zNC"/>
+                                    <constraint firstItem="v5M-kK-lp0" firstAttribute="top" secondItem="xT9-p2-inL" secondAttribute="top" constant="57" id="r9Z-Lj-zNC"/>
                                     <constraint firstAttribute="trailing" secondItem="T16-qN-b8a" secondAttribute="trailing" id="raL-We-jy3"/>
                                     <constraint firstAttribute="height" constant="180" id="sQz-NF-HKM"/>
                                     <constraint firstItem="nQw-IL-Js6" firstAttribute="leading" secondItem="xT9-p2-inL" secondAttribute="leading" id="tVf-vn-gdq"/>

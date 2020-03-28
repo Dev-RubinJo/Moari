@@ -55,6 +55,7 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     @IBOutlet weak var contentViewPlaceholderLabel: UILabel!
     
     var actor: AddReviewActorDelegate?
+    weak var categoryDetailVC: CategoryDetailVC?
     
     let picker: UIImagePickerController = UIImagePickerController()
     /// 선택한 이미지를 저장하는 변수
@@ -153,6 +154,9 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
             break
         }
 //        print(self.actor?.categoryList)
+        if self.isAdd ?? false {
+            self.navigationItem.title = "작성하기"
+        }
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

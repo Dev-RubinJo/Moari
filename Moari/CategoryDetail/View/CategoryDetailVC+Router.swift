@@ -29,6 +29,7 @@ extension CategoryDetailVC: CategoryDetailVCRouterDelegate {
         reviewDetailVC.isAdd = false
         reviewDetailVC.reviewId = id
         reviewDetailVC.categoryId = category
+        reviewDetailVC.categoryDetailVC = self
         self.navigationController?.pushViewController(reviewDetailVC, animated: true)
     }
     
@@ -37,6 +38,7 @@ extension CategoryDetailVC: CategoryDetailVCRouterDelegate {
         let addReviewVC = UINavigationController.init(rootViewController: addReviewRootVC)
         addReviewRootVC.isAdd = true
         addReviewRootVC.categoryId = id
+        addReviewRootVC.categoryDetailVC = self
         addReviewVC.modalPresentationStyle = .fullScreen
         self.present(addReviewVC, animated: true, completion: nil)
     }

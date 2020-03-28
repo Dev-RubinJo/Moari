@@ -228,7 +228,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                                 .validate()
                                 .responseObject(completionHandler: { (response: DataResponse<WriteReviewResponse>) in
                                     switch response.result {
-                                    case .success( _):
+                                    case .success(let writeResponse):
                                         vc.isAdd = false
                                         vc.reviewTitleBorderImageView.isHidden = true
                                         vc.reviewTitlePlaceholderLabel.isHidden = true
@@ -245,6 +245,12 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                                         vc.contentTextView.isEditable = false
                                         vc.contentViewPlaceholderLabel.isHidden = true
                                         vc.navigationItem.rightBarButtonItem = nil
+                                        
+                                        vc.reviewId = writeResponse.reviewId
+                                        vc.review = ReviewDetail(reviewId: writeResponse.reviewId, categoryId: vc.categoryId, title: vc.reviewTitleTextView.text, simpleContent: vc.reviewContentTextView.text, imageUrl: "\(url!)", starRate: vc.starRateValue, reviewContent: vc.contentTextView.text, reviewDate: vc.selectDateTextField.text)
+                                        
+                                        vc.image = vc.backgroundImageView.image
+                                        
                                         vc.disappearIndicator()
                                     case .failure(let error):
                                         print(error)
@@ -267,7 +273,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                     .validate()
                     .responseObject(completionHandler: { (response: DataResponse<WriteReviewResponse>) in
                         switch response.result {
-                        case .success( _):
+                        case .success(let writeResponse):
                             vc.isAdd = false
                             vc.reviewTitleBorderImageView.isHidden = true
                             vc.reviewTitlePlaceholderLabel.isHidden = true
@@ -284,6 +290,12 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                             vc.contentTextView.isEditable = false
                             vc.contentViewPlaceholderLabel.isHidden = true
                             vc.navigationItem.rightBarButtonItem = nil
+                            
+                            vc.reviewId = writeResponse.reviewId
+                            
+                            vc.review = ReviewDetail(reviewId: writeResponse.reviewId, categoryId: vc.categoryId, title: vc.reviewTitleTextView.text, simpleContent: vc.reviewContentTextView.text, imageUrl: "", starRate: vc.starRateValue, reviewContent: vc.contentTextView.text, reviewDate: vc.selectDateTextField.text)
+                            
+                            vc.image = vc.backgroundImageView.image
                             vc.disappearIndicator()
                         case .failure(let error):
                             print(error)
@@ -304,6 +316,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
             .responseObject(completionHandler: {(response: DataResponse<WriteReviewResponse>) in
                 switch response.result {
                 case .success( _):
+                    vc.categoryDetailVC?.isLoad = true
                     vc.navigationController?.popViewController(animated: true)
                 case .failure(let error):
                     print(error)

@@ -56,6 +56,7 @@ struct WriteReviewResponse {
     var isSuccess: Bool!
     var code: Int!
     var message: String!
+    var reviewId: Int!
 }
 extension WriteReviewResponse: Mappable {
     init?(map: Map) {
@@ -65,5 +66,6 @@ extension WriteReviewResponse: Mappable {
         isSuccess <- map["isSuccess"]
         code <- map["code"]
         message <- map["message"]
+        reviewId <- map["boardIdx"]
     }
 }

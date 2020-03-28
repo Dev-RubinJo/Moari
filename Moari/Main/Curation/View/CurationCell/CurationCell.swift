@@ -12,9 +12,16 @@ class CurationCell: UICollectionViewCell {
     
     @IBOutlet weak var backgroundColorView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var reviewTitleLabel: UILabel!
+    
+    
+    @IBOutlet weak var reviewTitleTextView: UITextView!
+    @IBOutlet weak var reviewTitleViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var reviewTitleViewTopConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var reviewStarRateImageView: UIImageView!
-    @IBOutlet weak var reviewSimpleContentLabel: UILabel!
+    
+    @IBOutlet weak var reviewSimpleContentTextView: UITextView!
+    
     @IBOutlet weak var reviewContentLabel: UITextView!
     
     @IBOutlet weak var curationCellTopConstraint: NSLayoutConstraint!

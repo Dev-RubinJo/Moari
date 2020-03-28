@@ -15,6 +15,25 @@ class CurationVC: BaseVC, CurationVCProtocol {
     
     var actor: CurationActorDelegate?
     
+    lazy var fontSize: CGFloat = {
+        switch UIScreen.main.nativeBounds.height {
+        case 1136: // se1
+            return 15.0
+        case 1334:
+            //                print("iPhone 6/6S/7/8")
+            return 17.0
+        case 1920:
+            return 19.0
+        case 2436:
+            return 17.0
+        case 1792, 2688:
+            //                print("iPhone XR, XS MAX")
+            return 19.0
+        default:
+            return 19.0
+        }
+    }()
+    
     var logoButton: UIButton = UIButton()
     let colorSet: [UIColor] = [.curationPink, .curationBlue, .curationDarkGray, .curationBrown, .curationGreen]
     
@@ -58,11 +77,35 @@ extension CurationVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             cell.backgroundColorView.backgroundColor = self.colorSet[randNumber]
             self.view.backgroundColor = cell.backgroundColorView.backgroundColor
             guard let imageUrlString = self.actor?.curationList[indexPath.item].imageUrl else { return UICollectionViewCell() }
-            let imageUrl = URL(string: imageUrlString)
-            cell.backgroundImageView.kf.setImage(with: imageUrl)
-            cell.reviewTitleLabel.text = self.actor?.curationList[indexPath.item].title
-            cell.reviewSimpleContentLabel.text = self.actor?.curationList[indexPath.item].simpleContent
-            self.actor?.setLabelLineSpacing(cell.reviewSimpleContentLabel, lineSpace: 5.0, fontSize: 20.0, color: .white, textAlignment: .center)
+            if imageUrlString != "" {
+                let imageUrl = URL(string: imageUrlString)
+                cell.backgroundImageView.kf.setImage(with: imageUrl)
+            } else {
+                cell.backgroundImageView.image = UIImage(named: "defaultImage")
+            }
+            
+            switch UIScreen.main.nativeBounds.height {
+            case 1136: // se1
+                cell.reviewTitleViewTopConstraint.constant = 60
+                cell.reviewTitleViewHeightConstraint.constant = 70
+                cell.reviewTitleTextView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 22)
+            case 1334, 2436:
+                //                print("iPhone 6/6S/7/8")
+                cell.reviewTitleViewTopConstraint.constant = 64
+                cell.reviewTitleViewHeightConstraint.constant = 85
+                cell.reviewTitleTextView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 25)
+            default:
+                break
+                //            self.reviewTitleViewTopConstraint.constant = 85
+                //            self.reviewTitleViewHeightConstraint.constant = 86
+                //            self.reviewTitleTextView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 29)
+            }
+            
+            cell.reviewTitleTextView.text = self.actor?.curationList[indexPath.item].title
+            cell.reviewTitleTextView.centerVertically()
+            cell.reviewSimpleContentTextView.text = self.actor?.curationList[indexPath.item].simpleContent
+            self.actor?.setTextViewLineSpacing(cell.reviewSimpleContentTextView, lineSpace: 5.0, fontSize: self.fontSize, color: .white, textAlignment: .center)
+            cell.reviewSimpleContentTextView.centerVertically()
             cell.reviewContentLabel.text = self.actor?.curationList[indexPath.item].reviewContent
             self.actor?.setTextViewLineSpacing(cell.reviewContentLabel, lineSpace: 6, fontSize: 17.0, color: .white, textAlignment: .natural)
             self.actor?.updateStarRateImageView(updateCell: cell, value: self.actor?.curationList[indexPath.item].starRate ?? 0)

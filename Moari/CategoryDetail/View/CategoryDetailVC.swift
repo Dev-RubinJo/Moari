@@ -15,6 +15,7 @@ class CategoryDetailVC: BaseVC, CategoryDetailVCProtocol {
     
     var actor: CategoryDetailActorDelegate?
     var category: Category?
+    var isLoad: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,11 @@ class CategoryDetailVC: BaseVC, CategoryDetailVCProtocol {
             UIApplication.shared.statusBarStyle = .default
             break
         }
+        if self.isLoad {
+            self.actor?.didLoadCategoryDetailList(fromVC: self)
+        }
+        guard let title = self.category?.categoryName else { return }
+        self.navigationItem.title = "\(title)"
     }
 }
 extension CategoryDetailVC {
@@ -60,6 +66,8 @@ extension CategoryDetailVC {
         let addReviewButton = UIBarButtonItem(image: UIImage(named: "addReview"), style: .plain, target: self, action: #selector(self.pressAddReviewButton(_:)))
 
         self.navigationItem.rightBarButtonItem = addReviewButton
+        
+        
     }
     
     func initTapListener() {

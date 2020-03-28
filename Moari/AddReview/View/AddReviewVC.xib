@@ -203,7 +203,7 @@
                                         <constraint firstItem="cta-oB-cLX" firstAttribute="top" secondItem="MhV-G0-LaW" secondAttribute="top" constant="85" id="wGZ-AB-ybV"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htp-QG-Wvc">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htp-QG-Wvc">
                                     <rect key="frame" x="22" y="439" width="99" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="hMn-Pw-QNJ"/>
@@ -220,7 +220,7 @@
                                         <color key="titleColor" red="0.76078431369999999" green="0.094117647060000004" blue="0.35686274509999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                     </state>
                                 </button>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" text=" " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wk3-o8-Rle">
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wk3-o8-Rle">
                                     <rect key="frame" x="22" y="541" width="370" height="302"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>

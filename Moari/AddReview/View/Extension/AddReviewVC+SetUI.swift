@@ -11,9 +11,8 @@ import UIKit
 // AddReviewVC SetUI extension
 extension AddReviewVC {
     func setAddReviewVCUI() {
-        self.navigationController?.navigationBar.barTintColor = .systemWBColor
+//        self.navigationController?.navigationBar.barTintColor = .systemWBColor
         // TODO: 작성하기 다국어 지원으로 변경하기
-        self.navigationItem.title = "작성하기"
         
         self.appendReviewButton = UIBarButtonItem(image: UIImage(named: "appendReview"), style: .plain, target: self, action: #selector(self.pressAppendReviewButton(_:)))
         self.closeReviewButton = UIBarButtonItem(image: UIImage(named: "closeButtonDefault"), style: .plain, target: self, action: #selector(self.pressCloseReviewButton(_:)))
@@ -118,11 +117,14 @@ extension AddReviewVC {
         
         if self.isEdit {
             if let id = self.review?.reviewId {
+                self.categoryDetailVC?.isLoad = true
+                self.navigationItem.title = ""
                 self.actor?.editReview(fromVC: self, reviewId: id)
             }
         } else {
             if let categoryId = self.categoryId {
                 self.starRateView.isUserInteractionEnabled = false
+                self.categoryDetailVC?.isLoad = true
                 self.actor?.addReview(fromVC: self, categoryId: categoryId)
             }
         }
@@ -256,6 +258,8 @@ extension AddReviewVC {
         self.contentTextView.isEditable = true
         
         self.selectCategoryButton.isUserInteractionEnabled = true
+        
+        self.navigationItem.title = "수정하기"
     }
     
     @objc func pressShareReviewButton(_ sender: UIButton) {
@@ -323,6 +327,5 @@ extension AddReviewVC: UIImagePickerControllerDelegate, UINavigationControllerDe
     
     func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation) {
         self.backgroundImageView.image = cropped
-        self.image = cropped
     }
 }

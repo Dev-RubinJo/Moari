@@ -91,6 +91,9 @@ extension AddReviewVC: UITextViewDelegate {
             }
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height)
         case self.contentTextView:
+            if textView.text == "" {
+                self.contentViewPlaceholderLabel.isHidden = false
+            }
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + 10)
             self.contentTextViewBottomConstraint.constant = 10
         default:
