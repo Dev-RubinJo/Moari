@@ -17,6 +17,7 @@ class DrawerVC: UIViewController {
     @IBOutlet var drawerBackgroundView: UIView!
     @IBOutlet weak var drawerViewTitleLabel: UILabel!
     
+    @IBOutlet weak var menuViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchLabel: UILabel!
     
@@ -25,6 +26,9 @@ class DrawerVC: UIViewController {
     
     @IBOutlet weak var themeModeView: UIView!
     @IBOutlet weak var themeModeLabel: UILabel!
+    
+    @IBOutlet weak var usingGuideView: UIView!
+    @IBOutlet weak var usingGuideLabel: UILabel!
     
     @IBOutlet weak var securitySettingView: UIView!
     @IBOutlet weak var securitySettingLabel: UILabel!
@@ -42,13 +46,12 @@ class DrawerVC: UIViewController {
         if #available(iOS 13.0, *) {
         } else {
             self.themeModeView.isHidden = true
-            self.securitySettingView.snp.makeConstraints { make in
-                make.top.equalTo(self.editUserInfoView.snp.bottom).offset(0)
-            }
+            
+            
+//            self.securitySettingView.snp.makeConstraints { make in
+//                make.top.equalTo(self.editUserInfoView.snp.bottom).offset(0)
+//            }
         }
-        
-        // drawerController 닫는 함수
-//        self.drawerController?.closeSide()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,6 +85,22 @@ extension DrawerVC {
             
             self.drawerViewTitleLabel.attributedText = attributedString
         }
+        
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 1136:
+                self.menuTopConstraint.constant = 50
+            case 1334:
+                self.menuTopConstraint.constant = 60
+            case 1920:
+                break
+            case 2436, 1792, 2688:
+                //                print("iPhone XR, XS MAX")
+                fallthrough
+            default:
+                self.securitySettingView.isHidden = true
+            }
+        }
     }
     
     func getBioAuthInfo() {
@@ -107,6 +126,10 @@ extension DrawerVC {
         self.editUserInfoView.isUserInteractionEnabled = true
         self.editUserInfoView.addGestureRecognizer(didTapEditUserInfoView)
         
+        let didTapUsingGuideView: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.pressUsingGuideView(_:)))
+        self.usingGuideView.isUserInteractionEnabled = true
+        self.usingGuideView.addGestureRecognizer(didTapUsingGuideView)
+        
         let didTapThemeModeView: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.pressThemeModeView(_:)))
         self.themeModeView.isUserInteractionEnabled = true
         self.themeModeView.addGestureRecognizer(didTapThemeModeView)
@@ -130,6 +153,14 @@ extension DrawerVC {
         let userInfoVC = UserInfoVC.makeUserInfoVC
         userInfoVC.modalPresentationStyle = .fullScreen
         self.present(userInfoVC, animated: true, completion: nil)
+        self.drawerController?.closeSide()
+    }
+    
+    @objc func pressUsingGuideView(_ sender: UIView) {
+        let usingGuideView = UsingGuideView()
+        usingGuideView.modalPresentationStyle = .fullScreen
+        self.present(usingGuideView, animated: true, completion: nil)
+        
         self.drawerController?.closeSide()
     }
     

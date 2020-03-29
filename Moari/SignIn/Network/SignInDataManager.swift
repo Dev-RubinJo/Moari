@@ -29,6 +29,7 @@ class SignInDataManager: SignInDataManagerDelegate {
                         UserDefaults.standard.set(email, forKey: "UserEmail")
                         UserDefaults.standard.set(signInResponse.jwt, forKey: "LoginToken")
                         UserDefaults.standard.set(signInResponse.name, forKey: "NickName")
+                        UserDefaults.standard.set(true, forKey: "ShowTutorial")
                         self.actor?.successSignIn()
                     case 310:
                         print("이메일을 확인해주세요")

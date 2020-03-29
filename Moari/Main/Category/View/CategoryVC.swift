@@ -42,6 +42,12 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
         self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: .clear)
         
         self.actor?.didLoadCategoryVC(vc: self)
+        
+        if UserDefaults.standard.bool(forKey: "ShowTutorial") {
+            let usingGuideView = UsingGuideView()
+            usingGuideView.modalPresentationStyle = .fullScreen
+            self.present(usingGuideView, animated: true, completion: nil)
+        }
     }
 }
     

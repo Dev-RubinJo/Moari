@@ -59,6 +59,8 @@ class SignUpDataManager: SignUpDataManagerDelegate {
                     case 200:
                         UserDefaults.standard.set(signInResponse.name, forKey: "NickName")
                         UserDefaults.standard.set(signInResponse.jwt, forKey: "LoginToken")
+                        UserDefaults.standard.set(email, forKey: "UserEmail")
+                        UserDefaults.standard.set(true, forKey: "ShowTutorial")
                         self.actor?.completeSignInAfterSignUp()
                     default:
                         break

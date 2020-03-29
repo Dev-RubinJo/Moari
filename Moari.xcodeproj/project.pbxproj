@@ -93,6 +93,10 @@
 		43878186240FE26200C39B8B /* CurationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878184240FE26200C39B8B /* CurationCell.swift */; };
 		43878187240FE26200C39B8B /* CurationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43878185240FE26200C39B8B /* CurationCell.xib */; };
 		4387818A240FF64800C39B8B /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878189240FF64800C39B8B /* ReviewModel.swift */; };
+		4389E48B2430EEEF004A3D2C /* UsingGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389E4892430EEEF004A3D2C /* UsingGuideView.swift */; };
+		4389E48C2430EEEF004A3D2C /* UsingGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4389E48A2430EEEF004A3D2C /* UsingGuideView.xib */; };
+		4389E4902430F1B9004A3D2C /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389E48E2430F1B9004A3D2C /* TutorialCell.swift */; };
+		4389E4912430F1B9004A3D2C /* TutorialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4389E48F2430F1B9004A3D2C /* TutorialCell.xib */; };
 		4394D71224133D0700856B02 /* AddReviewVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4394D71124133D0700856B02 /* AddReviewVC+SetUI.swift */; };
 		4394D71424133D1700856B02 /* AddReviewVC+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4394D71324133D1700856B02 /* AddReviewVC+UITextView.swift */; };
 		439BE62C23FC54C100EC77A9 /* SignInVC+SetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */; };
@@ -278,6 +282,10 @@
 		43878184240FE26200C39B8B /* CurationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurationCell.swift; sourceTree = "<group>"; };
 		43878185240FE26200C39B8B /* CurationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurationCell.xib; sourceTree = "<group>"; };
 		43878189240FF64800C39B8B /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		4389E4892430EEEF004A3D2C /* UsingGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingGuideView.swift; sourceTree = "<group>"; };
+		4389E48A2430EEEF004A3D2C /* UsingGuideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsingGuideView.xib; sourceTree = "<group>"; };
+		4389E48E2430F1B9004A3D2C /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
+		4389E48F2430F1B9004A3D2C /* TutorialCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialCell.xib; sourceTree = "<group>"; };
 		4394D71124133D0700856B02 /* AddReviewVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddReviewVC+SetUI.swift"; sourceTree = "<group>"; };
 		4394D71324133D1700856B02 /* AddReviewVC+UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddReviewVC+UITextView.swift"; sourceTree = "<group>"; };
 		439BE62B23FC54C100EC77A9 /* SignInVC+SetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+SetUI.swift"; sourceTree = "<group>"; };
@@ -562,6 +570,7 @@
 			isa = PBXGroup;
 			children = (
 				430B4E6224079256004046F9 /* View */,
+				4389E4882430EEBF004A3D2C /* UsingGuide */,
 				430B4E952409416D004046F9 /* Drawer */,
 				435EAC3C23FA9E8F00FF1AD8 /* Category */,
 				435EAC3D23FA9E9A00FF1AD8 /* Curation */,
@@ -933,6 +942,25 @@
 				43878189240FF64800C39B8B /* ReviewModel.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		4389E4882430EEBF004A3D2C /* UsingGuide */ = {
+			isa = PBXGroup;
+			children = (
+				4389E48D2430F1A2004A3D2C /* TutorialCell */,
+				4389E4892430EEEF004A3D2C /* UsingGuideView.swift */,
+				4389E48A2430EEEF004A3D2C /* UsingGuideView.xib */,
+			);
+			path = UsingGuide;
+			sourceTree = "<group>";
+		};
+		4389E48D2430F1A2004A3D2C /* TutorialCell */ = {
+			isa = PBXGroup;
+			children = (
+				4389E48E2430F1B9004A3D2C /* TutorialCell.swift */,
+				4389E48F2430F1B9004A3D2C /* TutorialCell.xib */,
+			);
+			path = TutorialCell;
 			sourceTree = "<group>";
 		};
 		4394D70F2412AAD400856B02 /* AppLock */ = {
@@ -1504,9 +1532,11 @@
 				432E0FD7240B7F3900ADD122 /* EditCategory.storyboard in Resources */,
 				43FF1349241C7FED00C89F66 /* EditThemeVC.xib in Resources */,
 				43CF86AC23F29CAE0062B846 /* InfoPlist.strings in Resources */,
+				4389E4912430F1B9004A3D2C /* TutorialCell.xib in Resources */,
 				439BE64423FE29C400EC77A9 /* FindEmailPasswordVC.xib in Resources */,
 				438402222402646B00ECA42E /* SignUpVC.xib in Resources */,
 				43E9CADF2414E17800A74CE9 /* StarRate.storyboard in Resources */,
+				4389E48C2430EEEF004A3D2C /* UsingGuideView.xib in Resources */,
 				43D53E4923FAE191005DFC4A /* GoogleService-Info.plist in Resources */,
 				430B4E6E240792EE004046F9 /* CurationVC.xib in Resources */,
 				43878187240FE26200C39B8B /* CurationCell.xib in Resources */,
@@ -1700,6 +1730,7 @@
 				430B4E782407948B004046F9 /* CategoryVC+Router.swift in Sources */,
 				43E9CB11241730B900A74CE9 /* CategoryVC+EditPopUp.swift in Sources */,
 				43FF134D241C846000C89F66 /* EditThemeActor.swift in Sources */,
+				4389E48B2430EEEF004A3D2C /* UsingGuideView.swift in Sources */,
 				43D0DBBE241F304A0093F937 /* DeleteReview.swift in Sources */,
 				4383795C240F55FC00317F3D /* CategoryDetailVC.swift in Sources */,
 				43BD49C72424BE7900236C0A /* SignOutPopUpDelegate.swift in Sources */,
@@ -1728,6 +1759,7 @@
 				439BE63323FD425000EC77A9 /* SignInVC+UITextFieldDelegate.swift in Sources */,
 				43E9CB0E241729BF00A74CE9 /* CategoryActor+PopUp.swift in Sources */,
 				430B4E69240792DD004046F9 /* CategoryVC.swift in Sources */,
+				4389E4902430F1B9004A3D2C /* TutorialCell.swift in Sources */,
 				438402262402648300ECA42E /* SignUpDataManager.swift in Sources */,
 				43BD49D22425B24C00236C0A /* FinalDeleteUser.swift in Sources */,
 				4384022A2402649D00ECA42E /* SignUpProtocol.swift in Sources */,
@@ -1919,7 +1951,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				EXCLUDED_SOURCE_FILE_NAMES = "";
@@ -1945,7 +1977,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = Moari/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
