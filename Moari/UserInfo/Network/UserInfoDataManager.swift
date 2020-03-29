@@ -8,10 +8,12 @@
 
 import Alamofire
 import AlamofireObjectMapper
+import Kingfisher
 
 class UserInfoDataManager: UserInfoDataManagerDelegate {
 
     weak var actor: UserInfoActorDelegate?
+    let cache = ImageCache.default
     
     func editUserInfo(fromVC vc: UserInfoVC, nickName name: String?, password: String?) {
         guard let loginToken = UserDefaults.standard.string(forKey: "LoginToken") else {
@@ -64,6 +66,7 @@ class UserInfoDataManager: UserInfoDataManagerDelegate {
                         UserDefaults.standard.removeObject(forKey: "LoginToken")
                         UserDefaults.standard.removeObject(forKey: "UserEmail")
                         UserDefaults.standard.removeObject(forKey: "NickName")
+                        self.cache.clearMemoryCache()
                         vc.presentSignInVC()
                     default:
                         break

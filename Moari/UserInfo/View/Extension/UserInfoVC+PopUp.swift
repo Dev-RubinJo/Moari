@@ -27,6 +27,7 @@ extension UserInfoVC: SignOutPopUpDelegate {
         UserDefaults.standard.removeObject(forKey: "NickName")
         UserDefaults.standard.removeObject(forKey: "ReviewCount")
         UserDefaults.standard.removeObject(forKey: "ShowTutorial")
+        self.cache.clearMemoryCache()
         self.presentSignInVC()
     }
 }

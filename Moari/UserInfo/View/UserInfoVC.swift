@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserInfoVC: BaseVC, UserInfoVCProtococl {
     
@@ -28,6 +29,8 @@ class UserInfoVC: BaseVC, UserInfoVCProtococl {
     @IBOutlet weak var deleteUserButton: UIButton!
     
     var actor: (UserInfoActorDelegate & UserInfoPopUpActorDelegate)?
+    
+    let cache = ImageCache.default
     
     override func viewDidLoad() {
         super.viewDidLoad()

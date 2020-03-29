@@ -248,7 +248,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                                         
                                         vc.reviewId = writeResponse.reviewId
                                         vc.review = ReviewDetail(reviewId: writeResponse.reviewId, categoryId: vc.categoryId, title: vc.reviewTitleTextView.text, simpleContent: vc.reviewContentTextView.text, imageUrl: "\(url!)", starRate: vc.starRateValue, reviewContent: vc.contentTextView.text, reviewDate: vc.selectDateTextField.text)
-                                        
+                                        vc.navigationItem.title = ""
                                         vc.image = vc.backgroundImageView.image
                                         
                                         vc.disappearIndicator()
@@ -294,7 +294,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                             vc.reviewId = writeResponse.reviewId
                             
                             vc.review = ReviewDetail(reviewId: writeResponse.reviewId, categoryId: vc.categoryId, title: vc.reviewTitleTextView.text, simpleContent: vc.reviewContentTextView.text, imageUrl: "", starRate: vc.starRateValue, reviewContent: vc.contentTextView.text, reviewDate: vc.selectDateTextField.text)
-                            
+                            vc.navigationItem.title = ""
                             vc.image = vc.backgroundImageView.image
                             vc.disappearIndicator()
                         case .failure(let error):
