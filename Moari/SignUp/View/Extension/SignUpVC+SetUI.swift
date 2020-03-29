@@ -98,7 +98,7 @@ extension SignUpVC {
     
     @objc func pressSignUpButton(_ sender: UIButton) {
         // 전체 벨리데이션이 맞을 때 회원가입이 가능하도록
-        if self.emailTextField.text!.validateEmail() && self.passwordTextField.text != nil && (self.passwordTextField.text == self.passwordCheckTextField.text) && self.usingPolicyCheck && self.personalPolicyCheck {
+        if self.emailTextField.text!.validateEmail() && self.passwordTextField.text != nil && self.passwordTextField.text?.count ?? 0 > 5 && (self.passwordTextField.text == self.passwordCheckTextField.text) && self.usingPolicyCheck && self.personalPolicyCheck {
             self.actor?.didTapSignUpButton(fromVC: self)
         } else if !self.emailTextField.text!.validateEmail() { // 이메일 벨리데이션이 안맞을 때
             self.actor?.presentInvalidEmailAlert(toVC: self)

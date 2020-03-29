@@ -46,7 +46,9 @@ extension CurationVC {
     
     @objc func pressAddReviewButton(_ sender: UIBarButtonItem) {
         // Actor로 옮기기
-        let addReviewVC = AddReviewVC.makeAddReviewVC
+        let addReviewRootVC = AddReviewVC.makeAddReviewVC
+        let addReviewVC = UINavigationController.init(rootViewController: addReviewRootVC)
+        addReviewRootVC.isAdd = true
         addReviewVC.modalPresentationStyle = .fullScreen
         self.present(addReviewVC, animated: true, completion: nil)
     }

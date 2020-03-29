@@ -33,7 +33,7 @@ class SignInActor: SignInActorDelegate {
 }
 extension SignInActor {
     private func checkTextFields(vc: SignInVC) {
-        if vc.emailTextField.text!.validateEmail() && vc.passwordTextField.text != nil {
+        if vc.emailTextField.text!.validateEmail() && vc.passwordTextField.text != nil && vc.passwordTextField.text?.count ?? 0 > 5 {
             guard let id = vc.emailTextField.text else { return }
             guard let password = vc.passwordTextField.text else { return }
             self.dataManager?.signIn(fromVC: vc, email: id, password: password)

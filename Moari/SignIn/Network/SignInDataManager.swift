@@ -35,8 +35,10 @@ class SignInDataManager: SignInDataManagerDelegate {
                         self.actor?.presentValidationAlert(toVC: vc, email: false, password: true)
                     case 311:
                         // 비밀번호 틀린 Alert만들기
+                        vc.presentAlert(title: "비밀번호 오류", message: "비밀번호를 다시 확인해주세요!")
                         print("비밀번호가 틀림")
                     case 312:
+                        vc.presentAlert(title: "비활성화된 이메일", message: "비활성화된 이메일입니다! 고객센터에 문의해주세요!!")
                         print("비활성화 된 계정입니다. 고객센터")
                         fallthrough
                     case 313:
