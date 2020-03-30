@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 // AddReviewVC SetUI extension
 extension AddReviewVC {
@@ -258,6 +259,7 @@ extension AddReviewVC {
         self.contentTextView.isEditable = true
         
         self.selectCategoryButton.isUserInteractionEnabled = true
+        self.selectDateTextField.isUserInteractionEnabled = true
         
         self.navigationItem.title = "수정하기"
     }

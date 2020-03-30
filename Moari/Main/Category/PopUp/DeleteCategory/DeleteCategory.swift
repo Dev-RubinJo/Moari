@@ -40,13 +40,21 @@ extension DeleteCategory {
             attributedString.addAttribute(.foregroundColor, value: UIColor.cursorColor, range: NSRange(location: 0, length: 3))
             self.deletePopUpLabel.attributedText = attributedString
         } else if self.deviceLocale == "en" {
-            let attributedString = NSMutableAttributedString(string: "Do you want to delete \((self.category?.categoryName)!)?", attributes: [
+            let attributedString = NSMutableAttributedString(string: "\((self.category?.categoryName)!) 카테고리를삭제하시겠습니까?", attributes: [
               .font: UIFont(name: "AppleSDGothicNeo-Light", size: 17.0)!,
               .foregroundColor: UIColor.deletePopUpAttributeColor,
               .kern: 0.0
             ])
-            attributedString.addAttribute(.foregroundColor, value: UIColor.cursorColor, range: NSRange(location: 22, length: (self.category?.categoryName.count)!))
+            attributedString.addAttribute(.foregroundColor, value: UIColor.cursorColor, range: NSRange(location: 0, length: 3))
             self.deletePopUpLabel.attributedText = attributedString
+            // TODO: 추후 영문지원할 때 이것으로 바꾸기
+//            let attributedString = NSMutableAttributedString(string: "Do you want to delete \((self.category?.categoryName)!)?", attributes: [
+//              .font: UIFont(name: "AppleSDGothicNeo-Light", size: 17.0)!,
+//              .foregroundColor: UIColor.deletePopUpAttributeColor,
+//              .kern: 0.0
+//            ])
+//            attributedString.addAttribute(.foregroundColor, value: UIColor.cursorColor, range: NSRange(location: 22, length: (self.category?.categoryName.count)!))
+//            self.deletePopUpLabel.attributedText = attributedString
         }
     }
     

@@ -60,6 +60,9 @@ class CategoryDetailActor: CategoryDetailActorDelegate {
                 self._reviewList.remove(at: reviewIndex)
             }
         }
+        if self.reviewList.count == 1 {
+            self._reviewList.remove(at: 0)
+        }
         self.dataManager?.deleteReview(fromVC: vc, reviewId: id)
     }
     

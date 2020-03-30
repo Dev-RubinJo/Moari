@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Photos
 
 class AddReviewVC: BaseVC, AddReviewVCProtocol {
     
@@ -126,6 +127,23 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
         
         self.setAddReviewVCUI()
         self.initTapListener()
+        
+        AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
+            if response {
+                //권한 획득시 실행될 명령
+            } else {
+                self.presentAlert(title: "카메라 권한을 허가해주세요", message: "원활한 이용을 위해 카메라 권한을 허가해주세요!")
+            }
+        }
+        //앨범 권한 묻기
+        if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized {
+            PHPhotoLibrary.requestAuthorization({ (status: PHAuthorizationStatus) -> Void in
+                if status != .authorized { // 권한 허가가 아니라면
+                    self.presentAlert(title: "앨범 권한을 허가해주세요", message: "원활한 이용을 위해 앨범 권한을 허가해주세요!")
+                }
+            })
+        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

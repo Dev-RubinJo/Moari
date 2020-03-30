@@ -70,10 +70,10 @@ extension DrawerVC {
         guard let userName = UserDefaults.standard.string(forKey: "NickName") else { return }
         if self.deviceLocale == "ko" {
             let attributedString = NSMutableAttributedString(string: "\(userName)님의\n모아 놓은 리뷰", attributes: [
-              .font: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 22.0)!,
+              .font: UIFont(name: "AppleSDGothicNeo-Thin", size: 22.0)!,
               .kern: 0.0
             ])
-            attributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-Thin", size: 22.0)!, range: NSRange(location: 0, length: userName.count))
+            attributedString.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 22.0)!, range: NSRange(location: 0, length: userName.count))
             
             self.drawerViewTitleLabel.attributedText = attributedString
         } else if self.deviceLocale == "en" {
