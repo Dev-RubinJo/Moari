@@ -62,6 +62,7 @@
 		4365F7602406B68C008232EF /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4365F75F2406B68C008232EF /* SignUp.storyboard */; };
 		4365F7622406B69C008232EF /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4365F7612406B69C008232EF /* SignUp.swift */; };
 		4365F7642406B6B0008232EF /* SignUpPopUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4365F7632406B6B0008232EF /* SignUpPopUpDelegate.swift */; };
+		437A95122431CE1100EC8E49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 437A95112431CE1100EC8E49 /* GoogleService-Info.plist */; };
 		437F3892240F72D1006DFCC4 /* CategoryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437F3890240F72D1006DFCC4 /* CategoryDetailCell.swift */; };
 		437F3893240F72D1006DFCC4 /* CategoryDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437F3891240F72D1006DFCC4 /* CategoryDetailCell.xib */; };
 		43837953240F541B00317F3D /* CategoryDetailActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43837952240F541B00317F3D /* CategoryDetailActor.swift */; };
@@ -142,7 +143,6 @@
 		43D0DBBC241F303D0093F937 /* DeleteReview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D0DBBB241F303D0093F937 /* DeleteReview.storyboard */; };
 		43D0DBBE241F304A0093F937 /* DeleteReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D0DBBD241F304A0093F937 /* DeleteReview.swift */; };
 		43D0DBC0241F305A0093F937 /* DeleteReviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D0DBBF241F305A0093F937 /* DeleteReviewDelegate.swift */; };
-		43D53E4923FAE191005DFC4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43D53E4823FAE191005DFC4A /* GoogleService-Info.plist */; };
 		43D53E4D23FAE7DD005DFC4A /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D53E4B23FAE7DD005DFC4A /* SignInVC.swift */; };
 		43D53E4E23FAE7DD005DFC4A /* SignInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D53E4C23FAE7DD005DFC4A /* SignInVC.xib */; };
 		43D53E5023FAE808005DFC4A /* SignInProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D53E4F23FAE808005DFC4A /* SignInProtocol.swift */; };
@@ -251,6 +251,7 @@
 		4365F75F2406B68C008232EF /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		4365F7612406B69C008232EF /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		4365F7632406B6B0008232EF /* SignUpPopUpDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPopUpDelegate.swift; sourceTree = "<group>"; };
+		437A95112431CE1100EC8E49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		437F3890240F72D1006DFCC4 /* CategoryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailCell.swift; sourceTree = "<group>"; };
 		437F3891240F72D1006DFCC4 /* CategoryDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryDetailCell.xib; sourceTree = "<group>"; };
 		43837952240F541B00317F3D /* CategoryDetailActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailActor.swift; sourceTree = "<group>"; };
@@ -334,7 +335,6 @@
 		43D0DBBB241F303D0093F937 /* DeleteReview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteReview.storyboard; sourceTree = "<group>"; };
 		43D0DBBD241F304A0093F937 /* DeleteReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReview.swift; sourceTree = "<group>"; };
 		43D0DBBF241F305A0093F937 /* DeleteReviewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReviewDelegate.swift; sourceTree = "<group>"; };
-		43D53E4823FAE191005DFC4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43D53E4B23FAE7DD005DFC4A /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		43D53E4C23FAE7DD005DFC4A /* SignInVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInVC.xib; sourceTree = "<group>"; };
 		43D53E4F23FAE808005DFC4A /* SignInProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInProtocol.swift; sourceTree = "<group>"; };
@@ -844,7 +844,7 @@
 				4362199123F1A2B7008B9F84 /* Assets.xcassets */,
 				4362199323F1A2B7008B9F84 /* LaunchScreen.storyboard */,
 				4362199623F1A2B7008B9F84 /* Info.plist */,
-				43D53E4823FAE191005DFC4A /* GoogleService-Info.plist */,
+				437A95112431CE1100EC8E49 /* GoogleService-Info.plist */,
 			);
 			path = Moari;
 			sourceTree = "<group>";
@@ -1438,6 +1438,7 @@
 				4362198223F1A2B6008B9F84 /* Frameworks */,
 				4362198323F1A2B6008B9F84 /* Resources */,
 				43D53E4A23FAE328005DFC4A /* ShellScript */,
+				437A95102431CCCF00EC8E49 /* ShellScript */,
 				BAF472BB3E0AA5AC3B122D1C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -1537,11 +1538,11 @@
 				438402222402646B00ECA42E /* SignUpVC.xib in Resources */,
 				43E9CADF2414E17800A74CE9 /* StarRate.storyboard in Resources */,
 				4389E48C2430EEEF004A3D2C /* UsingGuideView.xib in Resources */,
-				43D53E4923FAE191005DFC4A /* GoogleService-Info.plist in Resources */,
 				430B4E6E240792EE004046F9 /* CurationVC.xib in Resources */,
 				43878187240FE26200C39B8B /* CurationCell.xib in Resources */,
 				43FF133B241BE19E00C89F66 /* SearchVC.xib in Resources */,
 				432E0FD1240B7EF700ADD122 /* AddCategory.storyboard in Resources */,
+				437A95122431CE1100EC8E49 /* GoogleService-Info.plist in Resources */,
 				437F3893240F72D1006DFCC4 /* CategoryDetailCell.xib in Resources */,
 				43FF135F241D368C00C89F66 /* AppLockVC.xib in Resources */,
 				43D0DBBC241F303D0093F937 /* DeleteReview.storyboard in Resources */,
@@ -1559,6 +1560,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		437A95102431CCCF00EC8E49 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nfind dSYM_directory -name \"*.dSYM\" | xargs -I \\{\\} $PODS_ROOT/FirebaseCrashlytics/upload-symbols -gsp ${PROJECT_DIR}/GoogleService-Info.plist -p ios \\{\\}\n";
+		};
 		43D53E4A23FAE328005DFC4A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1574,7 +1592,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/Fabric/upload-symbols\" -gsp \"${PROJECT_DIR}/GoogleService-Info.plist\" -p ios \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		7BC79A57ECE982CF7422E9AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1951,7 +1969,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 18;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				EXCLUDED_SOURCE_FILE_NAMES = "";
@@ -1977,7 +1995,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = Moari/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

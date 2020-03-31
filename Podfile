@@ -24,6 +24,8 @@ target 'Moari' do
   pod 'Mantis', '~> 1.0.0'
   
   pod 'Firebase/Analytics'
+  # pod 'Fabric', '~> 1.10.2'
+  # pod 'Crashlytics', '~> 3.14.0'
   pod 'Firebase/Crashlytics'
   pod 'FirebaseStorage'
 
