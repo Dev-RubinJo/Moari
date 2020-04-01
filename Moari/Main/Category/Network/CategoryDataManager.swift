@@ -78,6 +78,8 @@ class CategoryDataManager: CategoryDataManagerDelegate {
                     switch categoryResponse.code {
                     case 200:
                         self.loadCategoryList(toVC: vc)
+                    case 316:
+                        vc.presentAlert(title: "중복되었어요!", message: "동일한 카테고리 이름이 존재해요!")
                     default:
                         break
                     }
@@ -104,6 +106,8 @@ class CategoryDataManager: CategoryDataManagerDelegate {
                     switch categoryResponse.code {
                     case 200:
                         self.loadCategoryList(toVC: vc)
+                    case 316:
+                        vc.presentAlert(title: "중복되었어요!", message: "동일한 카테고리 이름이 존재해요!")
                     default:
                         break
                     }
