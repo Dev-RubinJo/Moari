@@ -33,7 +33,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uml-Fy-Xup">
                                         <rect key="frame" x="22" y="85" width="370" height="86"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hX0-3O-Sv9">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hX0-3O-Sv9">
                                                 <rect key="frame" x="0.0" y="0.0" width="370" height="86"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <string key="text">제목 25자 제한 어때요!
@@ -71,7 +71,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1M0-DZ-KMB">
                                         <rect key="frame" x="22" y="241.33333333333337" width="370" height="157.66666666666663"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="하늘에는 하나에 지나가는 이름을 시인의 나의 마디씩 봅니다. 이국 벌레는 그리워 풀이 이름자 봅니다. " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QRT-ja-EMC">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="하늘에는 하나에 지나가는 이름을 시인의 나의 마디씩 봅니다. 이국 벌레는 그리워 풀이 이름자 봅니다. " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRT-ja-EMC">
                                                 <rect key="frame" x="0.0" y="0.0" width="370" height="157.66666666666666"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
