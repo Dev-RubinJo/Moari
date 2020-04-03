@@ -23,25 +23,11 @@ extension AddReviewVC: UITextViewDelegate {
             self.contentViewPlaceholderLabel.isHidden = true
             self.resizeContentTextView()
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + self.keyboardHeight)
-
-            
-            //            var point = self.contentTextView.frame.origin
-            //            point.y = point.y - self.keyboardHeight - 4
-            //            point.x = point.x - 22
-            //            self.scrollView.setContentOffset(point, animated: true)
             
             let caret = self.contentTextView.caretRect(for: self.contentTextView.selectedTextRange!.start)
             let cursorRect: CGRect = CGRect.init(x: caret.maxX, y: caret.maxY, width: caret.width, height: self.contentView.bounds.height)
             
             self.scrollView.setContentOffset(CGPoint(x: 0.0, y: cursorRect.minY + 50), animated: true)
-            // (cursorRect, animated: true)
-//            self.scrollToCursorPosition()
-            // 11promax = 346
-            // 11 = 346
-            // 11pro = 220
-            // 6s+ = 265
-            // 8 = 220
-        // se = 261
         default:
             break
         }
@@ -63,16 +49,6 @@ extension AddReviewVC: UITextViewDelegate {
             self.resizeContentTextView()
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + self.keyboardHeight)
             self.scrollToCursorPosition()
-            //            var point = contentTextView.frame.origin
-            //            point.y = point.y - 261
-            //            point.x = point.x - 22
-            //
-            //            if let selectedRange = self.contentTextView.selectedTextRange {
-            //                let cursorPosition = self.contentTextView.offset(from: self.contentTextView.beginningOfDocument, to: selectedRange.start)
-            //                print("\(cursorPosition)")
-            //            }
-            
-        //            self.scrollView.setContentOffset(point, animated: true)
         default:
             break
         }
@@ -94,7 +70,13 @@ extension AddReviewVC: UITextViewDelegate {
             if textView.text == "" {
                 self.contentViewPlaceholderLabel.isHidden = false
             }
-            self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + 10)
+            
+            if self.baseHeight + self.contentTextView.bounds.height > self.screenHeight {
+                self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height + 10)
+            } else {
+                self.updateScrollView(heightValue: self.screenHeight)
+            }
+            
             self.contentTextViewBottomConstraint.constant = 10
         default:
             break
@@ -103,14 +85,12 @@ extension AddReviewVC: UITextViewDelegate {
     
     private func scrollToCursorPosition() {
         let caret = self.contentTextView.caretRect(for: self.contentTextView.selectedTextRange!.start)
-        let cursorRect: CGRect = CGRect.init(x: caret.maxX, y: caret.maxY, width: caret.width, height: self.contentView.bounds.height)
-        
+        let cursorRect: CGRect = CGRect.init(x: caret.origin.x, y: caret.origin.y, width: caret.width, height: self.contentView.bounds.height)
         self.scrollView.scrollRectToVisible(cursorRect, animated: true)
     }
 
     func resizeContentTextView() {
         if self.contentTextView.text != " " && self.contentTextView.text != "" {
-            
             self.actor?.setTextViewLineSpacing(self.contentTextView, lineSpace: 6, fontSize: 17.0, color: .systemWBColor, textAlignment: .natural)
             
             let fixedWidth = self.contentTextView.frame.size.width
@@ -120,16 +100,10 @@ extension AddReviewVC: UITextViewDelegate {
                     constraint.constant = newSize.height
                 }
             }
+            
             self.contentTextViewHeight.height = newSize.height
         } else {
-            let fixedWidth = self.contentTextView.frame.size.width
-            let textView = UITextView(frame: CGRect(x: 0, y: 0, width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-            textView.text = self.contentTextView.text
-            textView.font = self.contentTextView.font
-            
-            textView.sizeToFit()
-            self.contentTextViewHeight.height = textView.frame.height
-
+            self.contentTextViewHeight.height = self.screenHeight - self.baseHeight
         }
     }
     

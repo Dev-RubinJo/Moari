@@ -35,6 +35,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                             let imageUrl = URL(string: review.imageUrl)
                             vc.backgroundImageView.kf.setImage(with: imageUrl!)
                             vc.image = vc.backgroundImageView.image
+                            
                         } else {
                             vc.backgroundImageView.image = UIImage(named: "defaultImage")
                         }
@@ -83,10 +84,10 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
         metadata.contentType = "image/jpeg"
         if let reviewId = id {
             if vc.backgroundImageView.image != UIImage(named: "defaultImage") {
-                if vc.image != vc.backgroundImageView.image {
+                if vc.imageChangeFlag {
                     if let image = vc.backgroundImageView.image {
                         let storageReference = Storage.storage().reference().child("iOS/\(UserDefaults.standard.string(forKey: "NickName")!)/\(vc.categoryId!).jpg")
-                        let imageData = image.jpegData(compressionQuality: 0.05)
+                        let imageData = image.jpegData(compressionQuality: 0.001)
                         vc.appearIndicator()
                         storageReference.putData(imageData!, metadata:  metadata) { (metadata, error) in
                             storageReference.downloadURL { (url, error) in
@@ -119,6 +120,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                                             vc.contentTextView.isEditable = false
                                             vc.contentViewPlaceholderLabel.isHidden = true
                                             vc.navigationItem.rightBarButtonItem = nil
+                                            vc.imageChangeFlag = false
                                             vc.disappearIndicator()
                                         case .failure(let error):
                                             print(error)
@@ -211,7 +213,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
             if vc.backgroundImageView.image != UIImage(named: "defaultImage") {
                 if let image = vc.backgroundImageView.image {
                     let storageReference = Storage.storage().reference().child("iOS/\(UserDefaults.standard.string(forKey: "NickName")!)/\(vc.reviewTitleTextView.text!).jpg")
-                    let imageData = image.jpegData(compressionQuality: 0.05)
+                    let imageData = image.jpegData(compressionQuality: 0.001)
                     vc.appearIndicator()
                     storageReference.putData(imageData!, metadata:  metadata) { (metadata, error) in
                         storageReference.downloadURL { (url, error) in

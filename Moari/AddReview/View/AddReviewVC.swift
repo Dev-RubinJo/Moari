@@ -62,6 +62,7 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     /// 선택한 이미지를 저장하는 변수
     var image: UIImage? = UIImage(named: "defaultImage")
     var imageUrl: String = ""
+    var imageChangeFlag: Bool = false
     
     var appendReviewButton = UIBarButtonItem()
     var closeReviewButton = UIBarButtonItem()
@@ -79,6 +80,27 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     var contentTextViewHeight: CGSize = CGSize(width: 0, height: 0)
     
     var datePicker: UIDatePicker!
+    
+    lazy var screenHeight: CGFloat = {
+        switch UIScreen.main.nativeBounds.height {
+        case 1136: // se1
+            return 568
+        case 1334:
+            //                print("iPhone 6/6S/7/8")
+            return 667
+        case 1920:
+            return 736
+        case 2436:
+            return 812
+        case 1792:
+            //                print("iPhone XR, XS MAX")
+            return 896
+        case 2688:
+            return 896
+        default:
+            return 896
+        }
+    }()
     
     lazy var keyboardHeight: CGFloat = {
         switch UIScreen.main.nativeBounds.height {
@@ -143,7 +165,7 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
                 }
             })
         }
-
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setForegroundNotification), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -177,9 +199,18 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
         }
     }
     
+    // 일부 앱 생명주기와 관련이 되어있다. 앱 밖으로 나가는 것과 연관이 되어있다
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        self.setAddReviewVCUI()
+    }
+    
+    @objc func setForegroundNotification() {
+        if self.isAdd ?? false {
+            self.navigationItem.title = "작성하기"
+        }
+        if self.contentTextView.text != "" {
+            self.contentViewPlaceholderLabel.isHidden = true
+        }
     }
 }
 

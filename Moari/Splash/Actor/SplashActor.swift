@@ -6,6 +6,7 @@
 //  Copyright © 2020 YooBin Jo. All rights reserved.
 //
 import UIKit
+import Firebase
 
 class SplashActor: SplashActorDelegate {
     
@@ -17,10 +18,12 @@ class SplashActor: SplashActorDelegate {
     }
     
     func vaildToken() {
+        Analytics.logEvent("ValidToken_ios", parameters: ["req": "ValidToken_ios"])
         self.view?.presentMainVC()
     }
     
     func invalidToken() {
+        Analytics.logEvent("invalidToken_ios", parameters: ["req": "invalidToken_ios"])
         self.view?.presentSignInVC()
     }
     

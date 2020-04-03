@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(2, forKey: "Theme")
         }
         UserDefaults.standard.set(true, forKey: "FirstAppLaunch")
+        Analytics.setAnalyticsCollectionEnabled(true)
         
         
         if #available(iOS 13.0, *) {}
@@ -49,44 +50,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    }
 //    func test() {}
     
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        if let imageView : UIImageView = UIApplication.shared.keyWindow?.subviews.last?.viewWithTag(1001) as? UIImageView {
-            imageView.removeFromSuperview()
-        }
-    }
-    
-    func applicationWillResignActive(_ application: UIApplication) {
-        let imageView = UIImageView(frame: self.window!.bounds)
-        imageView.tag = 1001
-        imageView.image = UIImage(named: "imgAppLock")
-        imageView.contentMode = .scaleAspectFill
-
-        UIApplication.shared.keyWindow?.subviews.last?.addSubview(imageView)
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
-        if appLockConfig {
-            UserDefaults.standard.set(true, forKey: "NeedAppPassword")
-        } else {
-            UserDefaults.standard.set(false, forKey: "NeedAppPassword")
-        }
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        let needAppPassword = UserDefaults.standard.bool(forKey: "NeedAppPassword")
-        guard let appPassword = UserDefaults.standard.string(forKey: "AppPassword") else {
-            return
-        }
-        if needAppPassword {
-            let appLockVC = AppLockVC()
-            self.window?.rootViewController?.present(appLockVC, animated: false, completion: nil)
-        }
-    }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        
-    }
+//    func applicationDidBecomeActive(_ application: UIApplication) {
+//        if let imageView : UIImageView = UIApplication.shared.keyWindow?.subviews.last?.viewWithTag(1001) as? UIImageView {
+//            imageView.removeFromSuperview()
+//        }
+//    }
+//    
+//    func applicationWillResignActive(_ application: UIApplication) {
+//        let imageView = UIImageView(frame: self.window!.bounds)
+//        imageView.tag = 1001
+//        imageView.image = UIImage(named: "imgAppLock")
+//        imageView.contentMode = .scaleAspectFill
+//
+//        UIApplication.shared.keyWindow?.subviews.last?.addSubview(imageView)
+//    }
+//    
+//    func applicationDidEnterBackground(_ application: UIApplication) {
+//        let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
+//        if appLockConfig {
+//            UserDefaults.standard.set(true, forKey: "NeedAppPassword")
+//        } else {
+//            UserDefaults.standard.set(false, forKey: "NeedAppPassword")
+//        }
+//    }
+//    
+//    func applicationWillEnterForeground(_ application: UIApplication) {
+//        let needAppPassword = UserDefaults.standard.bool(forKey: "NeedAppPassword")
+//        guard let appPassword = UserDefaults.standard.string(forKey: "AppPassword") else {
+//            return
+//        }
+//        if needAppPassword {
+//            let appLockVC = AppLockVC()
+//            self.window?.rootViewController?.present(appLockVC, animated: false, completion: nil)
+//        }
+//    }
+//    
+//    func applicationWillTerminate(_ application: UIApplication) {
+//        
+//    }
     
     // MARK: UISceneSession Lifecycle
     @available(iOS 13.0, *)

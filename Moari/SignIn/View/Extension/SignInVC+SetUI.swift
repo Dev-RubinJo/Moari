@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension SignInVC {
     func setSignInVCUI() {
@@ -99,14 +100,17 @@ extension SignInVC {
     }
     
     @objc func pressSignInButton(_ sender: UILabel) {
+        Analytics.logEvent("pressSignIn_ios", parameters: ["req": "pressSignIn_ios"])
         self.actor?.didTapSignInButton(fromVC: self)
     }
     
     @objc func pressFindEmailPasswordButton(_ sender: UILabel) {
+        Analytics.logEvent("pressFindEmailPassword_ios", parameters: ["req": "pressFindEmailPassword_ios"])
         self.actor?.didTapFindEmailPasswordLabel()
     }
     
     @objc func pressSignUpButton(_ sender: UILabel) {
+        Analytics.logEvent("pressSignUp_ios", parameters: ["req": "pressSignUp_ios"])
         self.actor?.didTapSignUpLabel()
     }
 }

@@ -8,6 +8,7 @@
 
 import Alamofire
 import AlamofireObjectMapper
+import Firebase
 
 class SignInDataManager: SignInDataManagerDelegate {
     
@@ -30,6 +31,9 @@ class SignInDataManager: SignInDataManagerDelegate {
                         UserDefaults.standard.set(signInResponse.jwt, forKey: "LoginToken")
                         UserDefaults.standard.set(signInResponse.name, forKey: "NickName")
                         UserDefaults.standard.set(true, forKey: "ShowTutorial")
+                        
+                        Analytics.logEvent("SignIn_ios", parameters: ["req": "SignIn_ios"])
+                        
                         self.actor?.successSignIn()
                     case 310:
                         print("이메일을 확인해주세요")

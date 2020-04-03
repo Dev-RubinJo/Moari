@@ -50,60 +50,62 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-        let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
-        if appLockConfig {
-            if let imageView : UIImageView = UIApplication.shared.keyWindow?.subviews.last?.viewWithTag(1001) as? UIImageView {
-                imageView.removeFromSuperview()
-            }
-        }
         
-        
+        //        let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
+        //        if appLockConfig {
+        //            if let imageView : UIImageView = UIApplication.shared.keyWindow?.subviews.last?.viewWithTag(1001) as? UIImageView {
+        //                imageView.removeFromSuperview()
+        //            }
+        //        }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
-        let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
-        if appLockConfig {
-            let imageView = UIImageView(frame: self.window!.bounds)
-            imageView.tag = 1001
-            imageView.image = UIImage(named: "imgAppLock")
-            imageView.contentMode = .scaleAspectFill
-            UIApplication.shared.windows.first?.subviews.last?.addSubview(imageView)
-        }        
+        
+        //        let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
+        //        if appLockConfig {
+        //            let imageView = UIImageView(frame: self.window!.bounds)
+        //            imageView.tag = 1001
+        //            imageView.image = UIImage(named: "imgAppLock")
+        //            imageView.contentMode = .scaleAspectFill
+        //            UIApplication.shared.windows.first?.subviews.last?.addSubview(imageView)
+        //        }
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
-        let needAppPassword = UserDefaults.standard.bool(forKey: "NeedAppPassword")
-//        guard let appPassword = UserDefaults.standard.string(forKey: "AppPassword") else {
-//            return
-//        }
-        if needAppPassword {
-            let appLockVC = AppLockVC()
-            appLockVC.modalPresentationStyle = .fullScreen
-            if let imageView : UIImageView = UIApplication.shared.keyWindow?.subviews.last?.viewWithTag(1001) as? UIImageView {
-                imageView.removeFromSuperview()
-            }
-            // TODO: 앱딜리게이트부터 실행이 되는 플로우일때랑 아닐때 나눠서 mainVC(CategoryVC에서 띄울지, 신델리게이트에서 띄울지 정하기)
-            self.window?.rootViewController?.present(appLockVC, animated: false, completion: nil)
-        } else {
-            
-        }
         
+        
+        //        let needAppPassword = UserDefaults.standard.bool(forKey: "NeedAppPassword")
+        //        guard let appPassword = UserDefaults.standard.string(forKey: "AppPassword") else {
+        //            return
+        //        }
+        //        if needAppPassword {
+        //            let appLockVC = AppLockVC()
+        //            appLockVC.modalPresentationStyle = .fullScreen
+        //            if let imageView : UIImageView = UIApplication.shared.keyWindow?.subviews.last?.viewWithTag(1001) as? UIImageView {
+        //                imageView.removeFromSuperview()
+        //            }
+        //            // TODO: 앱딜리게이트부터 실행이 되는 플로우일때랑 아닐때 나눠서 mainVC(CategoryVC에서 띄울지, 신델리게이트에서 띄울지 정하기)
+        //            self.window?.rootViewController?.present(appLockVC, animated: false, completion: nil)
+        //        } else {
+        //
+        //        }
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-        let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
-        if appLockConfig {
-            UserDefaults.standard.set(true, forKey: "NeedAppPassword")
-        } else {
-            UserDefaults.standard.set(false, forKey: "NeedAppPassword")
-        }
+        
+        //        let appLockConfig = UserDefaults.standard.bool(forKey: "AppLockConfig")
+        //        if appLockConfig {
+        //            UserDefaults.standard.set(true, forKey: "NeedAppPassword")
+        //        } else {
+        //            UserDefaults.standard.set(false, forKey: "NeedAppPassword")
+        //        }
     }
 }
 @available(iOS 13.0, *)

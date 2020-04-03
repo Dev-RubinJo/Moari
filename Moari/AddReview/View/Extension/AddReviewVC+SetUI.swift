@@ -140,7 +140,11 @@ extension AddReviewVC {
         // TODO: 기종별로 최적화 된 사이즈 지정하기
         self.resizeContentTextView()
         self.contentView.snp.makeConstraints { make in
-            make.height.equalTo(self.baseHeight + self.contentTextViewHeight.height)
+            if self.baseHeight + self.contentTextView.bounds.height > self.screenHeight {
+                make.height.equalTo(self.baseHeight + self.contentTextViewHeight.height + 10)
+            } else {
+                make.height.equalTo(self.screenHeight)
+            }
         }
     }
     
@@ -261,7 +265,8 @@ extension AddReviewVC {
         self.selectCategoryButton.isUserInteractionEnabled = true
         self.selectDateTextField.isUserInteractionEnabled = true
         
-        self.navigationItem.title = "수정하기"
+//        self.navigationItem.title = "수정하기"
+        self.navigationController?.navigationBar.topItem?.title = "수정하기"
     }
     
     @objc func pressShareReviewButton(_ sender: UIButton) {
@@ -329,5 +334,7 @@ extension AddReviewVC: UIImagePickerControllerDelegate, UINavigationControllerDe
     
     func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation) {
         self.backgroundImageView.image = cropped
+        self.image = cropped
+        self.imageChangeFlag = true
     }
 }

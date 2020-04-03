@@ -8,6 +8,7 @@
 
 import Alamofire
 import AlamofireObjectMapper
+import Firebase
 
 class SplashDataManager: SplashDataManagerDelegate {
     
@@ -28,6 +29,7 @@ class SplashDataManager: SplashDataManagerDelegate {
                     switch checkTokenResponse.code {
                     case 200:
                         UserDefaults.standard.set(checkTokenResponse.email, forKey: "UserEmail")
+                        Analytics.logEvent("Splash_ios", parameters: ["req": "Splash_ios"])
                         self.actor?.vaildToken()
                     case 403:
                         self.actor?.presentInvalidTokenAlert(toVC: vc)
