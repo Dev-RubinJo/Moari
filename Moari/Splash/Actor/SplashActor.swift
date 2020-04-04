@@ -19,6 +19,7 @@ class SplashActor: SplashActorDelegate {
     
     func vaildToken() {
         Analytics.logEvent("ValidToken_ios", parameters: ["req": "ValidToken_ios"])
+        // setUserPropertyString: ""
         self.view?.presentMainVC()
     }
     

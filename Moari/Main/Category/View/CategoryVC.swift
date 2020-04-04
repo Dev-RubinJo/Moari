@@ -50,10 +50,3 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
         }
     }
 }
-    
-//    @IBAction func makeImageTest(_ sender: Any) {
-//        let image = UIView.makeImage(with: self.view)
-//        print(image)
-//        self.testImageView.image = image
-//    }
-//    @IBOutlet weak var testImageView: UIImageView!
