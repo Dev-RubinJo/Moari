@@ -50,6 +50,7 @@ class CategoryDetailDataManager: CategoryDetailDataManagerDelegate {
         }
         guard let categoryId = vc.category?.categoryId else { return }
         let headers: [String: String] = ["x-access-Token": loginToken]
+        vc.appearIndicator()
         Alamofire.request("\(Server.api)/category/\(categoryId)/review/\(count)", method: .get, encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseObject(completionHandler: { (response: DataResponse<CategoryDetailResponse>) in
@@ -64,6 +65,7 @@ class CategoryDetailDataManager: CategoryDetailDataManagerDelegate {
                             self.actor?.setReviewList(review: review)
                         }
                         vc.categoryDetailCollectionView.reloadData()
+                        vc.disappearIndicator()
                     default:
                         break
                     }
