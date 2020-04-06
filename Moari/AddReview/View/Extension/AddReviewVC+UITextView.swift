@@ -41,7 +41,7 @@ extension AddReviewVC: UITextViewDelegate {
             self.reviewTitleTextView.centerVertically()
             textView.textContainer.maximumNumberOfLines = 2
         case self.reviewContentTextView:
-            self.actor?.setTextViewLineSpacing(self.reviewContentTextView, lineSpace: 5, fontSize: 19.0, color: .white, textAlignment: .center)
+            
             self.reviewContentPlaceholderLabel.isHidden = true
             self.reviewContentTextView.centerVertically()
             
@@ -65,6 +65,7 @@ extension AddReviewVC: UITextViewDelegate {
             if self.reviewContentTextView.text! == "" {
                 self.reviewContentPlaceholderLabel.isHidden = false
             }
+            self.actor?.setTextViewLineSpacing(self.reviewContentTextView, lineSpace: 5, fontSize: 19.0, color: .white, textAlignment: .center)
             self.updateScrollView(heightValue: self.baseHeight + self.contentTextViewHeight.height)
         case self.contentTextView:
             if textView.text == "" {
