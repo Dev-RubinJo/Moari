@@ -8,5 +8,5 @@
 
 protocol DeleteReviewDelegate: class {
     
-    func didTapDeletePopUpDoneButton(reviewId id: Int)
+    func didTapDeletePopUpDoneButton(reviewId id: Int, reviewImageUrl: String)
 }

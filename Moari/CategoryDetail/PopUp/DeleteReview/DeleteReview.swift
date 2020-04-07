@@ -18,6 +18,7 @@ class DeleteReview: BaseVC {
     weak var delegate: DeleteReviewDelegate?
     
     var reviewId: Int = 0
+    var reviewImageUrl: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ extension DeleteReview {
     }
     
     @objc func pressDeleteReviewPopUpDoneButton(_ sender: UIButton) {
-        self.delegate?.didTapDeletePopUpDoneButton(reviewId: self.reviewId)
+        self.delegate?.didTapDeletePopUpDoneButton(reviewId: self.reviewId, reviewImageUrl: self.reviewImageUrl)
         self.dismiss(animated: true, completion: nil)
     }
     

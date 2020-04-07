@@ -69,6 +69,7 @@ class AddReviewVC: BaseVC, AddReviewVCProtocol {
     
     var isEdit: Bool = false
     var isAdd: Bool?
+    var newReview: Bool = false
     
     var review: ReviewDetail?
     

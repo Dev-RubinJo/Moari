@@ -8,6 +8,7 @@
 
 import Alamofire
 import AlamofireObjectMapper
+import FirebaseStorage
 
 class CategoryDetailDataManager: CategoryDetailDataManagerDelegate {
     
@@ -77,11 +78,12 @@ class CategoryDetailDataManager: CategoryDetailDataManagerDelegate {
             })
     }
     
-    func deleteReview(fromVC vc: CategoryDetailVC, reviewId: Int) {
+    func deleteReview(fromVC vc: CategoryDetailVC, reviewId: Int, reviewImageUrl: String) {
         guard let loginToken = UserDefaults.standard.string(forKey: "LoginToken") else {
             return
         }
         let headers: [String: String] = ["x-access-Token": loginToken]
+        vc.appearIndicator()
         Alamofire.request("\(Server.api)/review/\(reviewId)", method: .delete, encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseObject(completionHandler: { (response: DataResponse<CategoryDetailDeleteResponse>) in
@@ -89,9 +91,23 @@ class CategoryDetailDataManager: CategoryDetailDataManagerDelegate {
                 case .success(let categoryDetailResponse):
                     switch categoryDetailResponse.code {
                     case 200:
-                        vc.categoryDetailCollectionView.reloadData()
+                        if reviewImageUrl != "" {
+                            Storage.storage().reference(forURL: "\(reviewImageUrl)")
+                            .delete { error in
+                                if let error = error {
+                                    print(error)
+                                } else {
+                                    vc.categoryDetailCollectionView.reloadData()
+                                    vc.disappearIndicator()
+                                }
+                            }
+                        } else {
+                            vc.categoryDetailCollectionView.reloadData()
+                            vc.disappearIndicator()
+                        }
                     default:
                         vc.categoryDetailCollectionView.reloadData()
+                        vc.disappearIndicator()
                     }
                 case .failure(let error):
                     print(error)

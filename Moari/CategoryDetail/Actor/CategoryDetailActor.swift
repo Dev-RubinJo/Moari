@@ -27,8 +27,9 @@ class CategoryDetailActor: CategoryDetailActorDelegate {
     
     // MARK: 리뷰 삭제넣기
     func removeReviewFromList(fromVC vc: CategoryDetailVC, review: Review) {
-        guard let reviewId = review.reviewId else { return }
-        self.dataManager?.deleteReview(fromVC: vc, reviewId: reviewId)
+        guard let reviewId = review.reviewId,
+            let reviewImageUrl = review.imageUrl else { return }
+        self.dataManager?.deleteReview(fromVC: vc, reviewId: reviewId, reviewImageUrl: reviewImageUrl)
     }
     
     func setReviewList(review: Review) {
@@ -44,26 +45,30 @@ class CategoryDetailActor: CategoryDetailActorDelegate {
         self.dataManager?.reloadReviewList(fromVC: vc, reviewCount: count)
     }
     
-    func presentDeleteReviewPopUp(fromVC vc: CategoryDetailVC, reviewId id: Int) {
+    func presentDeleteReviewPopUp(fromVC vc: CategoryDetailVC, reviewId id: Int, reviewImageUrl: String) {
         let deleteReviewPopUpStoryboard = UIStoryboard(name: "DeleteReview", bundle: nil)
         guard let deleteReviewPopUpView = deleteReviewPopUpStoryboard.instantiateViewController(withIdentifier: "DeleteReview") as? DeleteReview else { return }
         deleteReviewPopUpView.modalPresentationStyle = .custom
         deleteReviewPopUpView.modalTransitionStyle = .crossDissolve
         deleteReviewPopUpView.delegate = vc
         deleteReviewPopUpView.reviewId = id
+        deleteReviewPopUpView.reviewImageUrl = reviewImageUrl
         vc.present(deleteReviewPopUpView, animated: true, completion: nil)
     }
     
-    func deleteReviewAction(fromVC vc: CategoryDetailVC, reviewId id: Int) {
-        for reviewIndex in 0 ..< self._reviewList.count - 1 {
-            if self.reviewList[reviewIndex].reviewId == id {
-                self._reviewList.remove(at: reviewIndex)
+    func deleteReviewAction(fromVC vc: CategoryDetailVC, reviewId id: Int, reviewImageUrl: String) {
+        if self.reviewList.count > 1 {
+            for reviewIndex in 0 ..< self._reviewList.count - 1 {
+                if self.reviewList[reviewIndex].reviewId == id {
+                    self._reviewList.remove(at: reviewIndex)
+                }
             }
-        }
-        if self.reviewList.count == 1 {
-            self._reviewList.remove(at: 0)
-        }
-        self.dataManager?.deleteReview(fromVC: vc, reviewId: id)
+        } else {
+            if self.reviewList.count == 1 {
+                self._reviewList.remove(at: 0)
+            }
+        }        
+        self.dataManager?.deleteReview(fromVC: vc, reviewId: id, reviewImageUrl: reviewImageUrl)
     }
     
     func updateStarRateImageView(updateCell cell: CategoryDetailCell, value: Double) {

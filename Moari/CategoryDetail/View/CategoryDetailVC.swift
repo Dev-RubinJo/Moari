@@ -86,8 +86,9 @@ extension CategoryDetailVC {
         case .began:
             guard let selectedIndexPath = self.categoryDetailCollectionView.indexPathForItem(at: gesture.location(in: self.categoryDetailCollectionView)) else { return }
             
-            guard let reviewId = self.actor?.reviewList[selectedIndexPath.item].reviewId else { return }
-            self.actor?.presentDeleteReviewPopUp(fromVC: self, reviewId: reviewId)
+            guard let reviewId = self.actor?.reviewList[selectedIndexPath.item].reviewId,
+                let reviewImageUrl = self.actor?.reviewList[selectedIndexPath.item].imageUrl else { return }
+            self.actor?.presentDeleteReviewPopUp(fromVC: self, reviewId: reviewId, reviewImageUrl: reviewImageUrl)
             
         case .ended:
             fallthrough
@@ -100,7 +101,8 @@ extension CategoryDetailVC {
 
 extension CategoryDetailVC: DeleteReviewDelegate {
     
-    func didTapDeletePopUpDoneButton(reviewId id: Int) {
-        self.actor?.deleteReviewAction(fromVC: self, reviewId: id)
+    func didTapDeletePopUpDoneButton(reviewId id: Int, reviewImageUrl: String) {
+        self.actor?.deleteReviewAction(fromVC: self, reviewId: id, reviewImageUrl: reviewImageUrl)
     }
 }
+    

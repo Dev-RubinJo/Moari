@@ -80,6 +80,9 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
             "Content-Type": "application/json"
         ]
         
+        // 새로운 이미지 url을 임시로 저장할 수 있도록 하는 변수
+        var tempImageUrl: String = ""
+        
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         if let reviewId = id {
@@ -91,6 +94,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                         vc.appearIndicator()
                         storageReference.putData(imageData!, metadata:  metadata) { (metadata, error) in
                             storageReference.downloadURL { (url, error) in
+                                tempImageUrl = "\(url!)"
                                 let parameters: Parameters = [
                                     "categoryType": vc.review!.categoryId!,
                                     "title": vc.reviewTitleTextView.text!,
@@ -105,23 +109,52 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                                     .responseObject(completionHandler: { (response: DataResponse<WriteReviewResponse>) in
                                         switch response.result {
                                         case .success(let writeResponse):
-                                            vc.reviewTitleBorderImageView.isHidden = true
-                                            vc.reviewTitlePlaceholderLabel.isHidden = true
-                                            vc.starRateBorderImageView.isHidden = true
-                                            vc.reviewContentBorderImageView.isHidden = true
-                                            vc.reviewContentPlaceholderLabel.isHidden = true
-                                            vc.shareReviewButton.isHidden = false
-                                            vc.editReviewButton.isHidden = false
-                                            vc.deleteReviewButton.isHidden = true
-                                            vc.editImageButton.isHidden = true
-                                            vc.selectDateTextField.isUserInteractionEnabled = false
-                                            vc.reviewTitleTextView.isEditable = false
-                                            vc.reviewContentTextView.isEditable = false
-                                            vc.contentTextView.isEditable = false
-                                            vc.contentViewPlaceholderLabel.isHidden = true
-                                            vc.navigationItem.rightBarButtonItem = nil
-                                            vc.imageChangeFlag = false
-                                            vc.disappearIndicator()
+                                            if vc.imageUrl != "" {
+                                                Storage.storage().reference(forURL: "\(vc.imageUrl)")
+                                                    .delete { error in
+                                                        if let error = error {
+                                                            print(error)
+                                                        } else {
+                                                            vc.imageUrl = tempImageUrl
+                                                            vc.reviewTitleBorderImageView.isHidden = true
+                                                            vc.reviewTitlePlaceholderLabel.isHidden = true
+                                                            vc.starRateBorderImageView.isHidden = true
+                                                            vc.reviewContentBorderImageView.isHidden = true
+                                                            vc.reviewContentPlaceholderLabel.isHidden = true
+                                                            vc.shareReviewButton.isHidden = false
+                                                            vc.editReviewButton.isHidden = false
+                                                            vc.deleteReviewButton.isHidden = true
+                                                            vc.editImageButton.isHidden = true
+                                                            vc.selectDateTextField.isUserInteractionEnabled = false
+                                                            vc.reviewTitleTextView.isEditable = false
+                                                            vc.reviewContentTextView.isEditable = false
+                                                            vc.contentTextView.isEditable = false
+                                                            vc.contentViewPlaceholderLabel.isHidden = true
+                                                            vc.navigationItem.rightBarButtonItem = nil
+                                                            vc.imageChangeFlag = false
+                                                            vc.disappearIndicator()
+                                                        }
+                                                }
+                                            } else {
+                                                vc.imageUrl = tempImageUrl
+                                                vc.reviewTitleBorderImageView.isHidden = true
+                                                vc.reviewTitlePlaceholderLabel.isHidden = true
+                                                vc.starRateBorderImageView.isHidden = true
+                                                vc.reviewContentBorderImageView.isHidden = true
+                                                vc.reviewContentPlaceholderLabel.isHidden = true
+                                                vc.shareReviewButton.isHidden = false
+                                                vc.editReviewButton.isHidden = false
+                                                vc.deleteReviewButton.isHidden = true
+                                                vc.editImageButton.isHidden = true
+                                                vc.selectDateTextField.isUserInteractionEnabled = false
+                                                vc.reviewTitleTextView.isEditable = false
+                                                vc.reviewContentTextView.isEditable = false
+                                                vc.contentTextView.isEditable = false
+                                                vc.contentViewPlaceholderLabel.isHidden = true
+                                                vc.navigationItem.rightBarButtonItem = nil
+                                                vc.imageChangeFlag = false
+                                                vc.disappearIndicator()
+                                            }
                                         case .failure(let error):
                                             print(error)
                                         }
@@ -217,6 +250,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                     vc.appearIndicator()
                     storageReference.putData(imageData!, metadata:  metadata) { (metadata, error) in
                         storageReference.downloadURL { (url, error) in
+                            tempImageUrl = "\(url!)"
                             let parameters: Parameters = [
                                 "title": vc.reviewTitleTextView.text!,
                                 "content": vc.contentTextView.text!,
@@ -231,7 +265,9 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                                 .responseObject(completionHandler: { (response: DataResponse<WriteReviewResponse>) in
                                     switch response.result {
                                     case .success(let writeResponse):
+                                        vc.newReview = true
                                         vc.isAdd = false
+                                        vc.imageUrl = tempImageUrl
                                         vc.reviewTitleBorderImageView.isHidden = true
                                         vc.reviewTitlePlaceholderLabel.isHidden = true
                                         vc.starRateBorderImageView.isHidden = true
@@ -276,6 +312,7 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
                     .responseObject(completionHandler: { (response: DataResponse<WriteReviewResponse>) in
                         switch response.result {
                         case .success(let writeResponse):
+                            vc.newReview = true
                             vc.isAdd = false
                             vc.reviewTitleBorderImageView.isHidden = true
                             vc.reviewTitlePlaceholderLabel.isHidden = true
@@ -318,8 +355,28 @@ class AddReviewDataManager: AddReviewDataManagerDelegate {
             .responseObject(completionHandler: {(response: DataResponse<WriteReviewResponse>) in
                 switch response.result {
                 case .success( _):
-                    vc.categoryDetailVC?.isLoad = true
-                    vc.navigationController?.popViewController(animated: true)
+                    if vc.imageUrl != "" {
+                        Storage.storage().reference(forURL: "\(vc.imageUrl)")
+                            .delete { error in
+                                if let error = error {
+                                    print(error)
+                                } else {
+                                    vc.categoryDetailVC?.isLoad = true
+                                    if vc.newReview {
+                                        vc.dismiss(animated: true, completion: nil)
+                                    } else {
+                                        vc.navigationController?.popViewController(animated: true)
+                                    }
+                                }
+                        }
+                    } else {
+                        vc.categoryDetailVC?.isLoad = true
+                        if vc.newReview {
+                            vc.dismiss(animated: true, completion: nil)
+                        } else {
+                            vc.navigationController?.popViewController(animated: true)
+                        }
+                    }
                 case .failure(let error):
                     print(error)
                 }

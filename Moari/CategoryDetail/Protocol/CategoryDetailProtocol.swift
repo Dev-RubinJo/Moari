@@ -42,9 +42,9 @@ protocol CategoryDetailActorDelegate: class {
     
     func didTapReviewCell(reviewCategory category: Int, reviewId id: Int)
     
-    func presentDeleteReviewPopUp(fromVC vc: CategoryDetailVC, reviewId id: Int)
+    func presentDeleteReviewPopUp(fromVC vc: CategoryDetailVC, reviewId id: Int, reviewImageUrl: String)
     
-    func deleteReviewAction(fromVC vc: CategoryDetailVC, reviewId id: Int)
+    func deleteReviewAction(fromVC vc: CategoryDetailVC, reviewId id: Int, reviewImageUrl: String)
     
     func didTapAddReviewButton(fromVC vc: CategoryDetailVC)
 }
@@ -62,5 +62,5 @@ protocol CategoryDetailDataManagerDelegate: class {
     
     func reloadReviewList(fromVC vc: CategoryDetailVC, reviewCount count: Int)
     
-    func deleteReview(fromVC vc: CategoryDetailVC, reviewId: Int)
+    func deleteReview(fromVC vc: CategoryDetailVC, reviewId: Int, reviewImageUrl: String)
 }
