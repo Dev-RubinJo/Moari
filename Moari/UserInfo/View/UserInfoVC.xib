@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -16,6 +16,7 @@
                 <outlet property="editUserInfoButton" destination="I9a-cI-sWw" id="Cdw-kQ-eJE"/>
                 <outlet property="emailGuideLabel" destination="S23-VO-s3X" id="BNl-HK-a3y"/>
                 <outlet property="emailLabel" destination="7k4-fO-kDC" id="p03-SS-cls"/>
+                <outlet property="openSourceLicenseButton" destination="6fI-ib-PUi" id="shj-K8-RK1"/>
                 <outlet property="passwordCheckTextField" destination="XiR-YW-F8n" id="3EE-X8-Q5i"/>
                 <outlet property="passwordGuideLabel" destination="Twe-nT-2qa" id="ksQ-hj-Rxj"/>
                 <outlet property="passwordTextField" destination="kzn-Cz-TA8" id="BFa-Es-kgo"/>
@@ -140,6 +141,12 @@
                         <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fI-ib-PUi">
+                    <rect key="frame" x="28" y="593" width="108" height="30"/>
+                    <state key="normal" title="오픈소스 라이선스">
+                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -149,12 +156,14 @@
                 <constraint firstItem="5Cm-Zy-eVz" firstAttribute="leading" secondItem="EOd-qv-FGT" secondAttribute="leading" id="6jL-AZ-2uk"/>
                 <constraint firstItem="EOd-qv-FGT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="AYK-Ul-63F"/>
                 <constraint firstItem="7k4-fO-kDC" firstAttribute="top" secondItem="S23-VO-s3X" secondAttribute="bottom" constant="8" id="EcM-MV-oVx"/>
+                <constraint firstItem="6fI-ib-PUi" firstAttribute="leading" secondItem="RdM-92-D9B" secondAttribute="leading" id="GNK-x3-T8h"/>
                 <constraint firstItem="RdM-92-D9B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="IeS-oN-zhK"/>
                 <constraint firstItem="Yen-Jy-5JW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JYg-vw-B0p"/>
                 <constraint firstItem="Twe-nT-2qa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="L4X-hd-ypY"/>
                 <constraint firstItem="LY7-EZ-CGf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="SKt-uC-vek"/>
                 <constraint firstItem="XiR-YW-F8n" firstAttribute="leading" secondItem="kzn-Cz-TA8" secondAttribute="leading" id="UXK-Td-2Lm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kzn-Cz-TA8" secondAttribute="trailing" constant="28" id="VK2-mm-gso"/>
+                <constraint firstItem="6fI-ib-PUi" firstAttribute="top" secondItem="RdM-92-D9B" secondAttribute="bottom" constant="12" id="W8f-C2-epr"/>
                 <constraint firstItem="S23-VO-s3X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="Xfm-vp-YWO"/>
                 <constraint firstItem="Twe-nT-2qa" firstAttribute="top" secondItem="5Cm-Zy-eVz" secondAttribute="bottom" constant="42" id="ZHD-Vg-kdc"/>
                 <constraint firstItem="LY7-EZ-CGf" firstAttribute="top" secondItem="XiR-YW-F8n" secondAttribute="bottom" constant="42" id="fp7-Hm-SOr"/>

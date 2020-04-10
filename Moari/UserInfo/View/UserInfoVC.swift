@@ -27,6 +27,7 @@ class UserInfoVC: BaseVC, UserInfoVCProtococl {
     
     @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var deleteUserButton: UIButton!
+    @IBOutlet weak var openSourceLicenseButton: UIButton!
     
     var actor: (UserInfoActorDelegate & UserInfoPopUpActorDelegate)?
     
