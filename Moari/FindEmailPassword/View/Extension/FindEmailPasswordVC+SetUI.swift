@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension FindEmailPasswordVC {
     
@@ -59,10 +60,12 @@ extension FindEmailPasswordVC {
     }
     
     @objc func pressCheckEmailButton(_ sender: UIButton) {
+        Analytics.logEvent("FindEmailPassword_Email_Check_ios", parameters: ["req": "FindEmailPassword_Email_Check_ios"])
         self.actor?.didTapCheckForRegisteredEmailButton(fromVC: self)
     }
     
     @objc func pressSendTemporaryPasswordButton(_ sender: UIButton) {
+        Analytics.logEvent("FindEmailPassword_Send_Temp_Password_ios", parameters: ["req": "FindEmailPassword_Send_Temp_Password_ios"])
         self.actor?.didTapSendTemporaryPasswordButton(fromVC: self)
     }
 }
