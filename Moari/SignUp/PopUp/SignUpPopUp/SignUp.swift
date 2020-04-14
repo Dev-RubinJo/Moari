@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUp: BaseVC {
     
@@ -37,6 +38,7 @@ class SignUp: BaseVC {
     }
     
     @objc func didTapSignUpPopUpButton(_ sender: UIButton) {
+        Analytics.logEvent("Sign_Up_PopUp_OK_ios", parameters: ["req": "Sign_Up_PopUp_OK_ios"])
         self.delegate?.pressSignInButton()
         self.dismiss(animated: true, completion: nil)
     }
