@@ -9,6 +9,7 @@
 
 import Alamofire
 import AlamofireObjectMapper
+import Firebase
 
 class SignUpDataManager: SignUpDataManagerDelegate {
     
@@ -29,6 +30,7 @@ class SignUpDataManager: SignUpDataManagerDelegate {
                 case .success(let signUpResponse):
                     switch signUpResponse.code {
                     case 200:
+                        Analytics.logEvent("Complete_Sign_Up_ios", parameters: ["req": "Complete_Sign_Up_ios"])
                         self.actor?.presentSignUpPopUp(fromVC: vc)
                     case 310:
                         // TODO: 중복된 이메일 Alert띄우기 메서드 구현 후 적용
@@ -61,6 +63,7 @@ class SignUpDataManager: SignUpDataManagerDelegate {
                         UserDefaults.standard.set(signInResponse.jwt, forKey: "LoginToken")
                         UserDefaults.standard.set(email, forKey: "UserEmail")
                         UserDefaults.standard.set(true, forKey: "ShowTutorial")
+                        Analytics.logEvent("Sign_In_After_Sign_Up_ios", parameters: ["req": "Sign_In_After_Sign_Up_ios"])
                         self.actor?.completeSignInAfterSignUp()
                     default:
                         break

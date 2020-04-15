@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class SignUpActor: SignUpActorDelegate {
     
@@ -14,6 +15,7 @@ class SignUpActor: SignUpActorDelegate {
     var dataManager: SignUpDataManagerDelegate?
     
     func didTapUsingTermLabel() {
+        Analytics.logEvent("Did_Tap_Using_Policy_ios", parameters: ["req": "Did_Tap_Using_Policy_ios"])
         self.view?.presentUsingPolicyView()
     }
     
@@ -28,6 +30,7 @@ class SignUpActor: SignUpActorDelegate {
     }
     
     func didTapPersonalTermLabel() {
+        Analytics.logEvent("Did_Tap_Personal_Policy_ios", parameters: ["req": "Did_Tap_Personal_Policy_ios"])
         self.view?.presentPersonPolicyView()
     }
     
