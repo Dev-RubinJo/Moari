@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CategoryVC: BaseVC, CategoryVCProtocol {
     
@@ -48,5 +49,7 @@ class CategoryVC: BaseVC, CategoryVCProtocol {
             usingGuideView.modalPresentationStyle = .fullScreen
             self.present(usingGuideView, animated: true, completion: nil)
         }
+        
+        Analytics.logEvent("CategoryVC_Show_ios", parameters: ["req": "CategoryVC_Show_ios"])
     }
 }
