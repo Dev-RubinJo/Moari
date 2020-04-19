@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Firebase
 
 class CurationVC: BaseVC, CurationVCProtocol {
     
@@ -54,6 +55,9 @@ class CurationVC: BaseVC, CurationVCProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        Analytics.logEvent("CurationVC_Show_ios", parameters: ["req": "CurationVC_Show_ios"])
+        
         self.setCurationVCUI()
         self.actor?.didLoadCuration(fromVC: self)
         // Category, Curation 도메인 부터는 RootViewController 가 이니기 때문에 어쩔 수 없이 UIApplication의 statusBarStyle를 강제로 변환
