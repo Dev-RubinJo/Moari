@@ -74,7 +74,6 @@ extension CurationVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CurationCell", for: indexPath) as? CurationCell else {
                 return UICollectionViewCell()
             }
-            //        cell.backgroundColorView.backgroundColor = 지정할 컬러
             let randNumber = Int(arc4random_uniform(5))
             cell.curationCellTopConstraint.constant = self.topbarHeight
             
@@ -100,9 +99,6 @@ extension CurationVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
                 cell.reviewTitleTextView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 25)
             default:
                 break
-                //            self.reviewTitleViewTopConstraint.constant = 85
-                //            self.reviewTitleViewHeightConstraint.constant = 86
-                //            self.reviewTitleTextView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 29)
             }
             
             cell.reviewTitleTextView.text = self.actor?.curationList[indexPath.item].title
@@ -120,9 +116,7 @@ extension CurationVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-//        var screenSize = UIScreen.main.bounds.size
-//        screenSize.height = screenSize.height - (self.navigationController?.navigationBar.bounds.height)!
+
         var screenSize = CGSize()
         screenSize.height = self.curationCollectionView.bounds.height
         screenSize.width = self.curationCollectionView.bounds.width
