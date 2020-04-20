@@ -41,9 +41,6 @@ extension CategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: 카테고리를 선택하고 선택한 카테고리의 리뷰들 띄우기
-        // 롱클릭 이벤트 1 ~ 4번째 카테고리는 적용 안되도록 하기
-        // 롱클릭 이벤트 0번 카테고리는 적용 안되도록 하기
         
         if self.actor?.categoryList[indexPath.item].categoryId != 0 {
             guard let category = self.actor?.categoryList[indexPath.item] else { return }
@@ -60,16 +57,10 @@ extension CategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         case .iPhone:
             switch UIScreen.main.nativeBounds.height {
             case 1136: // se
-                //272
-                // cell size is 90.6
                 return CGSize(width: 90.6, height: 90.6)
             case 1334, 2436: // 6, 7, 8 X, 11pro
-                // 327
-                // cell size is 109
                 return CGSize(width: 109, height: 109)
             default:
-                // 366 // 6+7+8+ xr 11 11promax
-                // cell size is 122
                 return CGSize(width: 122, height: 122)
             }
         case .iPad:
@@ -79,9 +70,6 @@ extension CategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         return CGSize()
     }
 }
-
-
-
 extension CategoryVC: AddCategoryPopUpDelegate {
     func didTapAddCategoryDoneButton() {
         print(1)
