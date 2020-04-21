@@ -46,11 +46,6 @@ class DrawerVC: UIViewController {
         if #available(iOS 13.0, *) {
         } else {
             self.themeModeView.isHidden = true
-            
-            
-//            self.securitySettingView.snp.makeConstraints { make in
-//                make.top.equalTo(self.editUserInfoView.snp.bottom).offset(0)
-//            }
         }
     }
     
