@@ -65,6 +65,8 @@
 		437A95122431CE1100EC8E49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 437A95112431CE1100EC8E49 /* GoogleService-Info.plist */; };
 		437F3892240F72D1006DFCC4 /* CategoryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437F3890240F72D1006DFCC4 /* CategoryDetailCell.swift */; };
 		437F3893240F72D1006DFCC4 /* CategoryDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437F3891240F72D1006DFCC4 /* CategoryDetailCell.xib */; };
+		437F9DBB243D7A3F0098CDB2 /* OpenSourceLicenseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437F9DB9243D7A3F0098CDB2 /* OpenSourceLicenseVC.swift */; };
+		437F9DBC243D7A3F0098CDB2 /* OpenSourceLicenseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437F9DBA243D7A3F0098CDB2 /* OpenSourceLicenseVC.xib */; };
 		43837953240F541B00317F3D /* CategoryDetailActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43837952240F541B00317F3D /* CategoryDetailActor.swift */; };
 		43837955240F542800317F3D /* CategoryDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43837954240F542800317F3D /* CategoryDetailDataManager.swift */; };
 		43837957240F543500317F3D /* CategoryDetailDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43837956240F543500317F3D /* CategoryDetailDataResponse.swift */; };
@@ -254,6 +256,8 @@
 		437A95112431CE1100EC8E49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		437F3890240F72D1006DFCC4 /* CategoryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailCell.swift; sourceTree = "<group>"; };
 		437F3891240F72D1006DFCC4 /* CategoryDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryDetailCell.xib; sourceTree = "<group>"; };
+		437F9DB9243D7A3F0098CDB2 /* OpenSourceLicenseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceLicenseVC.swift; sourceTree = "<group>"; };
+		437F9DBA243D7A3F0098CDB2 /* OpenSourceLicenseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenSourceLicenseVC.xib; sourceTree = "<group>"; };
 		43837952240F541B00317F3D /* CategoryDetailActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailActor.swift; sourceTree = "<group>"; };
 		43837954240F542800317F3D /* CategoryDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailDataManager.swift; sourceTree = "<group>"; };
 		43837956240F543500317F3D /* CategoryDetailDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailDataResponse.swift; sourceTree = "<group>"; };
@@ -904,6 +908,23 @@
 			path = CategoryDetailCell;
 			sourceTree = "<group>";
 		};
+		437F9DB7243D79F50098CDB2 /* OpenSourceLicense */ = {
+			isa = PBXGroup;
+			children = (
+				437F9DB8243D7A260098CDB2 /* View */,
+			);
+			path = OpenSourceLicense;
+			sourceTree = "<group>";
+		};
+		437F9DB8243D7A260098CDB2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				437F9DB9243D7A3F0098CDB2 /* OpenSourceLicenseVC.swift */,
+				437F9DBA243D7A3F0098CDB2 /* OpenSourceLicenseVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4383794D240E988D00317F3D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -1247,6 +1268,7 @@
 		43FF132F241BDEEB00C89F66 /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
+				437F9DB7243D79F50098CDB2 /* OpenSourceLicense */,
 				43BD49BB2423C5B600236C0A /* PopUp */,
 				43FF1337241BDF3000C89F66 /* View */,
 				43FF1336241BDF2F00C89F66 /* Actor */,
@@ -1541,6 +1563,7 @@
 				430B4E6E240792EE004046F9 /* CurationVC.xib in Resources */,
 				43878187240FE26200C39B8B /* CurationCell.xib in Resources */,
 				43FF133B241BE19E00C89F66 /* SearchVC.xib in Resources */,
+				437F9DBC243D7A3F0098CDB2 /* OpenSourceLicenseVC.xib in Resources */,
 				432E0FD1240B7EF700ADD122 /* AddCategory.storyboard in Resources */,
 				437A95122431CE1100EC8E49 /* GoogleService-Info.plist in Resources */,
 				437F3893240F72D1006DFCC4 /* CategoryDetailCell.xib in Resources */,
@@ -1737,6 +1760,7 @@
 				438402212402646B00ECA42E /* SignUpVC.swift in Sources */,
 				43D53E5423FAE9DC005DFC4A /* SignInDataManager.swift in Sources */,
 				43BD49C52424BE5800236C0A /* SignOut.swift in Sources */,
+				437F9DBB243D7A3F0098CDB2 /* OpenSourceLicenseVC.swift in Sources */,
 				432E0FD5240B7F1F00ADD122 /* AddCategoryPopUpProtocol.swift in Sources */,
 				4384020D2401037B00ECA42E /* SplashActor+Alert.swift in Sources */,
 				432E0FF4240BA78900ADD122 /* AddReviewActor.swift in Sources */,
