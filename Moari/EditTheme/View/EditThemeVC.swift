@@ -24,6 +24,8 @@ class EditThemeVC: BaseVC, EditThemeVCProtocol {
     
     weak var actor: EditThemeActorDelegate?
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setEditThemeVCUI()
