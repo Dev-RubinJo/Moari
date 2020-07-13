@@ -21,14 +21,12 @@ class CurationVC: BaseVC, CurationVCProtocol {
         case 1136: // se1
             return 15.0
         case 1334:
-            //                print("iPhone 6/6S/7/8")
             return 17.0
         case 1920:
             return 19.0
         case 2436:
             return 17.0
         case 1792, 2688:
-            //                print("iPhone XR, XS MAX")
             return 19.0
         default:
             return 19.0
