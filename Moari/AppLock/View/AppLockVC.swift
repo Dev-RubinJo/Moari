@@ -78,19 +78,15 @@ extension AppLockVC {
             self.mainLogoTopConstraint.constant = 100
             break;
         case 1334:
-            //                print("iPhone 6/6S/7/8")
             self.mainLogoTopConstraint.constant = 150
             break;
         case 1920:
-            //                print("iPhone 6+/6S+/7+/8+")
             self.mainLogoTopConstraint.constant = 200
             break;
         case 2436:
-            //                print("iPhone X, XS")
             self.mainLogoTopConstraint.constant = 200
             break;
         case 1792, 2688:
-            //                print("iPhone XR, XS MAX")
             self.mainLogoTopConstraint.constant = 280
             break;
         default:
