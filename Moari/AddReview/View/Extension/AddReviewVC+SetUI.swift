@@ -270,8 +270,8 @@ extension AddReviewVC {
     }
     
     @objc func pressShareReviewButton(_ sender: UIButton) {
-        let image = UIView.makeImage(with: self.shareImageBaseView)
-        let shareViewController = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        guard let image = UIView.makeImage(with: self.shareImageBaseView) else { return }
+        let shareViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         shareViewController.popoverPresentationController?.sourceView = self.view
         
         self.present(shareViewController, animated: true, completion: nil)

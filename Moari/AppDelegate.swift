@@ -24,10 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         NetworkActivityIndicatorManager.shared.isEnabled = true
+        
+        
         if !UserDefaults.standard.bool(forKey: "FirstAppLaunch") {
-            UserDefaults.standard.set(2, forKey: "Theme")
+            UserDefaults.standard.set(true, forKey: "FirstAppLaunch")
         }
-        UserDefaults.standard.set(true, forKey: "FirstAppLaunch")
+        
+        
+        
         Analytics.setAnalyticsCollectionEnabled(true)
         
         
